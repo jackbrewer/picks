@@ -1,0 +1,37 @@
+.ButtonBase {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+
+  &:focus,
+  &:hover {
+    outline: 0;
+    transition-duration: 0.1s;
+    text-decoration: none;
+  }
+
+  // &:active {
+  //   //
+  // }
+}
+
+//
+// DISABLED BUTTON
+//
+
+.disabled {
+  opacity: 0.75;
+  user-select: none;
+  pointer-events: none;
+}
+
+//
+// BLOCK BUTTON
+//
+
+.block {
+  display: block;
+  width: 100%;
+}

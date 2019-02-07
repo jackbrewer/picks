@@ -1,0 +1,13 @@
+@function color($color-name, $color-variant: null) {
+  @if ($color-variant != null) {
+    @return map-get(map-get($color, $color-name), $color-variant);
+  } @else {
+    @return map-get($color, $color-name);
+    // @if map-has-key($color, $color-name) {
+    //   @return map-get($color, $color-name);
+    // } @else {
+    //   @error "Color `#{$color-name}` could not be found.";
+    //   @return null;
+    // }
+  }
+}

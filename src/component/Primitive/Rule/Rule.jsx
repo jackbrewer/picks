@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import styles from './Rule.module.sass'
+import styles from './Rule.module.scss'
 
 class Rule extends PureComponent {
   render() {

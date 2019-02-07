@@ -1,0 +1,24 @@
+$color-primary: blue;
+
+$color: (
+  common: (
+    black: hsl(0, 0%, 0%),
+    grey25: hsl(0, 0%, 25%),
+    grey50: hsl(0, 0%, 50%),
+    grey75: hsl(0, 0%, 75%),
+    grey85: hsl(0, 0%, 85%),
+    grey95: hsl(0, 0%, 95%),
+    white: hsl(0, 0%, 100%)
+  ),
+  primary: (
+    base: #1565c0,
+    light: #1976d2,
+    dark: #0d47a1
+  ),
+  status: (
+    success: #4caf50,
+    notice: #2196f3,
+    warning: #ff9800,
+    error: #f44336
+  )
+);

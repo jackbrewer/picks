@@ -1,0 +1,19 @@
+.ResponsiveMedia {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 100%; // Default to square
+  text-align: left; // Video in centered text can mis-align
+
+  // Ensure images fill placeholder
+  & > img {
+    width: 100%;
+  }
+
+  // A little extra persuasion for responsive video
+  & > iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+}

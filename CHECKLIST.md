@@ -21,7 +21,7 @@ If using HOCs:
 - Add `displayName` for better Storybook info
 - When exporting through HOC e.g. `export default withTheme(Foo)`, also `export class Foo extends…` for easier Enzyme testing without HOC wrapper
 
-## Styles/Themes
+## Styles
 
 - Styles are authored as `*.module.scss` files
 - Existing variables/mixins are used where appropriate
@@ -30,7 +30,6 @@ If using HOCs:
 - Images/fonts referenced in styles have paths relative to imported `.scss` file
 - Hover, active, focus styles use common styles across all components
 - `yarn lint:css` passes
-
 - (TBC) Styles props use `.Block` and `.BlockElement` naming convention for elements
 - (TBC) Styles use lowercase `modifier` naming convention for modifiers
 

@@ -39,8 +39,6 @@ class SmartLink extends PureComponent {
   }
 }
 
-SmartLink.displayName = 'SmartLink'
-
 SmartLink.defaultProps = {
   type: 'button'
 }

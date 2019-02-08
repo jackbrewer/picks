@@ -57,4 +57,5 @@ If using HOCs:
 - (TBC) Description/uses, or links to Storybook description etc
 - (TBC) Version
 - (TBC) Changelog
+- (TBC) List dependencies on other components
 - (TBC) Space to list per-project modifications from original if used in external project

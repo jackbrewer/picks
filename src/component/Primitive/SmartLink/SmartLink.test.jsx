@@ -5,7 +5,7 @@ import { shallow, mount } from 'enzyme'
 
 import SmartLink from './'
 
-const requiredProps = () => ({ children: 'Example content' })
+const requiredProps = () => ({ children: 'Default content' })
 
 describe('Component: SmartLink', function() {
   test('should return errors if required props missing', function() {
@@ -33,15 +33,15 @@ describe('Component: SmartLink', function() {
         undefined,
         'SmartLink should have no default className'
       )
-      expect(wrapper.text()).toEqual('Example content')
+      expect(wrapper.text()).toEqual('Default content')
     })
 
     test('should add additional props if passed', function() {
       const wrapper = shallow(
-        <SmartLink {...requiredProps()} disabled title="Example title" />
+        <SmartLink {...requiredProps()} disabled title="Default title" />
       )
       expect(wrapper.prop('disabled')).toEqual(true)
-      expect(wrapper.prop('title')).toEqual('Example title')
+      expect(wrapper.prop('title')).toEqual('Default title')
     })
 
     test('should add onClick function if passed', function() {
@@ -60,7 +60,7 @@ describe('Component: SmartLink', function() {
       const wrapper = shallow(<SmartLink {...requiredProps()} />)
       expect(wrapper.type()).toEqual('button')
       expect(wrapper.prop('type')).toEqual('button')
-      expect(wrapper.text()).toEqual('Example content')
+      expect(wrapper.text()).toEqual('Default content')
     })
 
     test('should allow a custom type prop', function() {

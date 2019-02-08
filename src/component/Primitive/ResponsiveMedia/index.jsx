@@ -21,8 +21,6 @@ class ResponsiveMedia extends PureComponent {
   }
 }
 
-ResponsiveMedia.displayName = 'ResponsiveMedia'
-
 ResponsiveMedia.propTypes = {
   children: node.isRequired,
   ratio: number.isRequired

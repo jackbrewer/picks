@@ -11,8 +11,6 @@ class Example extends PureComponent {
   }
 }
 
-Example.displayName = 'Example'
-
 Example.propTypes = {
   children: node.isRequired
 }

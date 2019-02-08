@@ -11,8 +11,6 @@ class Ellipsis extends PureComponent {
   }
 }
 
-Ellipsis.displayName = 'Ellipsis'
-
 Ellipsis.propTypes = {
   children: node.isRequired
 }

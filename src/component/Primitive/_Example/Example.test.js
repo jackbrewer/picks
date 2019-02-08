@@ -3,7 +3,7 @@ import validatePropTypes from 'validate-prop-types'
 import { shallow } from 'enzyme'
 import Example from '.'
 
-const requiredProps = () => ({ children: 'Example content' })
+const requiredProps = () => ({ children: 'Default content' })
 
 describe('Component: Example', function() {
   test('should return errors if required props missing', function() {
@@ -26,10 +26,11 @@ describe('Component: Example', function() {
   test('should output the expected markup with default props', function() {
     const wrapper = shallow(<Example {...requiredProps()} />)
     expect(wrapper.prop('className')).toEqual('Example')
+    expect(wrapper.text()).toEqual('Default content')
   })
 
   // test('should output additional className when `foo` prop passed', function() {
   //   const wrapper = shallow(<Example {...requiredProps()} foo />)
-  //   expect(wrapper.prop('className')).toEqual('Example isFoo')
+  //   expect(wrapper.prop('className')).toEqual('Example foo')
   // })
 })

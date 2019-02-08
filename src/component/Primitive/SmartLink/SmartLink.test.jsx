@@ -1,30 +1,53 @@
 import React from 'react'
+import validatePropTypes from 'validate-prop-types'
 import { shallow, mount } from 'enzyme'
 // import { BrowserRouter as Router } from 'react-router-dom'
 
 import SmartLink from './'
 
+const requiredProps = () => ({ children: 'Example content' })
+
 describe('Component: SmartLink', function() {
+  test('should return errors if required props missing', function() {
+    // eslint-disable-next-line react/forbid-foreign-prop-types
+    const actual = validatePropTypes(SmartLink.propTypes, {})
+    const expected = {
+      children:
+        'The prop `children` is marked as required in `Component`, but its value is `undefined`.'
+    }
+    expect(actual).toEqual(expected)
+  })
+
+  test('shouldn’t error if valid default props passed', function() {
+    // eslint-disable-next-line react/forbid-foreign-prop-types
+    const actual = validatePropTypes(SmartLink.propTypes, requiredProps())
+    const expected = undefined
+    expect(actual).toEqual(expected)
+  })
+
   describe('Common functionality', function() {
     test('should output expected default attributes', function() {
-      const wrapper = shallow(<SmartLink>Default Text</SmartLink>)
+      const wrapper = shallow(<SmartLink {...requiredProps()} />)
       expect(wrapper.prop('type')).toEqual('button')
       expect(wrapper.prop('className')).toEqual(
         undefined,
         'SmartLink should have no default className'
       )
-      expect(wrapper.text()).toEqual('Default Text')
+      expect(wrapper.text()).toEqual('Example content')
     })
 
-    test('should add a `disabled` prop if passed', function() {
-      const wrapper = shallow(<SmartLink disabled>Default Text</SmartLink>)
+    test('should add additional props if passed', function() {
+      const wrapper = shallow(
+        <SmartLink {...requiredProps()} disabled title="Example title" />
+      )
       expect(wrapper.prop('disabled')).toEqual(true)
+      expect(wrapper.prop('title')).toEqual('Example title')
     })
 
     test('should add onClick function if passed', function() {
       const mockOnClick = jest.fn()
       const wrapper = mount(
-        <SmartLink onClick={mockOnClick}>Default Text</SmartLink>
+        <SmartLink {...requiredProps()} onClick={mockOnClick} />
       )
       expect(mockOnClick.mock.calls.length).toBe(0)
       wrapper.simulate('click')
@@ -34,15 +57,15 @@ describe('Component: SmartLink', function() {
 
   describe('as a `<button>`:', function() {
     test('should render as a `<button>` if not passed an `href` prop', function() {
-      const wrapper = shallow(<SmartLink>SmartLink Text</SmartLink>)
+      const wrapper = shallow(<SmartLink {...requiredProps()} />)
+      expect(wrapper.type()).toEqual('button')
       expect(wrapper.prop('type')).toEqual('button')
-      expect(wrapper.text()).toEqual('SmartLink Text')
+      expect(wrapper.text()).toEqual('Example content')
     })
 
     test('should allow a custom type prop', function() {
-      const wrapper = shallow(
-        <SmartLink type="submit">SmartLink Text</SmartLink>
-      )
+      const wrapper = shallow(<SmartLink {...requiredProps()} type="submit" />)
+      expect(wrapper.type()).toEqual('button')
       expect(wrapper.prop('type')).toEqual('submit')
     })
   })
@@ -64,6 +87,7 @@ describe('Component: SmartLink', function() {
           Link Text
         </SmartLink>
       )
+      expect(wrapper.type()).toEqual('a')
       expect(wrapper.prop('type')).toEqual(undefined)
     })
 
@@ -73,15 +97,17 @@ describe('Component: SmartLink', function() {
           Link Text
         </SmartLink>
       )
+      expect(wrapper.type()).toEqual('a')
       expect(wrapper.prop('target')).toEqual('_self')
     })
 
-    test('should output rel attribute if `target` prop set', function() {
+    test('should output rel attribute if `target` prop set to _blank', function() {
       const wrapper = shallow(
         <SmartLink target="_blank" href="http://example.com">
           Link Text
         </SmartLink>
       )
+      expect(wrapper.type()).toEqual('a')
       expect(wrapper.prop('target')).toEqual('_blank')
       expect(wrapper.prop('rel')).toEqual('noopener noreferrer')
     })
@@ -102,6 +128,7 @@ describe('Component: SmartLink', function() {
   //         </SmartLink>
   //       </Router>
   //     )
+  //     expect(wrapper.name()).toEqual('Link')
   //     expect(wrapper.prop('type')).toEqual(undefined)
   //   })
   // })

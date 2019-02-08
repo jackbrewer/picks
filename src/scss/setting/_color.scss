@@ -1,24 +1,16 @@
-$color-primary: blue;
+$color-common-black: hsl(0, 0%, 0%);
+$color-common-grey25: hsl(0, 0%, 25%);
+$color-common-grey50: hsl(0, 0%, 50%);
+$color-common-grey75: hsl(0, 0%, 75%);
+$color-common-grey85: hsl(0, 0%, 85%);
+$color-common-grey95: hsl(0, 0%, 95%);
+$color-common-white: hsl(0, 0%, 100%);
 
-$color: (
-  common: (
-    black: hsl(0, 0%, 0%),
-    grey25: hsl(0, 0%, 25%),
-    grey50: hsl(0, 0%, 50%),
-    grey75: hsl(0, 0%, 75%),
-    grey85: hsl(0, 0%, 85%),
-    grey95: hsl(0, 0%, 95%),
-    white: hsl(0, 0%, 100%)
-  ),
-  primary: (
-    base: #1565c0,
-    light: #1976d2,
-    dark: #0d47a1
-  ),
-  status: (
-    success: #4caf50,
-    notice: #2196f3,
-    warning: #ff9800,
-    error: #f44336
-  )
-);
+$color-primary-base: #1565c0;
+$color-primary-light: #1976d2;
+$color-primary-dark: #0d47a1;
+
+$color-status-success: #4caf50;
+$color-status-notice: #2196f3;
+$color-status-warning: #ff9800;
+$color-status-error: #f44336;

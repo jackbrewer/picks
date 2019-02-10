@@ -26,6 +26,7 @@ If using HOCs:
 - Styles are authored as `*.module.scss` files
 - Existing variables/mixins are used where appropriate
 - Use existing spacing units for consistent sizing/spacing
+- Review compiled CSS for nesting levels, leftover scss variables/mixins etc
 - Component-specific variables and animation names are scoped by prefixing with component name
 - Images/fonts referenced in styles have paths relative to imported `.scss` file
 - Hover, active, focus styles use common styles across all components

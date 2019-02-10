@@ -1,0 +1,13 @@
+@import 'true';
+
+@import '../../function/percentage';
+
+@include test-module('percentage()') {
+  @include test('should return a percentage based on a supplied decimal') {
+    @include assert-equal(percentage(0.5), 50%);
+  }
+
+  @include test('should output as unitless when passed a zero value') {
+    @include assert-equal(percentage(0), 0);
+  }
+}

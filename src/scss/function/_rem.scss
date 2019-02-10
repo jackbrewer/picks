@@ -1,0 +1,13 @@
+//
+// REM
+// ===
+//
+
+@import './strip-unit';
+
+@function rem($px, $base: 16) {
+  @if ($px == 0) {
+    @return 0;
+  }
+  @return (strip-unit($px) / strip-unit($base)) * 1rem;
+}

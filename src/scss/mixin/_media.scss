@@ -1,0 +1,69 @@
+//
+// WIDTH/HEIGHT
+// ============
+//
+
+//
+// WIDTH BASED
+//
+
+@mixin width-min($width) {
+  @include _media-single('width', 'min', $width) {
+    @content;
+  }
+}
+
+@mixin width-max($width) {
+  @include _media-single('width', 'max', $width) {
+    @content;
+  }
+}
+
+@mixin width-range($min-width, $max-width) {
+  @include _media-range('width', $min-width, $max-width) {
+    @content;
+  }
+}
+
+//
+// HEIGHT BASED
+//
+
+@mixin height-min($height) {
+  @include _media-single('height', 'min', $height) {
+    @content;
+  }
+}
+
+@mixin height-max($height) {
+  @include _media-single('height', 'max', $height) {
+    @content;
+  }
+}
+
+@mixin height-range($min-height, $max-height) {
+  @include _media-range('height', $min-height, $max-height) {
+    @content;
+  }
+}
+
+//
+// MEDIA QUERY BUILDERS
+//
+
+@mixin _media-single($direction, $type, $a) {
+  $mq: 'screen and (' + $type + '-' + $direction + ': ' + $a + ')';
+
+  @media #{$mq} {
+    @content;
+  }
+}
+
+@mixin _media-range($direction, $a, $b) {
+  $mq: 'screen and (min-' + $direction + ': ' + $a + ') and (max-' + $direction +
+    ': ' + $b + ')';
+
+  @media #{$mq} {
+    @content;
+  }
+}

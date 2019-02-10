@@ -1,0 +1,17 @@
+@import 'true';
+
+@import '../../function/tracking';
+
+@include test-module('tracking()') {
+  @include test('should output expected letter-spacing') {
+    @include assert-equal(tracking(180), 0.18em);
+  }
+
+  @include test('should convert to px value when passed two arguments') {
+    @include assert-equal(tracking(180, 15px), 2.7px);
+  }
+
+  @include test('should not fail when passed a zero value') {
+    @include assert-equal(tracking(0), 0);
+  }
+}

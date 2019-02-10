@@ -3,6 +3,7 @@ import { withOptions } from '@storybook/addon-options'
 import { withInfo } from '@storybook/addon-info'
 
 import '../src/component/App/App.module.scss'
+import './storybook.module.scss'
 
 const req = require.context('../src', true, /stories\.jsx$/)
 

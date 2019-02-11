@@ -2,9 +2,15 @@ import { addDecorator, configure, getStorybook, setAddon } from '@storybook/reac
 import { withOptions } from '@storybook/addon-options'
 import { withInfo } from '@storybook/addon-info'
 import createPercyAddon from '@percy-io/percy-storybook'
+import inPercy from '@percy-io/in-percy'
+import mockdate from 'mockdate'
 
 import '../src/component/App/App.module.scss'
 import './storybook.module.scss'
+
+if (inPercy()) {
+  mockdate.set('October 21, 2015 04:19:00');
+}
 
 const req = require.context('../src', true, /stories\.jsx$/)
 

@@ -1044,6 +1044,11 @@
   resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
   integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
 
+"@percy-io/in-percy@^0.1.11":
+  version "0.1.11"
+  resolved "https://registry.yarnpkg.com/@percy-io/in-percy/-/in-percy-0.1.11.tgz#551f17599ded62a7970fc0277f6cdffc21da89ac"
+  integrity sha512-HSTM01S2lCXb92MU9P5g3ZTr5wLabdHZs9b8jyf0b1TS8ndwCcUBIc3wE2Ne5ScU6p5BOTgVAtOXyAOGuVbDaQ==
+
 "@percy-io/percy-storybook@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@percy-io/percy-storybook/-/percy-storybook-2.1.0.tgz#d0ddd081e0b2851e1e47c2b5a7b8aefd9ee5afdc"
@@ -8264,6 +8269,11 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
+
+mockdate@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/mockdate/-/mockdate-2.0.2.tgz#5ae0c0eaf8fe23e009cd01f9889b42c4f634af12"
+  integrity sha1-WuDA6vj+I+AJzQH5iJtCxPY0rxI=
 
 moo@^0.4.3:
   version "0.4.3"

@@ -1,6 +1,7 @@
-import { addDecorator, configure } from '@storybook/react'
+import { addDecorator, configure, getStorybook, setAddon } from '@storybook/react'
 import { withOptions } from '@storybook/addon-options'
 import { withInfo } from '@storybook/addon-info'
+import createPercyAddon from '@percy-io/percy-storybook'
 
 import '../src/component/App/App.module.scss'
 import './storybook.module.scss'
@@ -10,6 +11,8 @@ const req = require.context('../src', true, /stories\.jsx$/)
 const loadStories = () => {
   req.keys().forEach(filename => req(filename))
 }
+
+const { percyAddon, serializeStories } = createPercyAddon()
 
 // addon-options
 addDecorator(
@@ -36,4 +39,9 @@ addDecorator(
   })
 )
 
+setAddon(percyAddon)
+
 configure(loadStories, module)
+
+// NOTE: if you're using the Storybook options addon, call serializeStories *BEFORE* the setOptions call
+serializeStories(getStorybook)

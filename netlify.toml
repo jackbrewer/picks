@@ -3,7 +3,7 @@ ID = "backline"
 
 [build]
   publish = "storybook-static"
-  command = "yarn build-storybook"
+  command = "yarn deploy:storybook"
 
 [build.environment]
   YARN_VERSION = "1.12.3"

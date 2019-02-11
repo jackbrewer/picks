@@ -1,0 +1,30 @@
+//
+// MEDIA QUERIES
+// =============
+//
+
+// @mixin mq($value, $type: min, $direction: width) {
+//   @media only screen and (#{$type}-#{$direction}: $value) {
+//     @content;
+//   }
+// }
+
+@mixin mq($min: false, $max: false, $height: false, $and: false, $media: all) {
+  $_direction: if($height, height, width);
+
+  $media-query: '#{$media} ';
+
+  @if $min {
+    $media-query: '#{$media-query} and (min-#{$_direction}: #{$min})';
+  }
+  @if $max {
+    $media-query: '#{$media-query} and (max-#{$_direction}: #{$max})';
+  }
+  @if $and {
+    $media-query: '#{$media-query} and #{$and}';
+  }
+
+  @media #{$media-query} {
+    @content;
+  }
+}

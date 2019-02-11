@@ -6,4 +6,4 @@ ID = "backline"
   command = "yarn build-storybook"
 
 [build.environment]
-  YARN_VERSION = 1.12.3
+  YARN_VERSION = "1.12.3"

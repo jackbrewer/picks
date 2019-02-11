@@ -11,16 +11,15 @@
     "storybook": "start-storybook -p 9009 -s public",
     "build": "react-scripts build",
     "build:storybook": "build-storybook -s public",
+    "build:percy": "PERCY_TOKEN=ac5bb105b434a45c3058fd88269cae0c31717efcbf8fcc434a6ffa8a35ba004d percy-storybook --widths=300,550,1280",
     "test": "react-scripts test",
     "test:coverage": "react-scripts test --coverage --watch",
-    "test:percy": "PERCY_TOKEN=ac5bb105b434a45c3058fd88269cae0c31717efcbf8fcc434a6ffa8a35ba004d percy-storybook --widths=320,1280",
+    "test:percy": "npm-run-all build:storybook build:percy",
     "eject": "react-scripts eject",
     "lint": "npm-run-all --parallel lint:*",
     "lint:css": "stylelint src",
     "fix": "npm-run-all --parallel fix:*",
-    "fix:css": "stylelint src --fix",
-    "deploy": "npm-run-all --parallel deploy:*",
-    "deploy:storybook": "npm-run-all build:storybook test:percy"
+    "fix:css": "stylelint src --fix"
   },
   "eslintConfig": {
     "extends": "react-app",

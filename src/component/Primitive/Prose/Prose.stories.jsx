@@ -191,7 +191,7 @@ stories.add(
 
 const inlineStyles = {
   boxSizing: 'content-box',
-  color: '#0ffff0',
+  color: '#00ff00',
   fontFamily: 'Impact',
   fontSize: '40px',
   fontStyle: 'italic',

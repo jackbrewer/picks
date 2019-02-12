@@ -6,4 +6,10 @@
     min-height: 100%;
     overflow: visible;
   }
+
+  [style*='selector-hack--story-info-content'] {
+    > * + * {
+      margin-top: 20px;
+    }
+  }
 }

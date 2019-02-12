@@ -31,6 +31,21 @@ addDecorator(
           top: 'auto',
           zIndex: 99998
         }
+      },
+      infoStory: {
+        border: '1px solid rgb(238, 238, 238)',
+        background: 'rgb(250, 250, 250)',
+        borderRadius: '4px',
+        padding: '20px',
+        margin: '10px 40px'
+      },
+      infoBody: {
+        border: 0,
+        margin: 0,
+        paddingBottom: 20
+      },
+      infoContent: {
+        counterReset: 'selector-hack--story-info-content'
       }
     }
   })

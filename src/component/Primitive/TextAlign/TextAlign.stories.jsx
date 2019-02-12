@@ -28,3 +28,11 @@ stories.add(
     info: ''
   }
 )
+
+stories.add(
+  'Alignment justified',
+  () => <TextAlign justify>Example text, justified. Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui delectus voluptas perspiciatis quod sequi? Necessitatibus eaque tempora, odit est, atque voluptate minus magni ullam assumenda dolor laudantium eveniet similique sapiente!</TextAlign>,
+  {
+    info: ''
+  }
+)

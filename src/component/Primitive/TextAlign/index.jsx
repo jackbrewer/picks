@@ -6,7 +6,7 @@ import styles from './TextAlign.module.scss'
 
 class TextAlign extends PureComponent {
   render() {
-    const { children, center, left, right } = this.props
+    const { children, center, left, right, justify } = this.props
 
     return (
       <div
@@ -14,7 +14,8 @@ class TextAlign extends PureComponent {
           styles.TextAlign,
           center && styles.center,
           left && styles.left,
-          right && styles.right
+          right && styles.right,
+          justify && styles.justify
         )}
       >
         {children}
@@ -27,7 +28,8 @@ TextAlign.propTypes = {
   children: node.isRequired,
   center: bool,
   left: bool,
-  right: bool
+  right: bool,
+  justify: bool
 }
 
 export default TextAlign

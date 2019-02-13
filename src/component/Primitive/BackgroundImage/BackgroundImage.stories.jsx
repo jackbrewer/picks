@@ -9,9 +9,9 @@ stories.add(
   'Info',
   () => (
     <BackgroundImage
-      src="https://source.unsplash.com/800x600?nature"
-      alt="Random nature image from Unsplash"
       ratio={9 / 16}
+      alt="Random nature image from Unsplash"
+      src="https://source.unsplash.com/800x600?nature"
     />
   ),
   {

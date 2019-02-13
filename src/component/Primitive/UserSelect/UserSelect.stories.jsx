@@ -6,24 +6,38 @@ import UserSelect from '.'
 const stories = storiesOf('Utility/UserSelect', module)
 
 stories.add(
-  'Default state (auto)',
+  'info',
   () => (
     <div style={{ userSelect: 'none' }}>
-      <UserSelect is="span" all>
-        All text should be selectable
-      </UserSelect>
+      Only <UserSelect is="span" text>{`->THIS<-`}</UserSelect> should be
+      selectable.
     </div>
   ),
   {
-    info: 'Component which can be used as a starting point for others'
+    info: {
+      inline: true,
+      text: `
+          Sets \`user-select\` for child components. Reasons for modifying this
+          might include:
+
+          - improving copy/paste experience by making icons/image non-selectable
+          - disabling copying of an embed code if providing a copy button
+          - enabling selection of voucher code or build number in an app where
+            selection is disabled by default
+          `
+    }
   }
 )
 
+stories.add('Default state (auto)', () => (
+  <div style={{ userSelect: 'none' }}>
+    <UserSelect all>All text should be selectable</UserSelect>
+  </div>
+))
+
 stories.add('all', () => (
   <div style={{ userSelect: 'none' }}>
-    <UserSelect is="span" all>
-      All text should be selectable
-    </UserSelect>
+    <UserSelect all>All text should be selectable</UserSelect>
   </div>
 ))
 
@@ -38,5 +52,15 @@ stories.add('none', () => (
   <div style={{ userSelect: 'all' }}>
     Only <UserSelect is="span" none>{`->THIS<-`}</UserSelect> should be
     un-selectable.
+  </div>
+))
+
+stories.add('output as custom element', () => (
+  <div style={{ userSelect: 'none' }}>
+    I’m using an{' '}
+    <UserSelect is="em" text>
+      &lt;em /&gt;
+    </UserSelect>{' '}
+    element
   </div>
 ))

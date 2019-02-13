@@ -1,108 +1,66 @@
 import React from 'react'
-import { node, number } from 'prop-types'
 import { storiesOf } from '@storybook/react'
 
 import Position from '.'
 
 const stories = storiesOf('Utility/Position', module)
 
-const PositionContainer = ({ children, height }) => (
-  <div
-    style={{
-      height: height || 'auto',
-      position: 'relative',
-      border: '2px solid red'
-    }}
-  >
-    {children}
-  </div>
-)
-
-PositionContainer.propTypes = {
-  children: node.isRequired,
-  height: number
+const wrapperStyles = {
+  height: 100,
+  position: 'relative',
+  border: '10px solid #aaa'
 }
 
 stories.add(
-  'Static (default)',
+  'Info',
   () => (
-    <PositionContainer height={100}>
-      <Position>Content</Position>
-    </PositionContainer>
+    <Position relative style={{ top: -10, left: '30%' }}>
+      Positioned content
+    </Position>
   ),
   {
     info: {
+      inline: true,
       text: `A helper component which can be useful for ad-hoc positioning
-        of child components when building layouts.`,
-      propTablesExclude: [PositionContainer]
+        of child components when building layouts.`
     }
   }
 )
 
-stories.add(
-  'Relative',
-  () => (
-    <PositionContainer height={100}>
-      <Position relative style={{ top: 10, left: 10 }}>
-        Content
-      </Position>
-    </PositionContainer>
-  ),
-  {
-    info: {
-      text: '',
-      propTablesExclude: [PositionContainer]
-    }
-  }
-)
+stories.add('Static (default)', () => (
+  <div style={wrapperStyles}>
+    <Position>Content</Position>
+  </div>
+))
 
-stories.add(
-  'Absolute',
-  () => (
-    <PositionContainer height={100}>
-      <Position absolute style={{ top: '50%' }}>
-        Content
-      </Position>
-    </PositionContainer>
-  ),
-  {
-    info: {
-      text: '',
-      propTablesExclude: [PositionContainer]
-    }
-  }
-)
+stories.add('Relative', () => (
+  <div style={wrapperStyles}>
+    <Position relative style={{ top: 10, left: 10 }}>
+      Content
+    </Position>
+  </div>
+))
 
-stories.add(
-  'Fixed',
-  () => (
-    <PositionContainer height={2000}>
-      <Position fixed style={{ bottom: 0 }}>
-        Content
-      </Position>
-    </PositionContainer>
-  ),
-  {
-    info: {
-      text: '',
-      propTablesExclude: [PositionContainer]
-    }
-  }
-)
+stories.add('Absolute', () => (
+  <div style={wrapperStyles}>
+    <Position absolute style={{ top: '50%' }}>
+      Content
+    </Position>
+  </div>
+))
 
-stories.add(
-  'Sticky',
-  () => (
-    <PositionContainer height={2000}>
-      <Position sticky style={{ top: 0 }}>
-        Content
-      </Position>
-    </PositionContainer>
-  ),
-  {
-    info: {
-      text: '',
-      propTablesExclude: [PositionContainer]
-    }
-  }
-)
+stories.add('Fixed', () => (
+  <div style={{ ...wrapperStyles, height: 2000 }}>
+    <Position fixed style={{ bottom: 0 }}>
+      Content
+    </Position>
+  </div>
+))
+
+stories.add('Sticky', () => (
+  <div style={{ ...wrapperStyles, height: 2000 }}>
+    <Position sticky style={{ top: 0 }}>
+      Content
+    </Position>
+  </div>
+))

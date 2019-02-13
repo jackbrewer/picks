@@ -6,7 +6,7 @@ import VisuallyHidden from '.'
 const stories = storiesOf('Utility/VisuallyHidden', module)
 
 stories.add(
-  'info',
+  'Info',
   () => <VisuallyHidden>Example hidden content</VisuallyHidden>,
   {
     info: {

@@ -6,7 +6,7 @@ import ResponsiveMedia from './'
 const stories = storiesOf('Utility/ResponsiveMedia', module)
 
 stories.add(
-  'info',
+  'Info',
   () => (
     <ResponsiveMedia ratio={9 / 16}>
       <img src="http://img.clock.co.uk/800x450?text=16:9%20ratio" alt="" />

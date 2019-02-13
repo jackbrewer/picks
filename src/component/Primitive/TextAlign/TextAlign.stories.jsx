@@ -6,7 +6,7 @@ import TextAlign from '.'
 const stories = storiesOf('Utility/TextAlign', module)
 
 stories.add(
-  'info',
+  'Info',
   () => <TextAlign center>Example text, center-aligned</TextAlign>,
   {
     info: {

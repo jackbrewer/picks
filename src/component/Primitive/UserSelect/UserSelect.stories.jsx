@@ -6,7 +6,7 @@ import UserSelect from '.'
 const stories = storiesOf('Utility/UserSelect', module)
 
 stories.add(
-  'info',
+  'Info',
   () => (
     <div style={{ userSelect: 'none' }}>
       Only <UserSelect is="span" text>{`->THIS<-`}</UserSelect> should be

@@ -6,7 +6,7 @@ import SmartLink from './'
 
 const stories = storiesOf('Utility/SmartLink', module)
 
-stories.add('info', () => <SmartLink>Button</SmartLink>, {
+stories.add('Info', () => <SmartLink>Button</SmartLink>, {
   info: {
     inline: true,
     text: `

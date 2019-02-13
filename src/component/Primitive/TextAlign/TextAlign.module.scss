@@ -1,15 +1,7 @@
-.left {
-  text-align: left;
-}
+$align-types: center, justify, left, right;
 
-.center {
-  text-align: center;
-}
-
-.right {
-  text-align: right;
-}
-
-.justify {
-  text-align: justify;
+@each $alignment in $align-types {
+  .#{$alignment} {
+    text-align: $alignment;
+  }
 }

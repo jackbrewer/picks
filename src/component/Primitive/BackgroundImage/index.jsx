@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { bool, number, oneOf, string } from 'prop-types'
+import { bool, number, string } from 'prop-types'
 import classNames from 'classnames'
 
 import styles from './BackgroundImage.module.scss'

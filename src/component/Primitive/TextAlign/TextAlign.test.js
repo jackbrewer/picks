@@ -43,4 +43,9 @@ describe('Component: TextAlign', function() {
     const wrapper = shallow(<TextAlign {...requiredProps()} center />)
     expect(wrapper.prop('className')).toEqual('TextAlign center')
   })
+
+  test('should output additional className when `justify` prop passed', function() {
+    const wrapper = shallow(<TextAlign {...requiredProps()} justify />)
+    expect(wrapper.prop('className')).toEqual('TextAlign justify')
+  })
 })

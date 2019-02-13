@@ -28,4 +28,11 @@ describe('Component: Ellipsis', function() {
     const wrapper = shallow(<Ellipsis {...requiredProps()} />)
     expect(wrapper.prop('className')).toEqual('Ellipsis')
   })
+
+  test('should output additional styles if `maxWidth` set', function() {
+    const wrapper = shallow(<Ellipsis {...requiredProps()} maxWidth={200} />)
+    expect(wrapper.prop('style')).toEqual({ maxWidth: 200 })
+    wrapper.setProps({ maxWidth: '20%' })
+    expect(wrapper.prop('style')).toEqual({ maxWidth: '20%' })
+  })
 })

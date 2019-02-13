@@ -1,18 +1,23 @@
 import React, { PureComponent } from 'react'
-import { node } from 'prop-types'
+import { node, number, oneOfType, string } from 'prop-types'
 
 import styles from './Ellipsis.module.scss'
 
 class Ellipsis extends PureComponent {
   render() {
-    const { children } = this.props
+    const { children, maxWidth } = this.props
 
-    return <div className={styles.Ellipsis}>{children}</div>
+    return (
+      <div className={styles.Ellipsis} {...maxWidth && { style: { maxWidth } }}>
+        {children}
+      </div>
+    )
   }
 }
 
 Ellipsis.propTypes = {
-  children: node.isRequired
+  children: node.isRequired,
+  maxWidth: oneOfType([number, string])
 }
 
 export default Ellipsis

@@ -15,7 +15,7 @@ stories.add('Info', () => <Example>Content</Example>, {
       Use this first story to add documentation and show off the most
       interesting/useful component iteration. Use subsequent stories to detail
       all component permutations.
-      `
+    `
   }
 })
 

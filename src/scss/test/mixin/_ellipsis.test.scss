@@ -12,6 +12,25 @@
       }
       @include expect {
         .element {
+          display: block;
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  @include test('should allow custom display type') {
+    @include assert {
+      @include output {
+        .element {
+          @include ellipsis($display: inline-block);
+        }
+      }
+      @include expect {
+        .element {
           display: inline-block;
           max-width: 100%;
           overflow: hidden;
@@ -22,26 +41,7 @@
     }
   }
 
-  @include test('should alloe custom display type') {
-    @include assert {
-      @include output {
-        .element {
-          @include ellipsis($display: inline-flex);
-        }
-      }
-      @include expect {
-        .element {
-          display: inline-flex;
-          max-width: 100%;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-        }
-      }
-    }
-  }
-
-  @include test('should alloe custom max-width') {
+  @include test('should allow custom max-width') {
     @include assert {
       @include output {
         .element {

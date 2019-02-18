@@ -1,0 +1,24 @@
+@import '../../../scss/function/spacing';
+
+// .ResponsiveTable {}
+
+.ResponsiveTableTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+// to compose common styles in <th> and <td> components
+.ResponsiveTableCommonCellStyles {
+  text-align: left;
+  padding: spacing(1);
+  font-variant-numeric: tabular-nums;
+  vertical-align: baseline;
+
+  &:first-child {
+    padding-left: spacing(6);
+  }
+
+  &:last-child {
+    padding-right: spacing(6);
+  }
+}

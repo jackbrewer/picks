@@ -1,0 +1,13 @@
+.ResponsiveTableRow {
+  margin-left: 20px;
+
+  &.highlighted {
+    background-color: lightblue;
+  }
+
+  &.separatorBelow {
+    > * {
+      border-bottom: 1px dashed;
+    }
+  }
+}

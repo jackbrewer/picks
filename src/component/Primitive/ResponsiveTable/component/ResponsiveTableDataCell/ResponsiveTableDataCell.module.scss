@@ -1,0 +1,4 @@
+.ResponsiveTableDataCell {
+  composes: ResponsiveTableCommonCellStyles from '../../ResponsiveTable.module.scss';
+  border-bottom: 1px solid lightgrey;
+}

@@ -1,0 +1,9 @@
+.ResponsiveTableHeaderCell {
+  composes: ResponsiveTableCommonCellStyles from '../../ResponsiveTable.module.scss';
+  text-transform: uppercase;
+  border-bottom: 1px solid;
+
+  abbr {
+    border-bottom: 0;
+  }
+}

@@ -10,6 +10,7 @@
 - `!!` for non-boolean conditional JSX blocks e.g. `{!!items.length && <foo />}`
 - `key` prop should be component case, e.g. `key={`ExampleComponent\${i}`}
 - Prop usage consistent with similar functionality in existing components, e.g. one of`ratio={9 / 16}`,`ratio="9:16"`,`ratio="56.25%"`
+- Could prop-based data-formatting logic be moved out of the component to a higher level, e.g. come in to the component pre-formatted
 - (TBC) imports organised (TODO: define what ‘organised’ means)
 - (TBC) Props/PropTypes organised (TODO: define what ‘organised’ means)
 - (TBC) follows defined export strategy when exporting multiple sub-components
@@ -50,6 +51,7 @@ If using HOCs:
 - Storybook stories created for each prop, className, variation
 - Storybook info descriptions with suggested uses etc.
 - Make use of installed addons, e.g. `action()` for showing interactive functionality
+- (TBC) Stories don't include other components unless integral to this component’s functionality
 - (TBC) group stories into a pre-existing component group (Utility, Core, Composite etc).
 - (TBC) Storybook output looks OK across multiple BG colours/photos
 

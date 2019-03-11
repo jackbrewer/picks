@@ -50,7 +50,7 @@
       }
       @include expect {
         .element {
-          display: inline-block;
+          display: block;
           max-width: 50%;
           overflow: hidden;
           text-overflow: ellipsis;

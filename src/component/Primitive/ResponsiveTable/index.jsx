@@ -66,8 +66,8 @@ class ResponsiveTable extends PureComponent {
 }
 
 ResponsiveTable.propTypes = {
-  cols: array.isRequired, //TODO: define shape
-  rows: array.isRequired //TODO: define shape
+  cols: array.isRequired, // TODO: define shape
+  rows: array.isRequired // TODO: define shape
 }
 
 export default ResponsiveTable

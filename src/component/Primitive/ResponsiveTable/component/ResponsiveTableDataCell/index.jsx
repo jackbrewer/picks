@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import classNames from 'classnames'
-import { node } from 'prop-types'
+import { node, number } from 'prop-types'
 
 import styles from './ResponsiveTableDataCell.module.scss'
 
@@ -22,7 +22,8 @@ class ResponsiveTableDataCell extends PureComponent {
 }
 
 ResponsiveTableDataCell.propTypes = {
-  children: node
+  children: node,
+  hideUntil: number
 }
 
 export default ResponsiveTableDataCell

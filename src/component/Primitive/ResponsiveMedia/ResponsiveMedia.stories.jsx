@@ -54,8 +54,8 @@ stories.add('with iframe', () => (
         src="https://www.youtube.com/embed/ScMzIvxBSi4?showinfo=0&amp;playsinline=1&amp;rel=0"
         width="500"
         height="281"
-        frameborder="0"
-        allowfullscreen=""
+        frameBorder="0"
+        allowFullScreen=""
       />
     </ResponsiveMedia>
   </div>

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { node } from 'prop-types'
+import { node, string } from 'prop-types'
 
 class Element extends PureComponent {
   render() {
@@ -15,7 +15,8 @@ Element.defaultProps = {
 }
 
 Element.propTypes = {
-  children: node.isRequired
+  children: node.isRequired,
+  is: string
 }
 
 export default Element

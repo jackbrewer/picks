@@ -1,0 +1,12 @@
+.Icon {
+  display: inline-block;
+  vertical-align: baseline;
+  font-style: normal;
+
+  svg {
+    vertical-align: bottom;
+    height: auto;
+    width: inherit;
+    fill: currentColor;
+  }
+}

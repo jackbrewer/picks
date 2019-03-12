@@ -12,6 +12,7 @@
     "build:storybook": "build-storybook",
     "build:percy": "PERCY_TOKEN=ac5bb105b434a45c3058fd88269cae0c31717efcbf8fcc434a6ffa8a35ba004d percy-storybook --widths=300,550,1280",
     "start": "next start",
+    "export": "next export",
     "qa": "npm-run-all --parallel qa:*",
     "qa:js": "eslint . --cache --ext '.js,.jsx'",
     "qa:css": "stylelint src",

@@ -15,7 +15,8 @@ module.exports = {
   },
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$'],
   moduleNameMapper: {
-    '\\.(scss)$': 'identity-obj-proxy'
+    '\\.(scss)$': 'identity-obj-proxy',
+    '\\.svg$': '<rootDir>/__mocks__/svg.js'
   },
   coverageReporters: ['text']
 }

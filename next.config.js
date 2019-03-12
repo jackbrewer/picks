@@ -13,12 +13,12 @@ module.exports = withSass({
   },
   webpack(config, options) {
     config.module.rules.push({
-      test: /\.svg$/,
-      include: [path.resolve(__dirname, 'src/svg')],
+      test: /\.icon\.svg$/,
+      include: [path.resolve(__dirname, 'src/svg/icon')],
       use: [
         {
           loader: require.resolve('@svgr/webpack'),
-          options: { icon: true }
+          options: { dimensions: false }
         }
       ]
     })

@@ -10,6 +10,7 @@
     "dev": "next -p 3320",
     "build": "next build",
     "start": "next start",
+    "export": "next export",
     "qa:js": "eslint . --cache --ext '.js,.jsx'",
     "qa:css": "stylelint src",
     "prettier": "prettier --write '**/*.{js,jsx,css,scss}'",

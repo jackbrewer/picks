@@ -13,7 +13,7 @@ module.exports = withSass({
   },
   webpack(config, options) {
     config.module.rules.push({
-      test: /\.icon\.svg$/,
+      test: /\.svg$/,
       include: [path.resolve(__dirname, 'src/svg/icon')],
       use: [
         {

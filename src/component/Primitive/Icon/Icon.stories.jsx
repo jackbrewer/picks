@@ -1,28 +1,28 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import Icon from '.'
-import Svgs from './Svgs'
+import Icon, { allTypes } from '.'
 
 const stories = storiesOf('Utility/Icon', module)
 
-stories.add('Info', () => <Icon type="_Placeholder" />, {
+stories.add('Info', () => <Icon type="_placeholder" />, {
   info: {
     inline: true,
     text: `
-      Starter component which can be duplicated and used as a starting point
-      for others.
+      A wrapping element containing an inline SVG. Displays at the SVGs native
+      size by default, but a custom width/height can be passed.
 
-      Use this first story to add documentation and show off the most
-      interesting/useful component iteration. Use subsequent stories to detail
-      all component permutations.
+      An a11yText prop is required, similar to how an image requires an alt
+      attribute. If the icon is purely decorational, or is described by text
+      directly next to it, then a blank string can be passed as a11yText to
+      hide the icon from assistive technology.
     `
   }
 })
 
 stories.add('with all available types', () => (
   <div>
-    {Object.keys(Svgs).map((type, i) => (
+    {allTypes.map((type, i) => (
       <div style={{ margin: '5px 0' }} key={`icon-${i}`}>
         <Icon type={type} /> <code>{type}</code>
       </div>
@@ -31,14 +31,14 @@ stories.add('with all available types', () => (
 ))
 
 stories.add('with a11y text', () => (
-  <Icon type="_Placeholder" a11yText="My Account" />
+  <Icon type="_placeholder" a11yText="My Account" />
 ))
 
 stories.add('with custom width', () => (
   <div>
     {[20, 50, 100].map((width, i) => (
       <div style={{ margin: '5px 0' }} key={`icon-${i}`}>
-        <Icon type="_Placeholder" width={width} />{' '}
+        <Icon type="_placeholder" width={width} />{' '}
         <code>
           {width}
           px
@@ -52,7 +52,7 @@ stories.add('with custom height', () => (
   <div>
     {[20, 50, 100].map((height, i) => (
       <div style={{ margin: '5px 0' }} key={`icon-${i}`}>
-        <Icon type="_Placeholder" height={height} />{' '}
+        <Icon type="_placeholder" height={height} />{' '}
         <code>
           {height}
           px

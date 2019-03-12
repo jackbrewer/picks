@@ -5,7 +5,7 @@ import { shallow } from 'enzyme'
 import Icon from './'
 
 const requiredProps = () => ({
-  type: '_Placeholder'
+  type: '_placeholder'
 })
 
 describe('Component: Icon', function() {

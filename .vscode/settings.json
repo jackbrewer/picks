@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "scss.lint.validProperties": ["composes"],
+
+  "workbench.colorCustomizations": {
+    // "activityBar.background": "",
+    // "activityBar.dropBackground": "",
+    "activityBar.foreground": "#af759e",
+    "activityBar.inactiveForeground": "#9c5386",
+    // "activityBar.border": "",
+    "activityBarBadge.background": "#fff",
+    "activityBarBadge.foreground": "#9c5386"
+  }
+}

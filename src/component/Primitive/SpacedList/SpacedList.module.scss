@@ -1,0 +1,7 @@
+@import '../../../scss/function/spacing';
+
+.SpacedList {
+  > * + * {
+    margin-top: spacing(2);
+  }
+}

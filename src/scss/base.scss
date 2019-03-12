@@ -1,0 +1,10 @@
+@import './function/spacing';
+@import './variable/font-stack';
+@import './normalise/normailse';
+
+body {
+  font-size: spacing(2); // 16
+  line-height: spacing(3); // 24
+  font-weight: normal;
+  font-family: $font-stack--system;
+}

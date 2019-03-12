@@ -1,15 +1,19 @@
-import { addDecorator, configure, getStorybook, setAddon } from '@storybook/react'
-import { withOptions } from '@storybook/addon-options'
+import {
+  addDecorator,
+  configure,
+  getStorybook,
+  setAddon
+} from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 import createPercyAddon from '@percy-io/percy-storybook'
 import inPercy from '@percy-io/in-percy'
 import mockdate from 'mockdate'
 
-import '../src/component/App/App.module.scss'
+// import '../src/component/App/App.module.scss'
 import './storybook.module.scss'
 
 if (inPercy()) {
-  mockdate.set('October 21, 2015 04:19:00');
+  mockdate.set('October 21, 2015 04:19:00')
 }
 
 const req = require.context('../src', true, /stories\.jsx$/)
@@ -19,14 +23,6 @@ const loadStories = () => {
 }
 
 const { percyAddon, serializeStories } = createPercyAddon()
-
-// addon-options
-addDecorator(
-  withOptions({
-    name: 'Backline',
-    url: '/'
-  })
-)
 
 // addon-info
 addDecorator(
@@ -40,6 +36,23 @@ addDecorator(
           top: 'auto',
           zIndex: 99998
         }
+      },
+      infoStory: {
+        backgroundColor: 'rgb(255, 255, 255)',
+        backgroundImage:
+          'linear-gradient(to bottom, rgb(238, 238, 238) 0px, rgb(238, 238, 238) 1px, rgb(250, 250, 250) 1px, rgb(250, 250, 250) calc(100% - 1px), rgb(238, 238, 238) calc(100% - 1px), rgb(238, 238, 238) 100%)',
+        backgroundPosition: '50% 50%',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'calc(100% - 80px) 100%',
+        padding: '20px 60px'
+      },
+      infoBody: {
+        border: 0,
+        margin: 0,
+        paddingBottom: 20
+      },
+      infoContent: {
+        counterReset: 'selector-hack--story-info-content'
       }
     }
   })

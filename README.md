@@ -1,46 +1,86 @@
-# Backline
+## Ideal FE Workflow
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Whichever tools we use going forwards (Custom, Gatsby, Next.js, CRA), we should agree a baseline of what we need our FE setup to achieve.
 
-## Available Scripts
+### General
 
-In the project directory, you can run:
+**Development**
 
-### `npm start`
+- Hot reloading
+- quick
+- debuggable (useful class names etc)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Production**
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- Chunking (via build in method if available, MiniCssExtractPlugin idf not)
+- minification of CSS with CSSNano (review config)
+- Semi-minified classnames with sourcemaps?
 
-### `npm test`
+### JS/JSX
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Content from https://github.com/clocklimited/backline/blob/master/CHECKLIST.md
 
-### `npm run build`
+**Prettier**
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- "semi": false,
+- "singleQuote": true
+- JB: I'd also like to suggest trailingComma: "es5"
+  - Better Git diffs as you don’t modify lines above
+  - Easier multi-line editing without the last line being a special case
+  - Easier alphabetical sorting in editor
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+**ESLint**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- existing setup (to be documented)
+- eslint-plugin-jsx-a11y
 
-### `npm run eject`
+### Styling
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Sass modules**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Ident (review these):
+  - dev: [name]**[local]\_**[hash:base64:5]
+  - prod: [local]\_[hash:base64:5]
+- Foo.module.scss naming convention? required custom function to generate ideal classNames
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Libraries**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- SCSS Responsive grid (or a variation of)
+- SCSS Mixins (rewritten version of stylus-mixins)
 
-## Learn More
+**PostCSS config**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- postcss-flexbugs-fixes
+- autoprefixer (reading from browserslist config)
+- cssnano for minification (production-only? maybe minify dev for consistent output)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Browserslist**
+
+- > 1%, last 2 versions, not dead
+
+**Stylelint**
+
+- WIP config: https://github.com/clocklimited/backline/blob/master/.stylelintrc.json
+
+---
+
+## TODO / To review
+
+- [ ] Refactor SCSS webpack setup so storybook can share
+- [ ] [Document head setup](https://nextjs.org/docs/#populating-head)
+- [ ] Inline SVG workflow for Icons
+- [ ] Inline SVG workflow for image-based logos etc
+- [ ] SVG workflow for external images as <img />
+- [ ] SVG workflow for external images as CSS backgrounds
+- [ ] Critical CSS strategy
+- [ ] [importing static assets](https://nextjs.org/docs/#static-file-serving-eg-images)
+- [ ] [cache-control](https://csswizardry.com/2019/03/cache-control-for-civilians/)
+- [ ] Review pagespeed/lighthouse quick wins
+
+- [ ] Interesting Next.js plugins
+  - [ ] [next-bundle-analyzer](https://github.com/zeit/next-plugins/tree/master/packages/next-bundle-analyzer)
+  - [ ] [next-compose-plugins](https://github.com/cyrilwanner/next-compose-plugins)
+  - [ ] [next-optimized-images](https://github.com/cyrilwanner/next-optimized-images)
+  - [ ] [next-seo](https://github.com/garmeeh/next-seo)
+  - [ ] [next-fonts](https://github.com/rohanray/next-fonts)
+  - [ ] [next-size](https://github.com/lucleray/next-size)

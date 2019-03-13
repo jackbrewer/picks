@@ -1,6 +1,8 @@
 const withSass = require('@zeit/next-sass')
 const path = require('path')
 
+const createSvgLoader = require('./config/webpack/svg-loader')
+
 const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = withSass({
@@ -15,12 +17,7 @@ module.exports = withSass({
     config.module.rules.push({
       test: /\.svg$/,
       include: [path.resolve(__dirname, 'src/svg/icon')],
-      use: [
-        {
-          loader: require.resolve('@svgr/webpack'),
-          options: { dimensions: false }
-        }
-      ]
+      use: createSvgLoader()
     })
     return config
   }

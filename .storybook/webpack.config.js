@@ -1,5 +1,7 @@
 const path = require('path')
 
+const createSvgLoader = require('../config/webpack/svg-loader')
+
 module.exports = ({ config, mode }) => {
   // TODO: this is a hack to delay writing a completely bespoke config.
   // Find Storybooks in-built svg rule, and modify it to exclude SVGs we
@@ -15,12 +17,7 @@ module.exports = ({ config, mode }) => {
   config.module.rules.unshift({
     test: /\.svg$/,
     include: [path.resolve(__dirname, '../src/svg/icon')],
-    use: [
-      {
-        loader: require.resolve('@svgr/webpack'),
-        options: { dimensions: false }
-      }
-    ]
+    use: createSvgLoader()
   })
 
   // Add CSS modules support

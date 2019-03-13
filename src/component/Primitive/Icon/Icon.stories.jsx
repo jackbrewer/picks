@@ -5,10 +5,13 @@ import Icon, { allTypes } from '.'
 
 const stories = storiesOf('Utility/Icon', module)
 
-stories.add('Info', () => <Icon type="_placeholder" />, {
-  info: {
-    inline: true,
-    text: `
+stories.add(
+  'Info',
+  () => <Icon type="_placeholder" a11yText="Placeholder icon" />,
+  {
+    info: {
+      inline: true,
+      text: `
       A wrapping element containing an inline SVG. Displays at the SVGs native
       size by default, but a custom width/height can be passed.
 
@@ -17,28 +20,27 @@ stories.add('Info', () => <Icon type="_placeholder" />, {
       directly next to it, then a blank string can be passed as a11yText to
       hide the icon from assistive technology.
     `
+    }
   }
-})
+)
 
 stories.add('with all available types', () => (
   <div>
     {allTypes.map((type, i) => (
       <div style={{ margin: '5px 0' }} key={`icon-${i}`}>
-        <Icon type={type} /> <code>{type}</code>
+        <Icon type={type} a11yText={`${type} icon`} /> <code>{type}</code>
       </div>
     ))}
   </div>
 ))
 
-stories.add('with a11y text', () => (
-  <Icon type="_placeholder" a11yText="My Account" />
-))
+stories.add('with no a11y text', () => <Icon type="_placeholder" a11yText="" />)
 
 stories.add('with custom width', () => (
   <div>
     {[20, 50, 100].map((width, i) => (
       <div style={{ margin: '5px 0' }} key={`icon-${i}`}>
-        <Icon type="_placeholder" width={width} />{' '}
+        <Icon type="_placeholder" a11yText="Placeholder icon" width={width} />{' '}
         <code>
           {width}
           px
@@ -52,7 +54,7 @@ stories.add('with custom height', () => (
   <div>
     {[20, 50, 100].map((height, i) => (
       <div style={{ margin: '5px 0' }} key={`icon-${i}`}>
-        <Icon type="_placeholder" height={height} />{' '}
+        <Icon type="_placeholder" a11yText="Placeholder icon" height={height} />{' '}
         <code>
           {height}
           px

@@ -53,7 +53,7 @@ class Icon extends PureComponent {
 }
 
 Icon.propTypes = {
-  a11yText: string,
+  a11yText: string.isRequired,
   className: string,
   type: oneOf(allTypes).isRequired,
   height: number,

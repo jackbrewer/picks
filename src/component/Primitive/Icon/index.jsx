@@ -8,13 +8,15 @@ import ratioScaler from '../../../lib/ratio-scaler'
 import styles from './Icon.module.scss'
 
 const svgs = require.context('../../../svg/icon/', false, /\.svg$/)
-export const allTypes = svgs
+
+export const vAligns = ['baseline', 'bottom', 'middle', 'top']
+export const types = svgs
   .keys()
   .map(key => key.replace(`./`, '').replace(`.svg`, ''))
 
 class Icon extends PureComponent {
   render() {
-    const { a11yText, className, type, height, width } = this.props
+    const { a11yText, className, type, height, width, vAlign } = this.props
 
     const typeKey = `./${type}.svg`
     const SvgType = svgs.keys().find(key => key === typeKey)
@@ -33,7 +35,7 @@ class Icon extends PureComponent {
 
     return (
       <span
-        className={classNames(styles.Icon, className)}
+        className={classNames(styles.Icon, vAlign && styles[vAlign], className)}
         {...a11yText && {
           role: 'img',
           'aria-label': a11yText
@@ -55,9 +57,10 @@ class Icon extends PureComponent {
 Icon.propTypes = {
   a11yText: string.isRequired,
   className: string,
-  type: oneOf(allTypes).isRequired,
+  type: oneOf(types).isRequired,
   height: number,
-  width: number
+  width: number,
+  vAlign: oneOf(vAligns)
 }
 
 export default Icon

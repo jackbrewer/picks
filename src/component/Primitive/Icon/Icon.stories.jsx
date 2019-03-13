@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import Icon, { allTypes } from '.'
+import Icon, { types, vAligns } from '.'
 
 const stories = storiesOf('Utility/Icon', module)
 
@@ -26,9 +26,10 @@ stories.add(
 
 stories.add('with all available types', () => (
   <div>
-    {allTypes.map((type, i) => (
+    {types.map((type, i) => (
       <div style={{ margin: '5px 0' }} key={`icon-${i}`}>
-        <Icon type={type} a11yText={`${type} icon`} /> <code>{type}</code>
+        <Icon type={type} a11yText={`${type} icon`} vAlign="middle" />{' '}
+        <code>{type}</code>
       </div>
     ))}
   </div>
@@ -59,6 +60,22 @@ stories.add('with custom height', () => (
           {height}
           px
         </code>
+      </div>
+    ))}
+  </div>
+))
+
+stories.add('with custom vAlign', () => (
+  <div>
+    {vAligns.map((vAlign, i) => (
+      <div style={{ margin: '5px 0' }} key={`icon-${i}`}>
+        <Icon
+          type="_placeholder"
+          a11yText="Placeholder icon"
+          height={100}
+          vAlign={vAlign}
+        />{' '}
+        <code>{vAlign}</code>
       </div>
     ))}
   </div>

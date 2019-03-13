@@ -72,4 +72,11 @@ describe('Component: Icon', function() {
     expect(wrapper.prop('role')).toEqual(undefined)
     expect(wrapper.prop('aria-label')).toEqual(undefined)
   })
+
+  test('should allow custom vertical-alignment to be passed', function() {
+    const wrapper = shallow(<Icon {...requiredProps()} vAlign="top" />)
+    expect(wrapper.prop('className')).toEqual('Icon top')
+    wrapper.setProps({ vAlign: 'bottom' })
+    expect(wrapper.prop('className')).toEqual('Icon bottom')
+  })
 })

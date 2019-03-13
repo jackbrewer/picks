@@ -10,3 +10,13 @@
     fill: currentColor;
   }
 }
+
+// Vertical alignment modifiers
+
+$vAlign-options: baseline bottom middle top;
+
+@each $vAlign in $vAlign-options {
+  .#{$vAlign} {
+    vertical-align: $vAlign;
+  }
+}

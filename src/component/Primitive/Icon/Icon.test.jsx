@@ -39,6 +39,16 @@ describe('Component: Icon', function() {
     expect(wrapper.prop('aria-hidden')).toEqual(undefined)
   })
 
+  test('should error if passed an unrecognised type', function() {
+    const actual = validatePropTypes(Icon.propTypes, {
+      a11yText: 'Example text',
+      type: 'not-found'
+    })
+    const partialExpected =
+      'Invalid prop `type` of value `not-found` supplied to `Component`'
+    expect(actual.type).toEqual(expect.stringContaining(partialExpected))
+  })
+
   test('should allow custom class names to be passed', function() {
     const wrapper = shallow(
       <Icon {...requiredProps()} className="additional-class foo" />

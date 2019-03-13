@@ -9,6 +9,7 @@ import styles from './Icon.module.scss'
 
 const svgs = require.context('../../../svg/icon/', false, /\.svg$/)
 
+// Exported to allow iteration in storybook
 export const vAligns = ['baseline', 'bottom', 'middle', 'top']
 export const types = svgs
   .keys()
@@ -17,13 +18,7 @@ export const types = svgs
 class Icon extends PureComponent {
   render() {
     const { a11yText, className, type, height, width, vAlign } = this.props
-
-    const typeKey = `./${type}.svg`
-    const SvgType = svgs.keys().find(key => key === typeKey)
-      ? svgs(typeKey).default
-      : null
-
-    if (!SvgType) return null
+    const SvgType = svgs(`./${type}.svg`).default
 
     const targetDimensions = { width, height }
     const nativeDimensions = svgDimensionsFormatter(SvgType)

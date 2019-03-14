@@ -18,7 +18,10 @@
     "prettier": "prettier --write '**/*.{js,jsx,css,scss}'",
     "test:dev": "jest --coverage --watch --verbose",
     "storybook": "start-storybook -p 3321",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "analyze": "BUNDLE_ANALYZE=both yarn build",
+    "analyze:server": "BUNDLE_ANALYZE=server yarn build",
+    "analyze:browser": "BUNDLE_ANALYZE=browser yarn build"
   },
   "author": "",
   "license": "ISC",
@@ -31,6 +34,7 @@
     "@storybook/react": "^5.0.0",
     "@storybook/theming": "^5.0.0",
     "@svgr/webpack": "^4.1.0",
+    "@zeit/next-bundle-analyzer": "^0.1.2",
     "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^9.4.10",
     "babel-jest": "^24.1.0",

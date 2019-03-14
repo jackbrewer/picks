@@ -1,5 +1,5 @@
 import React from 'react'
-import StandardMeta from '../src/component/Meta/Section'
+import StandardMeta from '../src/component/Meta/Standard'
 
 import Icon from '../src/component/Primitive/Icon'
 

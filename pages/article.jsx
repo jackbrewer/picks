@@ -19,6 +19,7 @@ const ArticlePage = () => (
       publishedTime="2017-06-21T23:04:13Z"
       modifiedTime="2018-01-21T18:04:43Z"
       expirationTime="2022-12-21T22:04:11Z"
+      authorName="Author Name"
       publisherName="Publisher Name"
       publisherLogo="https://source.unsplash.com/600x60?nature"
     />

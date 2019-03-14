@@ -1,11 +1,11 @@
 import React from 'react'
-import { bool, number, oneOfType, shape, string } from 'prop-types'
+import { arrayOf, bool, number, oneOfType, shape, string } from 'prop-types'
 import NextSeo from 'next-seo'
 
 import { config } from '../../../../meta.config'
 
 const StandardMeta = props => {
-  const { title, description, slug, customTitle, image } = props
+  const { title, description, slug, customTitle, images } = props
   const canonical = `${config.url}${slug}`
 
   return (
@@ -20,7 +20,7 @@ const StandardMeta = props => {
             title,
             description,
             url: canonical,
-            images: [image]
+            images
           }
         }}
       />
@@ -33,12 +33,14 @@ StandardMeta.propTypes = {
   description: string.isRequired,
   slug: string.isRequired,
   customTitle: bool,
-  image: shape({
-    url: string.isRequired,
-    width: oneOfType([string, number]),
-    height: oneOfType([string, number]),
-    alt: string
-  })
+  images: arrayOf(
+    shape({
+      url: string.isRequired,
+      width: oneOfType([string, number]),
+      height: oneOfType([string, number]),
+      alt: string
+    })
+  )
 }
 
 export default StandardMeta

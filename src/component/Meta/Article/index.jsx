@@ -7,7 +7,6 @@ import { config } from '../../../../meta.config'
 const ArticleMeta = props => {
   const {
     authorName,
-    authors,
     customTitle,
     description,
     expirationTime,
@@ -42,7 +41,7 @@ const ArticleMeta = props => {
               modifiedTime,
               expirationTime,
               section,
-              authors,
+              authors: [authorName],
               tags
             }
           }
@@ -65,19 +64,10 @@ const ArticleMeta = props => {
 }
 
 ArticleMeta.propTypes = {
-  title: string.isRequired,
-  description: string.isRequired,
-  slug: string.isRequired,
-  customTitle: bool,
-  publishedTime: string,
-  modifiedTime: string,
-  expirationTime: string,
-  section: string,
   authorName: string,
-  publisherName: string,
-  publisherLogo: string,
-  authors: arrayOf(string),
-  tags: arrayOf(string),
+  customTitle: bool,
+  description: string.isRequired,
+  expirationTime: string,
   images: arrayOf(
     shape({
       url: string.isRequired,
@@ -85,7 +75,15 @@ ArticleMeta.propTypes = {
       height: oneOfType([string, number]),
       alt: string
     })
-  )
+  ),
+  modifiedTime: string,
+  publishedTime: string,
+  publisherLogo: string,
+  publisherName: string,
+  section: string,
+  slug: string.isRequired,
+  tags: arrayOf(string),
+  title: string.isRequired
 }
 
 export default ArticleMeta

@@ -66,21 +66,9 @@ Content from https://github.com/clocklimited/backline/blob/master/CHECKLIST.md
 
 ## TODO / To review
 
-- [ ] Refactor SCSS webpack setup so storybook can share
-- [ ] [Document head setup](https://nextjs.org/docs/#populating-head)
-- [ ] Inline SVG workflow for Icons
-- [ ] Inline SVG workflow for image-based logos etc
-- [ ] SVG workflow for external images as <img />
-- [ ] SVG workflow for external images as CSS backgrounds
+- [ ] Refactor SCSS webpack setup so storybook can share (might not be worth the hassle of having to handle chinking etc manually vs. letting Next do it)
 - [ ] Critical CSS strategy
-- [ ] [importing static assets](https://nextjs.org/docs/#static-file-serving-eg-images)
+- [ ] Consider custom asset loader instead of `next-image` to get better naming conventions
 - [ ] [cache-control](https://csswizardry.com/2019/03/cache-control-for-civilians/)
 - [ ] Review pagespeed/lighthouse quick wins
-
-- [ ] Interesting Next.js plugins
-  - [ ] [next-bundle-analyzer](https://github.com/zeit/next-plugins/tree/master/packages/next-bundle-analyzer)
-  - [ ] [next-compose-plugins](https://github.com/cyrilwanner/next-compose-plugins)
-  - [ ] [next-optimized-images](https://github.com/cyrilwanner/next-optimized-images)
-  - [ ] [next-seo](https://github.com/garmeeh/next-seo)
-  - [ ] [next-fonts](https://github.com/rohanray/next-fonts)
-  - [ ] [next-size](https://github.com/lucleray/next-size)
+- [ ] [next-fonts](https://github.com/rohanray/next-fonts)

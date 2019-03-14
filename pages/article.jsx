@@ -7,7 +7,7 @@ const ArticlePage = () => (
       title="Section Title"
       customTitle /* opts out of the default titleTemplate */
       description="Here’s a description"
-      slug="/"
+      slug="/article"
       images={[
         {
           url: 'https://source.unsplash.com/800x600?nature',

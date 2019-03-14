@@ -8267,6 +8267,11 @@ nested-object-assign@^1.0.1:
   resolved "https://registry.yarnpkg.com/nested-object-assign/-/nested-object-assign-1.0.3.tgz#5aca69390d9affe5a612152b5f0843ae399ac597"
   integrity sha512-kgq1CuvLyUcbcIuTiCA93cQ2IJFSlRwXcN+hLcb2qLJwC2qrePHGZZa7IipyWqaWF6tQjdax2pQnVxdq19Zzwg==
 
+next-seo@^1.11.1:
+  version "1.11.1"
+  resolved "https://registry.yarnpkg.com/next-seo/-/next-seo-1.11.1.tgz#fd17a522b84e3d21c367e5b54e801731c8c1c3ba"
+  integrity sha512-Xll6k00KQR7EUEaXhxbjEOcQm3Emx7/tW7pqx0vQN5NJH3NJWOKBZ2H2R540faacCRfWXeI5PDakfoK7/zKLqQ==
+
 next-server@8.0.3:
   version "8.0.3"
   resolved "https://registry.yarnpkg.com/next-server/-/next-server-8.0.3.tgz#47c5ad0317cd712f5ad8d35d817ad0668b7341cc"

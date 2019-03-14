@@ -1,9 +1,12 @@
 const isProduction = process.env.NODE_ENV === 'production'
 
 export const config = {
+  googleSiteVerification: null,
+  locale: 'en_GB',
+  themeColor: '#1565c0',
   title: 'Backline',
-  url: isProduction ? 'https://backline.netlify.com' : 'http://localhost:3320',
-  twitterHandle: '@backline_ui'
+  twitterHandle: '@backline_ui',
+  url: isProduction ? 'https://backline.netlify.com' : 'http://localhost:3320'
 }
 
 export const defaults = {
@@ -11,6 +14,7 @@ export const defaults = {
   openGraph: {
     site_name: config.title,
     type: 'website',
+    locale: config.locale,
     url: config.url
   },
   twitter: {

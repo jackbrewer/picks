@@ -37,6 +37,7 @@ stories.add('with image', () => (
 stories.add('with video', () => (
   <div style={{ border: '10px solid #aaa' }}>
     <ResponsiveMedia ratio={9 / 16}>
+      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
       <video
         controls
         poster="http://img.clock.co.uk/800x450?text=16:9%20ratio"

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { node, oneOf, string } from 'prop-types'
+import { func, node, oneOf, string } from 'prop-types'
 // import { Link } from 'react-router-dom'
 
 class SmartLink extends PureComponent {
@@ -46,6 +46,7 @@ SmartLink.defaultProps = {
 SmartLink.propTypes = {
   children: node.isRequired,
   href: string,
+  setRef: func,
   to: string,
   target: string,
   type: oneOf(['button', 'reset', 'submit'])

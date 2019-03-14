@@ -1,6 +1,7 @@
 const withPlugins = require('next-compose-plugins')
 const withSass = require('@zeit/next-sass')
 const withImages = require('next-images')
+const withSize = require('next-size')
 const path = require('path')
 
 const createSvgLoader = require('./config/webpack/svg-loader')
@@ -34,5 +35,6 @@ module.exports = withPlugins([
           : '[name]__[local]___[hash:base64:5]'
       }
     }
-  ]
+  ],
+  [withSize]
 ])

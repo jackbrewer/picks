@@ -11,51 +11,59 @@ const createSvgLoader = require('./config/webpack/svg-loader')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
-module.exports = withPlugins([
+const nextConfig = {
+  webpack: (config, options) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      include: [path.resolve(__dirname, 'src/svg/icon')],
+      use: createSvgLoader()
+    })
+    return config
+  }
+}
+
+module.exports = withPlugins(
   [
-    withImages,
-    {
-      exclude: path.resolve(__dirname, 'src/svg/icon'),
-      inlineImageLimit: 1,
-      webpack(config, options) {
-        config.module.rules.push({
-          test: /\.svg$/,
-          include: [path.resolve(__dirname, 'src/svg/icon')],
-          use: createSvgLoader()
-        })
-        return config
+    [
+      withImages,
+      {
+        exclude: path.resolve(__dirname, 'src/svg/icon'),
+        inlineImageLimit: 1
       }
-    }
-  ],
-  [
-    withSass,
-    {
-      cssModules: true,
-      cssLoaderOptions: {
-        importLoaders: 1,
-        localIdentName: isProduction
-          ? '[local]_[hash:base64:5]'
-          : '[name]__[local]___[hash:base64:5]'
-      }
-    }
-  ],
-  [withFonts],
-  [withSize],
-  [
-    withBundleAnalyzer,
-    {
-      analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
-      analyzeBrowser: ['browser', 'both'].includes(process.env.BUNDLE_ANALYZE),
-      bundleAnalyzerConfig: {
-        server: {
-          analyzerMode: 'static',
-          reportFilename: '../.bundle-analyzer/server.html'
-        },
-        browser: {
-          analyzerMode: 'static',
-          reportFilename: '../.bundle-analyzer/browser.html'
+    ],
+    [
+      withSass,
+      {
+        cssModules: true,
+        cssLoaderOptions: {
+          importLoaders: 1,
+          localIdentName: isProduction
+            ? '[local]_[hash:base64:5]'
+            : '[name]__[local]___[hash:base64:5]'
         }
       }
-    }
-  ]
-])
+    ],
+    [withFonts],
+    [withSize],
+    [
+      withBundleAnalyzer,
+      {
+        analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
+        analyzeBrowser: ['browser', 'both'].includes(
+          process.env.BUNDLE_ANALYZE
+        ),
+        bundleAnalyzerConfig: {
+          server: {
+            analyzerMode: 'static',
+            reportFilename: '../.bundle-analyzer/server.html'
+          },
+          browser: {
+            analyzerMode: 'static',
+            reportFilename: '../.bundle-analyzer/browser.html'
+          }
+        }
+      }
+    ]
+  ],
+  nextConfig
+)

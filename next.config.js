@@ -1,6 +1,7 @@
 const withPlugins = require('next-compose-plugins')
 const withSass = require('@zeit/next-sass')
 const withImages = require('next-images')
+const withFonts = require('next-fonts')
 const withSize = require('next-size')
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
 
@@ -17,7 +18,7 @@ module.exports = withPlugins([
       exclude: path.resolve(__dirname, 'src/svg/icon'),
       inlineImageLimit: 1,
       webpack(config, options) {
-        config.module.rules.unshift({
+        config.module.rules.push({
           test: /\.svg$/,
           include: [path.resolve(__dirname, 'src/svg/icon')],
           use: createSvgLoader()
@@ -38,6 +39,7 @@ module.exports = withPlugins([
       }
     }
   ],
+  [withFonts],
   [withSize],
   [
     withBundleAnalyzer,

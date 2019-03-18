@@ -1,14 +1,14 @@
 import React from 'react'
 import { string } from 'prop-types'
 
-import faviconIco from './icon/favicon.ico'
-import favicon16 from './icon/favicon-16.png'
-import favicon32 from './icon/favicon-32.png'
-import appleTouchIcon76 from './icon/apple-touch-icon-76.png'
-import appleTouchIcon120 from './icon/apple-touch-icon-120.png'
-import appleTouchIcon152 from './icon/apple-touch-icon-152.png'
-import appleTouchIcon180 from './icon/apple-touch-icon-180.png'
-import icon192 from './icon/icon-192.png'
+import faviconIco from '../../../asset/meta/favicon.ico'
+import favicon16 from '../../../asset/meta/favicon-16.png'
+import favicon32 from '../../../asset/meta/favicon-32.png'
+import appleTouchIcon76 from '../../../asset/meta/apple-touch-icon-76.png'
+import appleTouchIcon120 from '../../../asset/meta/apple-touch-icon-120.png'
+import appleTouchIcon152 from '../../../asset/meta/apple-touch-icon-152.png'
+import appleTouchIcon180 from '../../../asset/meta/apple-touch-icon-180.png'
+import icon192 from '../../../asset/meta/icon-192.png'
 
 const appleIconSizes = {
   76: appleTouchIcon76,

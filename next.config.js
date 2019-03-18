@@ -15,7 +15,7 @@ const nextConfig = {
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.svg$/,
-      include: [path.resolve(__dirname, 'src/svg/icon')],
+      include: [path.resolve(__dirname, 'src/asset/svg/icon')],
       use: createSvgLoader()
     })
     return config
@@ -27,7 +27,7 @@ module.exports = withPlugins(
     [
       withImages,
       {
-        exclude: path.resolve(__dirname, 'src/svg/icon'),
+        exclude: path.resolve(__dirname, 'src/asset/svg/icon'),
         inlineImageLimit: 1
       }
     ],

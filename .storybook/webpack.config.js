@@ -10,13 +10,13 @@ module.exports = ({ config, mode }) => {
     rule.test.toString().includes('svg')
   )
   config.module.rules[existingSvgRule].exclude = [
-    path.resolve(__dirname, '../src/svg/icon')
+    path.resolve(__dirname, '../src/asset/svg/icon')
   ]
 
   // Add support for creating icons using inline SVGs
   config.module.rules.unshift({
     test: /\.svg$/,
-    include: [path.resolve(__dirname, '../src/svg/icon')],
+    include: [path.resolve(__dirname, '../src/asset/svg/icon')],
     use: createSvgLoader()
   })
 

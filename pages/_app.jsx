@@ -2,7 +2,7 @@ import React from 'react'
 import App, { Container } from 'next/app'
 import NextSeo from 'next-seo'
 
-import '../src/scss/base.scss'
+import '../src/asset/scss/base.scss'
 
 import { defaults } from '../meta.config'
 

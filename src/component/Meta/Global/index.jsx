@@ -10,6 +10,8 @@ import appleTouchIcon152 from '../../../asset/meta/apple-touch-icon-152.png'
 import appleTouchIcon180 from '../../../asset/meta/apple-touch-icon-180.png'
 import icon192 from '../../../asset/meta/icon-192.png'
 
+const isProduction = process.env.NODE_ENV === 'production'
+
 const appleIconSizes = {
   76: appleTouchIcon76,
   120: appleTouchIcon120,
@@ -37,6 +39,10 @@ const GlobalMeta = props => {
       <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
       <link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
       <link rel="icon" sizes="192x192" href={icon192} />
+
+      {isProduction && (
+        <link rel="manifest" href="/_next/static/manifest.json" />
+      )}
 
       {Object.keys(appleIconSizes).map(size => (
         <link

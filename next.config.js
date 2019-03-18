@@ -4,15 +4,25 @@ const withImages = require('next-images')
 const withFonts = require('next-fonts')
 const withSize = require('next-size')
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
+const WebpackPwaManifest = require('webpack-pwa-manifest')
 
 const path = require('path')
 
 const createSvgLoader = require('./config/webpack/svg-loader')
+const pwaConfig = require('./config/webpack/pwa-config')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
 const nextConfig = {
   webpack: (config, options) => {
+    const { isServer, dev } = options
+
+    // Should really be "!isServer && !dev" but can't until we add conditional
+    // referencing of the manifest in the <head>
+    if (!isServer && !dev) {
+      config.plugins.push(new WebpackPwaManifest(pwaConfig))
+    }
+
     config.module.rules.push({
       test: /\.svg$/,
       include: [path.resolve(__dirname, 'src/asset/svg/icon')],

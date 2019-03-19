@@ -27,6 +27,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.3.4",
+    "@mdx-js/loader": "^0.20.3",
     "@storybook/addon-actions": "^5.0.0",
     "@storybook/addon-info": "^5.0.0",
     "@storybook/addon-links": "^5.0.0",
@@ -35,6 +36,7 @@
     "@storybook/theming": "^5.0.0",
     "@svgr/webpack": "^4.1.0",
     "@zeit/next-bundle-analyzer": "^0.1.2",
+    "@zeit/next-mdx": "^1.2.0",
     "@zeit/next-sass": "^1.0.1",
     "autoprefixer": "^9.4.10",
     "babel-jest": "^24.1.0",

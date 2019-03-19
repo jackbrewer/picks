@@ -2,6 +2,7 @@ const withPlugins = require('next-compose-plugins')
 const withSass = require('@zeit/next-sass')
 const withImages = require('next-images')
 const withFonts = require('next-fonts')
+const withMDX = require('@zeit/next-mdx')()
 const withSize = require('next-size')
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
 
@@ -44,6 +45,12 @@ module.exports = withPlugins(
       }
     ],
     [withFonts],
+    [
+      withMDX,
+      {
+        pageExtensions: ['js', 'jsx', 'mdx']
+      }
+    ],
     [withSize],
     [
       withBundleAnalyzer,

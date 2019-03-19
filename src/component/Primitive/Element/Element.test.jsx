@@ -30,7 +30,7 @@ describe('Component: Element', function() {
   })
 
   test('should output as specified element if set', function() {
-    const wrapper = shallow(<Element {...requiredProps()} is="h1" />)
+    const wrapper = shallow(<Element {...requiredProps()} as="h1" />)
     expect(wrapper.type()).toEqual('h1')
     expect(wrapper.text()).toEqual('Default content')
   })

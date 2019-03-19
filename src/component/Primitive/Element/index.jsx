@@ -3,20 +3,20 @@ import { node, string } from 'prop-types'
 
 class Element extends PureComponent {
   render() {
-    const { is, ...other } = this.props
-    const ElementEl = is
+    const { as, ...other } = this.props
+    const ElementEl = as
 
     return <ElementEl {...other} />
   }
 }
 
 Element.defaultProps = {
-  is: 'div'
+  as: 'div'
 }
 
 Element.propTypes = {
   children: node.isRequired,
-  is: string
+  as: string
 }
 
 export default Element

@@ -137,7 +137,7 @@ stories.add('Multiple items', () => (
 ))
 
 stories.add('Custom wrapping element', () => (
-  <ShrinkWrap is="label">
+  <ShrinkWrap as="label">
     <ShrinkWrap.Item shrink>
       <input type="checkbox" />
     </ShrinkWrap.Item>

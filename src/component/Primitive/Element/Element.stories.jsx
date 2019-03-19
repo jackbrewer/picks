@@ -25,5 +25,5 @@ stories.add('Info', () => <Element>Content wrapped in div</Element>, {
 stories.add('Default state', () => <Element>Content wrapped in div</Element>)
 
 stories.add('With specified element', () => (
-  <Element is="h1">Content wrapped in h1</Element>
+  <Element as="h1">Content wrapped in h1</Element>
 ))

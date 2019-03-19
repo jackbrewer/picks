@@ -8,11 +8,11 @@ import Element from '../../../Element'
 
 class ShrinkWrapWrapper extends PureComponent {
   render() {
-    const { children, is, fixed, fullWidth, spacing, vAlign } = this.props
+    const { children, as, fixed, fullWidth, spacing, vAlign } = this.props
 
     return (
       <Element
-        is={is}
+        as={as}
         className={classNames(
           styles.ShrinkWrapWrapper,
           fixed && styles.fixed,
@@ -29,7 +29,7 @@ class ShrinkWrapWrapper extends PureComponent {
 
 ShrinkWrapWrapper.propTypes = {
   children: node.isRequired,
-  is: string,
+  as: string,
   fixed: bool,
   fullWidth: bool,
   spacing: string,

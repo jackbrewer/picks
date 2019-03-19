@@ -9,7 +9,7 @@ stories.add(
   'Info',
   () => (
     <div style={{ userSelect: 'none' }}>
-      Only <UserSelect is="span" text>{`->THIS<-`}</UserSelect> should be
+      Only <UserSelect as="span" text>{`->THIS<-`}</UserSelect> should be
       selectable.
     </div>
   ),
@@ -43,14 +43,14 @@ stories.add('all', () => (
 
 stories.add('text', () => (
   <div style={{ userSelect: 'none' }}>
-    Only <UserSelect is="span" text>{`->THIS<-`}</UserSelect> should be
+    Only <UserSelect as="span" text>{`->THIS<-`}</UserSelect> should be
     selectable.
   </div>
 ))
 
 stories.add('none', () => (
   <div style={{ userSelect: 'all' }}>
-    Only <UserSelect is="span" none>{`->THIS<-`}</UserSelect> should be
+    Only <UserSelect as="span" none>{`->THIS<-`}</UserSelect> should be
     un-selectable.
   </div>
 ))
@@ -58,7 +58,7 @@ stories.add('none', () => (
 stories.add('output as custom element', () => (
   <div style={{ userSelect: 'none' }}>
     I’m using an{' '}
-    <UserSelect is="em" text>
+    <UserSelect as="em" text>
       &lt;em /&gt;
     </UserSelect>{' '}
     element

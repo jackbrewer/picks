@@ -15,12 +15,12 @@ class UserSelect extends PureComponent {
   }
 
   render() {
-    const { children, is } = this.props
+    const { children, as } = this.props
 
     return (
       <Element
         className={(styles.UserSelect, styles[this.getSelectionType()])}
-        is={is}
+        as={as}
       >
         {children}
       </Element>
@@ -30,7 +30,7 @@ class UserSelect extends PureComponent {
 
 UserSelect.propTypes = {
   children: node.isRequired,
-  is: string,
+  as: string,
 
   all: bool,
   none: bool,

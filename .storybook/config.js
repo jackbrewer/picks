@@ -1,4 +1,5 @@
 import { addDecorator, configure } from '@storybook/react'
+import { withA11y } from '@storybook/addon-a11y'
 import { withInfo } from '@storybook/addon-info'
 
 // import '../src/component/App/App.module.scss'
@@ -10,7 +11,8 @@ const loadStories = () => {
   req.keys().forEach(filename => req(filename))
 }
 
-// addon-info
+addDecorator(withA11y)
+
 addDecorator(
   withInfo({
     inline: false,

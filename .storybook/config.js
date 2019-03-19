@@ -22,7 +22,8 @@ addDecorator(
           borderRadius: '5px 0 0 0',
           bottom: 0,
           top: 'auto',
-          zIndex: 99998
+          zIndex: 99998,
+          backgroundColor: '#1565c0'
         }
       },
       infoStory: {

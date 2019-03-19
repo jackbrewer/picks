@@ -191,50 +191,26 @@ stories.add('General spacing examples', () => (
   <Fragment>
     <em>Default state:</em>
     <ShrinkWrap spacing="comfortable">
-      <ShrinkWrap.Item>
-        <a href="#example1">Item one</a>
-      </ShrinkWrap.Item>
-      <ShrinkWrap.Item>
-        <a href="#example2">Item two</a>
-      </ShrinkWrap.Item>
-      <ShrinkWrap.Item>
-        <a href="#example3">Item three is longer</a>
-      </ShrinkWrap.Item>
-      <ShrinkWrap.Item>
-        <a href="#example4">Item four</a>
-      </ShrinkWrap.Item>
+      <ShrinkWrap.Item>Item one</ShrinkWrap.Item>
+      <ShrinkWrap.Item>Item two</ShrinkWrap.Item>
+      <ShrinkWrap.Item>Item three is longer</ShrinkWrap.Item>
+      <ShrinkWrap.Item>Item four</ShrinkWrap.Item>
     </ShrinkWrap>
     <hr style={{ margin: '20px 0' }} />
     <em>Full-width, auto layout:</em>
     <ShrinkWrap spacing="comfortable" fullWidth>
-      <ShrinkWrap.Item>
-        <a href="#example1">Item one</a>
-      </ShrinkWrap.Item>
-      <ShrinkWrap.Item>
-        <a href="#example2">Item two</a>
-      </ShrinkWrap.Item>
-      <ShrinkWrap.Item>
-        <a href="#example3">Item three is longer</a>
-      </ShrinkWrap.Item>
-      <ShrinkWrap.Item>
-        <a href="#example4">Item four</a>
-      </ShrinkWrap.Item>
+      <ShrinkWrap.Item>Item one</ShrinkWrap.Item>
+      <ShrinkWrap.Item>Item two</ShrinkWrap.Item>
+      <ShrinkWrap.Item>Item three is longer</ShrinkWrap.Item>
+      <ShrinkWrap.Item>Item four</ShrinkWrap.Item>
     </ShrinkWrap>
     <hr style={{ margin: '20px 0' }} />
     <em>Full-width, fixed layout:</em>
     <ShrinkWrap spacing="comfortable" fullWidth fixed>
-      <ShrinkWrap.Item>
-        <a href="#example1">Item one</a>
-      </ShrinkWrap.Item>
-      <ShrinkWrap.Item>
-        <a href="#example2">Item two</a>
-      </ShrinkWrap.Item>
-      <ShrinkWrap.Item>
-        <a href="#example3">Item three is longer</a>
-      </ShrinkWrap.Item>
-      <ShrinkWrap.Item>
-        <a href="#example4">Item four</a>
-      </ShrinkWrap.Item>
+      <ShrinkWrap.Item>Item one</ShrinkWrap.Item>
+      <ShrinkWrap.Item>Item two</ShrinkWrap.Item>
+      <ShrinkWrap.Item>Item three is longer</ShrinkWrap.Item>
+      <ShrinkWrap.Item>Item four</ShrinkWrap.Item>
     </ShrinkWrap>
   </Fragment>
 ))

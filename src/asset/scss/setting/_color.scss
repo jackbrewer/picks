@@ -14,3 +14,10 @@ $color-status-success: #4caf50;
 $color-status-notice: #2196f3;
 $color-status-warning: #ff9800;
 $color-status-error: #f44336;
+
+$color-status-list: (
+  success: $color-status-success,
+  notice: $color-status-notice,
+  warning: $color-status-warning,
+  error: $color-status-error
+);

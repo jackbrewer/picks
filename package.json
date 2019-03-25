@@ -19,6 +19,7 @@
     "test:dev": "jest --coverage --watch --verbose",
     "storybook": "start-storybook -p 3321",
     "build-storybook": "build-storybook",
+    "coverage": "jest --coverage",
     "analyze": "BUNDLE_ANALYZE=both yarn build",
     "analyze:server": "BUNDLE_ANALYZE=server yarn build",
     "analyze:browser": "BUNDLE_ANALYZE=browser yarn build"

@@ -20,9 +20,9 @@ stories.add('Info', () => <PasswordControl name="password" />, {
 })
 
 stories.add('Password type (default)', () => (
-  <PasswordControl name="password" value="1234" />
+  <PasswordControl name="password" defaultValue="1234" />
 ))
 
 stories.add('Text type (forced)', () => (
-  <PasswordControl name="password" value="1234" type="text" />
+  <PasswordControl name="password" defaultValue="1234" type="text" />
 ))

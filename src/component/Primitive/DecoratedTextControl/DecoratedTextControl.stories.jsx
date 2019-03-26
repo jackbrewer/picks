@@ -14,8 +14,8 @@ stories.add(
       name="exampleText"
       type="text"
       placeholder="Example placeholder"
-      before={<Icon type="_placeholder" />}
-      after={<Icon type="_placeholder" />}
+      before={<Icon type="_placeholder" a11yText="placeholder icon" />}
+      after={<Icon type="_placeholder" a11yText="placeholder icon" />}
     />
   ),
   {

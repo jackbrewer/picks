@@ -37,12 +37,16 @@ stories.add('As a checkbox (checked)', () => (
 ))
 
 stories.add('As a checkbox with status (direct)', () => (
-  <CheckControl name="exampleSelect" type="checkbox" status="error" checked />
+  <CheckControl name="exampleSelect" type="checkbox" status="error" checked>
+    Example text
+  </CheckControl>
 ))
 
 stories.add('As a checkbox with status (via context)', () => (
   <StatusContextProvider status="success">
-    <CheckControl name="exampleSelect" type="checkbox" checked />
+    <CheckControl name="exampleSelect" type="checkbox" checked>
+      Example text
+    </CheckControl>
   </StatusContextProvider>
 ))
 

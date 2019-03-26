@@ -2,9 +2,11 @@
 @import './setting/font';
 @import './normalize/normailze';
 
-body {
-  font-size: spacing(2); // 16
-  line-height: spacing(3); // 24
-  font-weight: normal;
-  font-family: $font--body;
+:global {
+  body {
+    font-size: spacing(2); // 16
+    line-height: spacing(3); // 24
+    font-weight: normal;
+    font-family: $font--body;
+  }
 }

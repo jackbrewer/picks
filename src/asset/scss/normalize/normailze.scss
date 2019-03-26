@@ -7,6 +7,7 @@
 // - Change the default box-sizing value
 // - Remove all margin/padding
 // - Un-style all headings
+// - Un-style <button>
 // - Make images responsive by default
 //
 
@@ -131,16 +132,25 @@
   // FORMS
   // ===========================================================================
 
-  // 1. Interactive elements should inherit base typography
+  // Interactive elements should inherit base typography
   button,
   input,
   optgroup,
   select,
   textarea {
-    color: inherit; // 1
-    font-family: inherit; // 1
-    font-size: inherit; // 1
-    line-height: inherit; // 1
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  // 1. Remove default button styling
+  // 2. Add pointer as default cursor type, for consistency with <a>
+  button {
+    background: none; // 1
+    border: 0; // 1
+    border-radius: 0; // 1
+    cursor: pointer; // 2
   }
 
   // Show overflow as expected in IE

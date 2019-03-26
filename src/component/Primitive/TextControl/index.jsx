@@ -1,5 +1,14 @@
 import React, { useContext } from 'react'
-import { bool, func, number, oneOf, oneOfType, string } from 'prop-types'
+import {
+  bool,
+  func,
+  instanceOf,
+  number,
+  oneOf,
+  oneOfType,
+  shape,
+  string
+} from 'prop-types'
 import classNames from 'classnames'
 
 import { StatusContext } from '../../Context/StatusContext'
@@ -80,7 +89,7 @@ TextControl.defaultProps = {
 TextControl.propTypes = {
   autoComplete: oneOfType([bool, string]),
   className: string,
-  controlRef: func,
+  controlRef: oneOfType([func, shape({ current: instanceOf(Element) })]),
   defaultValue: string,
   disabled: bool,
   id: string,

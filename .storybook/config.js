@@ -2,7 +2,7 @@ import { addDecorator, configure } from '@storybook/react'
 import { withA11y } from '@storybook/addon-a11y'
 import { withInfo } from '@storybook/addon-info'
 
-// import '../src/component/App/App.module.scss'
+import '../src/asset/scss/base.scss'
 import './storybook.module.scss'
 
 const req = require.context('../src', true, /stories\.jsx$/)

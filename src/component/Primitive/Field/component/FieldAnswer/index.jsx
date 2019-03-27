@@ -10,8 +10,6 @@ class FieldAnswer extends PureComponent {
   }
 }
 
-FieldAnswer.displayName = 'FieldAnswer'
-
 FieldAnswer.propTypes = {
   children: node.isRequired
 }

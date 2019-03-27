@@ -85,7 +85,7 @@ NativeSelectControl.propTypes = {
   readOnly: bool,
   required: bool,
   size: number,
-  status: oneOf(['error', 'notice', 'success', 'warning']),
+  status: oneOf(['none', 'error', 'notice', 'success', 'warning']),
   tabIndex: number,
   value: oneOfType([arrayOf(string), string])
 }

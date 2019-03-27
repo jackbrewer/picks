@@ -29,7 +29,7 @@ const CustomCheckControl = props => {
 }
 
 CustomCheckControl.propTypes = {
-  status: oneOf(['error', 'notice', 'success', 'warning']),
+  status: oneOf(['none', 'error', 'notice', 'success', 'warning']),
   type: oneOf(['checkbox', 'radio']).isRequired
 }
 

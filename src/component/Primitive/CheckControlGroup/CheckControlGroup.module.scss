@@ -1,0 +1,7 @@
+@import '../../../asset/scss/function/spacing';
+
+.CheckControlGroup {
+  > * + * {
+    margin-top: spacing(1);
+  }
+}

@@ -3,25 +3,20 @@ import { shallow } from 'enzyme'
 import Field from '.'
 
 describe('Component: Field', function() {
-  test.skip('should output the expected markup with default props', function() {
+  test('should output the expected markup', function() {
     const wrapper = shallow(
       <Field>
-        <Field.Item>Item one</Field.Item>
-        <Field.Item>Item two</Field.Item>
+        <Field.Answer>Item one</Field.Answer>
+        <Field.Assistance>Item one</Field.Assistance>
+        <Field.Feedback>Item one</Field.Feedback>
+        <Field.Question htmlFor="example">Item one</Field.Question>
+        <Field.Required />
       </Field>
     )
-    expect(wrapper.prop('children').length).toEqual(2)
-    expect(
-      wrapper
-        .childAt(0)
-        .dive()
-        .text()
-    ).toEqual('Item one')
-    expect(
-      wrapper
-        .childAt(1)
-        .dive()
-        .text()
-    ).toEqual('Item two')
+    expect(wrapper.find(Field.Answer)).toHaveLength(1)
+    expect(wrapper.find(Field.Assistance)).toHaveLength(1)
+    expect(wrapper.find(Field.Feedback)).toHaveLength(1)
+    expect(wrapper.find(Field.Question)).toHaveLength(1)
+    expect(wrapper.find(Field.Required)).toHaveLength(1)
   })
 })

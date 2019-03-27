@@ -9,12 +9,9 @@ stories.add('Info', () => <PasswordControl name="password" />, {
   info: {
     inline: true,
     text: `
-      Starter component which can be duplicated and used as a starting point
-      for others.
-
-      Use this first story to add documentation and show off the most
-      interesting/useful component iteration. Use subsequent stories to detail
-      all component permutations.
+      A wrapper around a TextControl component which adds password visibility
+      toggling functionality. When the toggle button is pressed, focus
+      immediately returns to the input.
     `
   }
 })

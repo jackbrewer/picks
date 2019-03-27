@@ -49,7 +49,9 @@ describe('Component: PasswordControl', function() {
     )
     wrapper.find('IconButton').simulate('click')
     expect(wrapper.find('DecoratedTextControl').prop('type')).toEqual('text')
+    wrapper.find('IconButton').simulate('click')
+    expect(wrapper.find('DecoratedTextControl').prop('type')).toEqual(
+      'password'
+    )
   })
-
-  test.todo('should have complete code coverage')
 })

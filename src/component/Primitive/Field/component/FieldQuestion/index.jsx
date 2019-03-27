@@ -1,24 +1,35 @@
 import React, { PureComponent } from 'react'
-import { node, string } from 'prop-types'
+import { bool, node } from 'prop-types'
 
 import styles from './FieldQuestion.module.scss'
 
 class FieldQuestion extends PureComponent {
   render() {
-    const { htmlFor, children } = this.props
+    const { children, htmlFor, noLabel } = this.props
+    const FieldQuestionInnerEl = noLabel ? 'span' : 'label'
     return (
       <div className={styles.FieldQuestion}>
-        <label htmlFor={htmlFor}>{children}</label>
+        <FieldQuestionInnerEl htmlFor={htmlFor}>
+          {children}
+        </FieldQuestionInnerEl>
       </div>
     )
   }
 }
 
-FieldQuestion.displayName = 'FieldQuestion'
-
 FieldQuestion.propTypes = {
   children: node.isRequired,
-  htmlFor: string.isRequired
+  noLabel: bool,
+  htmlFor: function(props, propName, componentName) {
+    if (
+      (!props['noLabel'] || props['noLabel'] === false) &&
+      (props[propName] === undefined || typeof props[propName] !== 'string')
+    ) {
+      return new Error(
+        `The prop \`htmlFor\` is marked as required in \`${componentName}\`, unless also using the \`noLabel\` prop`
+      )
+    }
+  }
 }
 
 export default FieldQuestion

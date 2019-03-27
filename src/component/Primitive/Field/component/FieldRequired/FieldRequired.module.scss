@@ -1,0 +1,6 @@
+@import '../../../../../asset/scss/setting/color';
+
+.FieldRequired {
+  margin-left: 3px;
+  color: $color-status-error;
+}

@@ -1,0 +1,12 @@
+@import '../../../../../asset/scss/function/spacing';
+@import '../../../../../asset/scss/setting/color';
+
+.FieldFeedback {
+  margin-top: spacing(0.5);
+}
+
+@each $key, $value in $color-status-list {
+  .#{$key} {
+    color: $value !important;
+  }
+}

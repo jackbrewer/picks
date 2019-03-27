@@ -1,0 +1,7 @@
+@import '../../../../../asset/scss/function/spacing';
+@import '../../../../../asset/scss/setting/color';
+
+.FieldAssistance {
+  margin-top: spacing(0.5);
+  color: $color-common-grey50;
+}

@@ -1,5 +1,5 @@
-@import '../../../../../asset/scss/function/spacing';
-@import '../../../../../asset/scss/setting/color';
+@import 'setting';
+@import 'backline-mixins';
 
 .FieldFeedback {
   margin-top: spacing(0.5);

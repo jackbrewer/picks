@@ -1,8 +1,5 @@
-@import '../../../asset/scss/function/spacing';
-@import '../../../asset/scss/setting/color';
-@import '../../../asset/scss/setting/easing';
-@import '../../../asset/scss/setting/font';
-@import '../../../asset/scss/setting/duration';
+@import 'setting';
+@import 'backline-mixins';
 
 .Prose {
   // Unset common styles left in place by WYSIWYG editor

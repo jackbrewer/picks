@@ -1,8 +1,5 @@
-@import '../../../asset/scss/setting/color';
-@import '../../../asset/scss/setting/duration';
-@import '../../../asset/scss/setting/easing';
-@import '../../../asset/scss/setting/radius';
-@import '../../../asset/scss/function/spacing';
+@import 'setting';
+@import 'backline-mixins';
 
 .TextControl {
   display: block;

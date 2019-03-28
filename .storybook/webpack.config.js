@@ -34,7 +34,15 @@ module.exports = ({ config, mode }) => {
           localIdentName: '[name]__[local]___[hash:base64:5]'
         }
       },
-      { loader: 'sass-loader' }
+      {
+        loader: 'sass-loader',
+        options: {
+          includePaths: [
+            ...require('backline-mixins').includePaths,
+            path.join(__dirname, '../src/asset/scss/setting')
+          ]
+        }
+      }
     ]
   })
   return config

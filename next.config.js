@@ -41,6 +41,12 @@ module.exports = withPlugins(
           localIdentName: isProduction
             ? '[local]_[hash:base64:5]'
             : '[name]__[local]___[hash:base64:5]'
+        },
+        sassLoaderOptions: {
+          includePaths: [
+            ...require('backline-mixins').includePaths,
+            path.join(__dirname, 'src/asset/scss/setting')
+          ]
         }
       }
     ],

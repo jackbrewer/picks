@@ -3208,6 +3208,11 @@ babel-types@6.26.0:
     lodash "^4.17.4"
     to-fast-properties "^1.0.3"
 
+backline-grid@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/backline-grid/-/backline-grid-1.0.0.tgz#6b853411dbaae6111b521e654483d4d6fc11ef44"
+  integrity sha512-WMXJfWHBzIWGYLqPOyxXWQhkn/Kc22OZqNmbgWAM8bO9U7WH7VcDn4z54Co0Bz7m2DyDJxzd6tWjbzzLS5HqZA==
+
 backline-mixins@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/backline-mixins/-/backline-mixins-1.0.2.tgz#70d0f1d14a9e3927076ac5f6080cfc788c8a0f42"

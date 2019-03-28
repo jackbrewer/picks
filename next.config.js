@@ -6,6 +6,9 @@ const withMDX = require('@zeit/next-mdx')()
 const withSize = require('next-size')
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
 
+const backlineGrid = require('backline-grid')
+const backlineMixins = require('backline-mixins')
+
 const path = require('path')
 
 const createSvgLoader = require('./config/webpack/svg-loader')
@@ -44,7 +47,8 @@ module.exports = withPlugins(
         },
         sassLoaderOptions: {
           includePaths: [
-            ...require('backline-mixins').includePaths,
+            ...backlineGrid.includePaths,
+            ...backlineMixins.includePaths,
             path.join(__dirname, 'src/asset/scss/setting')
           ]
         }

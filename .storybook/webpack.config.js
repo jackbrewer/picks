@@ -1,5 +1,8 @@
 const path = require('path')
 
+const backlineGrid = require('backline-grid')
+const backlineMixins = require('backline-mixins')
+
 const createSvgLoader = require('../config/webpack/svg-loader')
 
 module.exports = ({ config, mode }) => {
@@ -38,7 +41,8 @@ module.exports = ({ config, mode }) => {
         loader: 'sass-loader',
         options: {
           includePaths: [
-            ...require('backline-mixins').includePaths,
+            ...backlineGrid.includePaths,
+            ...backlineMixins.includePaths,
             path.join(__dirname, '../src/asset/scss/setting')
           ]
         }

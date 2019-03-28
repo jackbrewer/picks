@@ -47,6 +47,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "backline-grid": "^1.0.0",
     "backline-mixins": "^1.0.2",
+    "backline-normalize": "^1.0.0",
     "classnames": "^2.2.6",
     "cssnano": "^4.1.10",
     "enzyme": "^3.9.0",

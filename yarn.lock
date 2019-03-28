@@ -3218,6 +3218,11 @@ backline-mixins@^1.0.2:
   resolved "https://registry.yarnpkg.com/backline-mixins/-/backline-mixins-1.0.2.tgz#70d0f1d14a9e3927076ac5f6080cfc788c8a0f42"
   integrity sha512-lYttrmBNJ1yVhiE6AcrIkaFy3YKAutFrMxt7oNmV3iWweZV6KvaQMrn/p8KJQ2B8vg8q1wrUZefqZmL59Cp5+Q==
 
+backline-normalize@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/backline-normalize/-/backline-normalize-1.0.0.tgz#d9909b56827a8448dc70f38e974a00c33982e6bd"
+  integrity sha512-Sltd6j8/JqR1j2YoGN9boGdFokAgKjTR+cvwKWnhYCG0espQXkZueDcsQ2DLeq1rB6yIo2Rt0HoV5LuF00xBzQ==
+
 bail@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/bail/-/bail-1.0.3.tgz#63cfb9ddbac829b02a3128cd53224be78e6c21a3"

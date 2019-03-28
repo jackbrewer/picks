@@ -1,6 +1,6 @@
 @import 'backline-mixins';
-@import './setting/font';
-@import './normalize/normailze';
+@import 'setting';
+@import 'backline-normalize';
 
 :global {
   body {

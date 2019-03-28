@@ -8,6 +8,7 @@ const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
 
 const backlineGrid = require('backline-grid')
 const backlineMixins = require('backline-mixins')
+const backlineNormalize = require('backline-normalize')
 
 const path = require('path')
 
@@ -49,6 +50,7 @@ module.exports = withPlugins(
           includePaths: [
             ...backlineGrid.includePaths,
             ...backlineMixins.includePaths,
+            ...backlineNormalize.includePaths,
             path.join(__dirname, 'src/asset/scss/setting')
           ]
         }

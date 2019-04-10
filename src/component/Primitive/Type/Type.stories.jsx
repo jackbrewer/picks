@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import Type, { sizes } from '.'
 
-const stories = storiesOf('Unsorted/Type', module)
+const stories = storiesOf('Core/Type', module)
 
 stories.add(
   'Info',

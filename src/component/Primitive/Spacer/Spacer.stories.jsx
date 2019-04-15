@@ -27,19 +27,27 @@ ContentTile.propTypes = {
 
 const stories = storiesOf('Unsorted/Spacer', module)
 
-stories.add('Info', () => <Spacer>Content</Spacer>, {
-  info: {
-    inline: true,
-    text: `
-      Starter component which can be duplicated and used as a starting point
-      for others.
+stories.add(
+  'Info',
+  () => (
+    <Spacer px={2} pt={1} pb={'5px'} style={{ outline: '2px dotted lime' }}>
+      <ContentTile />
+    </Spacer>
+  ),
+  {
+    info: {
+      inline: true,
+      text: `
+        A wrapper component which can be used to provide margin or padding where
+        required.
 
-      Use this first story to add documentation and show off the most
-      interesting/useful component iteration. Use subsequent stories to detail
-      all component permutations.
-    `
+        Values passed as numbers will be multiplied by the project’s default
+        spacing unit to allow for easy consistency. Values passed as strings
+        will be output without modification.
+      `
+    }
   }
-})
+)
 
 stories.add('Margin: 2x spacing unit', () => (
   <div>
@@ -53,6 +61,15 @@ stories.add('Margin: 2x spacing unit', () => (
 stories.add('Padding: 2x spacing unit', () => (
   <div>
     <Spacer p={2} style={{ outline: '2px dotted lime' }}>
+      <ContentTile />
+    </Spacer>
+    <ContentTile />
+  </div>
+))
+
+stories.add('As a custom element', () => (
+  <div>
+    <Spacer as="header" p={2} style={{ outline: '2px dotted lime' }}>
       <ContentTile />
     </Spacer>
     <ContentTile />

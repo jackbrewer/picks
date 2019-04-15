@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { bool, node, string } from 'prop-types'
+import { bool, node } from 'prop-types'
 
 import styles from './CaptionedMedia.module.scss'
 
@@ -23,7 +23,7 @@ class CaptionedMedia extends PureComponent {
 }
 
 CaptionedMedia.propTypes = {
-  caption: string,
+  caption: node,
   children: node.isRequired,
   figure: bool
 }

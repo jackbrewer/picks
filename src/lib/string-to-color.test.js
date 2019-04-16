@@ -1,7 +1,7 @@
 import stringToColor from './string-to-color'
 
 describe('stringToColor()', function() {
-  test('should return expected initials from name-style string', function() {
+  test('should return expected colour from string', function() {
     expect(stringToColor('Backline')).toEqual('#7b4d50')
     expect(stringToColor('Firstname Lastname')).toEqual('#a60f02')
     expect(stringToColor('Абрам Богдан')).toEqual('#309959')

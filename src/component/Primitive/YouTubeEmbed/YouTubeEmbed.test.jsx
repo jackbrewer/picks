@@ -3,7 +3,7 @@ import validatePropTypes from 'validate-prop-types'
 import { mount } from 'enzyme'
 import YouTubeEmbed, { YouTubeEmbedFallbackUrl } from '.'
 
-const requiredProps = () => ({ videoId: 'ScMzIvxBSi4' })
+const requiredProps = () => ({ videoId: '123' })
 
 describe('Component: YouTubeEmbed', function() {
   test('should return errors if required props missing', function() {
@@ -26,27 +26,27 @@ describe('Component: YouTubeEmbed', function() {
   test('should output the expected markup with default props', function() {
     const wrapper = mount(<YouTubeEmbed {...requiredProps()} />)
     expect(wrapper.getDOMNode().src).toEqual(
-      'https://www.youtube.com/embed/ScMzIvxBSi4?modestbranding=1&playsinline=1&rel=0'
+      'https://www.youtube.com/embed/123?modestbranding=1&playsinline=1&rel=0'
     )
   })
 
-  test('should output additional querystring parameter `hideControls` prop passed', function() {
+  test('should output additional querystring parameter if `hideControls` prop passed', function() {
     const wrapper = mount(<YouTubeEmbed {...requiredProps()} hideControls />)
     expect(wrapper.getDOMNode().src).toEqual(
-      'https://www.youtube.com/embed/ScMzIvxBSi4?modestbranding=1&playsinline=1&rel=0&controls=0'
+      'https://www.youtube.com/embed/123?modestbranding=1&playsinline=1&rel=0&controls=0'
     )
   })
 
-  test('should output additional querystring parameter `start` prop passed', function() {
+  test('should output additional querystring parameter if `start` prop passed', function() {
     const wrapper = mount(<YouTubeEmbed {...requiredProps()} start="20" />)
     expect(wrapper.getDOMNode().src).toEqual(
-      'https://www.youtube.com/embed/ScMzIvxBSi4?modestbranding=1&playsinline=1&rel=0&start=20'
+      'https://www.youtube.com/embed/123?modestbranding=1&playsinline=1&rel=0&start=20'
     )
   })
 
   test('should export a fallback URL', function() {
-    expect(YouTubeEmbedFallbackUrl('ScMzIvxBSi4')).toEqual(
-      'https://www.youtube.com/watch?v=ScMzIvxBSi4'
+    expect(YouTubeEmbedFallbackUrl('123')).toEqual(
+      'https://www.youtube.com/watch?v=123'
     )
   })
 })

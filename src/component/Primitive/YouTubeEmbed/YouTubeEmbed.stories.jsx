@@ -9,7 +9,9 @@ stories.add('Info', () => <YouTubeEmbed videoId="ScMzIvxBSi4" />, {
   info: {
     inline: true,
     text: `
-      Hi
+      Embeds a YouTube video, with options for common video API preferences.
+
+      To make the video responsive, wrap in in a \`ResponsiveMedia\` component.
     `
   }
 })

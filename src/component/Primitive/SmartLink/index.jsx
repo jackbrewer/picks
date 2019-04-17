@@ -1,15 +1,25 @@
 import React, { PureComponent } from 'react'
 import { func, node, oneOf, string } from 'prop-types'
-// import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 class SmartLink extends PureComponent {
   render() {
-    const { children, href, setRef, to, target, type, ...other } = this.props
+    const {
+      children,
+      className,
+      href,
+      setRef,
+      to,
+      target,
+      type,
+      ...other
+    } = this.props
 
     // Standard link, use an `anchor` element
     if (href) {
       return (
         <a
+          className={className}
           href={href}
           ref={setRef}
           {...target && { target }}
@@ -22,17 +32,18 @@ class SmartLink extends PureComponent {
     }
 
     // Internal link, use third-party `Link` component from router module
-    // if (to) {
-    //   return (
-    //     <Link to={to} ref={setRef} {...other}>
-    //       {children}
-    //     </Link>
-    //   )
-    // }
+    if (to) {
+      return (
+        <Link href={to} ref={setRef} {...other}>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          <a className={className}>{children}</a>
+        </Link>
+      )
+    }
 
     // No `href` or `to` means we need a `button` element
     return (
-      <button type={type} ref={setRef} {...other}>
+      <button className={className} type={type} ref={setRef} {...other}>
         {children}
       </button>
     )
@@ -45,6 +56,7 @@ SmartLink.defaultProps = {
 
 SmartLink.propTypes = {
   children: node.isRequired,
+  className: string,
   href: string,
   setRef: func,
   to: string,

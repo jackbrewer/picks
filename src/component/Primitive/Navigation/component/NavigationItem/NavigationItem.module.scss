@@ -1,0 +1,23 @@
+@import 'setting';
+@import 'backline-mixins';
+
+// .NavigationItem {}
+
+.NavigationItemLink {
+  display: block;
+  padding: spacing(1) spacing(2);
+  background-color: $color-primary-base;
+  color: $color-common-white;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $color-primary-dark;
+    color: $color-common-white;
+  }
+}
+
+.active {
+  background-color: $color-common-white;
+  color: $color-primary-base;
+}

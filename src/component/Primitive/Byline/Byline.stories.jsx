@@ -35,6 +35,10 @@ stories.add('Default state', () => (
 
 stories.add('Author only', () => <Byline author="Firstname Lastname" />)
 
+stories.add('Author as a link', () => (
+  <Byline author={<a href="/author-slug">Firstname Lastname</a>} />
+))
+
 stories.add('Display date only', () => <Byline displayDate="1 Jan 2020" />)
 
 stories.add('Date with timestamp', () => (

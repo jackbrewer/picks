@@ -29,14 +29,14 @@ describe('Component: Byline', function() {
     const wrapper = shallow(
       <Byline {...requiredProps()} author="Firstname Lastname" />
     )
-    expect(wrapper.find('span').text()).toEqual('Firstname Lastname')
+    expect(wrapper.find('.BylineAuthor').text()).toEqual('Firstname Lastname')
   })
 
   test('should output expected content when `displayDate` prop passed', function() {
     const wrapper = shallow(
       <Byline {...requiredProps()} displayDate="1 Jan 2020" />
     )
-    expect(wrapper.find('time').text()).toEqual('1 Jan 2020')
+    expect(wrapper.find('.BylineDate').text()).toEqual('1 Jan 2020')
   })
 
   test('should output expected content when `displayDate` and `timestamp` props passed', function() {

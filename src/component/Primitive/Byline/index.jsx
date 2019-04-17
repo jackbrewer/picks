@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-import { string } from 'prop-types'
+import { node, string } from 'prop-types'
 
 import styles from './Byline.module.scss'
 
@@ -14,10 +14,15 @@ export class Byline extends PureComponent {
       <div className={styles.Byline}>
         <Type size="small">
           {displayDate && (
-            <time {...timestamp && { dateTime: timestamp }}>{displayDate}</time>
+            <time
+              className={styles.BylineDate}
+              {...timestamp && { dateTime: timestamp }}
+            >
+              {displayDate}
+            </time>
           )}
           {displayDate && author && separator}
-          {author && <span>{author}</span>}
+          {author && <span className={styles.BylineAuthor}>{author}</span>}
         </Type>
       </div>
     )
@@ -29,7 +34,7 @@ Byline.defaultProps = {
 }
 
 Byline.propTypes = {
-  author: string,
+  author: node,
   displayDate: string,
   separator: string,
   timestamp: string

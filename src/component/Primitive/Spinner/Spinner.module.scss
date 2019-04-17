@@ -1,5 +1,8 @@
 @import 'setting';
 
+$spinner-duration: 800ms;
+$spinner-step-duration: $spinner-duration / 8;
+
 .Spinner {
   display: inline-block;
   width: 21px;
@@ -13,36 +16,18 @@
   transform: translateZ();
 
   circle {
-    animation: spinner-dot-fade 800ms linear infinite;
+    opacity: 0;
+    animation: spinner-dot-fade $spinner-duration linear infinite;
 
     .paused & {
       animation-play-state: paused;
     }
   }
 
-  circle:nth-child(1) {
-    animation-delay: 0;
-  }
-  circle:nth-child(2) {
-    animation-delay: -100ms;
-  }
-  circle:nth-child(3) {
-    animation-delay: -200ms;
-  }
-  circle:nth-child(4) {
-    animation-delay: -300ms;
-  }
-  circle:nth-child(5) {
-    animation-delay: -400ms;
-  }
-  circle:nth-child(6) {
-    animation-delay: -500ms;
-  }
-  circle:nth-child(7) {
-    animation-delay: -600ms;
-  }
-  circle:nth-child(8) {
-    animation-delay: -700ms;
+  @for $i from 1 through 8 {
+    circle:nth-child(#{$i}) {
+      animation-delay: -($i - 1) * $spinner-step-duration;
+    }
   }
 
   svg {
@@ -52,7 +37,7 @@
 }
 
 @keyframes spinner-dot-fade {
-  0% {
+  10% {
     opacity: 1;
   }
   80%,

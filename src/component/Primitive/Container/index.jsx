@@ -5,11 +5,19 @@ import Element from '../Element'
 
 import styles from './Container.module.scss'
 
-export const sizes = ['small', 'medium', 'large']
+export const sizes = ['small', 'medium', 'large', 'wide']
 
 class Container extends PureComponent {
   render() {
-    const { as, center, children, className, gutter, size } = this.props
+    const {
+      as,
+      center,
+      children,
+      className,
+      gutter,
+      noClearfix,
+      size
+    } = this.props
 
     return (
       <Element
@@ -18,6 +26,7 @@ class Container extends PureComponent {
           styles.Container,
           center && styles.center,
           gutter && styles.gutter,
+          noClearfix && styles.noClearfix,
           size && styles[size],
           className
         )}
@@ -34,6 +43,7 @@ Container.propTypes = {
   children: node.isRequired,
   className: string,
   gutter: bool,
+  noClearfix: bool,
   size: oneOf(sizes)
 }
 

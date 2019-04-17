@@ -3,6 +3,11 @@
 
 .Container {
   width: 100%;
+  clear: both;
+}
+
+.noClearfix {
+  clear: none;
 }
 
 .center {
@@ -22,8 +27,12 @@
 
 // SIZES
 
-.large {
+.wide {
   max-width: spacing(160);
+}
+
+.large {
+  max-width: spacing(120);
 }
 
 .medium {
@@ -31,5 +40,5 @@
 }
 
 .small {
-  max-width: spacing(40);
+  max-width: spacing(60);
 }

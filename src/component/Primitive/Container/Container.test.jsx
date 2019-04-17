@@ -43,4 +43,9 @@ describe('Component: Container', function() {
     const wrapper = shallow(<Container {...requiredProps()} size="small" />)
     expect(wrapper.prop('className')).toEqual('Container small')
   })
+
+  test('should output additional className when `noClearfix` prop passed', function() {
+    const wrapper = shallow(<Container {...requiredProps()} noClearfix />)
+    expect(wrapper.prop('className')).toEqual('Container noClearfix')
+  })
 })

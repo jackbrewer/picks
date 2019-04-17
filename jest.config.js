@@ -1,6 +1,6 @@
 module.exports = {
   collectCoverageFrom: ['src/**/*.{js,jsx}'],
-  coveragePathIgnorePatterns: ['.stories.jsx'],
+  coveragePathIgnorePatterns: ['.stories.jsx', '/fixture/'],
   setupFiles: ['<rootDir>/config/jest/register-context.js'],
   setupFilesAfterEnv: ['<rootDir>/config/jest/setup-tests.js'],
   testPathIgnorePatterns: [

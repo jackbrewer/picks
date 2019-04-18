@@ -21,7 +21,8 @@ stories.add('Info', () => <Header navigation={navigation} />, {
   info: {
     inline: true,
     text: `
-      Contains a logo
+      Basic site-level header component with mobile navigation toggle. Accepts a
+      navigation component as a prop.
     `
   }
 })

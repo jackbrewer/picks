@@ -6,6 +6,7 @@ import { node } from 'prop-types'
 import A11yNavigation from '../../Primitive/A11yNavigation'
 import Header from '../../Primitive/Header'
 import Navigation from '../../Primitive/Navigation'
+import Footer from '../../Primitive/Footer'
 
 class MainLayout extends PureComponent {
   render() {
@@ -31,6 +32,7 @@ class MainLayout extends PureComponent {
         <main id="content" role="main">
           {children}
         </main>
+        <Footer />
       </Fragment>
     )
   }

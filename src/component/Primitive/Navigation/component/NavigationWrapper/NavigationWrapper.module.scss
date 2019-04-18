@@ -1,12 +1,10 @@
+@import 'setting';
+
 .NavigationWrapper {
-  display: table;
-  width: auto;
+  border-top: 1px solid $color-common-grey75;
+  border-bottom: 1px solid $color-common-grey75;
 }
 
-.fixed {
-  table-layout: fixed;
-}
-
-.fullWidth {
-  width: 100%;
+.NavigationList {
+  text-align: center;
 }

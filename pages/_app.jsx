@@ -6,14 +6,18 @@ import '../src/asset/scss/base.scss'
 
 import { defaults } from '../meta.config'
 
+import MainLayout from '../src/component/Layout/MainLayout'
+
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props
 
     return (
       <Container>
-        <NextSeo config={defaults} />
-        <Component {...pageProps} />
+        <MainLayout>
+          <NextSeo config={defaults} />
+          <Component {...pageProps} />
+        </MainLayout>
       </Container>
     )
   }

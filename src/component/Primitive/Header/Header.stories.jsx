@@ -15,7 +15,7 @@ const navigation = (
   </Navigation>
 )
 
-const stories = storiesOf('Unsorted/Header', module)
+const stories = storiesOf('Structure/Header', module)
 
 stories.add('Info', () => <Header navigation={navigation} />, {
   info: {

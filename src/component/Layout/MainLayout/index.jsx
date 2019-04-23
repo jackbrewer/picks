@@ -1,4 +1,4 @@
-import React, { Fragment, PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 import { node } from 'prop-types'
 
 // import styles from './MainLayout.module.scss'
@@ -7,13 +7,15 @@ import A11yNavigation from '../../Primitive/A11yNavigation'
 import Header from '../../Primitive/Header'
 import Navigation from '../../Primitive/Navigation'
 import Footer from '../../Primitive/Footer'
+import SiteContainer from '../../Primitive/SiteContainer'
+import Main from '../../Primitive/Main'
 
 class MainLayout extends PureComponent {
   render() {
     const { children } = this.props
 
     return (
-      <Fragment>
+      <SiteContainer>
         <A11yNavigation>
           <a href="#content">Jump to main content</a>
           <a href="#navigation">Jump to primary navigation</a>
@@ -29,11 +31,9 @@ class MainLayout extends PureComponent {
             </Navigation>
           }
         />
-        <main id="content" role="main">
-          {children}
-        </main>
+        <Main>{children}</Main>
         <Footer />
-      </Fragment>
+      </SiteContainer>
     )
   }
 }

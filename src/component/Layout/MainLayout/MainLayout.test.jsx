@@ -25,9 +25,10 @@ describe('Component: MainLayout', function() {
 
   test('should output the expected markup with default props', function() {
     const wrapper = shallow(<MainLayout {...requiredProps()} />)
+    expect(wrapper.find('SiteContainer')).toHaveLength(1)
     expect(wrapper.find('A11yNavigation')).toHaveLength(1)
     expect(wrapper.find('Header')).toHaveLength(1)
-    expect(wrapper.find('main')).toHaveLength(1)
+    expect(wrapper.find('Main')).toHaveLength(1)
     expect(wrapper.find('Footer')).toHaveLength(1)
   })
 })

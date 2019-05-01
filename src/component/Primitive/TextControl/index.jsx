@@ -42,7 +42,8 @@ const TextControl = props => {
     value
   } = props
 
-  const derivedStatus = status || useContext(StatusContext)
+  const contextStatus = useContext(StatusContext)
+  const derivedStatus = status || contextStatus
   const TextControlEl = multiLine ? 'textarea' : 'input'
   const componentClassName = classNames(
     styles.TextControl,

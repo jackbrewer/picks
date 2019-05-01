@@ -8,7 +8,8 @@ import styles from './StatusColor.module.scss'
 
 const StatusColor = props => {
   const { children, status } = props
-  const derivedStatus = status || useContext(StatusContext)
+  const contextStatus = useContext(StatusContext)
+  const derivedStatus = status || contextStatus
 
   return (
     <div

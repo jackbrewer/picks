@@ -36,7 +36,8 @@ const NativeSelectControl = props => {
     value
   } = props
 
-  const derivedStatus = status || useContext(StatusContext)
+  const contextStatus = useContext(StatusContext)
+  const derivedStatus = status || contextStatus
   const componentClassName = classNames(
     styles.NativeSelectControl,
     multiple && styles.multiple,

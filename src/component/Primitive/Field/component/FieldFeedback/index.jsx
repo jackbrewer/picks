@@ -7,7 +7,8 @@ import styles from './FieldFeedback.module.scss'
 
 const FieldFeedback = props => {
   const { children, status } = props
-  const derivedStatus = status || useContext(StatusContext)
+  const contextStatus = useContext(StatusContext)
+  const derivedStatus = status || contextStatus
   return (
     <div
       className={classNames(

@@ -10,7 +10,8 @@ import NativeCheckControl from '../NativeCheckControl'
 
 const CustomCheckControl = props => {
   const { status, type } = props
-  const derivedStatus = status || useContext(StatusContext)
+  const contextStatus = useContext(StatusContext)
+  const derivedStatus = status || contextStatus
   const componentClassName = classNames(
     styles.CustomCheckControl,
     type && styles[type],

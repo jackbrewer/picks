@@ -10,7 +10,8 @@ import NativeSelectControl from '../NativeSelectControl'
 
 const CustomSelectControl = props => {
   const { multiple, status, ...other } = props
-  const derivedStatus = status || useContext(StatusContext)
+  const contextStatus = useContext(StatusContext)
+  const derivedStatus = status || contextStatus
   const componentClassName = classNames(
     styles.CustomSelectControl,
     multiple && styles.multiple,

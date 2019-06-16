@@ -22,8 +22,8 @@ class SmartLink extends PureComponent {
           className={className}
           href={href}
           ref={setRef}
-          {...target && { target }}
-          {...target === '_blank' && { rel: 'noopener noreferrer' }}
+          {...(target && { target })}
+          {...(target === '_blank' && { rel: 'noopener noreferrer' })}
           {...other}
         >
           {children}

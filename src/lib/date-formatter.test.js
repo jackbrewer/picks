@@ -25,7 +25,7 @@ describe('dateFormatter', function() {
       'Wednesday 1 January 2020 12:00 AM'
     )
     expect(dateFormatter(new Date('2020-01-01'), 'ISO')).toEqual(
-      '2020-01-01T00:00:00Z'
+      '2020-01-01T00:00:00.000+00:00'
     )
   })
 })

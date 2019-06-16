@@ -31,13 +31,13 @@ class Icon extends PureComponent {
     return (
       <span
         className={classNames(styles.Icon, vAlign && styles[vAlign], className)}
-        {...a11yText && {
+        {...(a11yText && {
           role: 'img',
           'aria-label': a11yText
-        }}
-        {...!a11yText && {
+        })}
+        {...(!a11yText && {
           'aria-hidden': 'true'
-        }}
+        })}
         style={{
           width: `${ratioDimensions.width}px`,
           height: `${ratioDimensions.height}px`

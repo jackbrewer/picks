@@ -8,7 +8,10 @@ class Ellipsis extends PureComponent {
     const { children, maxWidth } = this.props
 
     return (
-      <div className={styles.Ellipsis} {...maxWidth && { style: { maxWidth } }}>
+      <div
+        className={styles.Ellipsis}
+        {...(maxWidth && { style: { maxWidth } })}
+      >
         {children}
       </div>
     )

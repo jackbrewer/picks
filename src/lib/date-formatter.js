@@ -1,4 +1,4 @@
-import { format as formatFn } from 'date-fns'
+import formatFn from 'date-fns/format'
 
 const formats = {
   LT: 'p',
@@ -7,7 +7,7 @@ const formats = {
   LL: 'd MMMM yyyy',
   LLL: 'd MMMM yyyy p',
   LLLL: 'iiii d MMMM yyyy p',
-  ISO: `yyyy-MM-dd'T'HH:mm:ssZ`
+  ISO: `yyyy-MM-dd'T'HH:mm:ss.SSSxxx`
 }
 
 const dateFormatter = (date, format = 'LLL') => {

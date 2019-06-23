@@ -1,5 +1,7 @@
 ## Ideal FE Workflow
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/clocklimited/backline.svg?token=c19144f633dfde7cadd77122214927c149387d0e1223513814b8a4b53175dcb2&ts=1561325537439)](https://greenkeeper.io/)
+
 Whichever tools we use going forwards (Custom, Gatsby, Next.js, CRA), we should agree a baseline of what we need our FE setup to achieve.
 
 ### General

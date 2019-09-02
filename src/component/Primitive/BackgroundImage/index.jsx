@@ -22,10 +22,10 @@ class BackgroundImage extends PureComponent {
           ...(ratio && { paddingBottom: `${formattedRatio}%` }),
           ...(size && { backgroundSize: size })
         }}
-        {...alt !== '' && {
+        {...(alt !== '' && {
           role: 'img',
           'aria-label': alt
-        }}
+        })}
       />
     )
   }

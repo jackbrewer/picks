@@ -30,7 +30,7 @@ const stories = storiesOf('Utility/Spacer', module)
 stories.add(
   'Info',
   () => (
-    <Spacer px={2} pt={1} pb={'5px'} style={{ outline: '2px dotted lime' }}>
+    <Spacer px={2} pt={1} pb="5px" style={{ outline: '2px dotted lime' }}>
       <ContentTile />
     </Spacer>
   ),

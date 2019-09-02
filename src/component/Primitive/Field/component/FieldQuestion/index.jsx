@@ -22,7 +22,7 @@ FieldQuestion.propTypes = {
   noLabel: bool,
   htmlFor: function(props, propName, componentName) {
     if (
-      (!props['noLabel'] || props['noLabel'] === false) &&
+      (!props.noLabel || props.noLabel === false) &&
       (props[propName] === undefined || typeof props[propName] !== 'string')
     ) {
       return new Error(

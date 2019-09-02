@@ -130,7 +130,7 @@ describe('Component: Spacer', function() {
   })
 
   test('should output string formatted units as authored', function() {
-    const wrapper = shallow(<Spacer {...requiredProps()} m={'50%'} />)
+    const wrapper = shallow(<Spacer {...requiredProps()} m="50%" />)
     expect(wrapper.prop('style')).toEqual({ margin: '50%' })
   })
 })

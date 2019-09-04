@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import ShrinkWrap from '.'
@@ -188,7 +188,7 @@ stories.add('Spacing variation (comfortable)', () => (
 ))
 
 stories.add('General spacing examples', () => (
-  <Fragment>
+  <>
     <em>Default state:</em>
     <ShrinkWrap spacing="comfortable">
       <ShrinkWrap.Item>Item one</ShrinkWrap.Item>
@@ -212,5 +212,5 @@ stories.add('General spacing examples', () => (
       <ShrinkWrap.Item>Item three is longer</ShrinkWrap.Item>
       <ShrinkWrap.Item>Item four</ShrinkWrap.Item>
     </ShrinkWrap>
-  </Fragment>
+  </>
 ))

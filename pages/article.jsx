@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import ArticleMeta from '../src/component/Meta/Article'
 
 import dateFormatter from '../src/lib/date-formatter'
@@ -18,7 +18,7 @@ import SpacedList from '../src/component/Primitive/SpacedList'
 import Type from '../src/component/Primitive/Type'
 
 const ArticlePage = () => (
-  <Fragment>
+  <>
     <ArticleMeta
       title={article.headline}
       // customTitle /* opts out of the default titleTemplate */
@@ -140,7 +140,7 @@ const ArticlePage = () => (
         }}
       />
     </SpacedList>
-  </Fragment>
+  </>
 )
 
 export default ArticlePage

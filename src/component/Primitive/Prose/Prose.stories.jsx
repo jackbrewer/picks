@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import Prose from '.'
@@ -6,7 +6,7 @@ import Prose from '.'
 const stories = storiesOf('Core/Prose', module)
 
 const ProseText = () => (
-  <Fragment>
+  <>
     <h1>Typography</h1>
     <p>
       Prose text generally appears on article pages or service pages. Any text
@@ -173,7 +173,7 @@ const ProseText = () => (
     <p>
       Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr>
     </p>
-  </Fragment>
+  </>
 )
 
 stories.add(
@@ -240,7 +240,7 @@ stories.add('Inline HTML overrides', () => {
     textDecoration: 'underline'
   }
   return (
-    <Fragment>
+    <>
       <Prose>
         <p style={inlineStyles}>
           This HTML has inline styles similar to the ones left in by copying
@@ -251,6 +251,6 @@ stories.add('Inline HTML overrides', () => {
       <p style={inlineStyles}>
         This HTML has the same styles, but isn't wrapped in a Prose component.
       </p>
-    </Fragment>
+    </>
   )
 })

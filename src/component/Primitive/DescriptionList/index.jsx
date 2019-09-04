@@ -9,11 +9,14 @@ class DescriptionList extends PureComponent {
 
     return (
       <dl className={styles.DescriptionList}>
-        {Object.entries(items).map(item => {
+        {Object.entries(items).map((item, i) => {
           const [term, details] = item
 
           return (
-            <div className={styles.DescriptionListItem}>
+            <div
+              className={styles.DescriptionListItem}
+              key={`DescriptionListItem${i}`}
+            >
               <dt className={styles.DescriptionListTerm}>{term}</dt>
               <dd className={styles.DescriptionListDetails}>{details}</dd>
             </div>

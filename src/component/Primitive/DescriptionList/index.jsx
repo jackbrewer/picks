@@ -15,7 +15,7 @@ class DescriptionList extends PureComponent {
           return (
             <div
               className={styles.DescriptionListItem}
-              key={`desc-list-item-${i}`}
+              key={`DescriptionListItem${i}`}
             >
               <dt className={styles.DescriptionListTerm}>{term}</dt>
               <dd className={styles.DescriptionListDetails}>{details}</dd>

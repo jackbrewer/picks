@@ -19,9 +19,10 @@ class ShrinkWrapWrapper extends PureComponent {
           fullWidth && styles.fullWidth
         )}
       >
-        {Children.map(children, child =>
-          React.cloneElement(child, { spacing, vAlign })
-        )}
+        {Children.map(children, child => {
+          if (!child) return null
+          return React.cloneElement(child, { spacing, vAlign })
+        })}
       </Element>
     )
   }

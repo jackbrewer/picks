@@ -1,6 +1,6 @@
 import React from 'react'
 import { arrayOf, bool, number, oneOfType, shape, string } from 'prop-types'
-import NextSeo, { ArticleJsonLd } from 'next-seo'
+import { NextSeo, ArticleJsonLd } from 'next-seo'
 
 import { config } from '../../../../meta.config'
 

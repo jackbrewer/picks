@@ -16,7 +16,7 @@ export class Byline extends PureComponent {
           {displayDate && (
             <time
               className={styles.BylineDate}
-              {...timestamp && { dateTime: timestamp }}
+              {...(timestamp && { dateTime: timestamp })}
             >
               {displayDate}
             </time>

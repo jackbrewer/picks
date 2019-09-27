@@ -17,7 +17,7 @@ class Prose extends PureComponent {
           inverse && styles.inverse,
           className
         )}
-        {...html && { dangerouslySetInnerHTML: { __html: html } }}
+        {...(html && { dangerouslySetInnerHTML: { __html: html } })}
       >
         {children}
       </div>

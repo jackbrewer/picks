@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import StandardMeta from '../src/component/Meta/Standard'
 
 import Container from '../src/component/Primitive/Container'
@@ -8,7 +8,7 @@ import SpacedList from '../src/component/Primitive/SpacedList'
 import Type from '../src/component/Primitive/Type'
 
 const IndexPage = () => (
-  <Fragment>
+  <>
     <StandardMeta
       title="Section Title"
       description="Here’s a description"
@@ -33,7 +33,7 @@ const IndexPage = () => (
         </List>
       </SpacedList>
     </Container>
-  </Fragment>
+  </>
 )
 
 export default IndexPage

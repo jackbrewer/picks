@@ -7,7 +7,7 @@ const formats = {
   LL: 'd MMMM yyyy',
   LLL: 'd MMMM yyyy p',
   LLLL: 'iiii d MMMM yyyy p',
-  ISO: `yyyy-MM-dd'T'HH:mm:ssZ`
+  ISO: `yyyy-MM-dd'T'HH:mm:ss'Z'`
 }
 
 const dateFormatter = (date, format = 'LLL') => {

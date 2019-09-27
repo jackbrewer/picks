@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
@@ -27,11 +27,11 @@ stories.add('Info', () => <SmartLink>Button</SmartLink>, {
 stories.add('Default (<button>)', () => <SmartLink>Button</SmartLink>)
 
 stories.add('With button types', () => (
-  <Fragment>
+  <>
     <SmartLink type="button">Button (button)</SmartLink>
     <SmartLink type="submit">Button (submit)</SmartLink>
     <SmartLink type="reset">Button (reset)</SmartLink>
-  </Fragment>
+  </>
 ))
 
 stories.add('With anchor element', () => (
@@ -47,8 +47,8 @@ stories.add('With onClick function', () => (
 ))
 
 stories.add('With additional attributes', () => (
-  <Fragment>
+  <>
     <SmartLink disabled>Button with `disabled`</SmartLink>
     <SmartLink title="example">Button with `title`</SmartLink>
-  </Fragment>
+  </>
 ))

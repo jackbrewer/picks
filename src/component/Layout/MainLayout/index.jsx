@@ -4,11 +4,11 @@ import { node } from 'prop-types'
 // import styles from './MainLayout.module.scss'
 
 import A11yNavigation from '../../Primitive/A11yNavigation'
-import Header from '../../Primitive/Header'
-import Navigation from '../../Primitive/Navigation'
 import Footer from '../../Primitive/Footer'
-import SiteContainer from '../../Primitive/SiteContainer'
+import Header from '../../Primitive/Header'
 import Main from '../../Primitive/Main'
+import Navigation from '../../Primitive/Navigation'
+import SiteContainer from '../../Primitive/SiteContainer'
 
 class MainLayout extends PureComponent {
   render() {

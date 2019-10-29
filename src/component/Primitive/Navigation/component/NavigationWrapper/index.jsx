@@ -9,9 +9,7 @@ class NavigationWrapper extends PureComponent {
 
     return (
       <nav id={id} className={styles.NavigationWrapper}>
-        <ul inline className={styles.NavigationList}>
-          {children}
-        </ul>
+        <ul className={styles.NavigationList}>{children}</ul>
       </nav>
     )
   }

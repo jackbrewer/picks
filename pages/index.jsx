@@ -2,10 +2,11 @@ import React from 'react'
 import StandardMeta from '../src/component/Meta/Standard'
 
 import Container from '../src/component/Primitive/Container'
-import List from '../src/component/Primitive/List'
-import SmartLink from '../src/component/Primitive/SmartLink'
 import SpacedList from '../src/component/Primitive/SpacedList'
 import Type from '../src/component/Primitive/Type'
+
+import SmartLink from '../src/component/Primitive/SmartLink'
+import List from '../src/component/Primitive/List'
 
 const IndexPage = () => (
   <>

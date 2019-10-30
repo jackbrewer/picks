@@ -4,8 +4,9 @@ import Link from 'next/link'
 
 import Container from '../src/component/Primitive/Container'
 import SpacedList from '../src/component/Primitive/SpacedList'
-import Prose from '../src/component/Primitive/Prose'
 import Type from '../src/component/Primitive/Type'
+
+import Prose from '../src/component/Primitive/Prose'
 
 const ErrorPage = ({ statusCode }) => (
   <SpacedList>

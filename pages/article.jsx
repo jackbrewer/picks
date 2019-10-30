@@ -6,16 +6,17 @@ import dateFormatter from '../src/lib/date-formatter'
 import article from '../src/fixture/article'
 import author from '../src/fixture/author'
 
+import Container from '../src/component/Primitive/Container'
+import SpacedList from '../src/component/Primitive/SpacedList'
+import Type from '../src/component/Primitive/Type'
+
 import Blockquote from '../src/component/Primitive/Blockquote'
 import Byline from '../src/component/Primitive/Byline'
 import CaptionedMedia from '../src/component/Primitive/CaptionedMedia'
-import Container from '../src/component/Primitive/Container'
 import Floater from '../src/component/Primitive/Floater'
 import Prose from '../src/component/Primitive/Prose'
 import ResponsiveImage from '../src/component/Primitive/ResponsiveImage'
 import ResponsiveMedia from '../src/component/Primitive/ResponsiveMedia'
-import SpacedList from '../src/component/Primitive/SpacedList'
-import Type from '../src/component/Primitive/Type'
 
 const ArticlePage = () => (
   <>

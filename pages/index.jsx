@@ -1,12 +1,12 @@
 import React from 'react'
-import StandardMeta from '../src/component/Meta/Standard'
+import StandardMeta from '@/component/Meta/Standard'
 
-import Container from '../src/component/Primitive/Container'
-import SpacedList from '../src/component/Primitive/SpacedList'
-import Type from '../src/component/Primitive/Type'
+import Container from '@/component/Primitive/Container'
+import SpacedList from '@/component/Primitive/SpacedList'
+import Type from '@/component/Primitive/Type'
 
-import SmartLink from '../src/component/Primitive/SmartLink'
-import List from '../src/component/Primitive/List'
+import List from '@/component/Primitive/List'
+import SmartLink from '@/component/Primitive/SmartLink'
 
 const IndexPage = () => (
   <>
@@ -30,7 +30,12 @@ const IndexPage = () => (
           Example section page
         </Type>
         <List>
-          <SmartLink to="/article">Example article page</SmartLink>
+          <li>
+            <SmartLink to="/article">Example article page</SmartLink>
+          </li>
+          <li>
+            <SmartLink to="/movies">Movies</SmartLink>
+          </li>
         </List>
       </SpacedList>
     </Container>

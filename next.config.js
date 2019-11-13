@@ -23,6 +23,7 @@ const nextConfig = {
       include: [path.resolve(__dirname, 'src/asset/svg/icon')],
       use: createSvgLoader()
     })
+    config.resolve.alias['@'] = path.join(__dirname, 'src')
     return config
   }
 }

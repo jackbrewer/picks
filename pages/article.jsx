@@ -1,22 +1,22 @@
 import React from 'react'
-import ArticleMeta from '../src/component/Meta/Article'
+import ArticleMeta from '@/component/Meta/Article'
 
-import dateFormatter from '../src/lib/date-formatter'
+import dateFormatter from '@/lib/date-formatter'
 
 import article from '../src/fixture/article'
 import author from '../src/fixture/author'
 
-import Container from '../src/component/Primitive/Container'
-import SpacedList from '../src/component/Primitive/SpacedList'
-import Type from '../src/component/Primitive/Type'
+import Container from '@/component/Primitive/Container'
+import SpacedList from '@/component/Primitive/SpacedList'
+import Type from '@/component/Primitive/Type'
 
-import Blockquote from '../src/component/Primitive/Blockquote'
-import Byline from '../src/component/Primitive/Byline'
-import CaptionedMedia from '../src/component/Primitive/CaptionedMedia'
-import Floater from '../src/component/Primitive/Floater'
-import Prose from '../src/component/Primitive/Prose'
-import ResponsiveImage from '../src/component/Primitive/ResponsiveImage'
-import ResponsiveMedia from '../src/component/Primitive/ResponsiveMedia'
+import Blockquote from '@/component/Primitive/Blockquote'
+import Byline from '@/component/Primitive/Byline'
+import CaptionedMedia from '@/component/Primitive/CaptionedMedia'
+import Floater from '@/component/Primitive/Floater'
+import Prose from '@/component/Primitive/Prose'
+import ResponsiveImage from '@/component/Primitive/ResponsiveImage'
+import ResponsiveMedia from '@/component/Primitive/ResponsiveMedia'
 
 const ArticlePage = () => (
   <>

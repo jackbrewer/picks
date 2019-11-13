@@ -1,4 +1,4 @@
-import dateFormatter from './date-formatter'
+import dateFormatter from '../date-formatter'
 
 describe('dateFormatter', function() {
   test('should return empty string if no date passed', function() {

@@ -3,8 +3,8 @@ import ArticleMeta from '@/component/Meta/Article'
 
 import dateFormatter from '@/lib/date-formatter'
 
-import article from '../src/fixture/article'
-import author from '../src/fixture/author'
+import createArticle from '@/fixture/article'
+import createAuthor from '@/fixture/author'
 
 import Container from '@/component/Primitive/Container'
 import SpacedList from '@/component/Primitive/SpacedList'
@@ -17,6 +17,9 @@ import Floater from '@/component/Primitive/Floater'
 import Prose from '@/component/Primitive/Prose'
 import ResponsiveImage from '@/component/Primitive/ResponsiveImage'
 import ResponsiveMedia from '@/component/Primitive/ResponsiveMedia'
+
+const article = createArticle()
+const author = createAuthor()
 
 const ArticlePage = () => (
   <>

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { bool, node, oneOf, string } from 'prop-types'
 import classNames from 'classnames'
 
@@ -15,24 +15,22 @@ export const sizes = [
   'small'
 ]
 
-class Type extends PureComponent {
-  render() {
-    const { children, className, as, size, tight } = this.props
+const Type = props => {
+  const { children, className, as, size, tight } = props
 
-    return (
-      <Element
-        as={as}
-        className={classNames(
-          styles.Type,
-          size && styles[size],
-          tight && styles.tight,
-          className
-        )}
-      >
-        {children}
-      </Element>
-    )
-  }
+  return (
+    <Element
+      as={as}
+      className={classNames(
+        styles.Type,
+        size && styles[size],
+        tight && styles.tight,
+        className
+      )}
+    >
+      {children}
+    </Element>
+  )
 }
 
 Type.displayName = 'Type'

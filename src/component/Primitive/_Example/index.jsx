@@ -1,14 +1,12 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { node } from 'prop-types'
 
 import styles from './Example.module.scss'
 
-class Example extends PureComponent {
-  render() {
-    const { children } = this.props
+const Example = props => {
+  const { children } = props
 
-    return <div className={styles.Example}>{children}</div>
-  }
+  return <div className={styles.Example}>{children}</div>
 }
 
 Example.propTypes = {

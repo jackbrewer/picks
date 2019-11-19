@@ -1,13 +1,11 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { node, string } from 'prop-types'
 
-class Element extends PureComponent {
-  render() {
-    const { as, ...other } = this.props
-    const ElementEl = as
+const Element = props => {
+  const { as, ...other } = props
+  const ElementEl = as
 
-    return <ElementEl {...other} />
-  }
+  return <ElementEl {...other} />
 }
 
 Element.defaultProps = {

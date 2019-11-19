@@ -1,18 +1,16 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { node } from 'prop-types'
 
 import styles from './Main.module.scss'
 
-class Main extends PureComponent {
-  render() {
-    const { children } = this.props
+const Main = props => {
+  const { children } = props
 
-    return (
-      <main id="content" role="main" className={styles.Main}>
-        {children}
-      </main>
-    )
-  }
+  return (
+    <main id="content" role="main" className={styles.Main}>
+      {children}
+    </main>
+  )
 }
 
 Main.propTypes = {

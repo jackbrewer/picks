@@ -1,14 +1,12 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { node } from 'prop-types'
 
 import styles from './SiteContainer.module.scss'
 
-class SiteContainer extends PureComponent {
-  render() {
-    const { children } = this.props
+const SiteContainer = props => {
+  const { children } = props
 
-    return <div className={styles.SiteContainer}>{children}</div>
-  }
+  return <div className={styles.SiteContainer}>{children}</div>
 }
 
 SiteContainer.propTypes = {

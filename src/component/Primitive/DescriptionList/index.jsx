@@ -1,30 +1,28 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { object } from 'prop-types'
 
 import styles from './DescriptionList.module.scss'
 
-class DescriptionList extends PureComponent {
-  render() {
-    const { items } = this.props
+const DescriptionList = props => {
+  const { items } = props
 
-    return (
-      <dl className={styles.DescriptionList}>
-        {Object.entries(items).map((item, i) => {
-          const [term, details] = item
+  return (
+    <dl className={styles.DescriptionList}>
+      {Object.entries(items).map((item, i) => {
+        const [term, details] = item
 
-          return (
-            <div
-              className={styles.DescriptionListItem}
-              key={`DescriptionListItem${i}`}
-            >
-              <dt className={styles.DescriptionListTerm}>{term}</dt>
-              <dd className={styles.DescriptionListDetails}>{details}</dd>
-            </div>
-          )
-        })}
-      </dl>
-    )
-  }
+        return (
+          <div
+            className={styles.DescriptionListItem}
+            key={`DescriptionListItem${i}`}
+          >
+            <dt className={styles.DescriptionListTerm}>{term}</dt>
+            <dd className={styles.DescriptionListDetails}>{details}</dd>
+          </div>
+        )
+      })}
+    </dl>
+  )
 }
 
 DescriptionList.propTypes = {

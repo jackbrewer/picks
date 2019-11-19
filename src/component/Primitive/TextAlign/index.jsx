@@ -1,33 +1,31 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import classNames from 'classnames'
 import { bool, node } from 'prop-types'
 
 import styles from './TextAlign.module.scss'
 
-class TextAlign extends PureComponent {
-  getAlignmentType() {
-    const { center, justify, left, right } = this.props
+const TextAlign = props => {
+  const { center, children, justify, left, right } = props
+
+  const getAlignmentType = () => {
     if (center) return 'center'
     if (justify) return 'justify'
     if (left) return 'left'
     if (right) return 'right'
   }
 
-  render() {
-    const { children } = this.props
-    const alignmentType = this.getAlignmentType()
+  const alignmentType = getAlignmentType()
 
-    return (
-      <div
-        className={classNames(
-          styles.TextAlign,
-          alignmentType && styles[alignmentType]
-        )}
-      >
-        {children}
-      </div>
-    )
-  }
+  return (
+    <div
+      className={classNames(
+        styles.TextAlign,
+        alignmentType && styles[alignmentType]
+      )}
+    >
+      {children}
+    </div>
+  )
 }
 
 TextAlign.propTypes = {

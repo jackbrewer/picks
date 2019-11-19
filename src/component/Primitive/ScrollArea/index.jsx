@@ -1,25 +1,23 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import classNames from 'classnames'
 import { bool, node } from 'prop-types'
 
 import styles from './ScrollArea.module.scss'
 
-class ScrollArea extends PureComponent {
-  render() {
-    const { hideScrollbar, horizontal, children } = this.props
+const ScrollArea = props => {
+  const { hideScrollbar, horizontal, children } = props
 
-    return (
-      <div
-        className={classNames(
-          styles.ScrollArea,
-          hideScrollbar && styles.hideScrollbar,
-          horizontal ? styles.horizontal : styles.vertical
-        )}
-      >
-        {children}
-      </div>
-    )
-  }
+  return (
+    <div
+      className={classNames(
+        styles.ScrollArea,
+        hideScrollbar && styles.hideScrollbar,
+        horizontal ? styles.horizontal : styles.vertical
+      )}
+    >
+      {children}
+    </div>
+  )
 }
 
 ScrollArea.propTypes = {

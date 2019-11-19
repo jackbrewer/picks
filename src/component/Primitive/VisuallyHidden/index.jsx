@@ -1,14 +1,12 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { node } from 'prop-types'
 
 import styles from './VisuallyHidden.module.scss'
 
-class VisuallyHidden extends PureComponent {
-  render() {
-    const { children } = this.props
+const VisuallyHidden = props => {
+  const { children } = props
 
-    return <span className={styles.VisuallyHidden}>{children}</span>
-  }
+  return <span className={styles.VisuallyHidden}>{children}</span>
 }
 
 VisuallyHidden.propTypes = {

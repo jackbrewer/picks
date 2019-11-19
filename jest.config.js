@@ -16,7 +16,8 @@ module.exports = {
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$'],
   moduleNameMapper: {
     '\\.(scss)$': 'identity-obj-proxy',
-    '\\.svg$': '<rootDir>/config/jest/mock/svg.js'
+    '\\.svg$': '<rootDir>/config/jest/mock/svg.js',
+    '@/(.*)$': '<rootDir>/src/$1'
   },
   coverageReporters: ['text']
 }

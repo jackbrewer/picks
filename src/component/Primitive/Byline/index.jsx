@@ -5,8 +5,7 @@ import styles from './Byline.module.scss'
 
 import Type from '../Type'
 
-const Byline = props => {
-  const { author, displayDate, separator, timestamp } = props
+const Byline = ({ author, displayDate, separator, timestamp }) => {
   if (!author && !displayDate) return null
 
   return (

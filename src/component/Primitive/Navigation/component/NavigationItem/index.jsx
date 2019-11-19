@@ -6,23 +6,16 @@ import styles from './NavigationItem.module.scss'
 
 import SmartLink from '../../../SmartLink'
 
-const NavigationItem = props => {
-  const { children, active, ...other } = props
-
-  return (
-    <li className={classNames(styles.NavigationItem)}>
-      <SmartLink
-        className={classNames(
-          styles.NavigationItemLink,
-          active && styles.active
-        )}
-        {...other}
-      >
-        {children}
-      </SmartLink>
-    </li>
-  )
-}
+const NavigationItem = ({ children, active, ...other }) => (
+  <li className={classNames(styles.NavigationItem)}>
+    <SmartLink
+      className={classNames(styles.NavigationItemLink, active && styles.active)}
+      {...other}
+    >
+      {children}
+    </SmartLink>
+  </li>
+)
 
 NavigationItem.displayName = 'NavigationItem'
 

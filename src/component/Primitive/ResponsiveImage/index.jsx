@@ -5,18 +5,14 @@ const srcSetFormatter = srcSet => {
   return srcSet.map(image => `${image.src} ${image.width}w`).join(', ')
 }
 
-const ResponsiveImage = props => {
-  const { alt, sizes, src, srcSet } = props
-
-  return (
-    <img
-      alt={alt}
-      sizes={sizes && sizes.join(',')}
-      srcSet={srcSet && srcSetFormatter(srcSet)}
-      src={src}
-    />
-  )
-}
+const ResponsiveImage = ({ alt, sizes, src, srcSet }) => (
+  <img
+    alt={alt}
+    sizes={sizes && sizes.join(',')}
+    srcSet={srcSet && srcSetFormatter(srcSet)}
+    src={src}
+  />
+)
 
 ResponsiveImage.propTypes = {
   alt: string.isRequired,

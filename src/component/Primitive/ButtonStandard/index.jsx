@@ -6,21 +6,17 @@ import styles from './ButtonStandard.module.scss'
 
 import ButtonBase from '../ButtonBase'
 
-const ButtonStandard = props => {
-  const { className, disabled, ...other } = props
-
-  return (
-    <ButtonBase
-      className={classNames(
-        styles.ButtonStandard,
-        disabled && styles.disabled,
-        className
-      )}
-      disabled={disabled}
-      {...other}
-    />
-  )
-}
+const ButtonStandard = ({ className, disabled, ...other }) => (
+  <ButtonBase
+    className={classNames(
+      styles.ButtonStandard,
+      disabled && styles.disabled,
+      className
+    )}
+    disabled={disabled}
+    {...other}
+  />
+)
 
 ButtonStandard.propTypes = {
   className: string,

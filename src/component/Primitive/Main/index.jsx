@@ -3,15 +3,11 @@ import { node } from 'prop-types'
 
 import styles from './Main.module.scss'
 
-const Main = props => {
-  const { children } = props
-
-  return (
-    <main id="content" role="main" className={styles.Main}>
-      {children}
-    </main>
-  )
-}
+const Main = ({ children }) => (
+  <main id="content" role="main" className={styles.Main}>
+    {children}
+  </main>
+)
 
 Main.propTypes = {
   children: node.isRequired

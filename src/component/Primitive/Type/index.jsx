@@ -15,23 +15,19 @@ export const sizes = [
   'small'
 ]
 
-const Type = props => {
-  const { children, className, as, size, tight } = props
-
-  return (
-    <Element
-      as={as}
-      className={classNames(
-        styles.Type,
-        size && styles[size],
-        tight && styles.tight,
-        className
-      )}
-    >
-      {children}
-    </Element>
-  )
-}
+const Type = ({ children, className, as, size, tight }) => (
+  <Element
+    as={as}
+    className={classNames(
+      styles.Type,
+      size && styles[size],
+      tight && styles.tight,
+      className
+    )}
+  >
+    {children}
+  </Element>
+)
 
 Type.displayName = 'Type'
 

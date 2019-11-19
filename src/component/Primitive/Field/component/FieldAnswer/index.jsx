@@ -3,10 +3,9 @@ import { node } from 'prop-types'
 
 import styles from './FieldAnswer.module.scss'
 
-const FieldAnswer = props => {
-  const { children } = props
-  return <div className={styles.FieldAnswer}>{children}</div>
-}
+const FieldAnswer = ({ children }) => (
+  <div className={styles.FieldAnswer}>{children}</div>
+)
 
 FieldAnswer.propTypes = {
   children: node.isRequired

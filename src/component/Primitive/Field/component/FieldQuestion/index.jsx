@@ -6,6 +6,7 @@ import styles from './FieldQuestion.module.scss'
 const FieldQuestion = props => {
   const { children, htmlFor, noLabel } = props
   const FieldQuestionInnerEl = noLabel ? 'span' : 'label'
+
   return (
     <div className={styles.FieldQuestion}>
       <FieldQuestionInnerEl htmlFor={htmlFor}>{children}</FieldQuestionInnerEl>

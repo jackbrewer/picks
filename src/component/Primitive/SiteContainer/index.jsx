@@ -3,11 +3,9 @@ import { node } from 'prop-types'
 
 import styles from './SiteContainer.module.scss'
 
-const SiteContainer = props => {
-  const { children } = props
-
-  return <div className={styles.SiteContainer}>{children}</div>
-}
+const SiteContainer = ({ children }) => (
+  <div className={styles.SiteContainer}>{children}</div>
+)
 
 SiteContainer.propTypes = {
   children: node.isRequired

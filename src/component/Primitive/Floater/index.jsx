@@ -4,21 +4,17 @@ import classNames from 'classnames'
 
 import styles from './Floater.module.scss'
 
-const Floater = props => {
-  const { align, children, size } = props
-
-  return (
-    <div
-      className={classNames(
-        styles.Floater,
-        align && styles[align],
-        size && styles[size]
-      )}
-    >
-      {children}
-    </div>
-  )
-}
+const Floater = ({ align, children, size }) => (
+  <div
+    className={classNames(
+      styles.Floater,
+      align && styles[align],
+      size && styles[size]
+    )}
+  >
+    {children}
+  </div>
+)
 
 Floater.propTypes = {
   align: oneOf(['left', 'right']),

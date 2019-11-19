@@ -3,11 +3,9 @@ import { node } from 'prop-types'
 
 import styles from './Example.module.scss'
 
-const Example = props => {
-  const { children } = props
-
-  return <div className={styles.Example}>{children}</div>
-}
+const Example = ({ children }) => (
+  <div className={styles.Example}>{children}</div>
+)
 
 Example.propTypes = {
   children: node.isRequired

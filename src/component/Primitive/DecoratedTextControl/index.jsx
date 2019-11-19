@@ -6,20 +6,16 @@ import styles from './DecoratedTextControl.module.scss'
 
 import TextControl from '../TextControl'
 
-const DecoratedTextControlDecoration = props => {
-  const { children, interactive } = props
-
-  return (
-    <div
-      className={classNames(
-        styles.DecoratedTextControlDecoration,
-        interactive && styles.interactive
-      )}
-    >
-      {children}
-    </div>
-  )
-}
+const DecoratedTextControlDecoration = ({ children, interactive }) => (
+  <div
+    className={classNames(
+      styles.DecoratedTextControlDecoration,
+      interactive && styles.interactive
+    )}
+  >
+    {children}
+  </div>
+)
 
 DecoratedTextControlDecoration.displayName = 'DecoratedTextControlDecoration'
 

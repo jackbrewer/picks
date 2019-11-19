@@ -4,22 +4,19 @@ import { bool, node, oneOf } from 'prop-types'
 
 import styles from './ShrinkWrapItem.module.scss'
 
-const ShrinkWrapItem = props => {
-  const { children, noWrap, shrink, spacing, vAlign } = props
-  return (
-    <span
-      className={classNames(
-        styles.ShrinkWrapItem,
-        noWrap && styles.noWrap,
-        shrink && styles.shrink,
-        spacing && styles[spacing],
-        vAlign && styles[vAlign]
-      )}
-    >
-      {children}
-    </span>
-  )
-}
+const ShrinkWrapItem = ({ children, noWrap, shrink, spacing, vAlign }) => (
+  <span
+    className={classNames(
+      styles.ShrinkWrapItem,
+      noWrap && styles.noWrap,
+      shrink && styles.shrink,
+      spacing && styles[spacing],
+      vAlign && styles[vAlign]
+    )}
+  >
+    {children}
+  </span>
+)
 
 ShrinkWrapItem.displayName = 'ShrinkWrapItem'
 

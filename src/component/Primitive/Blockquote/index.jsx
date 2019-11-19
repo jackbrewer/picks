@@ -6,24 +6,20 @@ import styles from './Blockquote.module.scss'
 
 import Type from '../Type'
 
-const Blockquote = props => {
-  const { children, citation, quoteMarks } = props
-
-  return (
-    <blockquote
-      className={classNames(styles.Blockquote, quoteMarks && styles.quoteMarks)}
-    >
-      <Type as="span" size="subtitle" className={styles.BlockquoteQuote}>
-        {children}
+const Blockquote = ({ children, citation, quoteMarks }) => (
+  <blockquote
+    className={classNames(styles.Blockquote, quoteMarks && styles.quoteMarks)}
+  >
+    <Type as="span" size="subtitle" className={styles.BlockquoteQuote}>
+      {children}
+    </Type>
+    {citation && (
+      <Type as="cite" size="small" className={styles.BlockquoteCitation}>
+        {citation}
       </Type>
-      {citation && (
-        <Type as="cite" size="small" className={styles.BlockquoteCitation}>
-          {citation}
-        </Type>
-      )}
-    </blockquote>
-  )
-}
+    )}
+  </blockquote>
+)
 
 Blockquote.propTypes = {
   children: node.isRequired,

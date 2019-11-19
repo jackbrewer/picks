@@ -1,10 +1,12 @@
 import React from 'react'
+import { shape, string } from 'prop-types'
 import fetch from 'isomorphic-unfetch'
+
 import Container from '@/component/Primitive/Container'
-import List from '@/component/Primitive/List'
 import SpacedList from '@/component/Primitive/SpacedList'
 import Type from '@/component/Primitive/Type'
-import { shape, string } from 'prop-types'
+
+import List from '@/component/Primitive/List'
 
 const movieShape = shape({ name: string })
 

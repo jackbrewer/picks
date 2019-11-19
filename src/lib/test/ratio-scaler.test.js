@@ -1,4 +1,4 @@
-import ratioScaler from './ratio-scaler'
+import ratioScaler from '../ratio-scaler'
 
 describe('ratioScaler', function() {
   test('should return target if passed', function() {

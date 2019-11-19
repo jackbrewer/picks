@@ -1,4 +1,4 @@
-import stringToColor from './string-to-color'
+import stringToColor from '../string-to-color'
 
 describe('stringToColor()', function() {
   test('should return expected colour from string', function() {

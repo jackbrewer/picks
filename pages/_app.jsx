@@ -2,11 +2,11 @@ import React from 'react'
 import App from 'next/app'
 import { NextSeo } from 'next-seo'
 
-import '../src/asset/scss/base.scss'
+import '@/asset/scss/base.scss'
 
 import { defaults } from '../meta.config'
 
-import MainLayout from '../src/component/Layout/MainLayout'
+import MainLayout from '@/component/Layout/MainLayout'
 
 class MyApp extends App {
   render() {

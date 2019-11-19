@@ -1,4 +1,4 @@
-const article = {
+const createArticle = () => ({
   _id: 'article123',
   // state: 'Published', // [ 'Draft', 'Published', 'Archived', 'Trashed' ]
   // type: 'Standard', // articleTypes
@@ -40,6 +40,6 @@ const article = {
   // metaDescription: 'Meta Description', // TODO: rename to SEO Description?
   // shareTitle: 'Share Title', // TODO: rename to Social Title?
   // shareDescription: 'Share Description' // TODO: rename to Social Description?
-}
+})
 
-export default article
+export default createArticle

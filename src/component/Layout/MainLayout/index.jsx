@@ -23,11 +23,10 @@ class MainLayout extends PureComponent {
         <Header
           navigation={
             <Navigation id="navigation">
-              <Navigation.Item to="/1" active>
-                One
+              <Navigation.Item to="/" active>
+                Home
               </Navigation.Item>
-              <Navigation.Item to="/2">Two</Navigation.Item>
-              <Navigation.Item to="/3">Three</Navigation.Item>
+              <Navigation.Item to="/movies">Movies</Navigation.Item>
             </Navigation>
           }
         />

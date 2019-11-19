@@ -2,11 +2,11 @@ import React from 'react'
 import { number } from 'prop-types'
 import Link from 'next/link'
 
-import Container from '../src/component/Primitive/Container'
-import SpacedList from '../src/component/Primitive/SpacedList'
-import Type from '../src/component/Primitive/Type'
+import Container from '@/component/Primitive/Container'
+import SpacedList from '@/component/Primitive/SpacedList'
+import Type from '@/component/Primitive/Type'
 
-import Prose from '../src/component/Primitive/Prose'
+import Prose from '@/component/Primitive/Prose'
 
 const ErrorPage = ({ statusCode }) => (
   <SpacedList>

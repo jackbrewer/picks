@@ -1,26 +1,20 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { node, oneOf } from 'prop-types'
 import classNames from 'classnames'
 
 import styles from './Floater.module.scss'
 
-class Floater extends PureComponent {
-  render() {
-    const { align, children, size } = this.props
-
-    return (
-      <div
-        className={classNames(
-          styles.Floater,
-          align && styles[align],
-          size && styles[size]
-        )}
-      >
-        {children}
-      </div>
-    )
-  }
-}
+const Floater = ({ align, children, size }) => (
+  <div
+    className={classNames(
+      styles.Floater,
+      align && styles[align],
+      size && styles[size]
+    )}
+  >
+    {children}
+  </div>
+)
 
 Floater.propTypes = {
   align: oneOf(['left', 'right']),

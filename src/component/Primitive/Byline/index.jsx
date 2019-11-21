@@ -1,32 +1,29 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { node, string } from 'prop-types'
 
 import styles from './Byline.module.scss'
 
 import Type from '../Type'
 
-export class Byline extends PureComponent {
-  render() {
-    const { author, displayDate, separator, timestamp } = this.props
-    if (!author && !displayDate) return null
+const Byline = ({ author, displayDate, separator, timestamp }) => {
+  if (!author && !displayDate) return null
 
-    return (
-      <div className={styles.Byline}>
-        <Type size="small">
-          {displayDate && (
-            <time
-              className={styles.BylineDate}
-              {...(timestamp && { dateTime: timestamp })}
-            >
-              {displayDate}
-            </time>
-          )}
-          {displayDate && author && separator}
-          {author && <span className={styles.BylineAuthor}>{author}</span>}
-        </Type>
-      </div>
-    )
-  }
+  return (
+    <div className={styles.Byline}>
+      <Type size="small">
+        {displayDate && (
+          <time
+            className={styles.BylineDate}
+            {...(timestamp && { dateTime: timestamp })}
+          >
+            {displayDate}
+          </time>
+        )}
+        {displayDate && author && separator}
+        {author && <span className={styles.BylineAuthor}>{author}</span>}
+      </Type>
+    </div>
+  )
 }
 
 Byline.defaultProps = {

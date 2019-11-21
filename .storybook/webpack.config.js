@@ -50,5 +50,8 @@ module.exports = ({ config, mode }) => {
       }
     ]
   })
+
+  config.resolve.alias['@'] = path.join(__dirname, '../src')
+
   return config
 }

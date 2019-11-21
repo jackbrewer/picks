@@ -1,20 +1,17 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { bool, node } from 'prop-types'
 
 import styles from './FieldQuestion.module.scss'
 
-class FieldQuestion extends PureComponent {
-  render() {
-    const { children, htmlFor, noLabel } = this.props
-    const FieldQuestionInnerEl = noLabel ? 'span' : 'label'
-    return (
-      <div className={styles.FieldQuestion}>
-        <FieldQuestionInnerEl htmlFor={htmlFor}>
-          {children}
-        </FieldQuestionInnerEl>
-      </div>
-    )
-  }
+const FieldQuestion = props => {
+  const { children, htmlFor, noLabel } = props
+  const FieldQuestionInnerEl = noLabel ? 'span' : 'label'
+
+  return (
+    <div className={styles.FieldQuestion}>
+      <FieldQuestionInnerEl htmlFor={htmlFor}>{children}</FieldQuestionInnerEl>
+    </div>
+  )
 }
 
 FieldQuestion.propTypes = {

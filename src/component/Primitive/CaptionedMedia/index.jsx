@@ -3,8 +3,7 @@ import { bool, node } from 'prop-types'
 
 import styles from './CaptionedMedia.module.scss'
 
-const CaptionedMedia = props => {
-  const { caption, children, figure } = props
+const CaptionedMedia = ({ caption, children, figure }) => {
   const BodyEl = figure ? 'figure' : 'div'
   const CaptionEl = figure ? 'figcaption' : 'div'
 

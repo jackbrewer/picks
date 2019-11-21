@@ -3,8 +3,7 @@ import { bool, node } from 'prop-types'
 
 import styles from './FieldQuestion.module.scss'
 
-const FieldQuestion = props => {
-  const { children, htmlFor, noLabel } = props
+const FieldQuestion = ({ children, htmlFor, noLabel }) => {
   const FieldQuestionInnerEl = noLabel ? 'span' : 'label'
 
   return (

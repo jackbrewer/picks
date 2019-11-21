@@ -25,27 +25,25 @@ const formatValues = (property, values) => {
   }
 }
 
-const Spacer = props => {
-  const {
-    as,
-    children,
-    m,
-    mx,
-    my,
-    mt,
-    mr,
-    mb,
-    ml,
-    p,
-    px,
-    py,
-    pt,
-    pr,
-    pb,
-    pl,
-    style
-  } = props
-
+const Spacer = ({
+  as,
+  children,
+  m,
+  mx,
+  my,
+  mt,
+  mr,
+  mb,
+  ml,
+  p,
+  px,
+  py,
+  pt,
+  pr,
+  pb,
+  pl,
+  style
+}) => {
   const marginValues = {
     xy: m,
     t: mt || my,

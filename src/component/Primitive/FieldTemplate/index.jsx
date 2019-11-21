@@ -5,12 +5,11 @@ import CheckFieldTemplate from './CheckFieldTemplate'
 import MultiTextFieldTemplate from './MultiTextFieldTemplate'
 import TextFieldTemplate from './TextFieldTemplate'
 
-const FieldTemplate = props => {
-  const { template } = props
+const FieldTemplate = ({ template, ...other }) => {
   const componentMap = {
-    check: () => <CheckFieldTemplate {...props} />,
-    multiText: () => <MultiTextFieldTemplate {...props} />,
-    text: () => <TextFieldTemplate {...props} />
+    check: () => <CheckFieldTemplate {...other} />,
+    multiText: () => <MultiTextFieldTemplate {...other} />,
+    text: () => <TextFieldTemplate {...other} />
   }
 
   return componentMap[template]()

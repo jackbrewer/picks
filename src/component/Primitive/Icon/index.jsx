@@ -15,8 +15,7 @@ export const types = svgs
   .keys()
   .map(key => key.replace(`./`, '').replace(`.svg`, ''))
 
-const Icon = props => {
-  const { a11yText, className, type, height, width, vAlign } = props
+const Icon = ({ a11yText, className, type, height, width, vAlign }) => {
   const SvgType = svgs(`./${type}.svg`).default
 
   const targetDimensions = { width, height }

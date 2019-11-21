@@ -8,8 +8,7 @@ import styles from './CustomCheckControl.module.scss'
 
 import NativeCheckControl from '../NativeCheckControl'
 
-const CustomCheckControl = props => {
-  const { status, type } = props
+const CustomCheckControl = ({ status, type, ...other }) => {
   const contextStatus = useContext(StatusContext)
   const derivedStatus = status || contextStatus
   const componentClassName = classNames(
@@ -22,7 +21,8 @@ const CustomCheckControl = props => {
     <span className={componentClassName}>
       <NativeCheckControl
         className={styles.CustomCheckControlControl}
-        {...props}
+        type={type}
+        {...other}
       />
       <span className={styles.CustomCheckControlIndicator} />
     </span>

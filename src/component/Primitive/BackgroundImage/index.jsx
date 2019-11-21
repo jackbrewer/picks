@@ -4,8 +4,15 @@ import classNames from 'classnames'
 
 import styles from './BackgroundImage.module.scss'
 
-const BackgroundImage = props => {
-  const { alt, color, fillContainer, position, ratio, size, src } = props
+const BackgroundImage = ({
+  alt,
+  color,
+  fillContainer,
+  position,
+  ratio,
+  size,
+  src
+}) => {
   const formattedRatio = parseFloat((ratio * 100).toFixed(5))
 
   return (

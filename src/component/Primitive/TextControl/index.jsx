@@ -15,33 +15,31 @@ import { StatusContext } from '../../Context/StatusContext'
 
 import styles from './TextControl.module.scss'
 
-const TextControl = props => {
-  const {
-    autoComplete,
-    className,
-    controlRef,
-    defaultValue,
-    disabled,
-    id,
-    maxLength,
-    minLength,
-    multiLine,
-    name,
-    onBlur,
-    onChange,
-    onFocus,
-    pattern,
-    placeholder,
-    readOnly,
-    required,
-    rows,
-    size,
-    status,
-    tabIndex,
-    type,
-    value
-  } = props
-
+const TextControl = ({
+  autoComplete,
+  className,
+  controlRef,
+  defaultValue,
+  disabled,
+  id,
+  maxLength,
+  minLength,
+  multiLine,
+  name,
+  onBlur,
+  onChange,
+  onFocus,
+  pattern,
+  placeholder,
+  readOnly,
+  required,
+  rows,
+  size,
+  status,
+  tabIndex,
+  type,
+  value
+}) => {
   const contextStatus = useContext(StatusContext)
   const derivedStatus = status || contextStatus
   const TextControlEl = multiLine ? 'textarea' : 'input'

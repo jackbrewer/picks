@@ -3,12 +3,9 @@ import { node, oneOf } from 'prop-types'
 
 const StatusContext = React.createContext()
 
-const StatusContextProvider = props => {
-  const { children, status } = props
-  return (
-    <StatusContext.Provider value={status}>{children}</StatusContext.Provider>
-  )
-}
+const StatusContextProvider = ({ children, status }) => (
+  <StatusContext.Provider value={status}>{children}</StatusContext.Provider>
+)
 
 StatusContextProvider.propTypes = {
   children: node.isRequired,

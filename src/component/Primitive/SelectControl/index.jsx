@@ -4,8 +4,7 @@ import { bool } from 'prop-types'
 import CustomSelectControl from './CustomSelectControl'
 import NativeSelectControl from './NativeSelectControl'
 
-const SelectControl = props => {
-  const { native, ...controlProps } = props
+const SelectControl = ({ native, ...controlProps }) => {
   const SelectControlType = native ? NativeSelectControl : CustomSelectControl
 
   return <SelectControlType {...controlProps} />

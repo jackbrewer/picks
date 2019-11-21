@@ -4,22 +4,21 @@ import { NextSeo, ArticleJsonLd } from 'next-seo'
 
 import { config } from '../../../../meta.config'
 
-const ArticleMeta = props => {
-  const {
-    authorName,
-    customTitle,
-    description,
-    expirationTime,
-    images,
-    modifiedTime,
-    publishedTime,
-    publisherLogo,
-    publisherName,
-    section,
-    slug,
-    tags,
-    title
-  } = props
+const ArticleMeta = ({
+  authorName,
+  customTitle,
+  description,
+  expirationTime,
+  images,
+  modifiedTime,
+  publishedTime,
+  publisherLogo,
+  publisherName,
+  section,
+  slug,
+  tags,
+  title
+}) => {
   const canonical = `${config.url}${slug}`
 
   return (

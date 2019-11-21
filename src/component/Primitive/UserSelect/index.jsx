@@ -5,8 +5,7 @@ import styles from './UserSelect.module.scss'
 
 import Element from '../Element'
 
-const UserSelect = props => {
-  const { all, as, children, none, text } = props
+const UserSelect = ({ all, as, children, none, text }) => {
   const getSelectionType = () => {
     if (none) return 'none'
     if (text) return 'text'

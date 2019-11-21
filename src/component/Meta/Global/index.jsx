@@ -17,8 +17,7 @@ const appleIconSizes = {
   180: appleTouchIcon180
 }
 
-const GlobalMeta = props => {
-  const { googleSiteVerification, title, themeColor } = props
+const GlobalMeta = ({ googleSiteVerification, title, themeColor }) => {
   const optional = {
     'application-name': title,
     'theme-color': themeColor,

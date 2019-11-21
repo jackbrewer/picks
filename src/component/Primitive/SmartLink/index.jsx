@@ -2,18 +2,16 @@ import React from 'react'
 import { func, node, oneOf, string } from 'prop-types'
 import Link from 'next/link'
 
-const SmartLink = props => {
-  const {
-    children,
-    className,
-    href,
-    setRef,
-    to,
-    target,
-    type,
-    ...other
-  } = props
-
+const SmartLink = ({
+  children,
+  className,
+  href,
+  setRef,
+  to,
+  target,
+  type,
+  ...other
+}) => {
   // Standard link, use an `anchor` element
   if (href) {
     return (

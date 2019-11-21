@@ -4,9 +4,7 @@ import { bool, node, string } from 'prop-types'
 
 import styles from './Prose.module.scss'
 
-const Prose = props => {
-  const { children, className, html, inverse } = props
-
+const Prose = ({ children, className, html, inverse }) => {
   if (!children && !html) return null
 
   return (

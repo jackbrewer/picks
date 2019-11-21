@@ -1,8 +1,7 @@
 import React from 'react'
 import { node, string } from 'prop-types'
 
-const Element = props => {
-  const { as, ...other } = props
+const Element = ({ as, ...other }) => {
   const ElementEl = as
 
   return <ElementEl {...other} />

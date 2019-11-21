@@ -4,19 +4,17 @@ import { bool, node, oneOf, string } from 'prop-types'
 import Field from '../../Field'
 import VisuallyHidden from '../../VisuallyHidden'
 
-const MultiTextFieldTemplate = props => {
-  const {
-    assistance,
-    children,
-    controlName,
-    feedback,
-    hideLabel,
-    inverse,
-    label,
-    required,
-    status
-  } = props
-
+const MultiTextFieldTemplate = ({
+  assistance,
+  children,
+  controlName,
+  feedback,
+  hideLabel,
+  inverse,
+  label,
+  required,
+  status
+}) => {
   const MultiTextFieldTemplateQuestion = () => (
     <Field.Question noLabel>
       {label}

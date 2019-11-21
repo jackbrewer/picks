@@ -15,27 +15,25 @@ import { StatusContext } from '../../../Context/StatusContext'
 
 import styles from './NativeSelectControl.module.scss'
 
-const NativeSelectControl = props => {
-  const {
-    children,
-    className,
-    controlRef,
-    defaultValue,
-    disabled,
-    id,
-    multiple,
-    name,
-    onBlur,
-    onChange,
-    onFocus,
-    readOnly,
-    required,
-    size,
-    status,
-    tabIndex,
-    value
-  } = props
-
+const NativeSelectControl = ({
+  children,
+  className,
+  controlRef,
+  defaultValue,
+  disabled,
+  id,
+  multiple,
+  name,
+  onBlur,
+  onChange,
+  onFocus,
+  readOnly,
+  required,
+  size,
+  status,
+  tabIndex,
+  value
+}) => {
   const contextStatus = useContext(StatusContext)
   const derivedStatus = status || contextStatus
   const componentClassName = classNames(

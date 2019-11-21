@@ -5,8 +5,7 @@ import classNames from 'classnames'
 import { StatusContext } from '../../../../Context/StatusContext'
 import styles from './FieldFeedback.module.scss'
 
-const FieldFeedback = props => {
-  const { children, status } = props
+const FieldFeedback = ({ children, status }) => {
   const contextStatus = useContext(StatusContext)
   const derivedStatus = status || contextStatus
   return (

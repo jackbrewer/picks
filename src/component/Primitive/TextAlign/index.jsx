@@ -4,9 +4,7 @@ import { bool, node } from 'prop-types'
 
 import styles from './TextAlign.module.scss'
 
-const TextAlign = props => {
-  const { center, children, justify, left, right } = props
-
+const TextAlign = ({ center, children, justify, left, right }) => {
   const getAlignmentType = () => {
     if (center) return 'center'
     if (justify) return 'justify'

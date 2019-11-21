@@ -1,35 +1,31 @@
 import React from 'react'
 import { bool, func, number, oneOf, string } from 'prop-types'
 
-const NativeCheckControl = props => {
-  const {
-    checked,
-    className,
-    disabled,
-    id,
-    name,
-    onChange,
-    required,
-    type,
-    tabIndex,
-    value
-  } = props
-
-  return (
-    <input
-      checked={checked}
-      className={className}
-      disabled={disabled}
-      id={id}
-      name={name}
-      onChange={onChange}
-      required={required}
-      tabIndex={tabIndex}
-      type={type}
-      value={value}
-    />
-  )
-}
+const NativeCheckControl = ({
+  checked,
+  className,
+  disabled,
+  id,
+  name,
+  onChange,
+  required,
+  type,
+  tabIndex,
+  value
+}) => (
+  <input
+    checked={checked}
+    className={className}
+    disabled={disabled}
+    id={id}
+    name={name}
+    onChange={onChange}
+    required={required}
+    tabIndex={tabIndex}
+    type={type}
+    value={value}
+  />
+)
 
 NativeCheckControl.propTypes = {
   checked: bool,

@@ -6,8 +6,7 @@ import shallowObjectToQuery from '../../../lib/shallow-object-to-query'
 export const YouTubeEmbedFallbackUrl = videoId =>
   `https://www.youtube.com/watch?v=${videoId}`
 
-const YouTubeEmbed = props => {
-  const { hideControls, start, videoId } = props
+const YouTubeEmbed = ({ hideControls, start, videoId }) => {
   const srcPrefix = 'https://www.youtube.com/embed/'
   const query = {
     modestbranding: 1,

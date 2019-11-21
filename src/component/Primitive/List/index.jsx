@@ -4,8 +4,7 @@ import classNames from 'classnames'
 
 import styles from './List.module.scss'
 
-const List = props => {
-  const { children, className, inline, ordered, unstyled } = props
+const List = ({ children, className, inline, ordered, unstyled }) => {
   const ListEl = ordered ? 'ol' : 'ul'
 
   return (

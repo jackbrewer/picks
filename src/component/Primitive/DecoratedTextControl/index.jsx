@@ -24,31 +24,33 @@ DecoratedTextControlDecoration.propTypes = {
   children: node.isRequired
 }
 
-const DecoratedTextControl = props => {
-  const { before, beforeInteractive, after, afterInteractive, ...other } = props
-
-  return (
-    <div
-      className={classNames(
-        styles.DecoratedTextControl,
-        before && styles.before,
-        after && styles.after
-      )}
-    >
-      {before && (
-        <DecoratedTextControlDecoration interactive={beforeInteractive}>
-          {before}
-        </DecoratedTextControlDecoration>
-      )}
-      <TextControl {...other} className={styles.DecoratedTextControlControl} />
-      {after && (
-        <DecoratedTextControlDecoration interactive={afterInteractive}>
-          {after}
-        </DecoratedTextControlDecoration>
-      )}
-    </div>
-  )
-}
+const DecoratedTextControl = ({
+  before,
+  beforeInteractive,
+  after,
+  afterInteractive,
+  ...other
+}) => (
+  <div
+    className={classNames(
+      styles.DecoratedTextControl,
+      before && styles.before,
+      after && styles.after
+    )}
+  >
+    {before && (
+      <DecoratedTextControlDecoration interactive={beforeInteractive}>
+        {before}
+      </DecoratedTextControlDecoration>
+    )}
+    <TextControl {...other} className={styles.DecoratedTextControlControl} />
+    {after && (
+      <DecoratedTextControlDecoration interactive={afterInteractive}>
+        {after}
+      </DecoratedTextControlDecoration>
+    )}
+  </div>
+)
 
 DecoratedTextControl.propTypes = {
   before: node,

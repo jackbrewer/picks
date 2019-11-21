@@ -5,8 +5,7 @@ import shallowObjectToQuery from '../../../lib/shallow-object-to-query'
 
 export const VimeoEmbedFallbackUrl = videoId => `https://vimeo.com/${videoId}`
 
-const VimeoEmbed = props => {
-  const { color, hideByline, hideTitle, start, videoId } = props
+const VimeoEmbed = ({ color, hideByline, hideTitle, start, videoId }) => {
   const srcPrefix = 'https://player.vimeo.com/video/'
   const query = {
     ...(color && { color: color.replace('#', '') }),

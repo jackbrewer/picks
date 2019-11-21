@@ -4,9 +4,7 @@ import { bool, node, object } from 'prop-types'
 
 import styles from './Position.module.scss'
 
-const Position = props => {
-  const { absolute, children, fixed, relative, sticky, style } = props
-
+const Position = ({ absolute, children, fixed, relative, sticky, style }) => {
   const getPositionType = () => {
     if (absolute) return 'absolute'
     if (fixed) return 'fixed'

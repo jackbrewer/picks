@@ -5,8 +5,7 @@ import CustomCheckControl from './CustomCheckControl'
 import NativeCheckControl from './NativeCheckControl'
 import ShrinkWrap from '../ShrinkWrap'
 
-const CheckControl = props => {
-  const { children, native, ...other } = props
+const CheckControl = ({ children, native, ...other }) => {
   const CheckControlType = native ? NativeCheckControl : CustomCheckControl
 
   return (

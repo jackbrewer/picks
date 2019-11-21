@@ -7,25 +7,29 @@ import styles from './Container.module.scss'
 
 export const sizes = ['small', 'medium', 'large', 'wide']
 
-const Container = props => {
-  const { as, center, children, className, gutter, noClearfix, size } = props
-
-  return (
-    <Element
-      as={as}
-      className={classNames(
-        styles.Container,
-        center && styles.center,
-        gutter && styles.gutter,
-        noClearfix && styles.noClearfix,
-        size && styles[size],
-        className
-      )}
-    >
-      {children}
-    </Element>
-  )
-}
+const Container = ({
+  as,
+  center,
+  children,
+  className,
+  gutter,
+  noClearfix,
+  size
+}) => (
+  <Element
+    as={as}
+    className={classNames(
+      styles.Container,
+      center && styles.center,
+      gutter && styles.gutter,
+      noClearfix && styles.noClearfix,
+      size && styles[size],
+      className
+    )}
+  >
+    {children}
+  </Element>
+)
 
 Container.propTypes = {
   as: string,

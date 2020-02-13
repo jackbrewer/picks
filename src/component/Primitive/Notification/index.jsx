@@ -30,6 +30,7 @@ const Notification = props => {
             <IconButton
               a11yText="Dismiss"
               icon="close"
+              increaseHitArea
               onClick={onDismiss}
               small
             />

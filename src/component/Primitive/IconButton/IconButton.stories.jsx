@@ -74,7 +74,6 @@ stories.add('With increased hit-area', () => (
     icon="_placeholder"
     a11yText="Placeholder icon"
     increaseHitArea
-    solid
     small
   />
 ))

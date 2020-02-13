@@ -48,8 +48,8 @@
 }
 
 .small {
-  height: spacing(4);
-  min-width: spacing(4);
+  height: spacing(3);
+  min-width: spacing(3);
 }
 
 .increaseHitArea {
@@ -58,9 +58,9 @@
   &::after {
     content: '';
     position: absolute;
-    top: spacing(-1);
-    right: spacing(-1);
-    bottom: spacing(-1);
-    left: spacing(-1);
+    top: spacing(-2);
+    right: spacing(-2);
+    bottom: spacing(-2);
+    left: spacing(-2);
   }
 }

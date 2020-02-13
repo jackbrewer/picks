@@ -1,17 +1,14 @@
-import { addDecorator, configure } from '@storybook/react'
-import { withA11y } from '@storybook/addon-a11y'
+import { addDecorator, addParameters } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 
 import '../src/asset/scss/base.scss'
 import './storybook.module.scss'
 
-const req = require.context('../src', true, /stories\.jsx$/)
-
-const loadStories = () => {
-  req.keys().forEach(filename => req(filename))
-}
-
-addDecorator(withA11y)
+addParameters({
+  options: {
+    showRoots: true
+  }
+})
 
 addDecorator(
   withInfo({
@@ -46,5 +43,3 @@ addDecorator(
     }
   })
 )
-
-configure(loadStories, module)

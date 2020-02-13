@@ -1,12 +1,11 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import classNames from 'classnames'
 import { bool, node, object } from 'prop-types'
 
 import styles from './Position.module.scss'
 
-export class Position extends PureComponent {
-  getPositionType() {
-    const { absolute, fixed, relative, sticky } = this.props
+const Position = ({ absolute, children, fixed, relative, sticky, style }) => {
+  const getPositionType = () => {
     if (absolute) return 'absolute'
     if (fixed) return 'fixed'
     if (relative) return 'relative'
@@ -14,18 +13,14 @@ export class Position extends PureComponent {
     return 'static'
   }
 
-  render() {
-    const { children, style } = this.props
-
-    return (
-      <div
-        className={classNames(styles.Position, styles[this.getPositionType()])}
-        style={{ ...style }}
-      >
-        {children}
-      </div>
-    )
-  }
+  return (
+    <div
+      className={classNames(styles.Position, styles[getPositionType()])}
+      style={{ ...style }}
+    >
+      {children}
+    </div>
+  )
 }
 
 Position.displayName = 'Position'

@@ -4,8 +4,7 @@ import { NextSeo } from 'next-seo'
 
 import { config } from '../../../../meta.config'
 
-const StandardMeta = props => {
-  const { title, description, slug, customTitle, images } = props
+const StandardMeta = ({ title, description, slug, customTitle, images }) => {
   const canonical = `${config.url}${slug}`
 
   return (

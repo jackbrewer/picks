@@ -1,16 +1,13 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { bool } from 'prop-types'
 
 import CustomSelectControl from './CustomSelectControl'
 import NativeSelectControl from './NativeSelectControl'
 
-class SelectControl extends PureComponent {
-  render() {
-    const { native, ...controlProps } = this.props
-    const SelectControlType = native ? NativeSelectControl : CustomSelectControl
+const SelectControl = ({ native, ...controlProps }) => {
+  const SelectControlType = native ? NativeSelectControl : CustomSelectControl
 
-    return <SelectControlType {...controlProps} />
-  }
+  return <SelectControlType {...controlProps} />
 }
 
 SelectControl.propTypes = {

@@ -1,7 +1,7 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
-import GlobalMeta from '../src/component/Meta/Global'
+import GlobalMeta from '@/component/Meta/Global'
 
 import { config } from '../meta.config'
 class MyDocument extends Document {

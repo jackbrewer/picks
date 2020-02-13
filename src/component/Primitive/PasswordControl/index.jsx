@@ -4,9 +4,8 @@ import { oneOf } from 'prop-types'
 import DecoratedTextControl from '../DecoratedTextControl'
 import IconButton from '../IconButton'
 
-const PasswordControl = props => {
-  const { type, ...other } = props
-  const [toggleType, setType] = useState(props.type)
+const PasswordControl = ({ type, ...other }) => {
+  const [toggleType, setType] = useState(type)
   const controlEl = useRef(null)
 
   const handleToggleType = () => {

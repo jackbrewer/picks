@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { number, oneOf, string } from 'prop-types'
 import classNames from 'classnames'
 
@@ -15,38 +15,35 @@ export const types = svgs
   .keys()
   .map(key => key.replace(`./`, '').replace(`.svg`, ''))
 
-class Icon extends PureComponent {
-  render() {
-    const { a11yText, className, type, height, width, vAlign } = this.props
-    const SvgType = svgs(`./${type}.svg`).default
+const Icon = ({ a11yText, className, type, height, width, vAlign }) => {
+  const SvgType = svgs(`./${type}.svg`).default
 
-    const targetDimensions = { width, height }
-    const nativeDimensions = svgDimensionsFormatter(SvgType)
-    const ratioDimensions = ratioScaler(
-      targetDimensions,
-      nativeDimensions,
-      'ceil'
-    )
+  const targetDimensions = { width, height }
+  const nativeDimensions = svgDimensionsFormatter(SvgType)
+  const ratioDimensions = ratioScaler(
+    targetDimensions,
+    nativeDimensions,
+    'ceil'
+  )
 
-    return (
-      <span
-        className={classNames(styles.Icon, vAlign && styles[vAlign], className)}
-        {...(a11yText && {
-          role: 'img',
-          'aria-label': a11yText
-        })}
-        {...(!a11yText && {
-          'aria-hidden': 'true'
-        })}
-        style={{
-          width: `${ratioDimensions.width}px`,
-          height: `${ratioDimensions.height}px`
-        }}
-      >
-        <SvgType />
-      </span>
-    )
-  }
+  return (
+    <span
+      className={classNames(styles.Icon, vAlign && styles[vAlign], className)}
+      {...(a11yText && {
+        role: 'img',
+        'aria-label': a11yText
+      })}
+      {...(!a11yText && {
+        'aria-hidden': 'true'
+      })}
+      style={{
+        width: `${ratioDimensions.width}px`,
+        height: `${ratioDimensions.height}px`
+      }}
+    >
+      <SvgType />
+    </span>
+  )
 }
 
 Icon.propTypes = {

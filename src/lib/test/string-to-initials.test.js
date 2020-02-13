@@ -1,4 +1,4 @@
-import stringToInitials from './string-to-initials'
+import stringToInitials from '../string-to-initials'
 
 describe('stringToInitials()', function() {
   test('should return expected initials from name-style string', function() {

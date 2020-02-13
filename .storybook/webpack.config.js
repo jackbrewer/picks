@@ -34,8 +34,7 @@ module.exports = ({ config, mode }) => {
       {
         loader: 'css-loader',
         options: {
-          modules: true,
-          localIdentName: '[name]__[local]___[hash:base64:5]'
+          modules: { localIdentName: '[name]__[local]___[hash:base64:5]' }
         }
       },
       {
@@ -51,5 +50,8 @@ module.exports = ({ config, mode }) => {
       }
     ]
   })
+
+  config.resolve.alias['@'] = path.join(__dirname, '../src')
+
   return config
 }

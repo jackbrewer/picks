@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import classNames from 'classnames'
 import { any, number, object, oneOfType, string } from 'prop-types'
 
@@ -25,57 +25,53 @@ const formatValues = (property, values) => {
   }
 }
 
-class Spacer extends PureComponent {
-  render() {
-    const {
-      as,
-      children,
-      m,
-      mx,
-      my,
-      mt,
-      mr,
-      mb,
-      ml,
-      p,
-      px,
-      py,
-      pt,
-      pr,
-      pb,
-      pl,
-      style
-    } = this.props
-
-    const marginValues = {
-      xy: m,
-      t: mt || my,
-      r: mr || mx,
-      b: mb || my,
-      l: ml || mx
-    }
-    const paddingValues = {
-      xy: p,
-      t: pt || py,
-      r: pr || px,
-      b: pb || py,
-      l: pl || px
-    }
-
-    return (
-      <Element
-        as={as}
-        className={classNames(styles.Spacer)}
-        style={{
-          ...formatValues('margin', marginValues),
-          ...formatValues('padding', paddingValues),
-          ...style
-        }}
-      >
-        {children}
-      </Element>
-    )
+const Spacer = ({
+  as,
+  children,
+  m,
+  mx,
+  my,
+  mt,
+  mr,
+  mb,
+  ml,
+  p,
+  px,
+  py,
+  pt,
+  pr,
+  pb,
+  pl,
+  style
+}) => {
+  const marginValues = {
+    xy: m,
+    t: mt || my,
+    r: mr || mx,
+    b: mb || my,
+    l: ml || mx
   }
+  const paddingValues = {
+    xy: p,
+    t: pt || py,
+    r: pr || px,
+    b: pb || py,
+    l: pl || px
+  }
+
+  return (
+    <Element
+      as={as}
+      className={classNames(styles.Spacer)}
+      style={{
+        ...formatValues('margin', marginValues),
+        ...formatValues('padding', paddingValues),
+        ...style
+      }}
+    >
+      {children}
+    </Element>
+  )
 }
 
 Spacer.propTypes = {

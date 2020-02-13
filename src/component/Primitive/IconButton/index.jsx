@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { bool, number, string } from 'prop-types'
 import classNames from 'classnames'
 
@@ -7,49 +7,41 @@ import styles from './IconButton.module.scss'
 import Icon from '../Icon'
 import SmartLink from '../SmartLink'
 
-class IconButton extends PureComponent {
-  render() {
-    const {
-      a11yText,
-      children,
-      className,
-      icon,
-      iconHeight,
-      iconWidth,
-      increaseHitArea,
-      rounded,
-      small,
-      solid,
-      ...other
-    } = this.props
-
-    return (
-      <SmartLink
-        className={classNames(
-          styles.IconButton,
-          increaseHitArea && styles.increaseHitArea,
-          rounded && styles.rounded,
-          small && styles.small,
-          solid && styles.solid,
-          className
-        )}
-        {...other}
-      >
-        <div className={styles.IconButtonInner}>
-          <Icon
-            type={icon}
-            height={iconHeight}
-            width={iconWidth}
-            a11yText={a11yText}
-          />
-          {children && (
-            <span className={styles.IconButtonText}>{children}</span>
-          )}
-        </div>
-      </SmartLink>
-    )
-  }
-}
+const IconButton = ({
+  a11yText,
+  children,
+  className,
+  icon,
+  iconHeight,
+  iconWidth,
+  increaseHitArea,
+  rounded,
+  small,
+  solid,
+  ...other
+}) => (
+  <SmartLink
+    className={classNames(
+      styles.IconButton,
+      increaseHitArea && styles.increaseHitArea,
+      rounded && styles.rounded,
+      small && styles.small,
+      solid && styles.solid,
+      className
+    )}
+    {...other}
+  >
+    <div className={styles.IconButtonInner}>
+      <Icon
+        type={icon}
+        height={iconHeight}
+        width={iconWidth}
+        a11yText={a11yText}
+      />
+      {children && <span className={styles.IconButtonText}>{children}</span>}
+    </div>
+  </SmartLink>
+)
 
 IconButton.propTypes = {
   a11yText: string,

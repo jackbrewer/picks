@@ -1,4 +1,4 @@
-import shallowObjectToQuery from './shallow-object-to-query'
+import shallowObjectToQuery from '../shallow-object-to-query'
 
 describe('shallowObjectToQuery()', function() {
   test('should return expected querystring from shallow object', function() {

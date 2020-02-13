@@ -3,8 +3,7 @@
 ## JSX
 
 - All files containing JSX have `.jsx` extension, including stories and test files
-- Use `PureComponent` unless specific reason not to, until we move to hooks workflow
-- PropTypes are desctructured at import
+- PropTypes are destructured at import
 - Props have correct types, and use `.isRequired` in necessary places
 - Imports sorted sensibly (npm modules, internal modules, styles, child components)
 - `!!` for non-boolean conditional JSX blocks e.g. `{!!items.length && <foo />}`

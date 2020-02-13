@@ -1,3 +1,4 @@
+// NEVER PUT SECRETS IN THIS FILE
 const isProduction = process.env.NODE_ENV === 'production'
 
 export const config = {

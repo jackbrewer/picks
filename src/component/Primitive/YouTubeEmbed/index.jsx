@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { bool, string } from 'prop-types'
 
 import shallowObjectToQuery from '../../../lib/shallow-object-to-query'
@@ -6,29 +6,26 @@ import shallowObjectToQuery from '../../../lib/shallow-object-to-query'
 export const YouTubeEmbedFallbackUrl = videoId =>
   `https://www.youtube.com/watch?v=${videoId}`
 
-export class YouTubeEmbed extends PureComponent {
-  render() {
-    const { hideControls, start, videoId } = this.props
-    const srcPrefix = 'https://www.youtube.com/embed/'
-    const query = {
-      modestbranding: 1,
-      playsinline: 1,
-      rel: 0, // https://developers.google.com/youtube/player_parameters#release_notes_08_23_2018
-      ...(hideControls && { controls: 0 }),
-      ...(start && { start })
-    }
-
-    return (
-      <iframe
-        title="Embedded YouTube video"
-        src={`${srcPrefix}${videoId}?${shallowObjectToQuery(query)}`}
-        width="560"
-        height="315"
-        frameBorder="0"
-        allowFullScreen
-      />
-    )
+const YouTubeEmbed = ({ hideControls, start, videoId }) => {
+  const srcPrefix = 'https://www.youtube.com/embed/'
+  const query = {
+    modestbranding: 1,
+    playsinline: 1,
+    rel: 0, // https://developers.google.com/youtube/player_parameters#release_notes_08_23_2018
+    ...(hideControls && { controls: 0 }),
+    ...(start && { start })
   }
+
+  return (
+    <iframe
+      title="Embedded YouTube video"
+      src={`${srcPrefix}${videoId}?${shallowObjectToQuery(query)}`}
+      width="560"
+      height="315"
+      frameBorder="0"
+      allowFullScreen
+    />
+  )
 }
 
 YouTubeEmbed.propTypes = {

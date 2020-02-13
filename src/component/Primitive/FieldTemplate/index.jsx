@@ -1,21 +1,18 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import { oneOf } from 'prop-types'
 
 import CheckFieldTemplate from './CheckFieldTemplate'
 import MultiTextFieldTemplate from './MultiTextFieldTemplate'
 import TextFieldTemplate from './TextFieldTemplate'
 
-class FieldTemplate extends PureComponent {
-  render() {
-    const { template } = this.props
-    const componentMap = {
-      check: () => <CheckFieldTemplate {...this.props} />,
-      multiText: () => <MultiTextFieldTemplate {...this.props} />,
-      text: () => <TextFieldTemplate {...this.props} />
-    }
-
-    return componentMap[template]()
+const FieldTemplate = ({ template, ...other }) => {
+  const componentMap = {
+    check: () => <CheckFieldTemplate {...other} />,
+    multiText: () => <MultiTextFieldTemplate {...other} />,
+    text: () => <TextFieldTemplate {...other} />
   }
+
+  return componentMap[template]()
 }
 
 FieldTemplate.defaultProps = {

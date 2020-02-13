@@ -8,9 +8,7 @@ import Container from '../Container'
 import IconButton from '../IconButton'
 import SmartLink from '../SmartLink'
 
-const Header = props => {
-  const { navigation } = props
-
+const Header = ({ navigation }) => {
   const [isActive, setActive] = useState(false)
 
   const handleActiveToggle = () => {

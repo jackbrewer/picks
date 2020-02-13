@@ -1,4 +1,4 @@
-import svgDimensionsFormatter from './svg-dimensions-formatter'
+import svgDimensionsFormatter from '../svg-dimensions-formatter'
 
 describe('svgDimensionsFormatter', function() {
   test('should early return width and height if supplied', function() {

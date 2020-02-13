@@ -8,8 +8,7 @@ import styles from './CustomSelectControl.module.scss'
 
 import NativeSelectControl from '../NativeSelectControl'
 
-const CustomSelectControl = props => {
-  const { multiple, status, ...other } = props
+const CustomSelectControl = ({ multiple, status, ...other }) => {
   const contextStatus = useContext(StatusContext)
   const derivedStatus = status || contextStatus
   const componentClassName = classNames(

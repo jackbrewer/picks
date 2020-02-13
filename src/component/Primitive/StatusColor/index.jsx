@@ -6,8 +6,7 @@ import { StatusContext } from '../../Context/StatusContext'
 
 import styles from './StatusColor.module.scss'
 
-const StatusColor = props => {
-  const { children, status } = props
+const StatusColor = ({ children, status }) => {
   const contextStatus = useContext(StatusContext)
   const derivedStatus = status || contextStatus
 

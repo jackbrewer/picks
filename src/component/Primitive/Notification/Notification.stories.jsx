@@ -5,17 +5,14 @@ import { action } from '@storybook/addon-actions'
 import { StatusContextProvider } from '../../Context/StatusContext'
 
 import Notification from '.'
+import Icon from '../Icon'
 
 const stories = storiesOf('Core/Notification', module)
 
 stories.add(
   'Info',
   () => (
-    <Notification
-      icon="_placeholder"
-      status="success"
-      onDismiss={action('Dismiss')}
-    >
+    <Notification status="success" onDismiss={action('Dismiss')}>
       Content
     </Notification>
   ),
@@ -23,19 +20,23 @@ stories.add(
     info: {
       inline: true,
       text: `
-        Hello
+        A status-ready notification component. If passed an onDismiss function,
+        a close button is added to the right-hand side.
       `
     }
   }
 )
+
 stories.add('Default state', () => <Notification>Content</Notification>)
 
 stories.add('With Icon', () => (
-  <Notification icon="_placeholder">Content</Notification>
+  <Notification>
+    <Icon type="_placeholder" a11yText="Placeholder" /> Content
+  </Notification>
 ))
 
 stories.add('With long content', () => (
-  <Notification icon="_placeholder">
+  <Notification>
     Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget
     lacinia odio sem nec elit. Cum sociis natoque penatibus et magnis dis
     parturient montes, nascetur ridiculus mus. Praesent commodo cursus magna,

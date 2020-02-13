@@ -6,12 +6,11 @@ import { StatusContext } from '../../Context/StatusContext'
 
 import styles from './Notification.module.scss'
 
-import Icon from '../Icon'
 import IconButton from '../IconButton'
 import ShrinkWrap from '../ShrinkWrap'
 
 const Notification = props => {
-  const { children, className, icon, onDismiss, status } = props
+  const { children, className, onDismiss, status } = props
   const contextStatus = useContext(StatusContext)
   const derivedStatus = status || contextStatus
 
@@ -23,14 +22,10 @@ const Notification = props => {
         className
       )}
     >
-      <ShrinkWrap vAlign="middle">
-        {icon && (
-          <ShrinkWrap.Item shrink>
-            <Icon type={icon} />
-          </ShrinkWrap.Item>
-        )}
-        <ShrinkWrap.Item>{children}</ShrinkWrap.Item>
-        {onDismiss && (
+      {!onDismiss && children}
+      {onDismiss && (
+        <ShrinkWrap vAlign="middle" fullWidth>
+          <ShrinkWrap.Item>{children}</ShrinkWrap.Item>
           <ShrinkWrap.Item shrink>
             <IconButton
               a11yText="Dismiss"
@@ -39,8 +34,8 @@ const Notification = props => {
               small
             />
           </ShrinkWrap.Item>
-        )}
-      </ShrinkWrap>
+        </ShrinkWrap>
+      )}
     </div>
   )
 }
@@ -48,7 +43,6 @@ const Notification = props => {
 Notification.propTypes = {
   children: node.isRequired,
   className: string,
-  icon: string,
   onDismiss: func,
   status: oneOf(['none', 'error', 'notice', 'success', 'warning'])
 }

@@ -222,6 +222,14 @@ stories.add('Default state', () => (
   </Prose>
 ))
 
+stories.add('Inverse state', () => (
+  <div style={{ background: '#333', color: '#eee' }}>
+    <Prose inverse>
+      <ProseText />
+    </Prose>
+  </div>
+))
+
 stories.add('HTML passed as string', () => (
   <Prose html="<p><strong>This text</strong> may have been passed from <em>a CMS</em>.</p><p>Do not use for User-supplied content.</p>" />
 ))

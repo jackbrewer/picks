@@ -29,19 +29,11 @@ describe('Component: DotPagination', function() {
     const wrapper = shallow(<DotPagination {...requiredProps()} />)
     const buttons = wrapper.find('button')
     expect(wrapper.prop('className')).toEqual('DotPagination')
+    expect(wrapper.find('ol').prop('aria-label')).toEqual('Pagination')
     expect(wrapper.find('li').length).toEqual(3)
-    expect(
-      buttons
-        .at(0)
-        .find('VisuallyHidden')
-        .dive()
-        .text()
-    ).toEqual('Go to slide 1')
-    expect(buttons.at(0).prop('className')).toEqual(
-      'DotPaginationButton active'
-    )
-    expect(buttons.at(1).prop('className')).toEqual('DotPaginationButton')
-    expect(buttons.at(2).prop('className')).toEqual('DotPaginationButton')
+    expect(buttons.at(0).prop('aria-label')).toEqual('Current item')
+    expect(buttons.at(1).prop('aria-label')).toEqual('Go to item 2')
+    expect(buttons.at(2).prop('aria-label')).toEqual('Go to item 3')
   })
 
   test('should output the expected markup if `activeIndex` prop passed', function() {
@@ -56,18 +48,22 @@ describe('Component: DotPagination', function() {
     )
   })
 
-  test('should output the custom text when `a11yPrefix` prop passed', function() {
+  test('should output the custom text when `label*` props passed', async () => {
     const wrapper = shallow(
-      <DotPagination {...requiredProps()} a11yPrefix="View photo" />
+      <DotPagination
+        {...requiredProps()}
+        labelTitle="Photo Viewer Pagination"
+        labelActive="Current photo"
+        labelInactive="View photo"
+      />
     )
-    expect(
-      wrapper
-        .find('li')
-        .at(0)
-        .find('VisuallyHidden')
-        .dive()
-        .text()
-    ).toEqual('View photo 1')
+    expect(wrapper.find('ol').prop('aria-label')).toEqual(
+      'Photo Viewer Pagination'
+    )
+    const buttons = wrapper.find('button')
+    expect(buttons.at(0).prop('aria-label')).toEqual('Current photo')
+    expect(buttons.at(1).prop('aria-label')).toEqual('View photo 2')
+    expect(buttons.at(2).prop('aria-label')).toEqual('View photo 3')
   })
 
   test('should trigger `onChangeIndex` function on button click', function() {
@@ -78,7 +74,7 @@ describe('Component: DotPagination', function() {
     expect(mockOnClick.mock.calls.length).toBe(0)
     wrapper
       .find('button')
-      .at(0)
+      .at(1)
       .simulate('click')
     expect(mockOnClick.mock.calls.length).toBe(1)
   })

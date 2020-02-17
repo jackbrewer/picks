@@ -10,9 +10,9 @@ stories.add(
   'Info',
   () => (
     <DotPagination
-      dots={10}
+      dots={7}
       onChangeIndex={action('Dot clicked')}
-      activeIndex={1}
+      activeIndex={2}
     />
   ),
   {
@@ -28,9 +28,13 @@ stories.add(
 )
 
 stories.add('Default state', () => (
+  <DotPagination dots={5} onChangeIndex={action('Dot clicked')} />
+))
+
+stories.add('Custom dot selected state', () => (
   <DotPagination
     dots={10}
     onChangeIndex={action('Dot clicked')}
-    activeIndex={1}
+    activeIndex={5}
   />
 ))

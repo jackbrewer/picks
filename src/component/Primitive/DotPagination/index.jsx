@@ -4,45 +4,62 @@ import classNames from 'classnames'
 
 import styles from './DotPagination.module.scss'
 
-import VisuallyHidden from '../VisuallyHidden'
-
-const DotPagination = ({ activeIndex, a11yPrefix, dots, onChangeIndex }) => (
-  <div className={styles.DotPagination}>
-    <ol className={styles.DotPaginationList}>
-      {[...Array(dots).keys()].map(dot => (
-        <li
-          key={`DotPaginationItem${dot}`}
-          className={styles.DotPaginationItem}
-        >
-          <button
-            className={classNames(
-              styles.DotPaginationButton,
-              activeIndex === dot && styles.active
-            )}
-            onClick={() => onChangeIndex(dot)}
+const DotPagination = ({
+  activeIndex,
+  dots,
+  labelActive,
+  labelInactive,
+  labelTitle,
+  onChangeIndex
+}) => (
+  <nav className={styles.DotPagination}>
+    <ol className={styles.DotPaginationList} aria-label={labelTitle}>
+      {[...Array(dots).keys()].map(dot => {
+        const isActive = activeIndex === dot
+        const label = isActive ? labelActive : `${labelInactive} ${dot + 1}`
+        return (
+          <li
+            key={`DotPaginationItem${dot}`}
+            className={styles.DotPaginationItem}
           >
-            <span className={styles.DotPaginationButtonInner}>
-              <VisuallyHidden>
-                {a11yPrefix} {dot + 1}
-              </VisuallyHidden>
-            </span>
-          </button>
-        </li>
-      ))}
+            <button
+              className={classNames(
+                styles.DotPaginationButton,
+                isActive && styles.active
+              )}
+              aria-label={label}
+              {...(isActive && {
+                'aria-current': 'true',
+                disabled: true
+              })}
+              {...(!isActive && {
+                onClick: () => onChangeIndex(dot)
+              })}
+            >
+              <span className={styles.DotPaginationButtonInner} />
+            </button>
+          </li>
+        )
+      })}
     </ol>
-  </div>
+  </nav>
 )
 
 DotPagination.defaultProps = {
   activeIndex: 0,
-  a11yPrefix: 'Go to slide'
+  labelActive: 'Current item',
+  labelInactive: 'Go to item',
+  labelTitle: 'Pagination'
 }
 
 DotPagination.propTypes = {
-  a11yPrefix: string,
   activeIndex: number,
   dots: number.isRequired,
-  onChangeIndex: func.isRequired
+  labelActive: string,
+  labelInactive: string,
+  labelTitle: string,
+  onChangeIndex: func.isRequired,
+  title: string
 }
 
 export default DotPagination

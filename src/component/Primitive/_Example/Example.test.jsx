@@ -1,6 +1,6 @@
 import React from 'react'
 import validatePropTypes from 'validate-prop-types'
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
 import Example from '.'
 
 const requiredProps = () => ({ children: 'Default content' })
@@ -24,13 +24,12 @@ describe('Component: Example', function() {
   })
 
   test('should output the expected markup with default props', function() {
-    const wrapper = shallow(<Example {...requiredProps()} />)
-    expect(wrapper.prop('className')).toEqual('Example')
-    expect(wrapper.text()).toEqual('Default content')
+    const { getByText } = render(<Example {...requiredProps()} />)
+    expect(getByText('Default content')).toBeTruthy()
   })
 
   // test('should output additional className when `foo` prop passed', function() {
-  //   const wrapper = shallow(<Example {...requiredProps()} foo />)
-  //   expect(wrapper.prop('className')).toEqual('Example foo')
+  //   const { getByText } = render(<Example {...requiredProps()} foo />)
+  //   expect().toEqual()
   // })
 })

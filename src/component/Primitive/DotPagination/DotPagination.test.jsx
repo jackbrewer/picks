@@ -29,17 +29,14 @@ describe('Component: DotPagination', function() {
     const { getByLabelText, getAllByRole } = render(
       <DotPagination {...requiredProps()} />
     )
+    const currentItem = getByLabelText('Current item')
     expect(getByLabelText('Pagination')).toBeTruthy()
     expect(getAllByRole('button')).toHaveLength(3)
-
-    const currentItem = getByLabelText('Current item')
     expect(currentItem).toBeTruthy()
     expect(currentItem.getAttribute('disabled')).toBeDefined()
     expect(currentItem.getAttribute('aria-current')).toEqual('true')
-
     expect(getByLabelText('Go to item 2')).toBeTruthy()
     expect(getByLabelText('Go to item 2').getAttribute('disabled')).toBeNull()
-
     expect(getByLabelText('Go to item 3')).toBeTruthy()
     expect(getByLabelText('Go to item 3').getAttribute('disabled')).toBeNull()
   })

@@ -6,7 +6,7 @@ import DotPagination from '.'
 const requiredProps = () => ({ dots: 3, onChangeIndex: () => {} })
 
 describe('Component: DotPagination', function() {
-  test('should return errors if required props missing', function() {
+  test('should return errors if required props missing', async () => {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(DotPagination.propTypes, {})
     const expected = {
@@ -18,7 +18,7 @@ describe('Component: DotPagination', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', async () => {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(DotPagination.propTypes, requiredProps())
     const expected = undefined
@@ -30,13 +30,18 @@ describe('Component: DotPagination', function() {
       <DotPagination {...requiredProps()} />
     )
     expect(getByLabelText('Pagination')).toBeTruthy()
-    expect(getAllByRole('button')).toHaveLength(2)
-    expect(getByLabelText('Current item')).toBeTruthy()
-    expect(getByLabelText('Current item').getAttribute('aria-current')).toEqual(
-      'true'
-    )
+    expect(getAllByRole('button')).toHaveLength(3)
+
+    const currentItem = getByLabelText('Current item')
+    expect(currentItem).toBeTruthy()
+    expect(currentItem.getAttribute('disabled')).toBeDefined()
+    expect(currentItem.getAttribute('aria-current')).toEqual('true')
+
     expect(getByLabelText('Go to item 2')).toBeTruthy()
+    expect(getByLabelText('Go to item 2').getAttribute('disabled')).toBeNull()
+
     expect(getByLabelText('Go to item 3')).toBeTruthy()
+    expect(getByLabelText('Go to item 3').getAttribute('disabled')).toBeNull()
   })
 
   test('should output the expected markup if `activeIndex` prop passed', async () => {

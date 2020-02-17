@@ -1,11 +1,12 @@
 @import 'setting';
 @import 'backline-mixins';
 
-// .DotPagination {}
+.DotPagination {
+  text-align: center;
+}
 
 .DotPaginationList {
   display: inline-block;
-  margin: 0 auto;
 }
 
 .DotPaginationItem {

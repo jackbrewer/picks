@@ -1,6 +1,6 @@
 import React from 'react'
 import validatePropTypes from 'validate-prop-types'
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
 import A11yNavigation from '.'
 
 const requiredProps = () => ({
@@ -33,8 +33,11 @@ describe('Component: A11yNavigation', function() {
   })
 
   test('should output the expected markup with default props', function() {
-    const wrapper = shallow(<A11yNavigation {...requiredProps()} />)
-    expect(wrapper.prop('className')).toEqual('A11yNavigation')
-    expect(wrapper.find('a')).toHaveLength(2)
+    const { getByText, getAllByRole } = render(
+      <A11yNavigation {...requiredProps()} />
+    )
+    expect(getAllByRole('link')).toHaveLength(2)
+    expect(getByText('Jump to main content')).toBeTruthy()
+    expect(getByText('Jump to primary navigation')).toBeTruthy()
   })
 })

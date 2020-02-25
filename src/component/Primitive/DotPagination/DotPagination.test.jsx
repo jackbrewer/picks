@@ -1,6 +1,7 @@
 import React from 'react'
 import validatePropTypes from 'validate-prop-types'
 import { render, fireEvent } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import DotPagination from '.'
 
 const requiredProps = () => ({ dots: 3, onChangeIndex: () => {} })
@@ -33,12 +34,12 @@ describe('Component: DotPagination', function() {
     expect(getByLabelText('Pagination')).toBeTruthy()
     expect(getAllByRole('button')).toHaveLength(3)
     expect(currentItem).toBeTruthy()
-    expect(currentItem.getAttribute('disabled')).toBeDefined()
+    expect(currentItem).toBeDisabled()
     expect(currentItem.getAttribute('aria-current')).toEqual('true')
     expect(getByLabelText('Go to item 2')).toBeTruthy()
-    expect(getByLabelText('Go to item 2').getAttribute('disabled')).toBeNull()
+    expect(getByLabelText('Go to item 2')).toBeEnabled()
     expect(getByLabelText('Go to item 3')).toBeTruthy()
-    expect(getByLabelText('Go to item 3').getAttribute('disabled')).toBeNull()
+    expect(getByLabelText('Go to item 3')).toBeEnabled()
   })
 
   test('should output the expected markup if `activeIndex` prop passed', async () => {

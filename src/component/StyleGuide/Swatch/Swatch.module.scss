@@ -1,0 +1,42 @@
+@import 'setting';
+@import 'backline-mixins';
+
+.Swatch {
+  background-color: $color-common-white;
+  overflow: hidden;
+}
+
+.SwatchInner {
+  position: relative;
+  padding-top: 8em;
+  text-align: left;
+}
+
+.hasAlpha {
+  background-position: 0px 0px, 10px 10px;
+  background-size: 20px 20px;
+  background-image: linear-gradient(
+      45deg,
+      #eee 25%,
+      transparent 25%,
+      transparent 75%,
+      #eee 75%,
+      #eee 100%
+    ),
+    linear-gradient(45deg, #eee 25%, white 25%, white 75%, #eee 75%, #eee 100%);
+}
+
+.SwatchContent {
+  background-color: $color-common-white;
+  padding: 0.5em 0.75em;
+  border-top-width: 0;
+}
+
+.SwatchHeading {
+  font-weight: bold;
+}
+
+.SwatchListItem {
+  list-style: none;
+  font-size: 0.9em;
+}

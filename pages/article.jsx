@@ -7,7 +7,7 @@ import createArticle from '@/fixture/article'
 import createAuthor from '@/fixture/author'
 
 import Container from '@/component/Primitive/Container'
-import SpacedList from '@/component/Primitive/SpacedList'
+import Stack from '@/component/Primitive/Stack'
 import Type from '@/component/Primitive/Type'
 
 import Blockquote from '@/component/Primitive/Blockquote'
@@ -44,7 +44,7 @@ const ArticlePage = () => (
       publisherLogo="https://source.unsplash.com/600x60?nature"
     />
 
-    <SpacedList>
+    <Stack>
       <Container size="wide" center>
         <ResponsiveMedia ratio={3 / 8}>
           <ResponsiveImage
@@ -147,7 +147,7 @@ const ArticlePage = () => (
             '<strong style="background:#00f;color:#fff">custom HTML</strong>'
         }}
       />
-    </SpacedList>
+    </Stack>
   </>
 )
 

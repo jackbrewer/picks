@@ -2,7 +2,7 @@ import React from 'react'
 import StandardMeta from '@/component/Meta/Standard'
 
 import Container from '@/component/Primitive/Container'
-import SpacedList from '@/component/Primitive/SpacedList'
+import Stack from '@/component/Primitive/Stack'
 import Type from '@/component/Primitive/Type'
 
 import List from '@/component/Primitive/List'
@@ -25,7 +25,7 @@ const IndexPage = () => (
       ]}
     />
     <Container size="medium" gutter center>
-      <SpacedList>
+      <Stack>
         <Type element="h2" size="display1">
           Example section page
         </Type>
@@ -37,7 +37,7 @@ const IndexPage = () => (
             <SmartLink to="/movies">Movies</SmartLink>
           </li>
         </List>
-      </SpacedList>
+      </Stack>
     </Container>
   </>
 )

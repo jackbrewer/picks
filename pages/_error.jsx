@@ -3,13 +3,13 @@ import { number } from 'prop-types'
 import Link from 'next/link'
 
 import Container from '@/component/Primitive/Container'
-import SpacedList from '@/component/Primitive/SpacedList'
+import Stack from '@/component/Primitive/Stack'
 import Type from '@/component/Primitive/Type'
 
 import Prose from '@/component/Primitive/Prose'
 
 const ErrorPage = ({ statusCode }) => (
-  <SpacedList>
+  <Stack>
     <Container size="medium" gutter center>
       <Prose>
         <Type size="title">
@@ -26,7 +26,7 @@ const ErrorPage = ({ statusCode }) => (
         </p>
       </Prose>
     </Container>
-  </SpacedList>
+  </Stack>
 )
 
 ErrorPage.getInitialProps = ({ res, err }) => {

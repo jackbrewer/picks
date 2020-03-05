@@ -3,7 +3,7 @@ import { shape, string } from 'prop-types'
 import fetch from 'isomorphic-unfetch'
 
 import Container from '@/component/Primitive/Container'
-import SpacedList from '@/component/Primitive/SpacedList'
+import Stack from '@/component/Primitive/Stack'
 import Type from '@/component/Primitive/Type'
 
 import List from '@/component/Primitive/List'
@@ -12,7 +12,7 @@ const movieShape = shape({ name: string })
 
 const MoviesPage = ({ movies }) => (
   <Container size="medium" gutter center>
-    <SpacedList>
+    <Stack>
       <Type element="h2" size="display1">
         Movies Page
       </Type>
@@ -21,7 +21,7 @@ const MoviesPage = ({ movies }) => (
           <li key={movie.name}>{movie.name}</li>
         ))}
       </List>
-    </SpacedList>
+    </Stack>
   </Container>
 )
 

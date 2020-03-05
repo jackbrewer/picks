@@ -6,9 +6,6 @@
 /coverage
 .eslintcache
 
-# development
-/.next
-
 # production
 /out
 /storybook-static

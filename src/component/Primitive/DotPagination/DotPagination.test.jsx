@@ -40,6 +40,7 @@ describe('Component: DotPagination', function() {
     const wrapper = shallow(
       <DotPagination {...requiredProps()} activeIndex={2} />
     )
+
     const buttons = wrapper.find('button')
     expect(buttons.at(0).prop('className')).toEqual('DotPaginationButton')
     expect(buttons.at(1).prop('className')).toEqual('DotPaginationButton')

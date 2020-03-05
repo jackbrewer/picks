@@ -6,6 +6,14 @@ const backlineNormalize = require('backline-normalize')
 
 const createSvgLoader = require('../config/webpack/svg-loader')
 
+const sassIncludes = [
+  ...backlineGrid.includePaths,
+  ...backlineMixins.includePaths,
+  ...backlineNormalize.includePaths,
+  path.join(__dirname, '../src/asset/scss/setting')
+]
+console.log(sassIncludes)
+
 module.exports = ({ config, mode }) => {
   // TODO: this is a hack to delay writing a completely bespoke config.
   // Find Storybooks in-built svg rule, and modify it to exclude SVGs we
@@ -40,12 +48,9 @@ module.exports = ({ config, mode }) => {
       {
         loader: 'sass-loader',
         options: {
-          includePaths: [
-            ...backlineGrid.includePaths,
-            ...backlineMixins.includePaths,
-            ...backlineNormalize.includePaths,
-            path.join(__dirname, '../src/asset/scss/setting')
-          ]
+          sassOptions: {
+            includePaths: sassIncludes
+          }
         }
       }
     ]

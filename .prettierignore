@@ -5,9 +5,6 @@
 .bundle-analyzer
 /coverage
 
-# development
-/.next
-
 # production
 /out
 /storybook-static

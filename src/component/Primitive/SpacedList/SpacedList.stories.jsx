@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import SpacedList from '.'
 
-const stories = storiesOf('Utility/SpacedList', module)
+const stories = storiesOf('Structure/SpacedList', module)
 
 stories.add(
   'Info',

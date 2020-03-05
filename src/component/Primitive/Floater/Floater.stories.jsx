@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import Floater from '.'
 
-const stories = storiesOf('Core/Floater', module)
+const stories = storiesOf('Structure/Floater', module)
 
 const content = (
   <p>

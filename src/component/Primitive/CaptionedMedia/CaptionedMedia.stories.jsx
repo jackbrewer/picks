@@ -40,6 +40,8 @@ stories.add('As inline image', () => (
       <ResponsiveImage
         src="https://source.unsplash.com/800x450?nature"
         alt="Description of visual content"
+        width={800}
+        height={450}
       />
     </ResponsiveMedia>
   </CaptionedMedia>

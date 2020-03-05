@@ -50,6 +50,8 @@ const ArticlePage = () => (
           <ResponsiveImage
             alt=""
             src="https://source.unsplash.com/800x300?nature"
+            width={800}
+            height={300}
           />
         </ResponsiveMedia>
       </Container>
@@ -90,6 +92,8 @@ const ArticlePage = () => (
               <ResponsiveImage
                 src="https://source.unsplash.com/800x450?nature"
                 alt="Description of visual content"
+                width={800}
+                height={450}
               />
             </ResponsiveMedia>
           </CaptionedMedia>

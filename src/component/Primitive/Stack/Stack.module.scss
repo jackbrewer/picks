@@ -1,6 +1,3 @@
-@import 'setting';
-@import 'backline-mixins';
-
 .Stack {
   > * + * {
     margin-top: spacing(2);

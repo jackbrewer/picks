@@ -5,6 +5,7 @@ import '../src/asset/scss/base.scss'
 import './storybook.module.scss'
 
 addParameters({
+  grid: { cellSize: 8 },
   options: {
     showRoots: true
   }

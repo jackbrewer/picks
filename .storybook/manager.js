@@ -1,6 +1,6 @@
 import { addons } from '@storybook/addons'
-import backlineTheme from './backlineTheme'
+import theme from './theme'
 
 addons.setConfig({
-  theme: backlineTheme
+  theme
 })

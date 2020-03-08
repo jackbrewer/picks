@@ -1,5 +1,5 @@
 {
-  "name": "backline",
+  "name": "picks",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -7,6 +7,7 @@
     "yarn": "^1.12.3"
   },
   "scripts": {
+    "dev": "yarn run storybook",
     "test": "run-p qa:**",
     "qa:test": "jest",
     "qa:js": "eslint . --cache --ext '.js,.jsx'",
@@ -15,10 +16,7 @@
     "test:dev": "jest --coverage --watch --verbose",
     "storybook": "start-storybook -p 3321",
     "build-storybook": "build-storybook",
-    "coverage": "jest --coverage",
-    "analyze": "BUNDLE_ANALYZE=both yarn build",
-    "analyze:server": "BUNDLE_ANALYZE=server yarn build",
-    "analyze:browser": "BUNDLE_ANALYZE=browser yarn build"
+    "coverage": "jest --coverage"
   },
   "author": "",
   "license": "ISC",
@@ -28,9 +26,9 @@
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
-    "@mdx-js/loader": "^1.5.5",
     "@storybook/addon-a11y": "^5.3.13",
     "@storybook/addon-actions": "^5.3.13",
+    "@storybook/addon-backgrounds": "^5.3.14",
     "@storybook/addon-info": "^5.3.13",
     "@storybook/addon-links": "^5.3.13",
     "@storybook/addons": "^5.3.13",
@@ -63,8 +61,6 @@
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.2.0",
     "eslint-plugin-standard": "^4.0.1",
-    "identity-obj-proxy": "^3.0.0",
-    "isomorphic-unfetch": "^3.0.0",
     "jest": "^25.1.0",
     "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",

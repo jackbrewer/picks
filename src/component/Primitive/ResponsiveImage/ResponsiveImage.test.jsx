@@ -5,7 +5,9 @@ import ResponsiveImage from '.'
 
 const requiredProps = () => ({
   alt: 'Default a11y text',
-  src: '/image-800.jpg'
+  src: '/image-800.jpg',
+  width: 900,
+  height: 450
 })
 
 describe('Component: ResponsiveImage', function() {
@@ -15,6 +17,10 @@ describe('Component: ResponsiveImage', function() {
     const expected = {
       alt:
         'The prop `alt` is marked as required in `Component`, but its value is `undefined`.',
+      height:
+        'The prop `height` is marked as required in `Component`, but its value is `undefined`.',
+      width:
+        'The prop `width` is marked as required in `Component`, but its value is `undefined`.',
       src:
         'The prop `src` is marked as required in `Component`, but its value is `undefined`.'
     }
@@ -31,8 +37,10 @@ describe('Component: ResponsiveImage', function() {
   test('should output the expected markup with default props', function() {
     const wrapper = shallow(<ResponsiveImage {...requiredProps()} />)
     expect(wrapper.prop('alt')).toEqual('Default a11y text')
-    expect(wrapper.prop('src')).toEqual('/image-800.jpg')
+    expect(wrapper.prop('height')).toEqual(450)
+    expect(wrapper.prop('width')).toEqual(900)
     expect(wrapper.prop('sizes')).toEqual(undefined)
+    expect(wrapper.prop('src')).toEqual('/image-800.jpg')
     expect(wrapper.prop('srcSet')).toEqual(undefined)
   })
 

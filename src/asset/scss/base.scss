@@ -1,11 +1,9 @@
-@import 'backline-mixins';
-@import 'setting';
-@import 'backline-normalize';
+@import '~backline-normalize/src/backline-normalize';
 
 :global {
   body {
-    font-size: spacing(2); // 16
-    line-height: spacing(3); // 24
+    font-size: spacing(2);
+    line-height: spacing(3);
     font-weight: normal;
     font-family: $font-body;
   }

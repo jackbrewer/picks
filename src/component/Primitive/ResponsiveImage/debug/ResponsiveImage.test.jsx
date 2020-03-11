@@ -16,8 +16,6 @@ describe('Component: ResponsiveImage', function() {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(ResponsiveImage.propTypes, {})
     const expected = {
-      alt:
-        'The prop `alt` is marked as required in `Component`, but its value is `undefined`.',
       height:
         'The prop `height` is marked as required in `Component`, but its value is `undefined`.',
       width:
@@ -40,7 +38,10 @@ describe('Component: ResponsiveImage', function() {
       <ResponsiveImage {...requiredProps()} />
     )
     expect(getByAltText('Default a11y text')).toBeTruthy()
-    expect(container.firstChild).toHaveAttribute('src', '/image-800.jpg')
+    expect(container.firstChild).toHaveAttribute(
+      'src',
+      'https://img.clock.co.uk/900x450?color=d08d07'
+    )
     expect(container.firstChild).toHaveAttribute('width', '900')
     expect(container.firstChild).toHaveAttribute('height', '450')
     expect(container.firstChild).not.toHaveAttribute('sizes')
@@ -85,7 +86,7 @@ describe('Component: ResponsiveImage', function() {
     )
     expect(container.firstChild).toHaveAttribute(
       'srcSet',
-      '/image-400.jpg 400w, /image-800.jpg 800w'
+      'https://img.clock.co.uk/400x200?color=6e5d88 400w, https://img.clock.co.uk/800x400?color=f45121 800w'
     )
   })
 })

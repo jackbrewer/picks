@@ -1,8 +1,0 @@
-@import 'setting';
-@import 'backline-mixins';
-
-.SpacedList {
-  > * + * {
-    margin-top: spacing(2);
-  }
-}

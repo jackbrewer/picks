@@ -25,7 +25,7 @@ ContentTile.propTypes = {
   children: node
 }
 
-const stories = storiesOf('Utility/Spacer', module)
+const stories = storiesOf('Structure/Spacer', module)
 
 stories.add(
   'Info',

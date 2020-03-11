@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import ResponsiveImage from '.'
+import ResponsiveDebugImage from './debug'
 
 const stories = storiesOf('Utility/ResponsiveImage', module)
 
@@ -14,15 +15,17 @@ stories.add(
         srcSet={[
           {
             width: 400,
-            src: 'https://img.clock.co.uk/400x225'
+            src: 'https://picsum.photos/400/225.jpg'
           },
           {
             width: 1600,
-            src: 'https://img.clock.co.uk/1600x900'
+            src: 'https://picsum.photos/1600/900.jpg'
           }
         ]}
         sizes={['(min-width: 800px) 50vw', '(min-width: 320px) 80vw', '100vw']}
-        src="https://img.clock.co.uk/900x450"
+        src="https://picsum.photos/800/450.jpg"
+        width={800}
+        height={450}
       />
     </div>
   ),
@@ -56,22 +59,78 @@ stories.add('Default state', () => (
     srcSet={[
       {
         width: 400,
-        src: 'https://img.clock.co.uk/400x225'
+        src: 'https://picsum.photos/400/225.jpg'
       },
       {
         width: 800,
-        src: 'https://img.clock.co.uk/800x450'
+        src: 'https://picsum.photos/800/450.jpg'
       },
       {
         width: 1280,
-        src: 'https://img.clock.co.uk/1280x720'
+        src: 'https://picsum.photos/1280/720.jpg'
       },
       {
         width: 1600,
-        src: 'https://img.clock.co.uk/1600x900'
+        src: 'https://picsum.photos/1600/900.jpg'
       }
     ]}
     sizes={['100vw']}
-    src="https://img.clock.co.uk/900x450"
+    src="https://picsum.photos/800/450.jpg"
+    width={800}
+    height={450}
+  />
+))
+
+stories.add('With debug images', () => (
+  <ResponsiveDebugImage
+    alt=""
+    srcSet={[
+      {
+        width: 400,
+        src: 'https://picsum.photos/400/225.jpg'
+      },
+      {
+        width: 600,
+        src: 'https://picsum.photos/600/338.jpg'
+      },
+      {
+        width: 800,
+        src: 'https://picsum.photos/800/450.jpg'
+      },
+      {
+        width: 1000,
+        src: 'https://picsum.photos/1000/562.jpg'
+      },
+      {
+        width: 1280,
+        src: 'https://picsum.photos/1280/720.jpg'
+      },
+      {
+        width: 1600,
+        src: 'https://picsum.photos/1600/900.jpg'
+      }
+    ]}
+    sizes={['100vw']}
+    src="https://picsum.photos/800/450.jpg"
+    width={800}
+    height={450}
+  />
+))
+
+stories.add('Single Image state', () => (
+  <ResponsiveImage
+    alt=""
+    src="https://picsum.photos/800/450.jpg"
+    width={800}
+    height={450}
+  />
+))
+
+stories.add('Single Image state (debug)', () => (
+  <ResponsiveDebugImage
+    alt=""
+    src="https://picsum.photos/800/450.jpg"
+    width={800}
+    height={450}
   />
 ))

@@ -29,7 +29,11 @@ const Avatar = ({
     }}
     title={name}
   >
-    {initials && <div className={styles.AvatarInitials}>{initials}</div>}
+    {initials && (
+      <div aria-label="Initials" className={styles.AvatarInitials}>
+        {initials}
+      </div>
+    )}
   </div>
 )
 

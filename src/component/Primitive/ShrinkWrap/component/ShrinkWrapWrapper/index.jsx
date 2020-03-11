@@ -23,7 +23,6 @@ const ShrinkWrapWrapper = ({
     )}
   >
     {Children.map(children, child => {
-      if (!child) return null
       return React.cloneElement(child, { spacing, vAlign })
     })}
   </Element>

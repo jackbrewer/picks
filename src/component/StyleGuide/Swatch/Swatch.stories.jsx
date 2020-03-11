@@ -5,14 +5,17 @@ import Swatch from '.'
 
 const stories = storiesOf('Style Guide/Swatch', module)
 
-stories.add('Info', () => <Swatch name="Slime Green" color="#bada55aa" />, {
+stories.add('Info', () => <Swatch name="Brand Purple" color="#9c5386aa" />, {
   info: {
     inline: true,
     text: `Description to come…`
   }
 })
 
-stories.add('Default state', () => <Swatch name="Brand Blue" color="#bada55" />)
+stories.add('Default state', () => (
+  <Swatch name="Brand Purple" color="#9c5386" />
+))
+
 stories.add('With transparency', () => (
-  <Swatch name="Brand Blue" color="#bada5588" />
+  <Swatch name="Brand Purple" color="#9c538688" />
 ))

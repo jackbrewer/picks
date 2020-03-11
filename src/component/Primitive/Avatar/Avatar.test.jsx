@@ -6,8 +6,8 @@ import Avatar from '.'
 
 const requiredProps = () => ({ name: 'Firstname Lastname' })
 
-describe('Component: Avatar', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: Avatar', () => {
+  test('should return errors if required props missing', () => {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Avatar.propTypes, {})
     const expected = {
@@ -17,14 +17,14 @@ describe('Component: Avatar', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', () => {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Avatar.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', () => {
     const { getByTitle, queryByLabelText } = render(
       <Avatar {...requiredProps()} />
     )
@@ -32,7 +32,7 @@ describe('Component: Avatar', function() {
     expect(queryByLabelText('Initials')).toBeNull()
   })
 
-  test('should output the expected markup when `initials` prop passed with one character', function() {
+  test('should output the expected markup when `initials` prop passed with one character', () => {
     const { container, getByText } = render(
       <Avatar {...requiredProps()} initials="A" />
     )
@@ -40,7 +40,7 @@ describe('Component: Avatar', function() {
     expect(container.firstChild).toHaveStyle('font-size: 22px;')
   })
 
-  test('should output the expected markup when `initials` prop passed with two characters', function() {
+  test('should output the expected markup when `initials` prop passed with two characters', () => {
     const { container, getByText } = render(
       <Avatar {...requiredProps()} initials="AB" />
     )
@@ -48,7 +48,7 @@ describe('Component: Avatar', function() {
     expect(container.firstChild).toHaveStyle('font-size: 22px;')
   })
 
-  test('should output the expected markup when `initials` prop passed with three characters', function() {
+  test('should output the expected markup when `initials` prop passed with three characters', () => {
     const { container, getByText } = render(
       <Avatar {...requiredProps()} initials="ABC" />
     )
@@ -56,7 +56,7 @@ describe('Component: Avatar', function() {
     expect(container.firstChild).toHaveStyle('font-size: 15px;')
   })
 
-  test('should output the expected markup when `initials` prop passed with three characters', function() {
+  test('should output the expected markup when `initials` prop passed with three characters', () => {
     const { container, getByText } = render(
       <Avatar {...requiredProps()} initials="ABCD" />
     )
@@ -64,7 +64,7 @@ describe('Component: Avatar', function() {
     expect(container.firstChild).toHaveStyle('font-size: 11px;')
   })
 
-  test('should output the expected markup when `initials` prop passed with three characters', function() {
+  test('should output the expected markup when `initials` prop passed with three characters', () => {
     const { container, getByText } = render(
       <Avatar {...requiredProps()} initials="ABC" />
     )
@@ -72,7 +72,7 @@ describe('Component: Avatar', function() {
     expect(container.firstChild).toHaveStyle('font-size: 15px;')
   })
 
-  test('should output the expected markup when `src` prop passed', function() {
+  test('should output the expected markup when `src` prop passed', () => {
     const { container } = render(
       <Avatar {...requiredProps()} src="/image.jpg" />
     )
@@ -81,28 +81,28 @@ describe('Component: Avatar', function() {
     )
   })
 
-  test('should output the expected markup when `size` prop passed', function() {
+  test('should output the expected markup when `size` prop passed', () => {
     const { container } = render(<Avatar {...requiredProps()} size={96} />)
     expect(container.firstChild).toHaveStyle('width: 96px;')
     expect(container.firstChild).toHaveStyle('height: 96px;')
     expect(container.firstChild).toHaveStyle('line-height: 96px;')
   })
 
-  test('should output the expected markup when `borderRadius` prop passed', function() {
+  test('should output the expected markup when `borderRadius` prop passed', () => {
     const { container } = render(
       <Avatar {...requiredProps()} borderRadius={10} />
     )
     expect(container.firstChild).toHaveStyle('border-radius: 10px;')
   })
 
-  test('should output additional styles when `backgroundColor` prop passed', function() {
+  test('should output additional styles when `backgroundColor` prop passed', () => {
     const { container } = render(
       <Avatar {...requiredProps()} backgroundColor="#ff0" />
     )
     expect(container.firstChild).toHaveStyle('background-color: #ff0;')
   })
 
-  test('should output additional styles when `color` prop passed', function() {
+  test('should output additional styles when `color` prop passed', () => {
     const { container } = render(<Avatar {...requiredProps()} color="#333" />)
     expect(container.firstChild).toHaveStyle('color: #333;')
   })

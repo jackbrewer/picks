@@ -5,8 +5,8 @@ import Example from '.'
 
 const requiredProps = () => ({ children: 'Default content' })
 
-describe('Component: Example', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: Example', () => {
+  test('should return errors if required props missing', () => {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Example.propTypes, {})
     const expected = {
@@ -16,20 +16,20 @@ describe('Component: Example', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', () => {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Example.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', () => {
     const { getByText } = render(<Example {...requiredProps()} />)
     expect(getByText('Default content')).toBeTruthy()
   })
 
-  // test('should output additional className when `foo` prop passed', function() {
-  //   const { getByText } = render(<Example {...requiredProps()} foo />)
+  // test('should output additional className when `foo` prop passed', () => {
+  //   const { } = render(<Example {...requiredProps()} foo />)
   //   expect().toEqual()
   // })
 })

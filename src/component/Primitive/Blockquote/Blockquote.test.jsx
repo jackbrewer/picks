@@ -1,12 +1,13 @@
 import React from 'react'
 import validatePropTypes from 'validate-prop-types'
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
 import Blockquote from '.'
 
 const requiredProps = () => ({ children: 'Default content' })
 
-describe('Component: Blockquote', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: Blockquote', () => {
+  test('should return errors if required props missing', () => {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Blockquote.propTypes, {})
     const expected = {
@@ -16,52 +17,28 @@ describe('Component: Blockquote', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', () => {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Blockquote.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
-    const wrapper = shallow(<Blockquote {...requiredProps()} />)
-    expect(wrapper.prop('className')).toEqual('Blockquote')
-    expect(wrapper.find('Type')).toHaveLength(1)
-    expect(
-      wrapper
-        .find('Type')
-        .at(0)
-        .dive()
-        .dive()
-        .text()
-    ).toEqual('Default content')
+  test('should output the expected markup with default props', () => {
+    const { getByText } = render(<Blockquote {...requiredProps()} />)
+    expect(getByText('Default content')).toBeTruthy()
   })
 
-  test('should output additional content when `citation` prop passed', function() {
-    const wrapper = shallow(
+  test('should output additional content when `citation` prop passed', () => {
+    const { getByText } = render(
       <Blockquote {...requiredProps()} citation="Firstname Lastname" />
     )
-    expect(wrapper.find('Type')).toHaveLength(2)
-    expect(
-      wrapper
-        .find('Type')
-        .at(0)
-        .dive()
-        .dive()
-        .text()
-    ).toEqual('Default content')
-    expect(
-      wrapper
-        .find('Type')
-        .at(1)
-        .dive()
-        .dive()
-        .text()
-    ).toEqual('Firstname Lastname')
+    expect(getByText('Default content')).toBeTruthy()
+    expect(getByText('Firstname Lastname')).toBeTruthy()
   })
 
-  test('should output additional styles when `quoteMarks` prop passed', function() {
-    const wrapper = shallow(<Blockquote {...requiredProps()} quoteMarks />)
-    expect(wrapper.prop('className')).toEqual('Blockquote quoteMarks')
+  test('should output additional styles when `quoteMarks` prop passed', () => {
+    const { container } = render(<Blockquote {...requiredProps()} quoteMarks />)
+    expect(container.firstChild).toHaveClass('quoteMarks')
   })
 })

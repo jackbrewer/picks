@@ -1,12 +1,13 @@
 import React from 'react'
 import validatePropTypes from 'validate-prop-types'
-import { shallow } from 'enzyme'
+import { render, fireEvent } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import DotPagination from '.'
 
 const requiredProps = () => ({ dots: 3, onChangeIndex: () => {} })
 
 describe('Component: DotPagination', function() {
-  test('should return errors if required props missing', function() {
+  test('should return errors if required props missing', async () => {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(DotPagination.propTypes, {})
     const expected = {
@@ -18,39 +19,43 @@ describe('Component: DotPagination', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', async () => {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(DotPagination.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
-    const wrapper = shallow(<DotPagination {...requiredProps()} />)
-    const buttons = wrapper.find('button')
-    expect(wrapper.prop('className')).toEqual('DotPagination')
-    expect(wrapper.find('ol').prop('aria-label')).toEqual('Pagination')
-    expect(wrapper.find('li').length).toEqual(3)
-    expect(buttons.at(0).prop('aria-label')).toEqual('Current item')
-    expect(buttons.at(1).prop('aria-label')).toEqual('Go to item 2')
-    expect(buttons.at(2).prop('aria-label')).toEqual('Go to item 3')
+  test('should output the expected markup with default props', async () => {
+    const { getByLabelText, getAllByRole } = render(
+      <DotPagination {...requiredProps()} />
+    )
+    const currentItem = getByLabelText('Current item')
+    expect(getByLabelText('Pagination')).toBeTruthy()
+    expect(getAllByRole('button')).toHaveLength(3)
+    expect(currentItem).toBeTruthy()
+    expect(currentItem).toBeDisabled()
+    expect(currentItem.getAttribute('aria-current')).toEqual('true')
+    expect(getByLabelText('Go to item 2')).toBeTruthy()
+    expect(getByLabelText('Go to item 2')).toBeEnabled()
+    expect(getByLabelText('Go to item 3')).toBeTruthy()
+    expect(getByLabelText('Go to item 3')).toBeEnabled()
   })
 
-  test('should output the expected markup if `activeIndex` prop passed', function() {
-    const wrapper = shallow(
+  test('should output the expected markup if `activeIndex` prop passed', async () => {
+    const { getByLabelText } = render(
       <DotPagination {...requiredProps()} activeIndex={2} />
     )
-
-    const buttons = wrapper.find('button')
-    expect(buttons.at(0).prop('className')).toEqual('DotPaginationButton')
-    expect(buttons.at(1).prop('className')).toEqual('DotPaginationButton')
-    expect(buttons.at(2).prop('className')).toEqual(
-      'DotPaginationButton active'
+    expect(getByLabelText('Go to item 1')).toBeTruthy()
+    expect(getByLabelText('Current item')).toBeTruthy()
+    expect(getByLabelText('Current item').getAttribute('aria-current')).toEqual(
+      'true'
     )
+    expect(getByLabelText('Go to item 2')).toBeTruthy()
   })
 
   test('should output the custom text when `label*` props passed', async () => {
-    const wrapper = shallow(
+    const { getByLabelText } = render(
       <DotPagination
         {...requiredProps()}
         labelTitle="Photo Viewer Pagination"
@@ -58,25 +63,19 @@ describe('Component: DotPagination', function() {
         labelInactive="View photo"
       />
     )
-    expect(wrapper.find('ol').prop('aria-label')).toEqual(
-      'Photo Viewer Pagination'
-    )
-    const buttons = wrapper.find('button')
-    expect(buttons.at(0).prop('aria-label')).toEqual('Current photo')
-    expect(buttons.at(1).prop('aria-label')).toEqual('View photo 2')
-    expect(buttons.at(2).prop('aria-label')).toEqual('View photo 3')
+    expect(getByLabelText('Photo Viewer Pagination')).toBeTruthy()
+    expect(getByLabelText('Current photo')).toBeTruthy()
+    expect(getByLabelText('View photo 2')).toBeTruthy()
+    expect(getByLabelText('View photo 3')).toBeTruthy()
   })
 
   test('should trigger `onChangeIndex` function on button click', function() {
     const mockOnClick = jest.fn()
-    const wrapper = shallow(
+    const { getByLabelText } = render(
       <DotPagination {...requiredProps()} onChangeIndex={mockOnClick} />
     )
     expect(mockOnClick.mock.calls.length).toBe(0)
-    wrapper
-      .find('button')
-      .at(1)
-      .simulate('click')
+    fireEvent.click(getByLabelText('Go to item 2'))
     expect(mockOnClick.mock.calls.length).toBe(1)
   })
 })

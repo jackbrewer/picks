@@ -8,7 +8,7 @@ const stories = storiesOf('Style Guide/Swatch', module)
 stories.add('Info', () => <Swatch name="Brand Purple" color="#9c5386aa" />, {
   info: {
     inline: true,
-    text: `Description to come…`
+    text: `Displays a colour with a list of colour formats`
   }
 })
 

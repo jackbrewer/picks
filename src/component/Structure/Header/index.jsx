@@ -4,9 +4,9 @@ import classNames from 'classnames'
 
 import styles from './Header.module.scss'
 
-import Container from '../Container'
-import IconButton from '../IconButton'
-import SmartLink from '../SmartLink'
+import Container from '../../Primitive/Container'
+import IconButton from '../../Primitive/IconButton'
+import SmartLink from '../../Primitive/SmartLink'
 
 const Header = ({ navigation }) => {
   const [isActive, setActive] = useState(false)

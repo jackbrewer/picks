@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import ScrollArea from '.'
 
-const stories = storiesOf('Structure/ScrollArea', module)
+const stories = storiesOf('Layout/ScrollArea', module)
 
 stories.add(
   'Info',

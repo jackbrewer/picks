@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import ShrinkWrap from '.'
 
-const stories = storiesOf('Structure/ShrinkWrap', module)
+const stories = storiesOf('Layout/ShrinkWrap', module)
 
 stories.add(
   'Info',

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import Stack from '.'
 
-const stories = storiesOf('Structure/Stack', module)
+const stories = storiesOf('Layout/Stack', module)
 
 stories.add(
   'Info',

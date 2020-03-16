@@ -2,9 +2,9 @@ import React from 'react'
 
 import styles from './Footer.module.scss'
 
-import Container from '../Container'
-import TextAlign from '../TextAlign'
-import Type from '../Type'
+import Container from '../../Primitive/Container'
+import TextAlign from '../../Primitive/TextAlign'
+import Type from '../../Primitive/Type'
 
 const Footer = () => (
   <footer className={styles.Footer}>

@@ -4,11 +4,11 @@ import { node } from 'prop-types'
 // import styles from './MainLayout.module.scss'
 
 import A11yNavigation from '../../Primitive/A11yNavigation'
-import Footer from '../../Primitive/Footer'
-import Header from '../../Primitive/Header'
-import Main from '../../Primitive/Main'
-import Navigation from '../../Primitive/Navigation'
-import SiteContainer from '../../Primitive/SiteContainer'
+import Footer from '../../Structure/Footer'
+import Header from '../../Structure/Header'
+import Main from '../../Structure/Main'
+import Navigation from '../../Structure/Navigation'
+import SiteContainer from '../../Structure/SiteContainer'
 
 const MainLayout = ({ children }) => (
   <SiteContainer>

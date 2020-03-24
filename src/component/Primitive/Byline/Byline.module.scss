@@ -1,9 +1,9 @@
 // .Byline {}
 
-.BylineDate {
-  &::after {
+// .BylineDate {}
+
+.BylineAuthor {
+  .BylineDate + &::before {
     content: ' - ';
   }
 }
-
-// .BylineAuthor {}

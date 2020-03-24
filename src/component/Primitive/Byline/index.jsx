@@ -5,7 +5,7 @@ import styles from './Byline.module.scss'
 
 import Type from '../Type'
 
-const Byline = ({ author, displayDate, separator, timestamp }) => {
+const Byline = ({ author, displayDate, timestamp }) => {
   if (!author && !displayDate) return null
 
   return (
@@ -19,21 +19,15 @@ const Byline = ({ author, displayDate, separator, timestamp }) => {
             {displayDate}
           </time>
         )}
-        {displayDate && author && separator}
         {author && <span className={styles.BylineAuthor}>{author}</span>}
       </Type>
     </div>
   )
 }
 
-Byline.defaultProps = {
-  separator: ' - '
-}
-
 Byline.propTypes = {
   author: node,
   displayDate: string,
-  separator: string,
   timestamp: string
 }
 

@@ -18,8 +18,7 @@ stories.add(
     info: {
       inline: true,
       text: `
-        Displays a combination of Author and Date, with customisable separator
-        string.
+        Displays a combination of Author and Date.
       `
     }
   }
@@ -43,13 +42,4 @@ stories.add('Display date only', () => <Byline displayDate="1 Jan 2020" />)
 
 stories.add('Date with timestamp', () => (
   <Byline displayDate="1 Jan 2020" timestamp="2020-01-01T00:00:00Z" />
-))
-
-stories.add('Custom separator', () => (
-  <Byline
-    author="Firstname Lastname"
-    displayDate="1 Jan 2020"
-    timestamp="2020-01-01T00:00:00Z"
-    separator=" • "
-  />
 ))

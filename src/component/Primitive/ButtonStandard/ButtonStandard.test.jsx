@@ -1,6 +1,7 @@
 import React from 'react'
 import validatePropTypes from 'validate-prop-types'
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
 import ButtonStandard from '.'
 
 const requiredProps = () => ({})
@@ -16,16 +17,18 @@ describe('Component: ButtonStandard', function() {
   })
 
   test('should output the expected markup with default props', function() {
-    const wrapper = shallow(
+    const { getByRole, getByText } = render(
       <ButtonStandard {...requiredProps()} {...defaultProps()} />
     )
-    expect(wrapper.prop('className')).toEqual('ButtonStandard')
+    expect(getByRole('button')).toBeTruthy()
+    expect(getByText('Example content')).toBeTruthy()
   })
 
   test('should output additional className when `disabled` prop passed', function() {
-    const wrapper = shallow(
+    const { getByRole } = render(
       <ButtonStandard {...requiredProps()} {...defaultProps()} disabled />
     )
-    expect(wrapper.prop('className')).toEqual('ButtonStandard disabled')
+    expect(getByRole('button')).toBeDisabled()
+    expect(getByRole('button')).toHaveClass('disabled')
   })
 })

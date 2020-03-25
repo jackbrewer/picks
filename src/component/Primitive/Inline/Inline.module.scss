@@ -1,0 +1,8 @@
+.Inline {
+  margin: spacing(-1);
+
+  & > * {
+    display: inline-block;
+    margin: spacing(1);
+  }
+}

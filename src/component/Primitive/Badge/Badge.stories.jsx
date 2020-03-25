@@ -6,7 +6,7 @@ import { StatusContextProvider } from '../../Context/StatusContext'
 import Badge from '.'
 import Icon from '../Icon'
 
-const stories = storiesOf('Unsorted/Badge', module)
+const stories = storiesOf('Core/Badge', module)
 
 stories.add('Info', () => <Badge status="success">Content</Badge>, {
   info: {

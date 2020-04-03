@@ -18,6 +18,11 @@ describe('Component: Spinner', function() {
     expect(wrapper.prop('className')).toEqual('Spinner')
   })
 
+  test('should output the expected markup with default props', function() {
+    const wrapper = shallow(<Spinner {...requiredProps()} />)
+    expect(wrapper.prop('className')).toEqual('Spinner')
+  })
+
   test('should output additional className when `paused` prop passed', function() {
     const wrapper = shallow(<Spinner {...requiredProps()} paused />)
     expect(wrapper.prop('className')).toEqual('Spinner paused')
@@ -30,6 +35,10 @@ describe('Component: Spinner', function() {
 
   test('should output additional styles when `size` prop passed', function() {
     const wrapper = shallow(<Spinner {...requiredProps()} size={30} />)
-    expect(wrapper.prop('style')).toEqual({ height: 30, width: 30 })
+    expect(wrapper.prop('style')).toEqual({
+      height: 30,
+      lineHeight: '30px',
+      width: 30
+    })
   })
 })

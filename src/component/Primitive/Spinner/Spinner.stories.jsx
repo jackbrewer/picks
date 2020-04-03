@@ -25,3 +25,7 @@ stories.add('Paused', () => <Spinner paused />)
 stories.add('Delay before reveal', () => <Spinner revealDelay={2000} />)
 
 stories.add('Custom size', () => <Spinner size={50} />)
+
+stories.add('Custom accessible text', () => (
+  <Spinner a11yText="Loading 5 images" />
+))

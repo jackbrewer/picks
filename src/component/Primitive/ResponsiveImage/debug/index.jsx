@@ -12,7 +12,7 @@ const buildDebugSrc = ({ width, height }) => {
 }
 
 const buildDebugSrcSet = ({ srcSet, ratio }) =>
-  srcSet.map(image => ({
+  srcSet.map((image) => ({
     width: image.width,
     src: buildDebugSrc({ width: image.width, height: image.width * ratio })
   }))

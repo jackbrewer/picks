@@ -6,7 +6,7 @@ module.exports = ({ config, mode }) => {
   // TODO: this is a hack to delay writing a completely bespoke config.
   // Find Storybooks in-built svg rule, and modify it to exclude SVGs we
   // want to embed inline via a custom rule
-  const existingSvgRule = config.module.rules.findIndex(rule =>
+  const existingSvgRule = config.module.rules.findIndex((rule) =>
     rule.test.toString().includes('svg')
   )
   config.module.rules[existingSvgRule].exclude = [

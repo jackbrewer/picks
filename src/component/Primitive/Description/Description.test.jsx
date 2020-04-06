@@ -8,8 +8,8 @@ const requiredProps = () => ({
   term: 'Example term'
 })
 
-describe('Component: Description', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: Description', function () {
+  test('should return errors if required props missing', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Description.propTypes, {})
     const expected = {
@@ -21,14 +21,14 @@ describe('Component: Description', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Description.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(<Description {...requiredProps()} />)
     expect(wrapper.prop('className')).toEqual('Description')
     expect(wrapper.find('dt').text()).toEqual('Example term')
@@ -36,7 +36,7 @@ describe('Component: Description', function() {
     expect(wrapper.find('Icon').length).toEqual(0)
   })
 
-  test('should output the expected markup when `icon` prop passed', function() {
+  test('should output the expected markup when `icon` prop passed', function () {
     const wrapper = shallow(
       <Description {...requiredProps()} icon="_placeholder" />
     )

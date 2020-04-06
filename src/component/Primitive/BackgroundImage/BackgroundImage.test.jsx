@@ -6,8 +6,8 @@ import BackgroundImage from '.'
 
 const requiredProps = () => ({ alt: 'Default a11y text', src: '/image.jpg' })
 
-describe('Component: BackgroundImage', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: BackgroundImage', function () {
+  test('should return errors if required props missing', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(BackgroundImage.propTypes, {})
     const expected = {
@@ -19,14 +19,14 @@ describe('Component: BackgroundImage', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(BackgroundImage.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const { container, getByRole, getByLabelText } = render(
       <BackgroundImage {...requiredProps()} />
     )
@@ -37,14 +37,14 @@ describe('Component: BackgroundImage', function() {
     )
   })
 
-  test('should output additional className when `fillContainer` prop passed', function() {
+  test('should output additional className when `fillContainer` prop passed', function () {
     const { container } = render(
       <BackgroundImage {...requiredProps()} fillContainer />
     )
     expect(container.firstChild).toHaveClass('fillContainer')
   })
 
-  test('should output additional styles when `color` prop passed', function() {
+  test('should output additional styles when `color` prop passed', function () {
     const { container } = render(
       <BackgroundImage {...requiredProps()} color="c0ffee" />
     )
@@ -54,7 +54,7 @@ describe('Component: BackgroundImage', function() {
     })
   })
 
-  test('should output additional styles when `position` prop passed', function() {
+  test('should output additional styles when `position` prop passed', function () {
     const { container } = render(
       <BackgroundImage {...requiredProps()} position="0 0" />
     )
@@ -64,7 +64,7 @@ describe('Component: BackgroundImage', function() {
     })
   })
 
-  test('should output additional styles when `ratio` prop passed', function() {
+  test('should output additional styles when `ratio` prop passed', function () {
     const { container } = render(
       <BackgroundImage {...requiredProps()} ratio={9 / 16} />
     )
@@ -74,7 +74,7 @@ describe('Component: BackgroundImage', function() {
     })
   })
 
-  test('should output additional styles when `size` prop passed', function() {
+  test('should output additional styles when `size` prop passed', function () {
     const { container } = render(
       <BackgroundImage {...requiredProps()} size="cover" />
     )
@@ -84,7 +84,7 @@ describe('Component: BackgroundImage', function() {
     })
   })
 
-  test('should not output a11y attributes if alt=""', function() {
+  test('should not output a11y attributes if alt=""', function () {
     const { queryByRole, queryByLabelText } = render(
       <BackgroundImage {...requiredProps()} alt="" />
     )

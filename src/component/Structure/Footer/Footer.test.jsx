@@ -5,7 +5,7 @@ import Footer from '.'
 
 const requiredProps = () => ({})
 
-describe('Component: Footer', function() {
+describe('Component: Footer', function () {
   // test('should return errors if required props missing', function() {
   //   // eslint-disable-next-line react/forbid-foreign-prop-types
   //   const actual = validatePropTypes(Footer.propTypes, {})
@@ -20,7 +20,7 @@ describe('Component: Footer', function() {
   //   expect(actual).toEqual(expected)
   // })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(<Footer {...requiredProps()} />)
     expect(wrapper.type()).toEqual('footer')
   })

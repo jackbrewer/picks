@@ -9,7 +9,7 @@ stories.add(
   'Info',
   () => (
     <Stack>
-      {[...Array(10).keys()].map(i => (
+      {[...Array(10).keys()].map((i) => (
         <Placeholder key={i}>Item {i + 1}</Placeholder>
       ))}
     </Stack>
@@ -26,7 +26,7 @@ stories.add(
 
 stories.add('Default state', () => (
   <Stack>
-    {[...Array(10).keys()].map(i => (
+    {[...Array(10).keys()].map((i) => (
       <Placeholder key={i}>Item {i + 1}</Placeholder>
     ))}
   </Stack>

@@ -11,8 +11,8 @@ const requiredProps = () => ({
   height: 450
 })
 
-describe('Component: ResponsiveImage', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: ResponsiveImage', function () {
+  test('should return errors if required props missing', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(ResponsiveImage.propTypes, {})
     const expected = {
@@ -26,14 +26,14 @@ describe('Component: ResponsiveImage', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(ResponsiveImage.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const { container, getByAltText } = render(
       <ResponsiveImage {...requiredProps()} />
     )
@@ -48,14 +48,14 @@ describe('Component: ResponsiveImage', function() {
     expect(container.firstChild).not.toHaveAttribute('srcSet')
   })
 
-  test('should still output `alt` if empty string passed', function() {
+  test('should still output `alt` if empty string passed', function () {
     const { getByAltText } = render(
       <ResponsiveImage {...requiredProps()} alt="" />
     )
     expect(getByAltText('')).toBeTruthy()
   })
 
-  test('should output attribute if `sizes` prop passed', function() {
+  test('should output attribute if `sizes` prop passed', function () {
     const { container } = render(
       <ResponsiveImage
         {...requiredProps()}
@@ -68,7 +68,7 @@ describe('Component: ResponsiveImage', function() {
     )
   })
 
-  test('should output attribute if `srcSet` prop passed', function() {
+  test('should output attribute if `srcSet` prop passed', function () {
     const { container } = render(
       <ResponsiveImage
         {...requiredProps()}

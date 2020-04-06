@@ -3,7 +3,7 @@ import { bool, string } from 'prop-types'
 
 import shallowObjectToQuery from '../../../lib/shallow-object-to-query'
 
-export const VimeoEmbedFallbackUrl = videoId => `https://vimeo.com/${videoId}`
+export const VimeoEmbedFallbackUrl = (videoId) => `https://vimeo.com/${videoId}`
 
 const VimeoEmbed = ({ color, hideByline, hideTitle, start, videoId }) => {
   const srcPrefix = 'https://player.vimeo.com/video/'

@@ -9,7 +9,7 @@ import styles from './Notification.module.scss'
 import IconButton from '../IconButton'
 import ShrinkWrap from '../ShrinkWrap'
 
-const Notification = props => {
+const Notification = (props) => {
   const { children, className, onDismiss, status } = props
   const contextStatus = useContext(StatusContext)
   const derivedStatus = status || contextStatus

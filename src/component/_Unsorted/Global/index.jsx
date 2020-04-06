@@ -37,7 +37,7 @@ const GlobalMeta = ({ googleSiteVerification, title, themeColor }) => {
       <link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
       <link rel="icon" sizes="192x192" href={icon192} />
 
-      {Object.keys(appleIconSizes).map(size => (
+      {Object.keys(appleIconSizes).map((size) => (
         <link
           key={`appleTouchIcon${size}`}
           rel="apple-touch-icon"
@@ -46,7 +46,7 @@ const GlobalMeta = ({ googleSiteVerification, title, themeColor }) => {
         />
       ))}
 
-      {Object.keys(optional).map(name => {
+      {Object.keys(optional).map((name) => {
         if (!optional[name]) return
         return (
           <meta key={`Optional${name}`} name={name} content={optional[name]} />

@@ -27,7 +27,7 @@ const FontSample = ({ name, stack }) => (
       </div>
     </div>
     <div className={styles.FontSampleWaterfall}>
-      {waterfallSizes.map(size => (
+      {waterfallSizes.map((size) => (
         <div key={`FontSampleWaterfall${size}`}>
           <span className={styles.FontSampleLabel}>{size}</span>
           <span style={{ fontFamily: stack, fontSize: size }}>
@@ -38,7 +38,7 @@ const FontSample = ({ name, stack }) => (
       ))}
     </div>
     <div className={styles.FontSampleSizeGrid}>
-      {[14, 16, 18, 20, 24, 30].map(size => (
+      {[14, 16, 18, 20, 24, 30].map((size) => (
         <div
           key={`FontSampleSize${size}`}
           className={styles.FontSampleSizeGridItem}

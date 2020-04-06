@@ -20,7 +20,7 @@ const Rating = ({ rating, total, count }) => {
         Rating: {rating}/{total}
       </VisuallyHidden>
       <Inline>
-        {[...Array(count).keys()].map(i => {
+        {[...Array(count).keys()].map((i) => {
           const max = itemSize * (i + 1)
           const clip = 1 - round((max - decimalRating) * count)
           return (

@@ -18,7 +18,7 @@ const Swatch = ({ color, name }) => {
         <div className={styles.SwatchContent}>
           <div className={styles.SwatchHeading}>{name}</div>
           <ul className={styles.SwatchList}>
-            {Object.values(formats).map(format => (
+            {Object.values(formats).map((format) => (
               <li key={`Swatch-${format}`} className={styles.SwatchListItem}>
                 {format}
               </li>

@@ -1,6 +1,6 @@
 import colorConverter from 'color'
 
-const colorFormatter = color => {
+const colorFormatter = (color) => {
   const formattedColor = colorConverter(color)
   const channels = { ...formattedColor.object() }
   return {

@@ -6,7 +6,7 @@ import DotPagination from '.'
 
 const requiredProps = () => ({ dots: 3, onChangeIndex: () => {} })
 
-describe('Component: DotPagination', function() {
+describe('Component: DotPagination', function () {
   test('should return errors if required props missing', async () => {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(DotPagination.propTypes, {})
@@ -69,7 +69,7 @@ describe('Component: DotPagination', function() {
     expect(getByLabelText('View photo 3')).toBeTruthy()
   })
 
-  test('should trigger `onChangeIndex` function on button click', function() {
+  test('should trigger `onChangeIndex` function on button click', function () {
     const mockOnClick = jest.fn()
     const { getByLabelText } = render(
       <DotPagination {...requiredProps()} onChangeIndex={mockOnClick} />

@@ -5,8 +5,8 @@ import Position from '.'
 
 const requiredProps = () => ({ children: 'Default content' })
 
-describe('Component: Position', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: Position', function () {
+  test('should return errors if required props missing', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Position.propTypes, {})
     const expected = {
@@ -16,40 +16,40 @@ describe('Component: Position', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Position.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(<Position {...requiredProps()} />)
     expect(wrapper.prop('className')).toEqual('Position static')
     expect(wrapper.text()).toEqual('Default content')
   })
 
-  test('should output the expected class when `absolute`', function() {
+  test('should output the expected class when `absolute`', function () {
     const wrapper = shallow(<Position {...requiredProps()} absolute />)
     expect(wrapper.prop('className')).toEqual('Position absolute')
   })
 
-  test('should output the expected class when `fixed`', function() {
+  test('should output the expected class when `fixed`', function () {
     const wrapper = shallow(<Position {...requiredProps()} fixed />)
     expect(wrapper.prop('className')).toEqual('Position fixed')
   })
 
-  test('should output the expected class when `relative`', function() {
+  test('should output the expected class when `relative`', function () {
     const wrapper = shallow(<Position {...requiredProps()} relative />)
     expect(wrapper.prop('className')).toEqual('Position relative')
   })
 
-  test('should output the expected class when `sticky`', function() {
+  test('should output the expected class when `sticky`', function () {
     const wrapper = shallow(<Position {...requiredProps()} sticky />)
     expect(wrapper.prop('className')).toEqual('Position sticky')
   })
 
-  test('should allow additional styles to be passed', function() {
+  test('should allow additional styles to be passed', function () {
     const wrapper = shallow(
       <Position
         {...requiredProps()}

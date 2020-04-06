@@ -12,8 +12,8 @@ const requiredProps = () => ({
   )
 })
 
-describe('Component: Header', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: Header', function () {
+  test('should return errors if required props missing', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Header.propTypes, {})
     const expected = {
@@ -23,20 +23,20 @@ describe('Component: Header', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Header.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', function() {
+  test('should output the expected markup with default props', function () {
     const wrapper = shallow(<Header {...requiredProps()} />)
     expect(wrapper.prop('className')).toEqual('Header')
     expect(wrapper.find('ul')).toHaveLength(1)
   })
 
-  test('should toggle `isActive` className when toggle button clicked', function() {
+  test('should toggle `isActive` className when toggle button clicked', function () {
     const wrapper = mount(<Header {...requiredProps()} foo />)
     const NavToggle = wrapper.find('IconButton')
     expect(wrapper.find('.HeaderNavigation.isActive')).toHaveLength(0)

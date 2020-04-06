@@ -5,8 +5,8 @@ import Stack from '.'
 
 const requiredProps = () => ({ children: 'Default content' })
 
-describe('Component: Stack', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: Stack', function () {
+  test('should return errors if required props missing', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Stack.propTypes, {})
     const expected = {
@@ -16,7 +16,7 @@ describe('Component: Stack', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Stack.propTypes, requiredProps())
     const expected = undefined

@@ -6,8 +6,8 @@ import Swatch from '.'
 
 const requiredProps = () => ({ color: '#123456' })
 
-describe('Component: Swatch', function() {
-  test('should return errors if required props missing', function() {
+describe('Component: Swatch', function () {
+  test('should return errors if required props missing', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Swatch.propTypes, {})
     const expected = {
@@ -17,14 +17,14 @@ describe('Component: Swatch', function() {
     expect(actual).toEqual(expected)
   })
 
-  test('shouldn’t error if valid default props passed', function() {
+  test('shouldn’t error if valid default props passed', function () {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(Swatch.propTypes, requiredProps())
     const expected = undefined
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup when supplied hex colour', function() {
+  test('should output the expected markup when supplied hex colour', function () {
     const { getAllByRole } = render(<Swatch {...requiredProps()} />)
     const items = getAllByRole('listitem')
     expect(items).toHaveLength(3)
@@ -33,7 +33,7 @@ describe('Component: Swatch', function() {
     expect(items[2]).toHaveTextContent('#123456')
   })
 
-  test('should output the expected markup when supplied rgb colour', function() {
+  test('should output the expected markup when supplied rgb colour', function () {
     const { getAllByRole } = render(<Swatch color="rgb(18, 52, 86)" />)
     const items = getAllByRole('listitem')
     expect(items).toHaveLength(3)
@@ -42,7 +42,7 @@ describe('Component: Swatch', function() {
     expect(items[2]).toHaveTextContent('#123456')
   })
 
-  test('should output the expected markup when supplied hsl colour', function() {
+  test('should output the expected markup when supplied hsl colour', function () {
     const { getAllByRole } = render(<Swatch color="hsl(210, 65.4%, 20.4%)" />)
     const items = getAllByRole('listitem')
     expect(items).toHaveLength(3)
@@ -51,14 +51,14 @@ describe('Component: Swatch', function() {
     expect(items[2]).toHaveTextContent('#123456')
   })
 
-  test('should output `name` prop', function() {
+  test('should output `name` prop', function () {
     const { getByText } = render(
       <Swatch {...requiredProps()} name="Example colour" />
     )
     expect(getByText('Example colour')).toBeTruthy()
   })
 
-  test('should output expected markup with semi-transparent colours', function() {
+  test('should output expected markup with semi-transparent colours', function () {
     const { container, getAllByRole } = render(<Swatch color="#123456aa" />)
     const items = getAllByRole('listitem')
     expect(items).toHaveLength(2)

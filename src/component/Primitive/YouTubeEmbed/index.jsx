@@ -3,7 +3,7 @@ import { bool, string } from 'prop-types'
 
 import shallowObjectToQuery from '../../../lib/shallow-object-to-query'
 
-export const YouTubeEmbedFallbackUrl = videoId =>
+export const YouTubeEmbedFallbackUrl = (videoId) =>
   `https://www.youtube.com/watch?v=${videoId}`
 
 const YouTubeEmbed = ({ hideControls, start, videoId }) => {

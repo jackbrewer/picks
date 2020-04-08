@@ -1,12 +1,21 @@
 import React from 'react'
-import { node } from 'prop-types'
+import classNames from 'classnames'
+import { node, oneOf } from 'prop-types'
+import sassKeysToArray from '../../../lib/sass-keys-to-array'
 
 import styles from './Stack.module.scss'
 
-const Stack = ({ children }) => <div className={styles.Stack}>{children}</div>
+const Stack = ({ children, gap }) => (
+  <div className={classNames(styles.Stack, gap && styles[gap])}>{children}</div>
+)
+
+Stack.defaultProps = {
+  gap: 'medium'
+}
 
 Stack.propTypes = {
-  children: node.isRequired
+  children: node.isRequired,
+  gap: oneOf(sassKeysToArray(styles.gaps))
 }
 
 export default Stack

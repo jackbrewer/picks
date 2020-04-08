@@ -1,8 +1,24 @@
-.Inline {
-  margin: spacing(-1);
+$gap-list: (
+  'small': 0.5,
+  'medium': 1,
+  'large': 2
+);
 
-  & > * {
-    display: inline-block;
-    margin: spacing(1);
+.Inline {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@each $key, $value in $gap-list {
+  .#{$key} {
+    margin: spacing($value * -1);
+    & > * {
+      margin: spacing($value);
+    }
   }
+}
+
+:export {
+  /* stylelint-disable-next-line property-no-unknown */
+  gaps: map.keys($gap-list);
 }

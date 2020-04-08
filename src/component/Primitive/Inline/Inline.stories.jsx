@@ -11,7 +11,7 @@ stories.add(
   () => (
     <Inline>
       {[...Array(10).keys()].map((i) => (
-        <Placeholder key={i}>Item {i + 1}</Placeholder>
+        <Placeholder key={i} width={80} height={40} />
       ))}
     </Inline>
   ),
@@ -25,10 +25,18 @@ stories.add(
   }
 )
 
-stories.add('Default state', () => (
+stories.add('Default gap', () => (
   <Inline>
-    {[...Array(10).keys()].map((i) => (
-      <Placeholder key={i}>Item {i + 1}</Placeholder>
+    {[...Array(20).keys()].map((i) => (
+      <Placeholder key={i} width={80} height={40} />
+    ))}
+  </Inline>
+))
+
+stories.add('Custom gap', () => (
+  <Inline gap="small">
+    {[...Array(20).keys()].map((i) => (
+      <Placeholder key={i} width={80} height={40} />
     ))}
   </Inline>
 ))

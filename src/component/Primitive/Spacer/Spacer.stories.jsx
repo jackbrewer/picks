@@ -1,38 +1,19 @@
 import React from 'react'
-import { node } from 'prop-types'
 import { storiesOf } from '@storybook/react'
+import Placeholder from '../../Helper/Placeholder'
 
 import Spacer from '.'
-
-const ContentTile = ({ children }) => (
-  <div
-    style={{
-      backgroundColor: 'lightblue',
-      height: '80px',
-      // width: '140px',
-      borderRadius: '5px',
-      lineHeight: '16px',
-      textAlign: 'center',
-      display: 'flex',
-      alignItems: 'center'
-    }}
-  >
-    {children}
-  </div>
-)
-
-ContentTile.propTypes = {
-  children: node
-}
 
 const stories = storiesOf('Layout/Spacer', module)
 
 stories.add(
   'Info',
   () => (
-    <Spacer px={2} pt={1} pb="5px" style={{ outline: '2px dotted lime' }}>
-      <ContentTile />
-    </Spacer>
+    <div style={{ outline: '1px dotted lime' }}>
+      <Spacer px={2} pt={1} pb="5px">
+        <Placeholder height={160} />
+      </Spacer>
+    </div>
   ),
   {
     info: {
@@ -51,27 +32,24 @@ stories.add(
 
 stories.add('Margin: 2x spacing unit', () => (
   <div>
-    <Spacer m={2} style={{ outline: '2px dotted lime' }}>
-      <ContentTile />
+    <Spacer m={2}>
+      <Placeholder height={160} />
     </Spacer>
-    <ContentTile />
   </div>
 ))
 
 stories.add('Padding: 2x spacing unit', () => (
   <div>
-    <Spacer p={2} style={{ outline: '2px dotted lime' }}>
-      <ContentTile />
+    <Spacer p={2}>
+      <Placeholder height={160} />
     </Spacer>
-    <ContentTile />
   </div>
 ))
 
 stories.add('As a custom element', () => (
   <div>
-    <Spacer as="header" p={2} style={{ outline: '2px dotted lime' }}>
-      <ContentTile />
+    <Spacer as="header" p={2}>
+      <Placeholder height={160} />
     </Spacer>
-    <ContentTile />
   </div>
 ))

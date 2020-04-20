@@ -8,7 +8,7 @@ const colorFormatter = (color) => {
     formats: {
       rgb: formattedColor.rgb().string(),
       hsl: formattedColor.hsl().string(),
-      // 'color' module hs no RRGGBBAA support, so omit hex for semi-transparent colours
+      // 'color' module has no RRGGBBAA support, so omit hex for semi-transparent colours
       ...(typeof channels.alpha === 'undefined' && {
         hex: formattedColor.hex()
       })

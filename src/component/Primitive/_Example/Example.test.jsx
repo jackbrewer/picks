@@ -1,7 +1,6 @@
 import React from 'react'
 import validatePropTypes from 'validate-prop-types'
 import { render } from '@testing-library/react'
-import '@testing-library/jest-dom/extend-expect'
 import Example from '.'
 
 const requiredProps = () => ({ children: 'Default content' })

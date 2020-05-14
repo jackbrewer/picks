@@ -13,11 +13,18 @@ module.exports = {
     '^.+\\.css$': '<rootDir>/config/jest/css-transform.js',
     '^(?!.*\\.(js|jsx|css|json)$)': '<rootDir>/config/jest/file-transform.js'
   },
-  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$'],
+  transformIgnorePatterns: [
+    '[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$',
+    '^.+\\.module\\.(css|sass|scss)$'
+  ],
   moduleNameMapper: {
     '\\.(scss)$': 'identity-obj-proxy',
     '\\.svg$': '<rootDir>/config/jest/mock/svg.js',
     '@/(.*)$': '<rootDir>/src/$1'
   },
-  coverageReporters: ['text']
+  coverageReporters: ['text'],
+  watchPlugins: [
+    'jest-watch-typeahead/filename',
+    'jest-watch-typeahead/testname'
+  ]
 }

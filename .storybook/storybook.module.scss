@@ -24,9 +24,10 @@
     overflow: visible;
   }
 
-  [style*='selector-hack--story-info-content'] {
+  // Story info panel/overlay
+  #story-root + div div {
     > * + * {
-      margin-top: 20px;
+      margin-top: spacing(2);
     }
   }
 }

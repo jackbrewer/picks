@@ -1,6 +1,7 @@
 import React from 'react'
 import { bool, node, oneOfType, string } from 'prop-types'
 
+import CheckControlText from './CheckControlText'
 import CustomCheckControl from './CustomCheckControl'
 import NativeCheckControl from './NativeCheckControl'
 import ShrinkWrap from '../ShrinkWrap'
@@ -13,7 +14,9 @@ const CheckControl = ({ children, native, ...other }) => {
       <ShrinkWrap.Item shrink>
         <CheckControlType {...other} />
       </ShrinkWrap.Item>
-      <ShrinkWrap.Item>{children}</ShrinkWrap.Item>
+      <ShrinkWrap.Item>
+        <CheckControlText>{children}</CheckControlText>
+      </ShrinkWrap.Item>
     </ShrinkWrap>
   )
 }

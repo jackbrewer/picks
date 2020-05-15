@@ -1,0 +1,98 @@
+@mixin modal-fade-in($duration: 1000, $delay: 0) {
+  animation: modal-fade-in ($duration * 1ms) ($delay * 1ms) $ease-out-cubic 1
+    forwards;
+  opacity: 0;
+}
+
+@mixin modal-fade-in-up($duration: 1000, $delay: 0) {
+  animation: modal-fade-in-up ($duration * 1ms) ($delay * 1ms) $ease-out-cubic 1
+    forwards;
+  opacity: 0;
+}
+
+.Modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.ModalInner {
+  display: flex;
+  flex-direction: column;
+  max-width: spacing(50);
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100%;
+  padding: spacing(2) spacing(4);
+
+  // Align bottom for small screens for easier reachability
+  justify-content: flex-end;
+
+  @include mq($breakpoint-tablet) {
+    justify-content: center;
+  }
+}
+
+.ModalBg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba($color-common-black, 0.6);
+  @include modal-fade-in(300);
+}
+
+.ModalPanel {
+  background: white;
+  border-radius: $radius-standard;
+  overflow: hidden;
+  box-shadow: shadow(5);
+  @include modal-fade-in-up(300, 100);
+  padding: spacing(2);
+}
+
+.ModalPanelContent {
+  display: flex;
+  flex-direction: column;
+
+  > * + * {
+    margin-top: spacing(2);
+  }
+}
+
+.ModalClose {
+  align-self: flex-end;
+  position: relative;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+// .ModalContent {}
+
+.ModalActions {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes modal-fade-in {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-fade-in-up {
+  0% {
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

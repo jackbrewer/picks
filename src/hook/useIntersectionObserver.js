@@ -8,7 +8,7 @@ const useIntersectionObserver = ({
   threshold = 1.0
 }) => {
   useEffect(() => {
-    if (!root.current) return
+    if (!root) return
     if (!target) return
 
     const targetCurrent = target.current

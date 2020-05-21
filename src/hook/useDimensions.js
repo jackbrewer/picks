@@ -3,8 +3,6 @@ import { useLayoutEffect, useState } from 'react'
 const useDimensions = ({ ref, enableResize }) => {
   const [dimensions, setDimensions] = useState({})
   useLayoutEffect(() => {
-    if (!ref || !ref.current || ref.current.getBoundingClientRect) return
-
     const measure = () => {
       setDimensions(ref.current.getBoundingClientRect().toJSON())
     }

@@ -1,0 +1,17 @@
+// .CalendarWrapper {}
+
+.CalendarWrapperDates {
+  // margin-right: -1px;
+  @include mq($breakpoint-tablet) {
+    border-left: 1px solid $color-common-grey50;
+    border-bottom: 1px solid $color-common-grey50;
+  }
+}
+
+.CalendarWrapperName {
+  display: inline-block;
+  width: (100% / 7);
+  text-align: center;
+  padding: rem(5);
+  font-weight: bold;
+}

@@ -1,0 +1,59 @@
+.CalendarItem {
+  display: inline-block;
+  width: (100% / 7);
+  border-top: 1px solid $color-common-grey50;
+  @include mq($breakpoint-tablet) {
+    border-right: 1px solid $color-common-grey50;
+  }
+}
+
+.CalendarItemButton {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: spacing(0.5);
+  transition: background-color $duration-standard $easing-standard;
+
+  &:hover {
+    background-color: $color-primary-base;
+    color: $color-common-white;
+    transition-duration: $duration-shortest;
+  }
+
+  @include mq($breakpoint-tablet) {
+    padding-top: spacing(1);
+    padding-bottom: spacing(1);
+  }
+
+  .selected & {
+    color: $color-primary-base;
+    font-weight: bold;
+    background: $color-primary-light;
+
+    &:hover {
+      background-color: $color-primary-light;
+      color: $color-common-white;
+    }
+  }
+
+  .today & {
+    font-weight: bold;
+  }
+
+  .disabled &,
+  .outOfRange &,
+  .overlapping & {
+    color: $color-common-grey75;
+    background-color: transparent;
+    pointer-events: none;
+  }
+
+  .disabled.selected &,
+  .outOfRange.selected & {
+    color: $color-primary-base;
+    span {
+      opacity: 0.5;
+    }
+  }
+}

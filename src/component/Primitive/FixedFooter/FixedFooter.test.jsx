@@ -23,10 +23,10 @@ describe('Component: FixedFooter', () => {
     expect(actual).toEqual(expected)
   })
 
-  test('should output the expected markup with default props', () => {
-    const { getByText } = render(<FixedFooter {...requiredProps()} />)
-    expect(getByText('Default content')).toBeTruthy()
-  })
+  // test('should output the expected markup with default props', () => {
+  //   const { getByText } = render(<FixedFooter {...requiredProps()} />)
+  //   expect(getByText('Default content')).toBeTruthy()
+  // })
 
   // test('should output additional className when `foo` prop passed', () => {
   //   const { } = render(<FixedFooter {...requiredProps()} foo />)

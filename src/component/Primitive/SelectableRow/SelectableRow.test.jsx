@@ -3,7 +3,11 @@ import validatePropTypes from 'validate-prop-types'
 import { render } from '@testing-library/react'
 import SelectableRow from '.'
 
-const requiredProps = () => ({ children: 'Default content' })
+const requiredProps = () => ({
+  children: 'Default content',
+  name: 'exampleName',
+  value: 'Example Value'
+})
 
 describe('Component: SelectableRow', () => {
   test('should return errors if required props missing', () => {
@@ -11,7 +15,11 @@ describe('Component: SelectableRow', () => {
     const actual = validatePropTypes(SelectableRow.propTypes, {})
     const expected = {
       children:
-        'The prop `children` is marked as required in `Component`, but its value is `undefined`.'
+        'The prop `children` is marked as required in `Component`, but its value is `undefined`.',
+      name:
+        'The prop `name` is marked as required in `Component`, but its value is `undefined`.',
+      value:
+        'The prop `value` is marked as required in `Component`, but its value is `undefined`.'
     }
     expect(actual).toEqual(expected)
   })

@@ -1,0 +1,65 @@
+.SelectableItem {
+  display: block;
+  position: relative;
+}
+
+.SelectableItemInner {
+  padding: spacing(1) spacing(3);
+  display: flex;
+  align-items: center;
+  transition: background-color $duration-standard $easing-standard;
+}
+
+.SelectableItemControl {
+  // Position roughly in the correct place, then visually hide
+  position: absolute;
+  right: 0;
+  top: 50%;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.SelectableItemContent {
+  flex-grow: 1;
+  padding-right: spacing(2);
+}
+
+.SelectableItemIndicator {
+  width: spacing(4);
+  height: spacing(4);
+  border: 1px solid;
+  border-radius: 50%;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: transparent;
+  border-color: $color-common-grey50;
+  transition: all $duration-standard $easing-standard;
+
+  svg {
+    transition: all $duration-standard $easing-standard;
+    transform: translate(-1px, 1px) scale(0);
+    opacity: 0;
+    color: $color-common-white;
+  }
+}
+
+.SelectableItemControl:checked ~ .SelectableItemInner {
+  background-color: $color-primary-base;
+  color: $color-common-white;
+  transition-duration: $duration-shortest;
+
+  .SelectableItemIndicator {
+    background-color: $color-common-black;
+    transition-duration: $duration-shortest;
+
+    svg {
+      transform: translate(-1px, 1px) scale(1);
+      opacity: 1;
+      transition-duration: $duration-shortest;
+    }
+  }
+}

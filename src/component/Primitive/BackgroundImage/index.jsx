@@ -1,8 +1,11 @@
 import React from 'react'
-import { bool, number, string } from 'prop-types'
+import { arrayOf, bool, number, shape, string } from 'prop-types'
 import classNames from 'classnames'
 
 import styles from './BackgroundImage.module.scss'
+
+import generateUniqueCssClass from './lib/unique-css-class-generator'
+import srcSetToCss from './lib/srcset-to-css-formatter'
 
 const BackgroundImage = ({
   alt,
@@ -11,18 +14,26 @@ const BackgroundImage = ({
   position,
   ratio,
   size,
-  src
+  src,
+  srcSet
 }) => {
   const formattedRatio = parseFloat((ratio * 100).toFixed(5))
+
+  // To allow multiple srcSet powered <style> elements on the same page, each
+  // has to have a unique class name to avoid clashing. This creates a class
+  // based on the file path - rudimentary for now, can be improved later.
+  const hasSrcSet = !!srcSet.length
+  const uniqueClass = hasSrcSet && generateUniqueCssClass(srcSet[0].src)
 
   return (
     <div
       className={classNames(
         styles.BackgroundImage,
-        fillContainer && styles.fillContainer
+        fillContainer && styles.fillContainer,
+        uniqueClass
       )}
       style={{
-        backgroundImage: `url(${src})`,
+        ...(!hasSrcSet && { backgroundImage: `url(${src})` }),
         ...(color && { backgroundColor: color }),
         ...(position && { backgroundPosition: position }),
         ...(ratio && { paddingBottom: `${formattedRatio}%` }),
@@ -32,8 +43,20 @@ const BackgroundImage = ({
         role: 'img',
         'aria-label': alt
       })}
-    />
+    >
+      {hasSrcSet && (
+        <style
+          dangerouslySetInnerHTML={{
+            __html: srcSetToCss({ uniqueClass, srcSet })
+          }}
+        />
+      )}
+    </div>
   )
+}
+
+BackgroundImage.defaultProps = {
+  srcSet: []
 }
 
 BackgroundImage.propTypes = {
@@ -43,7 +66,8 @@ BackgroundImage.propTypes = {
   position: string,
   ratio: number,
   size: string,
-  src: string.isRequired
+  src: string.isRequired,
+  srcSet: arrayOf(shape({ width: number, src: string }))
 }
 
 export default BackgroundImage

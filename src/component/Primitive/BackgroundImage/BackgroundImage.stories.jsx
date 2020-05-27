@@ -102,3 +102,16 @@ stories.add('No a11y text', () => (
     ratio={9 / 16}
   />
 ))
+
+stories.add('Responsive images', () => (
+  <BackgroundImage
+    src="https://source.unsplash.com/800x600?nature"
+    alt=""
+    ratio={9 / 16}
+    srcSet={[
+      { width: 0, src: 'https://img.clock.co.uk/600' },
+      { width: 600, src: 'https://img.clock.co.uk/800' },
+      { width: 800, src: 'https://img.clock.co.uk/1000' }
+    ]}
+  />
+))

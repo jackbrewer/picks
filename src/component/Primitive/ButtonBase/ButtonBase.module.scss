@@ -1,20 +1,12 @@
-// Intentionally use element selectors in place of .BaseButton class so
-// components which extend this one don't experience specificity clashes.
-a,
-button {
+.ButtonBase {
   display: inline-block;
   vertical-align: middle;
-  color: inherit;
-  line-height: inherit;
-  text-align: center;
-  text-decoration: none;
   transition: all $duration-standard $easing-standard;
 
   &:focus,
   &:hover {
     outline: 0;
     transition-duration: $duration-shortest;
-    text-decoration: none;
   }
 
   // &:active {}

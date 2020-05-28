@@ -1,4 +1,7 @@
-.ButtonBase {
+// Intentionally use element selectors in place of .BaseButton class so
+// components which extend this one don't experience specificity clashes.
+a,
+button {
   display: inline-block;
   vertical-align: middle;
   color: inherit;

@@ -2,8 +2,8 @@ $toggle-width: $breakpoint-tablet;
 
 .SplitHero {
   position: relative;
-  background-color: $color-common-grey25;
-  color: $color-common-white;
+  background-color: $color-grey25;
+  color: $color-white;
   min-height: spacing(56);
   display: flex;
 
@@ -40,8 +40,8 @@ $toggle-width: $breakpoint-tablet;
     padding: spacing(4);
     background-image: linear-gradient(
       0deg,
-      rgba($color-common-grey25, 1) 0%,
-      rgba($color-common-grey25, 0) 86%
+      rgba($color-grey25, 1) 0%,
+      rgba($color-grey25, 0) 86%
     );
   }
 }

@@ -2,7 +2,7 @@
   display: block;
   width: 100%;
   height: spacing(4);
-  border: 1px solid $color-common-grey75;
+  border: 1px solid $color-grey75;
   color: inherit;
   font-family: inherit;
   font-size: inherit;
@@ -16,7 +16,7 @@
   }
 
   &:hover {
-    border-color: $color-common-grey50;
+    border-color: $color-grey50;
   }
 
   &:focus {

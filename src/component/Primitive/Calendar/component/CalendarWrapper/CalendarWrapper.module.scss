@@ -3,8 +3,8 @@
 .CalendarWrapperDates {
   // margin-right: -1px;
   @include mq($breakpoint-tablet) {
-    border-left: 1px solid $color-common-grey50;
-    border-bottom: 1px solid $color-common-grey50;
+    border-left: 1px solid $color-grey50;
+    border-bottom: 1px solid $color-grey50;
   }
 }
 

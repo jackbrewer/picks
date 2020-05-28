@@ -86,7 +86,7 @@
   }
 
   a {
-    color: $color-primary-base;
+    color: $color-primary;
     text-decoration: underline;
     transition: color $duration-standard $easing-standard;
 
@@ -114,12 +114,12 @@
 
 .inverse {
   a {
-    color: $color-common-white;
+    color: $color-white;
 
     &:hover,
     &:focus,
     &:active {
-      color: $color-common-white;
+      color: $color-white;
     }
   }
 }

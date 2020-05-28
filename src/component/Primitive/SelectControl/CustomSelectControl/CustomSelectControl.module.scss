@@ -11,7 +11,7 @@
   position: relative;
   display: block;
   padding: 0;
-  border: 1px solid $color-common-grey75;
+  border: 1px solid $color-grey75;
   border-radius: $radius-standard;
 
   // This is the native select, we’re making everything but the text invisible
@@ -34,12 +34,12 @@
     }
 
     &:hover {
-      box-shadow: 0 0 0 1px $color-common-grey50;
+      box-shadow: 0 0 0 1px $color-grey50;
     }
 
     &:focus,
     &:active {
-      box-shadow: 0 0 0 1px $color-primary-base;
+      box-shadow: 0 0 0 1px $color-primary;
     }
   }
 
@@ -52,11 +52,11 @@
     bottom: 2px;
     right: 2px;
     width: spacing(6);
-    background: $color-common-white;
+    background: $color-white;
     background: linear-gradient(
       to right,
-      rgba($color-common-white, 0),
-      $color-common-white 40%
+      rgba($color-white, 0),
+      $color-white 40%
     );
     pointer-events: none;
   }
@@ -71,7 +71,7 @@
     z-index: 2;
     // This hack make the select behind the arrow clickable in some browsers
     pointer-events: none;
-    @include triangle(down, 6px, $color-common-grey50);
+    @include triangle(down, 6px, $color-grey50);
   }
 }
 
@@ -121,7 +121,7 @@
   }
   .CustomSelectControl select:focus::-ms-value {
     background: transparent;
-    color: $color-common-black;
+    color: $color-black;
   }
 }
 
@@ -154,5 +154,5 @@
 // See https://developer.mozilla.org/en-US/docs/Web/CSS/:-moz-focusring
 .CustomSelectControl select:-moz-focusring {
   color: transparent;
-  text-shadow: 0 0 0 $color-common-black;
+  text-shadow: 0 0 0 $color-black;
 }

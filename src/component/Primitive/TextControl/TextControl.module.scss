@@ -3,12 +3,12 @@
   width: 100%;
   font-family: inherit;
   font-size: inherit;
-  background-color: $color-common-white;
+  background-color: $color-white;
   transition: all $duration-standard $easing-standard;
   padding: spacing(1.5) - 1 spacing(2) - 1;
   color: inherit;
   line-height: spacing(3);
-  border: 1px solid $color-common-grey75;
+  border: 1px solid $color-grey75;
   background-clip: padding-box;
   border-radius: $radius-standard;
 
@@ -20,11 +20,11 @@
   }
 
   &:hover {
-    border-color: $color-common-grey50;
+    border-color: $color-grey50;
   }
 
   &:focus {
-    border-color: $color-primary-base;
+    border-color: $color-primary;
     outline: 0;
   }
 

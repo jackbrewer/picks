@@ -4,9 +4,9 @@ $signpost-stack-breakpoint: $breakpoint-mobileLandscape;
   flex: 1 0 auto;
   display: flex;
   align-items: flex-start;
-  border: 1px solid $color-common-grey50;
+  border: 1px solid $color-grey50;
   padding: spacing(2);
-  background: $color-common-white;
+  background: $color-white;
   box-shadow: shadow(2);
   border-radius: $radius-standard;
   @include mq($signpost-stack-breakpoint) {
@@ -21,7 +21,7 @@ $signpost-stack-breakpoint: $breakpoint-mobileLandscape;
 
 .SignpostIcon {
   margin-right: spacing(1);
-  color: $color-primary-base;
+  color: $color-primary;
 
   @include mq($signpost-stack-breakpoint) {
     margin-right: 0;

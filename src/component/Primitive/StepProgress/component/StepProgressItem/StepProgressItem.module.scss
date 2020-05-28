@@ -2,8 +2,8 @@
   flex: 1 0 auto;
   transition: background-color $duration-standard $easing-standard;
   text-align: center;
-  color: $color-common-white;
-  background-color: $color-common-grey75;
+  color: $color-white;
+  background-color: $color-grey75;
 
   & + & {
     margin-left: 1px;

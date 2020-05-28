@@ -36,24 +36,24 @@
   justify-content: center;
   overflow: hidden;
   background-color: transparent;
-  border-color: $color-common-grey50;
+  border-color: $color-grey50;
   transition: all $duration-standard $easing-standard;
 
   svg {
     transition: all $duration-standard $easing-standard;
     transform: translate(-1px, 1px) scale(0);
     opacity: 0;
-    color: $color-common-white;
+    color: $color-white;
   }
 }
 
 .SelectableItemControl:checked ~ .SelectableItemInner {
-  background-color: $color-primary-base;
-  color: $color-common-white;
+  background-color: $color-primary;
+  color: $color-white;
   transition-duration: $duration-shortest;
 
   .SelectableItemIndicator {
-    background-color: $color-common-black;
+    background-color: $color-black;
     transition-duration: $duration-shortest;
 
     svg {

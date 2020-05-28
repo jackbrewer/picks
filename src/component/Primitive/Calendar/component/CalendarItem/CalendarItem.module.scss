@@ -1,9 +1,9 @@
 .CalendarItem {
   display: inline-block;
   width: (100% / 7);
-  border-top: 1px solid $color-common-grey50;
+  border-top: 1px solid $color-grey50;
   @include mq($breakpoint-tablet) {
-    border-right: 1px solid $color-common-grey50;
+    border-right: 1px solid $color-grey50;
   }
 }
 
@@ -16,8 +16,8 @@
   transition: background-color $duration-standard $easing-standard;
 
   &:hover {
-    background-color: $color-primary-base;
-    color: $color-common-white;
+    background-color: $color-primary;
+    color: $color-white;
     transition-duration: $duration-shortest;
   }
 
@@ -27,13 +27,13 @@
   }
 
   .selected & {
-    color: $color-primary-base;
+    color: $color-primary;
     font-weight: bold;
     background: $color-primary-light;
 
     &:hover {
       background-color: $color-primary-light;
-      color: $color-common-white;
+      color: $color-white;
     }
   }
 
@@ -44,14 +44,14 @@
   .disabled &,
   .outOfRange &,
   .overlapping & {
-    color: $color-common-grey75;
+    color: $color-grey75;
     background-color: transparent;
     pointer-events: none;
   }
 
   .disabled.selected &,
   .outOfRange.selected & {
-    color: $color-primary-base;
+    color: $color-primary;
     span {
       opacity: 0.5;
     }

@@ -1,9 +1,9 @@
 .Panel {
   border-radius: $radius-standard;
-  border: 1px solid $color-common-grey50;
+  border: 1px solid $color-grey50;
   overflow: hidden;
   box-shadow: shadow(2);
-  background-color: $color-common-white;
+  background-color: $color-white;
 }
 
 .PanelHeader {
@@ -23,5 +23,5 @@
 }
 
 .highlighted {
-  border-color: $color-primary-base;
+  border-color: $color-primary;
 }

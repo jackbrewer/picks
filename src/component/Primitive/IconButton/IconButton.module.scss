@@ -31,12 +31,12 @@
 }
 
 .solid {
-  color: $color-common-white;
-  background-color: $color-primary-base;
+  color: $color-white;
+  background-color: $color-primary;
 
   &:focus,
   &:hover {
-    color: $color-common-white;
+    color: $color-white;
     background-color: $color-primary-light;
   }
   &:active {

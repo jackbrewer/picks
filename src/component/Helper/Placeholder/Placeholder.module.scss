@@ -1,6 +1,6 @@
 .Placeholder {
   position: relative;
-  background-color: $color-common-grey95;
+  background-color: $color-grey95;
   padding: spacing(1);
 }
 
@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $color-common-grey50;
+  color: $color-grey50;
 }
 
 .PlaceholderSvg {
@@ -18,12 +18,12 @@
   height: 100%;
   left: 0;
   top: 0;
-  border: 2px solid $color-common-grey75;
+  border: 2px solid $color-grey75;
   z-index: 0;
 
   line {
     stroke-width: 1px;
-    stroke: $color-common-grey75;
+    stroke: $color-grey75;
     opacity: 0.5;
   }
 }

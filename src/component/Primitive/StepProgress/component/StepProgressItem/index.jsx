@@ -13,6 +13,7 @@ const StepProgress = ({ children, complete, current, status }) => {
         current && styles.current,
         status && styles[status]
       )}
+      {...(current && { 'aria-current': 'step' })}
     >
       {children}
     </div>

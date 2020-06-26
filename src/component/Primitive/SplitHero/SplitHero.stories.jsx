@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import SplitHero from '.'
 
-const stories = storiesOf('Unsorted/SplitHero')
+const stories = storiesOf('Unsorted/SplitHero', module)
 
 stories.add(
   'Info',

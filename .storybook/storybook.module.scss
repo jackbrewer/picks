@@ -1,22 +1,6 @@
+@import '../src/asset/scss/base.scss';
+
 :global {
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-  }
-
-  html {
-    box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-      Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-      'Segoe UI Symbol';
-    height: auto;
-    min-height: 100%;
-    overflow: visible;
-  }
-
   body,
   #root {
     height: 100%;
@@ -28,6 +12,11 @@
   #story-root + div div {
     > * + * {
       margin-top: spacing(2);
+    }
+  }
+  .simplebar-wrapper {
+    > * + * {
+      margin-top: 0 !important;
     }
   }
 }

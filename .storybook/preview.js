@@ -37,9 +37,6 @@ addDecorator(
         border: 0,
         margin: 0,
         paddingBottom: 20
-      },
-      infoContent: {
-        counterReset: 'selector-hack--story-info-content'
       }
     }
   })

@@ -20,6 +20,12 @@ module.exports = ({ config, mode }) => {
     use: createSvgLoader()
   })
 
+  // Add support for video subtitle files
+  config.module.rules.unshift({
+    test: /\.vtt$/,
+    loader: 'file-loader'
+  })
+
   // Add CSS modules support
   config.module.rules.unshift({
     test: /\.scss$/,

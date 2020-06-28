@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import Address from '.'
 
-const stories = storiesOf('Unsorted/Address', module)
+const stories = storiesOf('Schema/Address', module)
 
 stories.add(
   'Info',
@@ -22,7 +22,10 @@ stories.add(
     info: {
       inline: true,
       text: `
-        TBC
+        Displays a person or organisation address, formatted using the
+        PostalAddress schema.
+
+        [schema.org/PostalAddress](https://schema.org/PostalAddress)
       `
     }
   }

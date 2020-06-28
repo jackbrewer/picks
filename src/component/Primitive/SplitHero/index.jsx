@@ -50,7 +50,7 @@ SplitHero.propTypes = {
   ctaText: string,
   ctaUrl: string,
   description: string,
-  src: string,
+  src: string.isRequired,
   srcSet: arrayOf(shape({ width: number, src: string })),
   title: string.isRequired
 }

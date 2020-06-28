@@ -10,11 +10,11 @@ const CheckControl = ({ children, native, ...other }) => {
   const CheckControlType = native ? NativeCheckControl : CustomCheckControl
 
   return (
-    <ShrinkWrap as="label" vAlign="middle">
-      <ShrinkWrap.Item shrink>
+    <ShrinkWrap as="label">
+      <ShrinkWrap.Item shrink vAlign="middle">
         <CheckControlType {...other} />
       </ShrinkWrap.Item>
-      <ShrinkWrap.Item>
+      <ShrinkWrap.Item vAlign="middle">
         <CheckControlText>{children}</CheckControlText>
       </ShrinkWrap.Item>
     </ShrinkWrap>

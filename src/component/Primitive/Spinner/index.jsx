@@ -12,7 +12,7 @@ const Spinner = ({ a11yText, paused, revealDelay, size }) => (
     role="alert"
     aria-live="assertive"
     style={{
-      animationDelay: revealDelay && `${revealDelay}ms`,
+      ...(revealDelay && { animationDelay: `${revealDelay}ms` }),
       ...(size && {
         height: size,
         lineHeight: `${size}px`,

@@ -1,6 +1,5 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import Placeholder from '../../Helper/Placeholder'
 
 import SeparatedStack from '.'
 
@@ -19,7 +18,8 @@ stories.add(
     info: {
       inline: true,
       text: `
-        A wrapper component which adds horizontal borders to children.
+        A wrapper component which adds horizontal borders (but no additional
+        spacing) to children.
       `
     }
   }

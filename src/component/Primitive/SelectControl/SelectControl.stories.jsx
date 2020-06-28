@@ -50,6 +50,12 @@ stories.add('Pre-selected value', () => (
   </SelectControl>
 ))
 
+stories.add('Disabled', () => (
+  <SelectControl name="exampleSelect" disabled onChange={() => {}}>
+    {options}
+  </SelectControl>
+))
+
 stories.add('Text with status (direct)', () => (
   <SelectControl name="exampleSelect" type="text" status="error">
     {options}

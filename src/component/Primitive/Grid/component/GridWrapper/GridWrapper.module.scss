@@ -17,7 +17,7 @@ $gutters: (
   @include grid-reverse(d);
 }
 
-:export {
-  /* stylelint-disable-next-line property-no-unknown */
-  gutters: map-keys($gutters);
-}
+// :export {
+//   /* stylelint-disable-next-line property-no-unknown */
+//   gutters: map-keys($gutters);
+// }

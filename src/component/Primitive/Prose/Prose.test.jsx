@@ -30,7 +30,7 @@ describe('Component: Prose', function () {
   })
 
   test('should output the expected markup with html', function () {
-    const wrapper = shallow(<Prose html="<p>Default content</p>" />)
+    const wrapper = shallow(<Prose dangerousHtml="<p>Default content</p>" />)
     expect(wrapper.html()).toEqual(
       '<div class="Prose"><p>Default content</p></div>'
     )

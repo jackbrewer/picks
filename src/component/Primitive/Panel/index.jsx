@@ -33,6 +33,7 @@ const Panel = ({
           className={styles.PanelHeader}
           as={expandable ? 'button' : 'div'}
           {...(expandable && {
+            type: 'button',
             onClick: handleToggleExpanded,
             'aria-expanded': expanded
           })}

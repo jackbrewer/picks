@@ -1,11 +1,13 @@
 import React from 'react'
 import classNames from 'classnames'
-import { arrayOf, node, number, object, oneOfType } from 'prop-types'
-import sassKeysToArray from '../../../../../lib/sass-keys-to-array'
+import { arrayOf, node, number, object, oneOf, oneOfType } from 'prop-types'
+// import sassKeysToArray from '../../../../../lib/sass-keys-to-array'
 
 import styles from './GridItem.module.scss'
 
-const columns = sassKeysToArray(styles.columns)
+// const columns = sassKeysToArray(styles.columns)
+const columns = ['m', 't', 'd']
+const trailingGaps = ['mobile', 'default']
 
 const getWidthClasses = (widths) => {
   if (Array.isArray(widths)) {
@@ -20,18 +22,23 @@ const getWidthClasses = (widths) => {
   )
 }
 
-const GridItem = ({ children, width }) => (
-  <span
-    className={classNames(styles.GridItem, width && getWidthClasses(width))}
+const GridItem = ({ children, width, trailingGap }) => (
+  <div
+    className={classNames(
+      styles.GridItem,
+      width && getWidthClasses(width),
+      trailingGap && styles[`trailingGap-${trailingGap}`]
+    )}
   >
     {children}
-  </span>
+  </div>
 )
 
 GridItem.displayName = 'GridItem'
 
 GridItem.propTypes = {
   children: node.isRequired,
+  trailingGap: oneOf(trailingGaps),
   width: oneOfType([arrayOf(number), object])
 }
 

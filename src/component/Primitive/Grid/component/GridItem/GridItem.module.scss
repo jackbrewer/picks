@@ -29,7 +29,17 @@ $columns: (
   @include grid-widths('d', $columns);
 }
 
-:export {
-  /* stylelint-disable-next-line property-no-unknown */
-  columns: map-keys($columns);
+.trailingGap-default {
+  margin-bottom: spacing(2);
 }
+
+.trailingGap-mobile {
+  @include mq($max: $breakpoint-tablet) {
+    margin-bottom: spacing(2);
+  }
+}
+
+// :export {
+//   /* stylelint-disable-next-line property-no-unknown */
+//   columns: map-keys($columns);
+// }

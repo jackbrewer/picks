@@ -1,4 +1,4 @@
-import React, { Children } from 'react'
+import React from 'react'
 import classNames from 'classnames'
 import { bool, node, string } from 'prop-types'
 
@@ -6,25 +6,17 @@ import styles from './ShrinkWrapWrapper.module.scss'
 
 import Element from '../../../Element'
 
-const ShrinkWrapWrapper = ({
-  children,
-  as,
-  fixed,
-  fullWidth,
-  spacing,
-  vAlign
-}) => (
+const ShrinkWrapWrapper = ({ children, as, fixed, fullWidth, mobileStack }) => (
   <Element
     as={as}
     className={classNames(
       styles.ShrinkWrapWrapper,
       fixed && styles.fixed,
-      fullWidth && styles.fullWidth
+      fullWidth && styles.fullWidth,
+      mobileStack && styles.mobileStack
     )}
   >
-    {Children.map(children, (child) => {
-      return React.cloneElement(child, { spacing, vAlign })
-    })}
+    {children}
   </Element>
 )
 
@@ -33,8 +25,7 @@ ShrinkWrapWrapper.propTypes = {
   as: string,
   fixed: bool,
   fullWidth: bool,
-  spacing: string,
-  vAlign: string
+  mobileStack: bool
 }
 
 export default ShrinkWrapWrapper

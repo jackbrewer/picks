@@ -8,6 +8,7 @@ const CheckFieldTemplate = ({
   assistance,
   children,
   controlName,
+  disabled,
   feedback,
   hideLabel,
   inverse,
@@ -19,6 +20,7 @@ const CheckFieldTemplate = ({
     <Field.Question
       htmlFor={controlName} /* matches Control controlName */
       // element="div"
+      disabled={disabled}
       id={`field-question--${controlName}`}
     >
       {label}
@@ -56,6 +58,7 @@ CheckFieldTemplate.propTypes = {
   assistance: node,
   controlName: string.isRequired,
   children: node.isRequired,
+  disabled: bool,
   feedback: node,
   hideLabel: bool,
   inverse: bool,

@@ -1,10 +1,11 @@
 import React from 'react'
-import { func, node, oneOf, string } from 'prop-types'
+import { bool, func, node, oneOf, string } from 'prop-types'
 // import Link from 'next/link'
 
 const SmartLink = ({
   children,
   className,
+  disabled,
   href,
   setRef,
   to,
@@ -17,8 +18,9 @@ const SmartLink = ({
     return (
       <a
         className={className}
-        href={href}
         ref={setRef}
+        {...(!disabled && { href })}
+        {...(disabled && { 'aria-disabled': 'true' })}
         {...(target && { target })}
         {...(target === '_blank' && { rel: 'noopener noreferrer' })}
         {...other}
@@ -40,7 +42,13 @@ const SmartLink = ({
 
   // No `href` or `to` means we need a `button` element
   return (
-    <button className={className} type={type} ref={setRef} {...other}>
+    <button
+      className={className}
+      type={type}
+      ref={setRef}
+      {...(disabled && { disabled })}
+      {...other}
+    >
       {children}
     </button>
   )
@@ -53,6 +61,7 @@ SmartLink.defaultProps = {
 SmartLink.propTypes = {
   children: node.isRequired,
   className: string,
+  disabled: bool,
   href: string,
   setRef: func,
   to: string,

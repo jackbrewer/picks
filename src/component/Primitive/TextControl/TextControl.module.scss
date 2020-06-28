@@ -5,12 +5,13 @@
   font-size: inherit;
   background-color: $color-white;
   transition: all $duration-standard $easing-standard;
-  padding: spacing(1.5) - 1 spacing(2) - 1;
+  padding: spacing(1) - 1 spacing(1.5) - 1;
   color: inherit;
   line-height: spacing(3);
   border: 1px solid $color-grey75;
   background-clip: padding-box;
-  border-radius: $radius-standard;
+  border-radius: $radius-small;
+  caret-color: $color-primary;
 
   // &::placeholder {}
 
@@ -25,6 +26,7 @@
 
   &:focus {
     border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.3);
     outline: 0;
   }
 
@@ -42,5 +44,17 @@
 @each $key, $value in $color-status-list {
   .#{$key} {
     border-color: $value !important;
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  color: $color-grey75 !important;
+  border-color: $color-grey75 !important;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: none !important;
   }
 }

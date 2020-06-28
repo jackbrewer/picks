@@ -49,6 +49,10 @@ stories.add('Text with value', () => (
   />
 ))
 
+stories.add('Disabled', () => (
+  <TextControl name="exampleText" type="text" disabled value="disabled" />
+))
+
 stories.add('Text with status (direct)', () => (
   <TextControl name="exampleText" type="text" status="error" />
 ))

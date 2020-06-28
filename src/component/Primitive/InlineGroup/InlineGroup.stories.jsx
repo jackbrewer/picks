@@ -6,7 +6,7 @@ import InlineGroup from '.'
 import ButtonStandard from '../ButtonStandard'
 import TextControl from '../TextControl'
 
-const stories = storiesOf('Unsorted/InlineGroup', module)
+const stories = storiesOf('Layout/InlineGroup', module)
 
 stories.add(
   'Info',
@@ -20,8 +20,10 @@ stories.add(
   {
     info: {
       inline: true,
-      text: `Hi
-    `
+      text: `
+        Groups components in a similar way to \`<Inline />\` but adds/removes
+        rounded corners from children to give a more “grouped” visual.
+      `
     }
   }
 )

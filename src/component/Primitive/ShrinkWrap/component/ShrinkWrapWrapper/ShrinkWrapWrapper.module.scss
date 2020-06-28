@@ -10,3 +10,14 @@
 .fullWidth {
   width: 100%;
 }
+
+@include mq($max: $breakpoint-tablet - 1) {
+  .mobileStack {
+    > * {
+      display: inline-block !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      width: 100% !important;
+    }
+  }
+}

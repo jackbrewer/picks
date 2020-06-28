@@ -1,12 +1,21 @@
 import React from 'react'
 import classNames from 'classnames'
-import { node, oneOf } from 'prop-types'
-import sassKeysToArray from '../../../lib/sass-keys-to-array'
+import { bool, node, oneOf } from 'prop-types'
+// import sassKeysToArray from '../../../lib/sass-keys-to-array'
 
 import styles from './Inline.module.scss'
 
-const Inline = ({ children, gap }) => (
-  <div className={classNames(styles.Inline, gap && styles[gap])}>
+// const gaps = sassKeysToArray(styles.gaps)
+const gaps = ['small', 'medium', 'large']
+
+const Inline = ({ children, gap, shrink }) => (
+  <div
+    className={classNames(
+      styles.Inline,
+      gap && styles[gap],
+      shrink && styles.shrink
+    )}
+  >
     {children}
   </div>
 )
@@ -17,7 +26,8 @@ Inline.defaultProps = {
 
 Inline.propTypes = {
   children: node.isRequired,
-  gap: oneOf(sassKeysToArray(styles.gaps))
+  gap: oneOf(gaps),
+  shrink: bool
 }
 
 export default Inline

@@ -11,6 +11,7 @@
   position: relative;
   display: block;
   padding: 0;
+  background-color: $color-white;
   border: 1px solid $color-grey75;
   border-radius: $radius-standard;
 
@@ -21,8 +22,8 @@
     -moz-appearance: none;
     appearance: none;
     border: 0;
-    height: spacing(6) - 2;
-    padding: spacing(0.5) - 1 spacing(2) - 1;
+    height: spacing(5) - 2;
+    padding: spacing(1) - 1 spacing(1.5) - 1;
     line-height: spacing(3);
     transition: all $duration-standard $easing-standard;
     border-radius: $radius-standard - 1;
@@ -39,7 +40,7 @@
 
     &:focus,
     &:active {
-      box-shadow: 0 0 0 1px $color-primary;
+      box-shadow: 0 0 0 1px $color-primary, 0 0 0 4px rgba($color-primary, 0.3);
     }
   }
 
@@ -60,18 +61,19 @@
     );
     pointer-events: none;
   }
+}
 
-  // Custom arrow sits on top of the select
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: spacing(2);
-    transform: translateY(-50%);
-    z-index: 2;
-    // This hack make the select behind the arrow clickable in some browsers
-    pointer-events: none;
-    @include triangle(down, 6px, $color-grey50);
+.CustomSelectControlIndicator {
+  color: $color-primary;
+  position: absolute;
+  top: 50%;
+  right: spacing(0.75);
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none;
+
+  svg {
+    fill: currentColor;
   }
 }
 
@@ -100,6 +102,25 @@
       &:active {
         box-shadow: 0 0 0 1px $value !important;
       }
+    }
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  border-color: $color-grey75 !important;
+
+  .CustomSelectControlIndicator {
+    color: $color-grey75 !important;
+  }
+
+  select {
+    color: $color-grey75 !important;
+    opacity: 1;
+    &:hover,
+    &:focus,
+    &:active {
+      box-shadow: none !important;
     }
   }
 }

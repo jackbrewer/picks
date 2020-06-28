@@ -64,13 +64,13 @@ stories.add('Full width', () => (
 ))
 
 stories.add('Vertical-align top', () => (
-  <ShrinkWrap vAlign="top">
-    <ShrinkWrap.Item shrink>
+  <ShrinkWrap>
+    <ShrinkWrap.Item shrink vAlign="top">
       <span role="img" aria-label="Rocket">
         🚀
       </span>
     </ShrinkWrap.Item>
-    <ShrinkWrap.Item>
+    <ShrinkWrap.Item vAlign="top">
       Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
       vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
       Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.
@@ -79,13 +79,13 @@ stories.add('Vertical-align top', () => (
 ))
 
 stories.add('Vertical-align middle', () => (
-  <ShrinkWrap vAlign="middle">
-    <ShrinkWrap.Item shrink>
+  <ShrinkWrap>
+    <ShrinkWrap.Item shrink vAlign="middle">
       <span role="img" aria-label="Rocket">
         🚀
       </span>
     </ShrinkWrap.Item>
-    <ShrinkWrap.Item>
+    <ShrinkWrap.Item vAlign="middle">
       Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
       vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
       Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.
@@ -94,13 +94,13 @@ stories.add('Vertical-align middle', () => (
 ))
 
 stories.add('Vertical-align bottom', () => (
-  <ShrinkWrap vAlign="bottom">
-    <ShrinkWrap.Item shrink>
+  <ShrinkWrap>
+    <ShrinkWrap.Item shrink vAlign="bottom">
       <span role="img" aria-label="Rocket">
         🚀
       </span>
     </ShrinkWrap.Item>
-    <ShrinkWrap.Item>
+    <ShrinkWrap.Item vAlign="bottom">
       Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
       vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
       Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.
@@ -174,13 +174,13 @@ stories.add('No wrapping for shrink items', () => (
 ))
 
 stories.add('Spacing variation (comfortable)', () => (
-  <ShrinkWrap spacing="comfortable">
-    <ShrinkWrap.Item>
+  <ShrinkWrap>
+    <ShrinkWrap.Item spacing="comfortable">
       <span role="img" aria-label="Rocket">
         🚀
       </span>
     </ShrinkWrap.Item>
-    <ShrinkWrap.Item>
+    <ShrinkWrap.Item spacing="comfortable">
       Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae
       elit libero, a pharetra augue. Donec sed odio dui.
     </ShrinkWrap.Item>
@@ -190,7 +190,7 @@ stories.add('Spacing variation (comfortable)', () => (
 stories.add('General spacing examples', () => (
   <>
     <em>Default state:</em>
-    <ShrinkWrap spacing="comfortable">
+    <ShrinkWrap>
       <ShrinkWrap.Item>Item one</ShrinkWrap.Item>
       <ShrinkWrap.Item>Item two</ShrinkWrap.Item>
       <ShrinkWrap.Item>Item three is longer</ShrinkWrap.Item>
@@ -198,7 +198,7 @@ stories.add('General spacing examples', () => (
     </ShrinkWrap>
     <hr style={{ margin: '20px 0' }} />
     <em>Full-width, auto layout:</em>
-    <ShrinkWrap spacing="comfortable" fullWidth>
+    <ShrinkWrap fullWidth>
       <ShrinkWrap.Item>Item one</ShrinkWrap.Item>
       <ShrinkWrap.Item>Item two</ShrinkWrap.Item>
       <ShrinkWrap.Item>Item three is longer</ShrinkWrap.Item>
@@ -206,7 +206,7 @@ stories.add('General spacing examples', () => (
     </ShrinkWrap>
     <hr style={{ margin: '20px 0' }} />
     <em>Full-width, fixed layout:</em>
-    <ShrinkWrap spacing="comfortable" fullWidth fixed>
+    <ShrinkWrap fullWidth fixed>
       <ShrinkWrap.Item>Item one</ShrinkWrap.Item>
       <ShrinkWrap.Item>Item two</ShrinkWrap.Item>
       <ShrinkWrap.Item>Item three is longer</ShrinkWrap.Item>

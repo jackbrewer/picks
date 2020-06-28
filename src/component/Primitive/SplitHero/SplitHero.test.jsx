@@ -3,13 +3,15 @@ import validatePropTypes from 'validate-prop-types'
 import { render } from '@testing-library/react'
 import SplitHero from '.'
 
-const requiredProps = () => ({ title: 'Default content' })
+const requiredProps = () => ({ title: 'Default content', src: 'image.jpg' })
 
 describe('Component: SplitHero', () => {
   test('should return errors if required props missing', () => {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(SplitHero.propTypes, {})
     const expected = {
+      src:
+        'The prop `src` is marked as required in `Component`, but its value is `undefined`.',
       title:
         'The prop `title` is marked as required in `Component`, but its value is `undefined`.'
     }

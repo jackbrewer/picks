@@ -35,6 +35,10 @@ stories.add('Block (full-width)', () => (
   <ButtonStandard block>Block Button</ButtonStandard>
 ))
 
+stories.add('Loading state', () => (
+  <ButtonStandard loading>Loading Button</ButtonStandard>
+))
+
 stories.add('Disabled', () => (
   <ButtonStandard disabled>Disabled Button</ButtonStandard>
 ))

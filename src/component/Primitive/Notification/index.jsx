@@ -1,16 +1,15 @@
 import React, { useContext } from 'react'
-import { func, node, oneOf, string } from 'prop-types'
+import { bool, func, node, oneOf, string } from 'prop-types'
 import classNames from 'classnames'
 
 import { StatusContext } from '../../Context/StatusContext'
 
 import styles from './Notification.module.scss'
 
+import Icon from '../Icon'
 import IconButton from '../IconButton'
-import ShrinkWrap from '../ShrinkWrap'
 
-const Notification = (props) => {
-  const { children, className, onDismiss, status } = props
+const Notification = ({ children, icon, onDismiss, shadow, status }) => {
   const contextStatus = useContext(StatusContext)
   const derivedStatus = status || contextStatus
 
@@ -19,23 +18,25 @@ const Notification = (props) => {
       className={classNames(
         styles.Notification,
         derivedStatus && styles[derivedStatus],
-        className
+        shadow && styles.shadow
       )}
     >
-      {!onDismiss && children}
+      {icon && (
+        <div className={styles.NotificationIcon}>
+          <Icon type={icon} a11yText="" />
+        </div>
+      )}
+      <div className={styles.NotificationContent}>{children}</div>
       {onDismiss && (
-        <ShrinkWrap vAlign="middle" fullWidth>
-          <ShrinkWrap.Item>{children}</ShrinkWrap.Item>
-          <ShrinkWrap.Item shrink>
-            <IconButton
-              a11yText="Dismiss"
-              icon="close"
-              increaseHitArea
-              onClick={onDismiss}
-              small
-            />
-          </ShrinkWrap.Item>
-        </ShrinkWrap>
+        <div className={styles.NotificationDismiss}>
+          <IconButton
+            a11yText="Dismiss"
+            icon="close"
+            increaseHitArea
+            onClick={onDismiss}
+            small
+          />
+        </div>
       )}
     </div>
   )
@@ -43,8 +44,9 @@ const Notification = (props) => {
 
 Notification.propTypes = {
   children: node.isRequired,
-  className: string,
+  icon: string,
   onDismiss: func,
+  shadow: bool,
   status: oneOf(['none', 'error', 'notice', 'success', 'warning'])
 }
 

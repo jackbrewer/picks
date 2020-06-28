@@ -9,19 +9,28 @@ import FocusTrap from 'focus-trap-react'
 import styles from './Modal.module.scss'
 
 import VisuallyHidden from '../VisuallyHidden'
-import Icon from '../Icon'
+import IconButton from '../IconButton'
 
-const Modal = ({ actions, ariaLabel, children, onClose, open, role }) => {
+const Modal = ({
+  actions,
+  ariaLabel,
+  children,
+  heading,
+  onClose,
+  open,
+  role
+}) => {
   const ref = useRef()
 
   const handleClose = () => {
-    onClose && onClose()
+    open && onClose && onClose()
   }
 
   useEscapeKey(handleClose)
   useOutsideClick(ref, handleClose)
 
   if (!open) return null
+  if (typeof window === 'undefined') return null
 
   return createPortal(
     <aside
@@ -43,14 +52,16 @@ const Modal = ({ actions, ariaLabel, children, onClose, open, role }) => {
               </VisuallyHidden>
             )}
             {onClose && (
-              <button
-                className={styles.ModalClose}
-                onClick={onClose}
-                aria-label="Close Modal"
-              >
-                <Icon type="close" a11yText="" />
-              </button>
+              <div className={styles.ModalClose}>
+                <IconButton
+                  type="button"
+                  icon="close"
+                  a11yText="Close Modal"
+                  onClick={onClose}
+                />
+              </div>
             )}
+            {heading && <h4 className={styles.ModalHeader}>{heading}</h4>}
             <div className={styles.ModalPanelContent}>
               <div className={styles.ModalContent}>{children}</div>
               {actions && <div className={styles.ModalActions}>{actions}</div>}
@@ -71,6 +82,7 @@ Modal.propTypes = {
   actions: node,
   ariaLabel: string.isRequired,
   children: node.isRequired,
+  heading: string,
   onClose: func,
   open: bool,
   role: string

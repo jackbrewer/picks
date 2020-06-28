@@ -2,12 +2,11 @@ import React, { useContext } from 'react'
 import {
   bool,
   func,
-  instanceOf,
   number,
   oneOf,
   oneOfType,
-  shape,
-  string
+  string,
+  object
 } from 'prop-types'
 import classNames from 'classnames'
 
@@ -21,6 +20,7 @@ const TextControl = ({
   controlRef,
   defaultValue,
   disabled,
+  form,
   id,
   maxLength,
   minLength,
@@ -47,6 +47,7 @@ const TextControl = ({
     styles.TextControl,
     multiLine && styles.multiLine,
     derivedStatus && styles[derivedStatus],
+    disabled && styles.disabled,
     className
   )
 
@@ -60,7 +61,8 @@ const TextControl = ({
       className={componentClassName}
       defaultValue={defaultValue}
       disabled={disabled}
-      id={id}
+      form={form}
+      id={id || name}
       maxLength={maxLength}
       minLength={minLength}
       name={name}
@@ -72,7 +74,7 @@ const TextControl = ({
       readOnly={readOnly}
       ref={controlRef}
       required={required}
-      rows={multiLine ? rows : 3}
+      rows={multiLine ? rows : undefined}
       size={size}
       tabIndex={tabIndex}
       type={!multiLine ? type : undefined}
@@ -82,15 +84,17 @@ const TextControl = ({
 }
 
 TextControl.defaultProps = {
+  rows: 3,
   type: 'text'
 }
 
 TextControl.propTypes = {
   autoComplete: oneOfType([bool, string]),
   className: string,
-  controlRef: oneOfType([func, shape({ current: instanceOf(Element) })]),
+  controlRef: oneOfType([func, object]),
   defaultValue: string,
   disabled: bool,
+  form: string,
   id: string,
   maxLength: number,
   minLength: number,

@@ -9,6 +9,10 @@ $gap-list: (
   flex-wrap: wrap;
 }
 
+.shrink {
+  display: inline-flex;
+}
+
 @each $key, $value in $gap-list {
   .#{$key} {
     margin: spacing($value * -1);
@@ -18,7 +22,7 @@ $gap-list: (
   }
 }
 
-:export {
-  /* stylelint-disable-next-line property-no-unknown */
-  gaps: map-keys($gap-list);
-}
+// :export {
+//   /* stylelint-disable-next-line property-no-unknown */
+//   gaps: map-keys($gap-list);
+// }

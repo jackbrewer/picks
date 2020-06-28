@@ -8,6 +8,7 @@ const MultiTextFieldTemplate = ({
   assistance,
   children,
   controlName,
+  disabled,
   feedback,
   hideLabel,
   inverse,
@@ -16,7 +17,7 @@ const MultiTextFieldTemplate = ({
   status
 }) => {
   const MultiTextFieldTemplateQuestion = () => (
-    <Field.Question noLabel>
+    <Field.Question disabled={disabled} noLabel>
       {label}
       {required && <Field.Required />}
     </Field.Question>
@@ -44,6 +45,7 @@ MultiTextFieldTemplate.propTypes = {
   assistance: node,
   children: node.isRequired,
   controlName: string.isRequired,
+  disabled: bool,
   feedback: node,
   hideLabel: bool,
   inverse: bool,

@@ -1,13 +1,16 @@
 import React from 'react'
 import { bool, node } from 'prop-types'
+import classNames from 'classnames'
 
 import styles from './FieldQuestion.module.scss'
 
-const FieldQuestion = ({ children, htmlFor, noLabel }) => {
+const FieldQuestion = ({ children, disabled, htmlFor, noLabel }) => {
   const FieldQuestionInnerEl = noLabel ? 'span' : 'label'
 
   return (
-    <div className={styles.FieldQuestion}>
+    <div
+      className={classNames(styles.FieldQuestion, disabled && styles.disabled)}
+    >
       <FieldQuestionInnerEl htmlFor={htmlFor}>{children}</FieldQuestionInnerEl>
     </div>
   )
@@ -15,6 +18,7 @@ const FieldQuestion = ({ children, htmlFor, noLabel }) => {
 
 FieldQuestion.propTypes = {
   children: node.isRequired,
+  disabled: bool,
   noLabel: bool,
   htmlFor: function (props, propName, componentName) {
     if (

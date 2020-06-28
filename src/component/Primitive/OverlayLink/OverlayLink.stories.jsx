@@ -6,7 +6,7 @@ import OverlayLink from '.'
 import Placeholder from '../../Helper/Placeholder'
 import Stack from '../Stack'
 
-const stories = storiesOf('Unsorted/OverlayLink', module)
+const stories = storiesOf('Core/OverlayLink', module)
 
 stories.add(
   'Info',

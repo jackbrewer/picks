@@ -8,6 +8,7 @@ const TextFieldTemplate = ({
   assistance,
   children,
   controlName,
+  disabled,
   feedback,
   hideLabel,
   inverse,
@@ -16,7 +17,10 @@ const TextFieldTemplate = ({
   status
 }) => {
   const TextFieldTemplateQuestion = () => (
-    <Field.Question htmlFor={controlName} /* matches Control controlName */>
+    <Field.Question
+      disabled={disabled}
+      htmlFor={controlName} /* matches Control controlName */
+    >
       {label}
       {required && <Field.Required />}
     </Field.Question>
@@ -45,6 +49,7 @@ TextFieldTemplate.propTypes = {
   assistance: node,
   controlName: string.isRequired,
   children: node.isRequired,
+  disabled: bool,
   feedback: node,
   hideLabel: bool,
   inverse: bool,

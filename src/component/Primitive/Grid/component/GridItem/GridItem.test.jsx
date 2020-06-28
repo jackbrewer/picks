@@ -32,21 +32,21 @@ describe('Component: GridItem', () => {
     const { container } = render(
       <GridItem {...requiredProps()} width={[1 / 2]} />
     )
-    expect(container.firstChild).toHaveClass('columns-50')
+    expect(container.firstChild).toHaveClass('m-50')
   })
 
   test('should not fail when array with too many widths passed', () => {
     const { container } = render(
-      <GridItem {...requiredProps()} width={[1 / 2, 1 / 3]} />
+      <GridItem {...requiredProps()} width={[1 / 2, 1 / 3, 1 / 4, 1 / 5]} />
     )
-    expect(container.firstChild).toHaveClass('columns-50')
+    expect(container.firstChild).toHaveClass('m-50 t-33 d-25')
   })
 
   test('should output additional className when object of widths passed', () => {
     const { container } = render(
-      <GridItem {...requiredProps()} width={{ columns: 1 / 2 }} />
+      <GridItem {...requiredProps()} width={{ m: 1 / 2 }} />
     )
-    expect(container.firstChild).toHaveClass('columns-50')
+    expect(container.firstChild).toHaveClass('m-50')
   })
 
   // test('should not fail when unrecognised width format passed', () => {

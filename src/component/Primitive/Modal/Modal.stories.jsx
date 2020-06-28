@@ -8,20 +8,33 @@ import ButtonStandard from '../ButtonStandard'
 import Inline from '../Inline'
 import TextAlign from '../TextAlign'
 
-const stories = storiesOf('Unsorted/Modal', module)
+const stories = storiesOf('Core/Modal', module)
 
 stories.add(
   'Info',
   () => (
-    <Modal open onClose={action('Close clicked')} ariaLabel="Example Modal">
-      Example Content
-    </Modal>
+    <>
+      See examples in following stories
+      <Modal
+        heading="Example Heading"
+        onClose={action('Close clicked')}
+        ariaLabel="Example Modal"
+      >
+        Example Content
+      </Modal>
+    </>
   ),
   {
     info: {
       inline: true,
       text: `
-        A skeleton Modal overlay with optional close mechanic.
+        A static modal overlay which uses an \`open\` prop to show/hide.
+
+        Has lots of accessibility functionality built-in, including
+        focus-trapping, keyboard/click-outside closing.
+
+        _Note: This component doesn’t include the state-based functionality
+        required to show/hide: see \`<ModalWithTrigger />\`_.
       `
     }
   }
@@ -60,4 +73,23 @@ stories.add('Dialog', () => (
   >
     <TextAlign center>Example content</TextAlign>
   </Modal>
+))
+
+stories.add('With Heading', () => (
+  <Modal
+    heading="Example Heading"
+    ariaLabel="Example Label"
+    children="Default content"
+    open
+    onClose={action('Close clicked')}
+  />
+))
+
+stories.add('Closed (nothing visible)', () => (
+  <Modal
+    heading="Example Heading"
+    ariaLabel="Example Label"
+    children="Default content"
+    onClose={action('Close clicked')}
+  />
 ))

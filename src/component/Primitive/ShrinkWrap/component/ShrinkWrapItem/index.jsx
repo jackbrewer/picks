@@ -24,7 +24,7 @@ ShrinkWrapItem.propTypes = {
   children: node.isRequired,
   shrink: bool,
   noWrap: bool,
-  spacing: oneOf(['comfortable']),
+  spacing: oneOf(['comfortable', 'none']),
   vAlign: oneOf(['top', 'middle', 'bottom'])
 }
 

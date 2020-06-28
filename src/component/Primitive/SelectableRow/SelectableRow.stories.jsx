@@ -8,14 +8,23 @@ import Type from '../Type'
 
 const stories = storiesOf('Unsorted/SelectableRow', module)
 
-stories.add('Info', () => <SelectableRow>Content</SelectableRow>, {
-  info: {
-    inline: true,
-    text: `
-      TBC
-    `
+stories.add(
+  'Info',
+  () => (
+    <SelectableRow name="exampleCheck" value="One">
+      Content
+    </SelectableRow>
+  ),
+  {
+    info: {
+      inline: true,
+      text: `
+        A single selectable “row”, likely used as part of a group of rows. Can
+        function as a checkbox or radio as required.
+      `
+    }
   }
-})
+)
 
 stories.add('As checkbox (default)', () => (
   <div>

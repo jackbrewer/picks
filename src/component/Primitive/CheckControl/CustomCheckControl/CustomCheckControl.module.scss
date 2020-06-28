@@ -12,8 +12,8 @@
 .CustomCheckControlIndicator {
   position: relative;
   display: inline-block;
-  width: spacing(4);
-  height: spacing(4);
+  width: spacing(3);
+  height: spacing(3);
   background: $color-white;
   vertical-align: middle;
   border: 1px solid $color-grey75;
@@ -26,14 +26,14 @@
     transition-duration: $duration-shortest;
   }
 
-  .CustomCheckControlControl:checked ~ & {
-    border-color: $color-primary;
+  .CustomCheckControlControl:active ~ &,
+  .CustomCheckControlControl:focus ~ & {
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.3);
   }
 
   .CustomCheckControlControl:hover:not([disabled]):checked ~ &,
   .CustomCheckControlControl:checked:focus ~ & {
     border-color: $color-primary;
-    box-shadow: 0 0 0 1px $color-primary inset;
   }
 
   .CustomCheckControlControl:disabled ~ & {

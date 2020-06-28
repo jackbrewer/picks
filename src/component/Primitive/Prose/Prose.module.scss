@@ -85,7 +85,8 @@
     }
   }
 
-  a {
+  a,
+  button {
     color: $color-primary;
     text-decoration: underline;
     transition: color $duration-standard $easing-standard;
@@ -95,6 +96,10 @@
     &:active {
       color: $color-primary-dark;
       transition-duration: $duration-shortest;
+    }
+
+    &:focus {
+      outline: 0;
     }
   }
 

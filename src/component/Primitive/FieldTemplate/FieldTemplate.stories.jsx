@@ -1,6 +1,8 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
+import { days, months, years } from '../../../lib/date-part-generator'
+
 import FieldTemplate from './'
 import TextControl from '../TextControl'
 import CheckControlGroup from '../CheckControlGroup'
@@ -9,25 +11,6 @@ import CheckControl from '../CheckControl'
 import VisuallyHidden from '../VisuallyHidden'
 import SelectControl from '../SelectControl'
 import ShrinkWrap from '../ShrinkWrap'
-
-const days = [...Array(31).keys()].map((i) => `${i + 1}`)
-const months = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
-]
-const year = new Date().getFullYear()
-const years = []
-for (var i = 0; i <= 10; ++i) years.push(`${year - i}`)
 
 const stories = storiesOf('Form/FieldTemplate', module)
 
@@ -95,6 +78,25 @@ stories.add('Text template with hidden label', () => (
   </FieldTemplate>
 ))
 
+stories.add('Text template - disabled', () => (
+  <FieldTemplate
+    label="Example text question"
+    status="success"
+    required
+    disabled
+    feedback="Good answer"
+    controlName="exampleText"
+  >
+    <TextControl
+      name="exampleText"
+      type="text"
+      placeholder="Example placeholder"
+      required
+      disabled
+    />
+  </FieldTemplate>
+))
+
 stories.add('Check template', () => (
   <FieldTemplate
     template="check"
@@ -147,7 +149,7 @@ stories.add('Multi-text template (even width)', () => (
           <VisuallyHidden>Day</VisuallyHidden>
           <SelectControl name="day" required>
             <option value="">Day</option>
-            {days.map((day) => (
+            {days().map((day) => (
               <option value={day} key={`day${day}`}>
                 {day}
               </option>
@@ -160,7 +162,7 @@ stories.add('Multi-text template (even width)', () => (
           <VisuallyHidden>Month</VisuallyHidden>
           <SelectControl name="month" required>
             <option value="">Month</option>
-            {months.map((month) => (
+            {months().map((month) => (
               <option value={month} key={`month${month}`}>
                 {month}
               </option>
@@ -173,7 +175,7 @@ stories.add('Multi-text template (even width)', () => (
           <VisuallyHidden>Year</VisuallyHidden>
           <SelectControl name="year" required>
             <option value="">Year</option>
-            {years.map((year) => (
+            {years().map((year) => (
               <option value={year} key={`year${year}`}>
                 {year}
               </option>
@@ -199,7 +201,7 @@ stories.add('Multi-text template (auto width)', () => (
         <label>
           <VisuallyHidden>Day</VisuallyHidden>
           <SelectControl name="day">
-            {days.map((day) => (
+            {days().map((day) => (
               <option value={day} key={`day${day}`}>
                 {day}
               </option>
@@ -211,7 +213,7 @@ stories.add('Multi-text template (auto width)', () => (
         <label>
           <VisuallyHidden>Month</VisuallyHidden>
           <SelectControl name="month">
-            {months.map((month) => (
+            {months().map((month) => (
               <option value={month} key={`month${month}`}>
                 {month}
               </option>
@@ -223,7 +225,7 @@ stories.add('Multi-text template (auto width)', () => (
         <label>
           <VisuallyHidden>Year</VisuallyHidden>
           <SelectControl name="year">
-            {years.map((year) => (
+            {years().map((year) => (
               <option value={year} key={`year${year}`}>
                 {year}
               </option>

@@ -4,21 +4,22 @@ import { storiesOf } from '@storybook/react'
 import LoadingOverlay from '.'
 import Placeholder from '../../Helper/Placeholder'
 
-const stories = storiesOf('Unsorted/LoadingOverlay', module)
+const stories = storiesOf('Core/LoadingOverlay', module)
 
 stories.add(
   'Info',
   () => (
     <LoadingOverlay loading>
-      <Placeholder height={300} />
+      <Placeholder height={300}>Example content</Placeholder>
     </LoadingOverlay>
   ),
   {
     info: {
       inline: true,
       text: `
-        Wraps other components and overlays a loading indicator when passed the
-         \`loading\` prop.
+        A wrapper for other components. When passed the \`loading\` prop, it
+        disables mouse/touch functionality of child components and overlays a
+        loading indicator.
       `
     }
   }
@@ -26,12 +27,12 @@ stories.add(
 
 stories.add('Active state', () => (
   <LoadingOverlay loading>
-    <Placeholder height={300} />
+    <Placeholder height={300}>Example content</Placeholder>
   </LoadingOverlay>
 ))
 
 stories.add('Inactive state', () => (
   <LoadingOverlay>
-    <Placeholder height={300} />
+    <Placeholder height={300}>Example content</Placeholder>
   </LoadingOverlay>
 ))

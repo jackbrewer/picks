@@ -1,8 +1,8 @@
 import React, { useRef } from 'react'
 import { createPortal } from 'react-dom'
 import { bool, func, node, string } from 'prop-types'
-import useEscapeKey from '../../../hook/useEscapeKey'
-import useOutsideClick from '../../../hook/useOutsideClick'
+import useEscapeKey from '@/hook/useEscapeKey'
+import useOutsideClick from '@/hook/useOutsideClick'
 
 import FocusTrap from 'focus-trap-react'
 

@@ -4,7 +4,7 @@ import { bool, node } from 'prop-types'
 
 import styles from './NavigationItem.module.scss'
 
-import SmartLink from '../../../../Primitive/SmartLink'
+import SmartLink from '@/component/Primitive/SmartLink'
 
 const NavigationItem = ({ children, active, ...other }) => (
   <li className={classNames(styles.NavigationItem)}>

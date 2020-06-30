@@ -10,7 +10,7 @@ import {
 } from 'prop-types'
 import classNames from 'classnames'
 
-import { StatusContext } from '../../Context/StatusContext'
+import { StatusContext } from '@/component/Context/StatusContext'
 
 import styles from './TextControl.module.scss'
 

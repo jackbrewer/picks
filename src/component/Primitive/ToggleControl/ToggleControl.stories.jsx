@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { StatusContextProvider } from '../../Context/StatusContext'
+import { StatusContextProvider } from '@/component/Context/StatusContext'
 import ToggleControl from '.'
 
 const stories = storiesOf('Form/ToggleControl', module)

@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 import { bool, oneOf } from 'prop-types'
 import classNames from 'classnames'
 
-import { StatusContext } from '../../../Context/StatusContext'
+import { StatusContext } from '@/component/Context/StatusContext'
 
 import styles from './CustomSelectControl.module.scss'
 
-import Icon from '../../../Primitive/Icon'
+import Icon from '../../Icon'
 import NativeSelectControl from '../NativeSelectControl'
 
 const CustomSelectControl = ({ disabled, multiple, status, ...other }) => {

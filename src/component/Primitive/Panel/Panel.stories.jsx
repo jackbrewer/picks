@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import Panel from '.'
 
-import Placeholder from '../../Helper/Placeholder'
+import Placeholder from '@/component/Helper/Placeholder'
 import List from '../List'
 import Stack from '../Stack'
 

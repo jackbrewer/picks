@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import OverlayLink from '.'
 
-import Placeholder from '../../Helper/Placeholder'
+import Placeholder from '@/component/Helper/Placeholder'
 import Stack from '../Stack'
 
 const stories = storiesOf('Core/OverlayLink', module)

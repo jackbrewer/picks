@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { node, oneOf } from 'prop-types'
 
-import { StatusContext } from '../../Context/StatusContext'
+import { StatusContext } from '@/component/Context/StatusContext'
 
 import styles from './StatusColor.module.scss'
 

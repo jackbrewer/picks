@@ -1,6 +1,6 @@
 import React from 'react'
 import { arrayOf, number, shape, string } from 'prop-types'
-import stringToColor from '../../../../lib/string-to-color'
+import stringToColor from '@/lib/string-to-color'
 
 import ResponsiveImage from '../'
 

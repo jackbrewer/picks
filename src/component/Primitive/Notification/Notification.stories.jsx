@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
 
-import { StatusContextProvider } from '../../Context/StatusContext'
+import { StatusContextProvider } from '@/component/Context/StatusContext'
 
 import Notification from '.'
 import Prose from '../Prose'

@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import { node, oneOf, string } from 'prop-types'
 
-import { StatusContextProvider } from '../../../../Context/StatusContext'
+import { StatusContextProvider } from '@/component/Context/StatusContext'
 import styles from './FieldWrapper.module.scss'
 
 const FieldWrapper = ({ children, className, id, status }) => (

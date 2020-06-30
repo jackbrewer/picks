@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { arrayOf, node, number, object, oneOf, oneOfType } from 'prop-types'
-// import sassKeysToArray from '../../../../../lib/sass-keys-to-array'
+// import sassKeysToArray from '@/lib/sass-keys-to-array'
 
 import styles from './GridItem.module.scss'
 

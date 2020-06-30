@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import LoadingOverlay from '.'
-import Placeholder from '../../Helper/Placeholder'
+import Placeholder from '@/component/Helper/Placeholder'
 
 const stories = storiesOf('Core/LoadingOverlay', module)
 

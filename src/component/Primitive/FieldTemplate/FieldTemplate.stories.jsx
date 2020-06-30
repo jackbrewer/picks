@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { days, months, years } from '../../../lib/date-part-generator'
+import { days, months, years } from '@/lib/date-part-generator'
 
 import FieldTemplate from './'
 import TextControl from '../TextControl'

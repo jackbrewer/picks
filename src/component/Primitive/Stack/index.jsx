@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { node, oneOf } from 'prop-types'
-// import sassKeysToArray from '../../../lib/sass-keys-to-array'
+// import sassKeysToArray from '@/lib/sass-keys-to-array'
 
 import styles from './Stack.module.scss'
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import Placeholder from '../../Helper/Placeholder'
+import Placeholder from '@/component/Helper/Placeholder'
 
 import Inline from '.'
 

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { bool, func, node, oneOf, string } from 'prop-types'
 import classNames from 'classnames'
 
-import { StatusContext } from '../../Context/StatusContext'
+import { StatusContext } from '@/component/Context/StatusContext'
 
 import styles from './Notification.module.scss'
 

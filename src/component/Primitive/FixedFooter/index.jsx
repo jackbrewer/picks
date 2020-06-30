@@ -2,8 +2,8 @@ import React, { useRef, useState } from 'react'
 import { node } from 'prop-types'
 import classNames from 'classnames'
 
-import useDimensions from '../../../hook/useDimensions'
-import useIntersectionObserver from '../../../hook/useIntersectionObserver'
+import useDimensions from '@/hook/useDimensions'
+import useIntersectionObserver from '@/hook/useIntersectionObserver'
 
 import styles from './FixedFooter.module.scss'
 

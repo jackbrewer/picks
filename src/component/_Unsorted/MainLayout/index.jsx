@@ -3,12 +3,12 @@ import { node } from 'prop-types'
 
 // import styles from './MainLayout.module.scss'
 
-import A11yNavigation from '../../Primitive/A11yNavigation'
-import Footer from '../../Structure/Footer'
-import Header from '../../Structure/Header'
-import Main from '../../Structure/Main'
-import Navigation from '../../Structure/Navigation'
-import SiteContainer from '../../Structure/SiteContainer'
+import A11yNavigation from '@/component/Primitive/A11yNavigation'
+import Footer from '@/component/Structure/Footer'
+import Header from '@/component/Structure/Header'
+import Main from '@/component/Structure/Main'
+import Navigation from '@/component/Structure/Navigation'
+import SiteContainer from '@/component/Structure/SiteContainer'
 
 const MainLayout = ({ children }) => (
   <SiteContainer>

@@ -23,6 +23,7 @@ const ResponsiveDebugImage = ({ src, srcSet, height, width, ...other }) => (
     srcSet={srcSet && buildDebugSrcSet({ srcSet, ratio: height / width })}
     height={height}
     width={width}
+    alt=""
     {...other}
   />
 )

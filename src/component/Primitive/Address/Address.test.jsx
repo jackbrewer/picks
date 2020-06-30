@@ -1,5 +1,5 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 import { render } from '@testing-library/react'
 import Address from '.'
 
@@ -9,24 +9,7 @@ const requiredProps = () => ({
 })
 
 describe('Component: Address', () => {
-  test('should return errors if required props missing', () => {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(Address.propTypes, {})
-    const expected = {
-      streetAddress:
-        'The prop `streetAddress` is marked as required in `Component`, but its value is `undefined`.',
-      type:
-        'The prop `type` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid default props passed', () => {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(Address.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(Address, requiredProps())
 
   test('should output the expected markup with minimal props', () => {
     const { container, getByText } = render(<Address {...requiredProps()} />)

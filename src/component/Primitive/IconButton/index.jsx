@@ -44,7 +44,7 @@ const IconButton = ({
 )
 
 IconButton.propTypes = {
-  a11yText: string,
+  a11yText: string.isRequired,
   children: string,
   className: string,
   icon: string.isRequired,

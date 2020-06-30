@@ -66,7 +66,7 @@ BackgroundImage.propTypes = {
   position: string,
   ratio: number,
   size: string,
-  src: string.isRequired,
+  src: string,
   srcSet: arrayOf(shape({ width: number, src: string }))
 }
 

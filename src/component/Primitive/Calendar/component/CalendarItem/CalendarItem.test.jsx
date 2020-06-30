@@ -1,5 +1,5 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 import { render, fireEvent } from '@testing-library/react'
 import CalendarItem from '.'
 
@@ -9,24 +9,7 @@ const requiredProps = () => ({
 })
 
 describe('Component: CalendarItem', () => {
-  test('should return errors if required props missing', () => {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(CalendarItem.propTypes, {})
-    const expected = {
-      date:
-        'The prop `date` is marked as required in `Component`, but its value is `undefined`.',
-      formats:
-        'The prop `formats` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid default props passed', () => {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(CalendarItem.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(CalendarItem, requiredProps())
 
   test('should output the expected markup with default props', () => {
     const { getByText, getByTitle, getByRole } = render(

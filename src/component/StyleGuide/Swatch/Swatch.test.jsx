@@ -1,27 +1,12 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 import { render } from '@testing-library/react'
 import Swatch from '.'
 
 const requiredProps = () => ({ color: '#123456' })
 
 describe('Component: Swatch', function () {
-  test('should return errors if required props missing', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(Swatch.propTypes, {})
-    const expected = {
-      color:
-        'The prop `color` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid default props passed', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(Swatch.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(Swatch, requiredProps())
 
   test('should output the expected markup when supplied hex colour', function () {
     const { getAllByRole } = render(<Swatch {...requiredProps()} />)

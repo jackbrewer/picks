@@ -1,22 +1,12 @@
 // import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 // import { shallow } from 'enzyme'
 import GlobalMeta from '.'
 
-// const requiredProps = () => ({ themeColor: '#0f0', title: 'Example Title' })
+const requiredProps = () => ({ themeColor: '#0f0', title: 'Example Title' })
 
 describe('Component: GlobalMeta', function () {
-  test('should return errors if required props missing', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(GlobalMeta.propTypes, {})
-    const expected = {
-      themeColor:
-        'The prop `themeColor` is marked as required in `Component`, but its value is `undefined`.',
-      title:
-        'The prop `title` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(GlobalMeta, requiredProps())
 
   // test('shouldn’t error if valid default props passed', function () {
   //   // eslint-disable-next-line react/forbid-foreign-prop-types

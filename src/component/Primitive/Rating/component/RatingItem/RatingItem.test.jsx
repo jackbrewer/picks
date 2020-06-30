@@ -1,24 +1,12 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 import { render } from '@testing-library/react'
 import RatingItem from './'
 
 const requiredProps = () => ({})
 
 describe('Component: RatingItem', () => {
-  test('should return errors if required props missing', () => {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(RatingItem.propTypes, {})
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid default props passed', () => {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(RatingItem.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(RatingItem, requiredProps())
 
   test('should output the expected markup with default props', () => {
     const { container } = render(<RatingItem {...requiredProps()} />)

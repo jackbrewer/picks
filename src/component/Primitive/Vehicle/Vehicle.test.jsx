@@ -1,5 +1,5 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 import { render } from '@testing-library/react'
 import Vehicle from '.'
 
@@ -8,22 +8,7 @@ const requiredProps = () => ({
 })
 
 describe('Component: Vehicle', () => {
-  test('should return errors if required props missing', () => {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(Vehicle.propTypes, {})
-    const expected = {
-      name:
-        'The prop `name` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid default props passed', () => {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(Vehicle.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(Vehicle, requiredProps())
 
   test('should output the expected markup with minimal props', () => {
     const { container, getByText } = render(<Vehicle {...requiredProps()} />)

@@ -1,5 +1,5 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 import { render } from '@testing-library/react'
 import ButtonStandard from '.'
 
@@ -8,20 +8,7 @@ const requiredProps = () => ({})
 const defaultProps = () => ({ children: 'Example content' })
 
 describe('Component: ButtonStandard', function () {
-  test('shouldn’t error if valid default props passed', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(ButtonStandard.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
-
-  test('should output the expected markup with default props', function () {
-    const { getByRole, getByText } = render(
-      <ButtonStandard {...requiredProps()} {...defaultProps()} />
-    )
-    expect(getByRole('button')).toBeTruthy()
-    expect(getByText('Example content')).toBeTruthy()
-  })
+  validateRequiredProps(ButtonStandard, requiredProps())
 
   test('should output additional className when `disabled` prop passed', function () {
     const { getByRole } = render(
@@ -29,5 +16,12 @@ describe('Component: ButtonStandard', function () {
     )
     expect(getByRole('button')).toBeDisabled()
     expect(getByRole('button')).toHaveClass('disabled')
+  })
+
+  test('should display loading state when `loading` prop passed', function () {
+    const { getByText } = render(
+      <ButtonStandard {...requiredProps()} {...defaultProps()} loading />
+    )
+    expect(getByText('Example content')).toBeTruthy()
   })
 })

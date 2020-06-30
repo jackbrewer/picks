@@ -1,5 +1,5 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 import { shallow, mount } from 'enzyme'
 // import { BrowserRouter as Router } from 'react-router-dom'
 
@@ -8,22 +8,7 @@ import SmartLink from './'
 const requiredProps = () => ({ children: 'Default content' })
 
 describe('Component: SmartLink', function () {
-  test('should return errors if required props missing', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(SmartLink.propTypes, {})
-    const expected = {
-      children:
-        'The prop `children` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid default props passed', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(SmartLink.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(SmartLink, requiredProps())
 
   describe('Common functionality', function () {
     test('should output expected default attributes', function () {

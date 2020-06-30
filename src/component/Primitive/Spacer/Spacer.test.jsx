@@ -1,5 +1,5 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 import { shallow } from 'enzyme'
 import Spacer from '.'
 
@@ -8,21 +8,7 @@ const requiredProps = () => ({
 })
 
 describe('Component: Spacer', function () {
-  test('should return errors if invalid default props passed', function () {
-    const actual = validatePropTypes(Spacer.propTypes, {})
-    const expected = {
-      children:
-        'The prop `children` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-    expect(Object.keys(actual)).toHaveLength(1)
-  })
-
-  test('shouldn’t error if valid default props passed', function () {
-    const actual = validatePropTypes(Spacer.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(Spacer, requiredProps())
 
   test('should output the expected markup with default props', function () {
     const wrapper = shallow(<Spacer {...requiredProps()} />)

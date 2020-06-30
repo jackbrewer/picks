@@ -14,6 +14,4 @@ const Toaster = (props) => {
   return <Toast {...props} onDismiss={handleDismiss} />
 }
 
-// Toaster.propTypes = {}
-
 export default Toaster

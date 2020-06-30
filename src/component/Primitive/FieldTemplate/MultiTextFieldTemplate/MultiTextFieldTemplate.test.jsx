@@ -1,5 +1,5 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 import { shallow } from 'enzyme'
 
 import MultiTextFieldTemplate from '.'
@@ -12,27 +12,7 @@ const requiredProps = () => ({
 })
 
 describe('Component: MultiTextFieldTemplate', function () {
-  test('should return errors if invalid default props passed', function () {
-    const actual = validatePropTypes(MultiTextFieldTemplate.propTypes, {})
-    const expected = {
-      children:
-        'The prop `children` is marked as required in `Component`, but its value is `undefined`.',
-      controlName:
-        'The prop `controlName` is marked as required in `Component`, but its value is `undefined`.',
-      label:
-        'The prop `label` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid default props passed', function () {
-    const actual = validatePropTypes(
-      MultiTextFieldTemplate.propTypes,
-      requiredProps()
-    )
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(MultiTextFieldTemplate, requiredProps())
 
   test('should output the expected markup with default props', function () {
     const wrapper = shallow(<MultiTextFieldTemplate {...requiredProps()} />)

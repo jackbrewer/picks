@@ -1,5 +1,5 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 import { shallow } from 'enzyme'
 import ResponsiveMedia from './'
 
@@ -9,24 +9,7 @@ const requiredProps = () => ({
 })
 
 describe('Component: ResponsiveMedia', function () {
-  test('should return errors if required props missing', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(ResponsiveMedia.propTypes, {})
-    const expected = {
-      children:
-        'The prop `children` is marked as required in `Component`, but its value is `undefined`.',
-      ratio:
-        'The prop `ratio` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid required props passed', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(ResponsiveMedia.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(ResponsiveMedia, requiredProps())
 
   test('should output the expected markup with default props', function () {
     const wrapper = shallow(<ResponsiveMedia {...requiredProps()} />)

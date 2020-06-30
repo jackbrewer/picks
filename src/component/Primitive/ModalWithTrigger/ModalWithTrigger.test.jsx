@@ -1,38 +1,23 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 // import { render, fireEvent } from '@testing-library/react'
-import Modal from '.'
+import ModalWithTrigger from '.'
 
 const requiredProps = () => ({
   trigger: <button>Toggle</button>
 })
 
-describe('Component: Modal', () => {
-  test('should return errors if required props missing', () => {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(Modal.propTypes, {})
-    const expected = {
-      trigger:
-        'The prop `trigger` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid default props passed', () => {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(Modal.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+describe('Component: ModalWithTrigger', () => {
+  validateRequiredProps(ModalWithTrigger, requiredProps())
 
   // test('should output nothing without `open` prop', () => {
-  //   const { queryByRole, queryByText } = render(<Modal {...requiredProps()} />)
+  //   const { queryByRole, queryByText } = render(<ModalWithTrigger {...requiredProps()} />)
   //   expect(queryByRole('dialog')).toBeNull()
   //   expect(queryByText('Default content')).toBeNull()
   // })
 
   // test('should output the expected markup with default props', () => {
-  //   const { getByRole, getByText } = render(<Modal {...requiredProps()} open />)
+  //   const { getByRole, getByText } = render(<ModalWithTrigger {...requiredProps()} open />)
   //   expect(getByRole('dialog')).toBeTruthy()
   //   expect(getByText('Default content')).toBeTruthy()
   // })
@@ -40,10 +25,10 @@ describe('Component: Modal', () => {
   // test('should trigger `onClose` prop when required', () => {
   //   const handleClose = jest.fn()
   //   const { getByRole, getByLabelText } = render(
-  //     <Modal {...requiredProps()} open onClose={handleClose} />
+  //     <ModalWithTrigger {...requiredProps()} open onClose={handleClose} />
   //   )
   //   expect(getByRole('dialog')).toBeTruthy()
-  //   fireEvent.click(getByLabelText('Close Modal'))
+  //   fireEvent.click(getByLabelText('Close ModalWithTrigger'))
   //   expect(handleClose).toHaveBeenCalledTimes(1)
   // })
 })

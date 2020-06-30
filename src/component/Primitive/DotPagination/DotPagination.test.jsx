@@ -1,30 +1,12 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 import { render, fireEvent } from '@testing-library/react'
-import '@testing-library/jest-dom'
 import DotPagination from '.'
 
 const requiredProps = () => ({ dots: 3, onChangeIndex: () => {} })
 
 describe('Component: DotPagination', function () {
-  test('should return errors if required props missing', async () => {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(DotPagination.propTypes, {})
-    const expected = {
-      dots:
-        'The prop `dots` is marked as required in `Component`, but its value is `undefined`.',
-      onChangeIndex:
-        'The prop `onChangeIndex` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid default props passed', async () => {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(DotPagination.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(DotPagination, requiredProps())
 
   test('should output the expected markup with default props', async () => {
     const { getByLabelText, getAllByRole } = render(

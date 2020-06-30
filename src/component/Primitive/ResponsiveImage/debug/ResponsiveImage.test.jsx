@@ -1,42 +1,19 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 import { render } from '@testing-library/react'
-import ResponsiveImage from '.'
+import DebugResponsiveImage from '.'
 
 const requiredProps = () => ({
-  alt: 'Default a11y text',
   src: '/image-800.jpg',
   width: 900,
   height: 450
 })
 
-describe('Component: ResponsiveImage', function () {
-  test('should return errors if required props missing', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(ResponsiveImage.propTypes, {})
-    const expected = {
-      height:
-        'The prop `height` is marked as required in `Component`, but its value is `undefined`.',
-      width:
-        'The prop `width` is marked as required in `Component`, but its value is `undefined`.',
-      src:
-        'The prop `src` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid default props passed', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(ResponsiveImage.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+describe('Component: DebugResponsiveImage', function () {
+  validateRequiredProps(DebugResponsiveImage, requiredProps())
 
   test('should output the expected markup with default props', function () {
-    const { container, getByAltText } = render(
-      <ResponsiveImage {...requiredProps()} />
-    )
-    expect(getByAltText('Default a11y text')).toBeTruthy()
+    const { container } = render(<DebugResponsiveImage {...requiredProps()} />)
     expect(container.firstChild).toHaveAttribute(
       'src',
       'https://img.clock.co.uk/900x450?color=d08d07'
@@ -47,16 +24,9 @@ describe('Component: ResponsiveImage', function () {
     expect(container.firstChild).not.toHaveAttribute('srcSet')
   })
 
-  test('should still output `alt` if empty string passed', function () {
-    const { getByAltText } = render(
-      <ResponsiveImage {...requiredProps()} alt="" />
-    )
-    expect(getByAltText('')).toBeTruthy()
-  })
-
   test('should output attribute if `sizes` prop passed', function () {
     const { container } = render(
-      <ResponsiveImage
+      <DebugResponsiveImage
         {...requiredProps()}
         sizes={['(min-width: 200px) 50vw', '100vw']}
       />
@@ -69,7 +39,7 @@ describe('Component: ResponsiveImage', function () {
 
   test('should output attribute if `srcSet` prop passed', function () {
     const { container } = render(
-      <ResponsiveImage
+      <DebugResponsiveImage
         {...requiredProps()}
         srcSet={[
           {

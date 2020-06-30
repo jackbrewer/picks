@@ -1,17 +1,12 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 import { render } from '@testing-library/react'
 import Byline from '.'
 
 const requiredProps = () => ({})
 
 describe('Component: Byline', function () {
-  test('shouldn’t error if valid default props passed', function () {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(Byline.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(Byline, requiredProps())
 
   test('should output nothing without expected props', function () {
     const { container } = render(<Byline {...requiredProps()} />)

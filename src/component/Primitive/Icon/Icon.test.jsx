@@ -1,4 +1,5 @@
 import React from 'react'
+import validateRequiredProps from '@/lib/validate-required-props'
 import validatePropTypes from 'validate-prop-types'
 import { shallow } from 'enzyme'
 
@@ -10,23 +11,7 @@ const requiredProps = () => ({
 })
 
 describe('Component: Icon', function () {
-  test('should return errors if invalid default props passed', function () {
-    const actual = validatePropTypes(Icon.propTypes, {})
-    const expected = {
-      type:
-        'The prop `type` is marked as required in `Component`, but its value is `undefined`.',
-      a11yText:
-        'The prop `a11yText` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-    expect(Object.keys(actual)).toHaveLength(2)
-  })
-
-  test('shouldn’t error if valid default props passed', function () {
-    const actual = validatePropTypes(Icon.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(Icon, requiredProps())
 
   test('should render as expected with required props', function () {
     const wrapper = shallow(<Icon {...requiredProps()} />)

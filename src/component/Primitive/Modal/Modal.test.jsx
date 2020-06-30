@@ -1,5 +1,5 @@
 import React from 'react'
-import validatePropTypes from 'validate-prop-types'
+import validateRequiredProps from '@/lib/validate-required-props'
 import { render, fireEvent } from '@testing-library/react'
 import Modal from '.'
 
@@ -9,24 +9,7 @@ const requiredProps = () => ({
 })
 
 describe('Component: Modal', () => {
-  test('should return errors if required props missing', () => {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(Modal.propTypes, {})
-    const expected = {
-      ariaLabel:
-        'The prop `ariaLabel` is marked as required in `Component`, but its value is `undefined`.',
-      children:
-        'The prop `children` is marked as required in `Component`, but its value is `undefined`.'
-    }
-    expect(actual).toEqual(expected)
-  })
-
-  test('shouldn’t error if valid default props passed', () => {
-    // eslint-disable-next-line react/forbid-foreign-prop-types
-    const actual = validatePropTypes(Modal.propTypes, requiredProps())
-    const expected = undefined
-    expect(actual).toEqual(expected)
-  })
+  validateRequiredProps(Modal, requiredProps())
 
   test('should output nothing without `open` prop', () => {
     const { queryByRole, queryByText } = render(<Modal {...requiredProps()} />)

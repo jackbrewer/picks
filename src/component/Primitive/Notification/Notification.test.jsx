@@ -1,6 +1,6 @@
 import React from 'react'
 import validateRequiredProps from '@/lib/validate-required-props'
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
 import Notification from '.'
 
 const requiredProps = () => ({ children: 'Default content' })
@@ -9,22 +9,33 @@ describe('Component: Notification', function () {
   validateRequiredProps(Notification, requiredProps())
 
   test('should output the expected markup with default props', function () {
-    const wrapper = shallow(<Notification {...requiredProps()} />)
-    expect(wrapper.prop('className')).toEqual('Notification')
-    expect(wrapper.text()).toEqual('Default content')
+    const { getByText } = render(<Notification {...requiredProps()} />)
+    expect(getByText('Default content')).toBeTruthy()
   })
 
   test('should output the expected markup when `onDismiss` prop passed', function () {
-    const wrapper = shallow(
+    const { getByLabelText } = render(
       <Notification {...requiredProps()} onDismiss={() => {}} />
     )
-    expect(wrapper.find('IconButton').length).toEqual(1)
+    expect(getByLabelText('Dismiss')).toBeTruthy()
   })
 
   test('should output additional className when `status` prop passed', function () {
-    const wrapper = shallow(
+    const { container } = render(
       <Notification {...requiredProps()} status="success" />
     )
-    expect(wrapper.prop('className')).toEqual('Notification success')
+    expect(container.firstChild).toHaveClass('success')
+  })
+
+  test('should output the expected markup when `icon` prop passed', function () {
+    const { container } = render(
+      <Notification {...requiredProps()} icon="_placeholder" />
+    )
+    expect(container.querySelector('svg')).toBeTruthy()
+  })
+
+  test('should add the expected class when `shadow` prop passed', function () {
+    const { container } = render(<Notification {...requiredProps()} shadow />)
+    expect(container.firstChild).toHaveClass('shadow')
   })
 })

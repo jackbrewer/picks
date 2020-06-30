@@ -1,6 +1,6 @@
 import React from 'react'
 import validateRequiredProps from '@/lib/validate-required-props'
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
 import Description from '.'
 
 const requiredProps = () => ({
@@ -12,17 +12,15 @@ describe('Component: Description', function () {
   validateRequiredProps(Description, requiredProps())
 
   test('should output the expected markup with default props', function () {
-    const wrapper = shallow(<Description {...requiredProps()} />)
-    expect(wrapper.prop('className')).toEqual('Description')
-    expect(wrapper.find('dt').text()).toEqual('Example term')
-    expect(wrapper.find('dd').text()).toEqual('Example content')
-    expect(wrapper.find('Icon').length).toEqual(0)
+    const { getByRole } = render(<Description {...requiredProps()} />)
+    expect(getByRole('term')).toHaveTextContent('Example term')
+    expect(getByRole('definition')).toHaveTextContent('Example content')
   })
 
   test('should output the expected markup when `icon` prop passed', function () {
-    const wrapper = shallow(
+    const { container } = render(
       <Description {...requiredProps()} icon="_placeholder" />
     )
-    expect(wrapper.find('Icon').length).toEqual(1)
+    expect(container.querySelector('svg')).toBeTruthy()
   })
 })

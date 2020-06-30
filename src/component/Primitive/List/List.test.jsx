@@ -1,33 +1,34 @@
 import React from 'react'
 import validateRequiredProps from '@/lib/validate-required-props'
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
 import List from '.'
 
-const requiredProps = () => ({ children: 'Default content' })
+const requiredProps = () => ({
+  children: [<li key={1}>Item 1</li>, <li key={2}>Item 2</li>]
+})
 
 describe('Component: List', function () {
   validateRequiredProps(List, requiredProps())
 
   test('should output the expected markup with default props', function () {
-    const wrapper = shallow(<List {...requiredProps()} />)
-    expect(wrapper.prop('className')).toEqual('List')
-    expect(wrapper.type()).toEqual('ul')
-    expect(wrapper.text()).toEqual('Default content')
+    const { container, getByText } = render(<List {...requiredProps()} />)
+    expect(container.querySelector('ul')).toBeTruthy()
+    expect(getByText('Item 1')).toBeTruthy()
+    expect(getByText('Item 2')).toBeTruthy()
   })
 
   test('should output additional className when `inline` prop passed', function () {
-    const wrapper = shallow(<List {...requiredProps()} inline />)
-    expect(wrapper.prop('className')).toEqual('List inline')
+    const { container } = render(<List {...requiredProps()} inline />)
+    expect(container.firstChild).toHaveClass('inline')
   })
 
   test('should output additional className when `unstyled` prop passed', function () {
-    const wrapper = shallow(<List {...requiredProps()} unstyled />)
-    expect(wrapper.prop('className')).toEqual('List unstyled')
+    const { container } = render(<List {...requiredProps()} unstyled />)
+    expect(container.firstChild).toHaveClass('unstyled')
   })
 
   test('should output as `ol` when `ordered` prop passed', function () {
-    const wrapper = shallow(<List {...requiredProps()} ordered />)
-    expect(wrapper.prop('className')).toEqual('List')
-    expect(wrapper.type()).toEqual('ol')
+    const { container } = render(<List {...requiredProps()} ordered />)
+    expect(container.querySelector('ol')).toBeTruthy()
   })
 })

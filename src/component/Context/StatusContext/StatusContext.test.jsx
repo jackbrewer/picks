@@ -1,7 +1,7 @@
 import React from 'react'
 import validateRequiredProps from '@/lib/validate-required-props'
-import { shallow } from 'enzyme'
-import { StatusContextProvider } from '.'
+import { render } from '@testing-library/react'
+import { StatusContextProvider, StatusContextConsumer } from '.'
 
 const requiredProps = () => ({ children: 'Default content' })
 
@@ -9,14 +9,18 @@ describe('Component: StatusContext', function () {
   validateRequiredProps(StatusContextProvider, requiredProps())
 
   test('should output the expected markup with default props', function () {
-    const wrapper = shallow(<StatusContextProvider {...requiredProps()} />)
-    expect(wrapper.text()).toEqual('Default content')
+    const { getByText } = render(<StatusContextProvider {...requiredProps()} />)
+    expect(getByText('Default content')).toBeTruthy()
   })
 
   test('should output status value when `status` prop passed', function () {
-    const wrapper = shallow(
-      <StatusContextProvider {...requiredProps()} status="success" />
+    const { getByText } = render(
+      <StatusContextProvider {...requiredProps()} status="success">
+        <StatusContextConsumer>
+          {(status) => <span>Received: {status}</span>}
+        </StatusContextConsumer>
+      </StatusContextProvider>
     )
-    expect(wrapper.prop('value')).toEqual('success')
+    expect(getByText('Received: success')).toBeTruthy()
   })
 })

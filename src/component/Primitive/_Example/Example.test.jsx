@@ -18,3 +18,5 @@ describe('Component: Example', () => {
   //   expect().toEqual()
   // })
 })
+
+// expect(container.firstChild).toHaveClass('notice')

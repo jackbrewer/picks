@@ -1,24 +1,22 @@
 import React from 'react'
 import validateRequiredProps from '@/lib/validate-required-props'
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
 import FieldFeedback from '.'
 
-const requiredProps = () => ({
-  children: 'Example text'
-})
+const requiredProps = () => ({ children: 'Default content' })
 
 describe('Component: FieldFeedback', function () {
   validateRequiredProps(FieldFeedback, requiredProps())
 
   test('should output the expected markup with default props', function () {
-    const wrapper = shallow(<FieldFeedback {...requiredProps()} />)
-    expect(wrapper.prop('className')).toEqual('FieldFeedback')
+    const { getByText } = render(<FieldFeedback {...requiredProps()} />)
+    expect(getByText('Default content')).toBeTruthy()
   })
 
   test('should output additional className when `status` prop passed', function () {
-    const wrapper = shallow(
+    const { container } = render(
       <FieldFeedback {...requiredProps()} status="success" />
     )
-    expect(wrapper.prop('className')).toEqual('FieldFeedback success')
+    expect(container.firstChild).toHaveClass('success')
   })
 })

@@ -1,6 +1,6 @@
 import React from 'react'
 import validateRequiredProps from '@/lib/validate-required-props'
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
 import TextAlign from '.'
 
 const requiredProps = () => ({ children: 'Default content' })
@@ -9,28 +9,27 @@ describe('Component: TextAlign', function () {
   validateRequiredProps(TextAlign, requiredProps())
 
   test('should output the expected markup with default props', function () {
-    const wrapper = shallow(<TextAlign {...requiredProps()} />)
-    expect(wrapper.prop('className')).toEqual('TextAlign')
-    expect(wrapper.text()).toEqual('Default content')
+    const { getByText } = render(<TextAlign {...requiredProps()} />)
+    expect(getByText('Default content')).toBeTruthy()
   })
 
   test('should output additional className when `left` prop passed', function () {
-    const wrapper = shallow(<TextAlign {...requiredProps()} left />)
-    expect(wrapper.prop('className')).toEqual('TextAlign left')
+    const { container } = render(<TextAlign {...requiredProps()} left />)
+    expect(container.firstChild).toHaveClass('left')
   })
 
   test('should output additional className when `right` prop passed', function () {
-    const wrapper = shallow(<TextAlign {...requiredProps()} right />)
-    expect(wrapper.prop('className')).toEqual('TextAlign right')
+    const { container } = render(<TextAlign {...requiredProps()} right />)
+    expect(container.firstChild).toHaveClass('right')
   })
 
   test('should output additional className when `center` prop passed', function () {
-    const wrapper = shallow(<TextAlign {...requiredProps()} center />)
-    expect(wrapper.prop('className')).toEqual('TextAlign center')
+    const { container } = render(<TextAlign {...requiredProps()} center />)
+    expect(container.firstChild).toHaveClass('center')
   })
 
   test('should output additional className when `justify` prop passed', function () {
-    const wrapper = shallow(<TextAlign {...requiredProps()} justify />)
-    expect(wrapper.prop('className')).toEqual('TextAlign justify')
+    const { container } = render(<TextAlign {...requiredProps()} justify />)
+    expect(container.firstChild).toHaveClass('justify')
   })
 })

@@ -1,10 +1,10 @@
 import React from 'react'
 import validatePropTypes from 'validate-prop-types'
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
 import FieldQuestion from '.'
 
 const requiredProps = () => ({
-  children: 'Example text',
+  children: 'Default content',
   htmlFor: 'example-name'
 })
 
@@ -27,21 +27,25 @@ describe('Component: FieldQuestion', function () {
   })
 
   test('should output the expected markup with default props', function () {
-    const wrapper = shallow(<FieldQuestion {...requiredProps()} />)
-    expect(wrapper.prop('className')).toEqual('FieldQuestion')
-    expect(wrapper.find('label')).toHaveLength(1)
-    expect(wrapper.find('span')).toHaveLength(0)
+    const { container, getByText } = render(
+      <FieldQuestion {...requiredProps()} />
+    )
+    expect(getByText('Default content')).toBeTruthy()
+    expect(container.firstChild.querySelector('label')).toHaveAttribute(
+      'for',
+      'example-name'
+    )
   })
 
   test('should output expected markup when `noLabel` prop passed', function () {
-    const wrapper = shallow(<FieldQuestion {...requiredProps()} noLabel />)
-    expect(wrapper.prop('className')).toEqual('FieldQuestion')
-    expect(wrapper.find('label')).toHaveLength(0)
-    expect(wrapper.find('span')).toHaveLength(1)
+    const { container } = render(<FieldQuestion {...requiredProps()} noLabel />)
+    expect(container.firstChild.querySelector('span')).toBeTruthy()
   })
 
   test('should output expected styles when `disabled` prop passed', function () {
-    const wrapper = shallow(<FieldQuestion {...requiredProps()} disabled />)
-    expect(wrapper.prop('className')).toEqual('FieldQuestion disabled')
+    const { container } = render(
+      <FieldQuestion {...requiredProps()} disabled />
+    )
+    expect(container.firstChild).toHaveClass('disabled')
   })
 })

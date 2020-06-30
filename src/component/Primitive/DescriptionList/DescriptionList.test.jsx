@@ -1,6 +1,6 @@
 import React from 'react'
 import validateRequiredProps from '@/lib/validate-required-props'
-import { shallow } from 'enzyme'
+import { render } from '@testing-library/react'
 import DescriptionList from '.'
 
 const requiredProps = () => ({
@@ -11,10 +11,11 @@ describe('Component: DescriptionList', function () {
   validateRequiredProps(DescriptionList, requiredProps())
 
   test('should output the expected markup with default props', function () {
-    const wrapper = shallow(<DescriptionList {...requiredProps()} />)
-    expect(wrapper.prop('className')).toEqual('DescriptionList')
-    expect(wrapper.find('div')).toHaveLength(2)
-    expect(wrapper.find('dt')).toHaveLength(2)
-    expect(wrapper.find('dd')).toHaveLength(2)
+    const { container, getAllByRole } = render(
+      <DescriptionList {...requiredProps()} />
+    )
+    expect(container.querySelector('dl')).toBeTruthy()
+    expect(getAllByRole('term')).toHaveLength(2)
+    expect(getAllByRole('definition')).toHaveLength(2)
   })
 })

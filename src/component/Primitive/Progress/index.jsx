@@ -3,8 +3,8 @@ import { arrayOf, number, oneOfType } from 'prop-types'
 
 import styles from './Progress.module.scss'
 
-const Progress = ({ progress }) => {
-  const progressArr = Array.isArray(progress) ? progress : [progress]
+const Progress = ({ value }) => {
+  const progressArr = Array.isArray(value) ? value : [value]
 
   return (
     <div className={styles.Progress}>
@@ -14,6 +14,10 @@ const Progress = ({ progress }) => {
             key={`ProgressBar${i}`}
             className={styles.ProgressBar}
             style={{ width: `${progress}%` }}
+            role="progressbar"
+            aria-valuenow={progress}
+            aria-valuemin="0"
+            aria-valuemax="100"
           />
         ))}
       </div>
@@ -22,12 +26,11 @@ const Progress = ({ progress }) => {
 }
 
 Progress.defaultProps = {
-  progress: 0,
-  total: 100
+  value: 0
 }
 
 Progress.propTypes = {
-  progress: oneOfType([number, arrayOf(number)])
+  value: oneOfType([number, arrayOf(number)])
 }
 
 export default Progress

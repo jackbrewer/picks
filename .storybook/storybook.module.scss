@@ -12,6 +12,7 @@
   #story-root + div div {
     > * + * {
       margin-top: spacing(2);
+      list-style-position: inside;
     }
   }
   .simplebar-wrapper {

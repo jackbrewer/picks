@@ -1,8 +1,8 @@
 .Notification {
-  color: $color-black;
+  color: $color-grey25;
   padding: spacing(2) spacing(2);
   background-color: tint($color-grey75, 80%);
-  border-left: $radius-small solid $color-grey75;
+  border-left: $radius-small solid $color-grey25;
   border-radius: $radius-small;
   display: flex;
 }
@@ -33,7 +33,7 @@
 }
 
 .shadow {
-  box-shadow: spacing(5);
+  box-shadow: shadow(4);
 }
 
 @each $key, $value in $color-status-list {

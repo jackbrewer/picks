@@ -17,12 +17,20 @@ stories.add('Info', () => <StatusColor status="success">Content</StatusColor>, {
   }
 })
 
-stories.add('Status text (direct)', () => (
+stories.add('Status (direct)', () => (
   <StatusColor status="notice">Content</StatusColor>
 ))
 
-stories.add('Status text (via context)', () => (
+stories.add('Status (via context)', () => (
   <StatusContextProvider status="error">
     <StatusColor>Content</StatusColor>
   </StatusContextProvider>
 ))
+
+stories.add('Status (all)', () =>
+  ['none', 'success', 'notice', 'warning', 'error'].map((status) => (
+    <StatusColor key={`status-${status}`} status={status}>
+      Content
+    </StatusColor>
+  ))
+)

@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import Rating from '.'
 
-const stories = storiesOf('Core/Rating', module)
+const stories = storiesOf('Specific/Rating', module)
 
 stories.add('Info', () => <Rating count={5} rating={7} total={10} />, {
   info: {

@@ -6,7 +6,7 @@ import SelectableRow from '.'
 import Icon from '../Icon'
 import Type from '../Type'
 
-const stories = storiesOf('Unsorted/SelectableRow', module)
+const stories = storiesOf('Specific/SelectableRow', module)
 
 stories.add(
   'Info',

@@ -231,14 +231,14 @@ stories.add('Inverse state', () => (
 ))
 
 stories.add('HTML passed as string', () => (
-  <Prose html="<p><strong>This text</strong> may have been passed from <em>a CMS</em>.</p><p>Do not use for User-supplied content.</p>" />
+  <Prose dangerousHtml="<p><strong>This text</strong> may have been passed from <em>a CMS</em>.</p><p>Do not use for User-supplied content.</p>" />
 ))
 
 stories.add('Inline HTML overrides', () => {
   const inlineStyles = {
     boxSizing: 'content-box',
     color: '#000fff',
-    fontFamily: 'Impact',
+    fontFamily: 'Impact, cursive',
     fontSize: '40px',
     fontStyle: 'italic',
     fontWeight: 'bold',

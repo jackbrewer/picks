@@ -6,7 +6,7 @@ import Signpost from '.'
 
 import Inline from '../Inline'
 
-const stories = storiesOf('Unsorted/Signpost', module)
+const stories = storiesOf('Specific/Signpost', module)
 
 stories.add('Info', () => <Signpost icon="_placeholder">Content</Signpost>, {
   info: {

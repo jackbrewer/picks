@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import SeparatedStack from '.'
 
-const stories = storiesOf('Unsorted/SeparatedStack', module)
+const stories = storiesOf('Layout/SeparatedStack', module)
 
 stories.add(
   'Info',

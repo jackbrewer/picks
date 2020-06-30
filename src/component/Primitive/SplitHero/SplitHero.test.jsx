@@ -10,8 +10,6 @@ describe('Component: SplitHero', () => {
     // eslint-disable-next-line react/forbid-foreign-prop-types
     const actual = validatePropTypes(SplitHero.propTypes, {})
     const expected = {
-      src:
-        'The prop `src` is marked as required in `Component`, but its value is `undefined`.',
       title:
         'The prop `title` is marked as required in `Component`, but its value is `undefined`.'
     }

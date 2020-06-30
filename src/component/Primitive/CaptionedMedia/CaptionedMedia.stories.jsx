@@ -12,7 +12,9 @@ stories.add(
   'Info',
   () => (
     <CaptionedMedia caption="Example caption to accompany image">
-      <img src="https://source.unsplash.com/800x450?nature" alt="" />
+      <ResponsiveMedia ratio={9 / 16}>
+        <img src="https://source.unsplash.com/800x450?nature" alt="" />
+      </ResponsiveMedia>
     </CaptionedMedia>
   ),
   {
@@ -53,6 +55,7 @@ stories.add('As inline video', () => (
   >
     <ResponsiveMedia ratio={9 / 16}>
       <video
+        controls
         muted
         poster="https://img.clock.co.uk/640x360"
         src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
@@ -63,6 +66,8 @@ stories.add('As inline video', () => (
 
 stories.add('As a figure', () => (
   <CaptionedMedia figure caption="Figure 1. Example caption to accompany image">
-    <img src="https://source.unsplash.com/800x450?nature" alt="" />
+    <ResponsiveMedia ratio={9 / 16}>
+      <img src="https://source.unsplash.com/800x450?nature" alt="" />
+    </ResponsiveMedia>
   </CaptionedMedia>
 ))

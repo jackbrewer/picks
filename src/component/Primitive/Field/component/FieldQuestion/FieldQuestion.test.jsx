@@ -33,10 +33,15 @@ describe('Component: FieldQuestion', function () {
     expect(wrapper.find('span')).toHaveLength(0)
   })
 
-  test('should output the expected markup with default props', function () {
+  test('should output expected markup when `noLabel` prop passed', function () {
     const wrapper = shallow(<FieldQuestion {...requiredProps()} noLabel />)
     expect(wrapper.prop('className')).toEqual('FieldQuestion')
     expect(wrapper.find('label')).toHaveLength(0)
     expect(wrapper.find('span')).toHaveLength(1)
+  })
+
+  test('should output expected styles when `disabled` prop passed', function () {
+    const wrapper = shallow(<FieldQuestion {...requiredProps()} disabled />)
+    expect(wrapper.prop('className')).toEqual('FieldQuestion disabled')
   })
 })

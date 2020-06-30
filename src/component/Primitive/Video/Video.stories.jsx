@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import Video from '.'
 import captionsFile from './fixture/captions.vtt'
 
-const stories = storiesOf('Unsorted/Video', module)
+const stories = storiesOf('Utility/Video', module)
 
 stories.add(
   'Info',

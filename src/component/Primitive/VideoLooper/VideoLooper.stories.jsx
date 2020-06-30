@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import VideoLooper from '.'
 
-const stories = storiesOf('Unsorted/VideoLooper', module)
+const stories = storiesOf('Specific/VideoLooper', module)
 
 stories.addDecorator((story) => <div style={{ maxWidth: 480 }}>{story()}</div>)
 
@@ -21,8 +21,11 @@ stories.add(
     info: {
       inline: true,
       text: `
-      TBC
-    `
+        Emulates an animated GIF, using HTML \`<video>\`.
+
+        Can optionally include controls for looping, restarting, progress as
+        well as other video functionality.
+      `
     }
   }
 )

@@ -4,7 +4,7 @@ import { addDays } from 'date-fns'
 
 import Calendar from '.'
 
-const stories = storiesOf('Unsorted/Calendar', module)
+const stories = storiesOf('Specific/Calendar', module)
 
 stories.add('Info', () => <Calendar />, {
   info: {

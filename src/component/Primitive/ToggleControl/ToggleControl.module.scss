@@ -14,7 +14,7 @@ $toggle-control-diameter: $toggle-control-height - ($toggle-control-border * 2);
   width: ($toggle-control-height * 2) - ($toggle-control-border * 2);
   height: $toggle-control-height;
   border-radius: $toggle-control-diameter * 0.5 + $toggle-control-border;
-  background-color: $color-grey50;
+  background-color: $color-grey75;
   overflow: hidden;
   transition: background-color 0.2s ease-out;
 

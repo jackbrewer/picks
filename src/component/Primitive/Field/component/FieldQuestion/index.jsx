@@ -11,7 +11,9 @@ const FieldQuestion = ({ children, disabled, htmlFor, noLabel }) => {
     <div
       className={classNames(styles.FieldQuestion, disabled && styles.disabled)}
     >
-      <FieldQuestionInnerEl htmlFor={htmlFor}>{children}</FieldQuestionInnerEl>
+      <FieldQuestionInnerEl {...(!noLabel && { htmlFor })}>
+        {children}
+      </FieldQuestionInnerEl>
     </div>
   )
 }

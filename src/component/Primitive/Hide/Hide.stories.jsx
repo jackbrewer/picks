@@ -12,7 +12,7 @@ stories.add(
       Here is content{' '}
       <Hide as="span" at="tablet">
         <span style={{ background: 'orange' }}>
-          hidden at on Tablet width and above
+          hidden at Tablet width and above
         </span>
       </Hide>
       <Hide as="span" below="tablet">
@@ -43,7 +43,7 @@ stories.add('Default state', () => (
     Here is content{' '}
     <Hide as="span" at="tablet">
       <span style={{ background: 'orange' }}>
-        hidden at on Tablet width and above
+        hidden at Tablet width and above
       </span>
     </Hide>
     <Hide as="span" below="tablet">

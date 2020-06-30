@@ -43,8 +43,10 @@ stories.add('Custom gap', () => (
 
 stories.add('Shrink', () => (
   <Inline gap="small" shrink>
-    {[...Array(20).keys()].map((i) => (
-      <Placeholder key={i} width={80} height={40} />
+    {[...Array(4).keys()].map((i) => (
+      <Placeholder key={i} width={80} height={40}>
+        Shrink
+      </Placeholder>
     ))}
   </Inline>
 ))

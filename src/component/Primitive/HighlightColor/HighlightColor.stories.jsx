@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import HighlightColor, { colors } from '.'
 
-const stories = storiesOf('Future/HighlightColor', module)
+const stories = storiesOf('Core/HighlightColor', module)
 
 stories.add(
   'Info',

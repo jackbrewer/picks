@@ -2,6 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import Floater from '.'
+import ResponsiveMedia from '../ResponsiveMedia'
 
 const stories = storiesOf('Layout/Floater', module)
 
@@ -24,7 +25,9 @@ stories.add(
   () => (
     <div style={{ overflow: 'auto' }}>
       <Floater size="small" align="left">
-        <img src="https://source.unsplash.com/800x600?nature" alt="" />
+        <ResponsiveMedia ratio={6 / 8}>
+          <img src="https://source.unsplash.com/800x600?nature" alt="" />
+        </ResponsiveMedia>
       </Floater>
       {content}
     </div>
@@ -44,7 +47,9 @@ stories.add(
 stories.add('Aligned left', () => (
   <div style={{ overflow: 'auto' }}>
     <Floater size="small" align="left">
-      <img src="https://source.unsplash.com/800x600?nature" alt="" />
+      <ResponsiveMedia ratio={6 / 8}>
+        <img src="https://source.unsplash.com/800x600?nature" alt="" />
+      </ResponsiveMedia>
     </Floater>
     {content}
     {content}
@@ -54,7 +59,9 @@ stories.add('Aligned left', () => (
 stories.add('Aligned right', () => (
   <div style={{ overflow: 'auto' }}>
     <Floater size="small" align="right">
-      <img src="https://source.unsplash.com/800x600?nature" alt="" />
+      <ResponsiveMedia ratio={6 / 8}>
+        <img src="https://source.unsplash.com/800x600?nature" alt="" />
+      </ResponsiveMedia>
     </Floater>
     {content}
     {content}
@@ -64,7 +71,9 @@ stories.add('Aligned right', () => (
 stories.add('With set size (no align)', () => (
   <div style={{ overflow: 'auto' }}>
     <Floater size="medium">
-      <img src="https://source.unsplash.com/800x600?nature" alt="" />
+      <ResponsiveMedia ratio={6 / 8}>
+        <img src="https://source.unsplash.com/800x600?nature" alt="" />
+      </ResponsiveMedia>
     </Floater>
     {content}
     {content}
@@ -74,7 +83,9 @@ stories.add('With set size (no align)', () => (
 stories.add('With set size (with align)', () => (
   <div style={{ overflow: 'auto' }}>
     <Floater size="medium" align="left">
-      <img src="https://source.unsplash.com/800x600?nature" alt="" />
+      <ResponsiveMedia ratio={6 / 8}>
+        <img src="https://source.unsplash.com/800x600?nature" alt="" />
+      </ResponsiveMedia>
     </Floater>
     {content}
     {content}

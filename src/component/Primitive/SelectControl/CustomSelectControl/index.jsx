@@ -22,9 +22,11 @@ const CustomSelectControl = ({ disabled, multiple, status, ...other }) => {
         disabled && styles.disabled
       )}
     >
-      <div className={styles.CustomSelectControlIndicator} aria-hidden>
-        <Icon type="expand-more" a11yText="" />
-      </div>
+      {!multiple && (
+        <div className={styles.CustomSelectControlIndicator} aria-hidden>
+          <Icon type="expand-more" a11yText="" />
+        </div>
+      )}
       <NativeSelectControl
         disabled={disabled}
         multiple={multiple}

@@ -7,7 +7,7 @@ import Placeholder from '../../Helper/Placeholder'
 import List from '../List'
 import Stack from '../Stack'
 
-const stories = storiesOf('Unsorted/Panel', module)
+const stories = storiesOf('Specific/Panel', module)
 
 stories.add(
   'Info',

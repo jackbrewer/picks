@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import StepProgress from '.'
 
-const stories = storiesOf('Unsorted/StepProgress', module)
+const stories = storiesOf('Specific/StepProgress', module)
 
 stories.add(
   'Info',

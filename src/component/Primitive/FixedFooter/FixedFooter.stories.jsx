@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react'
 import FixedFooter from '.'
 import Placeholder from '../../Helper/Placeholder'
 
-const stories = storiesOf('Core/FixedFooter', module)
+const stories = storiesOf('Specific/FixedFooter', module)
 
 stories.add('Info', () => <>See examples</>, {
   info: {

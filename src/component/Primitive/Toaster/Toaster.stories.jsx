@@ -17,6 +17,7 @@ stories.add('Info', () => <Toaster>Content</Toaster>, {
       - auto-dismiss progress bar
       - pause/cancel auto-timeout on focus/hover
       - reveal delay
+      - Multiple notifications stacked
     `
   }
 })

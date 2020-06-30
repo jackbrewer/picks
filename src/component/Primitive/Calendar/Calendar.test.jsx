@@ -1,6 +1,6 @@
-import React from 'react'
+// import React from 'react'
 import validatePropTypes from 'validate-prop-types'
-import { render } from '@testing-library/react'
+// import { render } from '@testing-library/react'
 import Calendar from '.'
 
 const requiredProps = () => ({})

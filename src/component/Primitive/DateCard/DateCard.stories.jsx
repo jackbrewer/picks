@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react'
 
 import DateCard from '.'
 
-const stories = storiesOf('Unsorted/DateCard', module)
+const stories = storiesOf('Specific/DateCard', module)
 
 stories.add(
   'Info',

@@ -45,7 +45,7 @@ module.exports = ({ config, mode }) => {
           sassOptions: {
             includePaths: [path.join(__dirname, '../src/asset/scss/settings')]
           },
-          prependData: `
+          additionalData: `
             @import '~backline-mixins/src/backline-mixins';
             @import 'settings';
           `

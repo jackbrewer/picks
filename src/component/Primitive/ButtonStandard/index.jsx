@@ -7,6 +7,9 @@ import styles from './ButtonStandard.module.scss'
 import ButtonBase from '../ButtonBase'
 import Spinner from '../Spinner'
 
+/**
+ * Basic button component, building on the ButtonBase component.
+ */
 const ButtonStandard = ({
   children,
   className,

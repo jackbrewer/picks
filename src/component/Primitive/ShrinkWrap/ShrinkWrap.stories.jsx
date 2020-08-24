@@ -1,70 +1,32 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 
 import ShrinkWrap from '.'
 
-const stories = storiesOf('Layout/ShrinkWrap', module)
+export default {
+  title: 'Utility/ShrinkWrap',
+  component: ShrinkWrap
+}
 
-stories.add(
-  'Info',
-  () => (
-    <ShrinkWrap>
-      <ShrinkWrap.Item shrink>
-        <span role="img" aria-label="Rocket">
-          🚀
-        </span>
-      </ShrinkWrap.Item>
-      <ShrinkWrap.Item>
-        Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
-        vestibulum. Morbi leo risus, porta ac consectetur ac, vestibulum at
-        eros. Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.
-      </ShrinkWrap.Item>
-    </ShrinkWrap>
-  ),
-  {
-    info: {
-      inline: true,
-      text: `
-        A component to display items side-by-side, often with one item taking as
-        little space as possible and the other filling the remaining space.
-
-        Useful for laying out icons next to text, avatars next to names, inputs
-        next to label text, or even for just general horizontal spacing.
-
-        Uses \`display: table;\` for layout, so won’t ever wrap onto a new row.
-      `
-    }
-  }
+export const Default = (args) => (
+  <ShrinkWrap {...args}>
+    <ShrinkWrap.Item shrink>
+      <span role="img" aria-label="Rocket">
+        🚀
+      </span>
+    </ShrinkWrap.Item>
+    <ShrinkWrap.Item>
+      <p style={{ background: '#FCCA74' }}>Aenean eu leo quam.</p>
+    </ShrinkWrap.Item>
+  </ShrinkWrap>
 )
 
-stories.add('Content width (default state)', () => (
-  <ShrinkWrap>
-    <ShrinkWrap.Item shrink>
-      <span role="img" aria-label="Rocket">
-        🚀
-      </span>
-    </ShrinkWrap.Item>
-    <ShrinkWrap.Item>
-      <p style={{ background: 'lime' }}>Aenean eu leo quam.</p>
-    </ShrinkWrap.Item>
-  </ShrinkWrap>
-))
+export const FullWidth = Default.bind({})
+FullWidth.args = {
+  fullWidth: true
+}
 
-stories.add('Full width', () => (
-  <ShrinkWrap fullWidth>
-    <ShrinkWrap.Item shrink>
-      <span role="img" aria-label="Rocket">
-        🚀
-      </span>
-    </ShrinkWrap.Item>
-    <ShrinkWrap.Item>
-      <p style={{ background: 'lime' }}>Aenean eu leo quam.</p>
-    </ShrinkWrap.Item>
-  </ShrinkWrap>
-))
-
-stories.add('Vertical-align top', () => (
-  <ShrinkWrap>
+export const VerticalAlignTop = (args) => (
+  <ShrinkWrap {...args}>
     <ShrinkWrap.Item shrink vAlign="top">
       <span role="img" aria-label="Rocket">
         🚀
@@ -76,10 +38,10 @@ stories.add('Vertical-align top', () => (
       Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.
     </ShrinkWrap.Item>
   </ShrinkWrap>
-))
+)
 
-stories.add('Vertical-align middle', () => (
-  <ShrinkWrap>
+export const VerticalAlignMiddle = (args) => (
+  <ShrinkWrap {...args}>
     <ShrinkWrap.Item shrink vAlign="middle">
       <span role="img" aria-label="Rocket">
         🚀
@@ -91,10 +53,10 @@ stories.add('Vertical-align middle', () => (
       Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.
     </ShrinkWrap.Item>
   </ShrinkWrap>
-))
+)
 
-stories.add('Vertical-align bottom', () => (
-  <ShrinkWrap>
+export const VerticalAlignBottom = (args) => (
+  <ShrinkWrap {...args}>
     <ShrinkWrap.Item shrink vAlign="bottom">
       <span role="img" aria-label="Rocket">
         🚀
@@ -106,10 +68,10 @@ stories.add('Vertical-align bottom', () => (
       Nulla vitae elit libero, a pharetra augue. Donec sed odio dui.
     </ShrinkWrap.Item>
   </ShrinkWrap>
-))
+)
 
-stories.add('Multiple items', () => (
-  <ShrinkWrap>
+export const MultipleItems = (args) => (
+  <ShrinkWrap {...args}>
     <ShrinkWrap.Item shrink>
       <span role="img" aria-label="Rocket">
         🚀
@@ -134,19 +96,19 @@ stories.add('Multiple items', () => (
       </span>
     </ShrinkWrap.Item>
   </ShrinkWrap>
-))
+)
 
-stories.add('Custom wrapping element', () => (
-  <ShrinkWrap as="label">
+export const CustomWrappingElement = (args) => (
+  <ShrinkWrap {...args} as="label">
     <ShrinkWrap.Item shrink>
       <input type="checkbox" />
     </ShrinkWrap.Item>
     <ShrinkWrap.Item>I agree to the terms and conditions</ShrinkWrap.Item>
   </ShrinkWrap>
-))
+)
 
-stories.add('Fixed (even) spacing', () => (
-  <ShrinkWrap fixed fullWidth>
+export const EvenSpacing = (args) => (
+  <ShrinkWrap {...args} fixed fullWidth>
     <ShrinkWrap.Item shrink>
       Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
       vestibulum.
@@ -156,10 +118,10 @@ stories.add('Fixed (even) spacing', () => (
       elit libero, a pharetra augue. Donec sed odio dui.
     </ShrinkWrap.Item>
   </ShrinkWrap>
-))
+)
 
-stories.add('No wrapping for shrink items', () => (
-  <ShrinkWrap fullWidth>
+export const NoWrappingForShrinkItems = (args) => (
+  <ShrinkWrap fullWidth {...args}>
     <ShrinkWrap.Item noWrap>
       <span role="img" aria-label="Rocket">
         🚀
@@ -171,11 +133,11 @@ stories.add('No wrapping for shrink items', () => (
       elit libero, a pharetra augue. Donec sed odio dui.
     </ShrinkWrap.Item>
   </ShrinkWrap>
-))
+)
 
-stories.add('Spacing variation (comfortable)', () => (
-  <ShrinkWrap>
-    <ShrinkWrap.Item spacing="comfortable">
+export const Comfortable = (args) => (
+  <ShrinkWrap {...args}>
+    <ShrinkWrap.Item>
       <span role="img" aria-label="Rocket">
         🚀
       </span>
@@ -185,12 +147,12 @@ stories.add('Spacing variation (comfortable)', () => (
       elit libero, a pharetra augue. Donec sed odio dui.
     </ShrinkWrap.Item>
   </ShrinkWrap>
-))
+)
 
-stories.add('General spacing examples', () => (
+export const GeneralSpacingExamples = (args) => (
   <>
     <em>Default state:</em>
-    <ShrinkWrap>
+    <ShrinkWrap {...args}>
       <ShrinkWrap.Item>Item one</ShrinkWrap.Item>
       <ShrinkWrap.Item>Item two</ShrinkWrap.Item>
       <ShrinkWrap.Item>Item three is longer</ShrinkWrap.Item>
@@ -198,7 +160,7 @@ stories.add('General spacing examples', () => (
     </ShrinkWrap>
     <hr style={{ margin: '20px 0' }} />
     <em>Full-width, auto layout:</em>
-    <ShrinkWrap fullWidth>
+    <ShrinkWrap {...args}>
       <ShrinkWrap.Item>Item one</ShrinkWrap.Item>
       <ShrinkWrap.Item>Item two</ShrinkWrap.Item>
       <ShrinkWrap.Item>Item three is longer</ShrinkWrap.Item>
@@ -206,11 +168,11 @@ stories.add('General spacing examples', () => (
     </ShrinkWrap>
     <hr style={{ margin: '20px 0' }} />
     <em>Full-width, fixed layout:</em>
-    <ShrinkWrap fullWidth fixed>
+    <ShrinkWrap {...args} fullWidth fixed>
       <ShrinkWrap.Item>Item one</ShrinkWrap.Item>
       <ShrinkWrap.Item>Item two</ShrinkWrap.Item>
       <ShrinkWrap.Item>Item three is longer</ShrinkWrap.Item>
       <ShrinkWrap.Item>Item four</ShrinkWrap.Item>
     </ShrinkWrap>
   </>
-))
+)

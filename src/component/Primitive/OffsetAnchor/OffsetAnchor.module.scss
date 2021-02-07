@@ -1,0 +1,7 @@
+@import '../../../scss/function/spacing';
+
+.OffsetAnchor {
+  visibility: hidden;
+  height: spacing(5);
+  margin-top: spacing(-5);
+}

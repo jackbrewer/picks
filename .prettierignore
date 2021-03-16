@@ -2,11 +2,14 @@
 /node_modules
 
 # testing
-.bundle-analyzer
 /coverage
 
+# next.js
+/.next/
+/out/
+
 # production
-/out
+/build
 /storybook-static
 
 # misc

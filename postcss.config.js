@@ -5,7 +5,7 @@ module.exports = ({ env }) => {
     plugins: {
       'postcss-flexbugs-fixes': {},
       autoprefixer: {},
-      cssnano: isProduction ? {} : false
-    }
+      cssnano: isProduction ? {} : false,
+    },
   }
 }

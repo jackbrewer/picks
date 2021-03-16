@@ -2,11 +2,9 @@
 /node_modules
 
 # testing
-.bundle-analyzer
 /coverage
 
 # production
-/out
 /storybook-static
 
 # misc

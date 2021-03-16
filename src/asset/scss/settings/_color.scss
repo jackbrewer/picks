@@ -1,22 +1,32 @@
-$color-black: hsl(0, 0%, 0%);
-$color-grey25: hsl(0, 0%, 25%);
-$color-grey50: hsl(0, 0%, 50%);
-$color-grey75: hsl(0, 0%, 75%);
-$color-grey95: hsl(0, 0%, 95%);
-$color-white: hsl(0, 0%, 100%);
+$color-primary: #1985f3;
+$color-primary-alt: #00b9ff;
+$color-light-blue: #4cceff;
+$color-green: #19c784;
+$color-orange: #ee660a;
 
-$color-primary: #1565c0;
-$color-primary-light: #1976d2;
-$color-primary-dark: #0d47a1;
+$color-white: #fff;
+$color-white-op70: rgba(255, 255, 255, 0.7);
+$color-grey0: #f5f5f5;
+$color-grey1: #d8d8d8;
+$color-grey2: #c3c3c4;
+$color-grey3: #999;
+$color-grey4: #747476;
+$color-grey5: #3b3c41;
+$color-grey6: #292a2d;
 
-$color-status-success: #33691e;
-$color-status-notice: #01579b;
-$color-status-warning: #ff6f00;
-$color-status-error: #b71c1c;
+$color-status-success: $color-green;
+$color-status-notice: $color-primary-alt;
+$color-status-warning: #ee660a;
+$color-status-error: #a61225;
 
 $color-status-list: (
   success: $color-status-success,
   notice: $color-status-notice,
   warning: $color-status-warning,
-  error: $color-status-error
+  error: $color-status-error,
 );
+
+$color-rating1: hsl(157deg 78% 44%);
+$color-rating2: hsl(60deg 78% 40%);
+$color-rating3: hsl(24deg 78% 48%);
+$color-rating4: hsl(0deg 66% 49%);

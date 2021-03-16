@@ -1,12 +1,12 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import Badge from '.'
+import Example from '.'
 
 const requiredProps = () => ({ children: 'Default content' })
 
-describe('Component: Badge', () => {
+describe('Component: Example', () => {
   test('should output the expected markup with default props', () => {
-    const { getByText } = render(<Badge {...requiredProps()} />)
+    const { getByText } = render(<Example {...requiredProps()} />)
     expect(getByText('Default content')).toBeTruthy()
   })
 })

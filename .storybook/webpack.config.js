@@ -54,7 +54,13 @@ module.exports = ({ config, mode }) => {
     ],
   })
 
-  config.resolve.alias['@'] = path.join(__dirname, '../src')
+  config.resolve.alias['@/*'] = path.join(__dirname, '../src')
+  config.resolve.alias['@Primitive'] = path.join(
+    __dirname,
+    '../src/component/Primitive'
+  )
+  config.resolve.alias['@lib/*'] = path.join(__dirname, '../src/lib/*')
+  config.resolve.alias['@scss/*'] = path.join(__dirname, '../src/asset/scss/*')
 
   return config
 }

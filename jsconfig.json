@@ -3,7 +3,18 @@
     "baseUrl": ".",
     "jsx": "preserve",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ], // legacy format
+      "@Primitive/*": [
+        "src/component/Primitive/*"
+      ],
+      "@lib/*": [
+        "src/lib/*"
+      ],
+      "@scss/*": [
+        "src/asset/scss/*"
+      ],
     }
   }
 }

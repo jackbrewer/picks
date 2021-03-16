@@ -25,10 +25,11 @@
 }
 
 body {
-  font-size: spacing(2); // 16
-  line-height: 1.5; // 24
+  font-size: spacing(2);
+  line-height: 1.5;
   font-weight: normal;
   font-family: $font-body;
-  color: $color-grey6;
-  // -webkit-tap-highlight-color: transparent;
+  color: $c-text;
+  background-color: $c-background;
+  -webkit-tap-highlight-color: transparent;
 }
